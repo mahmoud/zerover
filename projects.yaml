@@ -1,9 +1,71 @@
 ---
-- name: Werkzeug
-  gh_url: https://github.com/pallets/werkzeug
-  author: Armin Ronacher
-  author_url: https://twitter.com/mitsuhiko
-- name: docutils
-  gh_url: https://github.com/docutils-mirror/docutils
-  author: David Goodger
-  author_url: http://docutils.sourceforge.net/docs/user/mailing-lists.html#docutils-develop
+projects:
+  - name: Werkzeug
+    gh_url: https://github.com/pallets/werkzeug
+  - name: docutils
+    gh_url: https://github.com/docutils-mirror/docutils
+  - name: Cython
+    gh_url: https://github.com/cython/cython
+  - name: TOML
+    gh_url: https://github.com/toml-lang/toml/
+  - name: Flask
+    gh_url: https://github.com/pallets/flask
+  - name: datadogpy
+    gh_url: https://github.com/DataDog/datadogpy
+  - name: SciPy  # honorable mention
+    gh_url: https://github.com/scipy/scipy
+  - name: Pandas
+    gh_url: https://github.com/pandas-dev/pandas
+  - name: Wheel
+    gh_url: https://github.com/pypa/wheel
+  - name: PyTorch
+    gh_url: https://github.com/pytorch/pytorch
+  - name: HTTPie
+    gh_url: https://github.com/jakubroztocil/httpie
+  - name: scikit-learn
+    gh_url: https://github.com/scikit-learn/scikit-learn
+  - name: certbot
+    gh_url: https://github.com/certbot/certbot
+  - name: sshuttle
+    gh_url: https://github.com/sshuttle/sshuttle
+  - name: Theano  # honorable mention
+    gh_url: https://github.com/Theano/Theano
+  - name: Bokeh
+    gh_url: https://github.com/bokeh/bokeh
+  - name: Magic Wormhole
+    gh_url: https://github.com/warner/magic-wormhole
+  - name: docopt
+    gh_url: https://github.com/docopt/docopt
+  - name: httpbin
+    gh_url: https://github.com/kennethreitz/httpbin/releases
+  - name: bottle
+    gh_url: https://github.com/bottlepy/bottle
+  - name: rq
+    gh_url: https://github.com/rq/rq
+  - name: hugo
+    gh_url: https://github.com/gohugoio/hugo
+  - name: drone
+    gh_url: https://github.com/drone/drone
+  - name: terraform
+    gh_url: https://github.com/hashicorp/terraform
+  - name: nomad
+    gh_url: https://github.com/hashicorp/nomad
+  - name: vault
+    gh_url: https://github.com/hashicorp/vault
+  - name: xhyve
+    gh_url: https://github.com/mist64/xhyve
+  - name: zeal
+    gh_url: https://github.com/zealdocs/zeal
+
+zv_entries:
+  - name: Dash
+    url: https://git.kernel.org/pub/scm/utils/dash/dash.git
+  - name: Inkscape
+    url: https://launchpad.net/inkscape
+  - name: Orc (liborc)
+    url: https://cgit.freedesktop.org/gstreamer/orc/
+  - name: Compiz
+    url: https://launchpad.net/compiz
+hm_entries:
+  - name: OpenSSL
+    url: https://github.com/openssl/openssl
