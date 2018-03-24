@@ -1,0 +1,9 @@
+---
+- name: Werkzeug
+  gh_url: https://github.com/pallets/werkzeug
+  author: Armin Ronacher
+  author_url: https://twitter.com/mitsuhiko
+- name: docutils
+  gh_url: https://github.com/docutils-mirror/docutils
+  author: David Goodger
+  author_url: http://docutils.sourceforge.net/docs/user/mailing-lists.html#docutils-develop
