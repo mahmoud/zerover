@@ -5,30 +5,30 @@ publish_date: March 3, 2018
 
 <div style="text-align:center"><i>Cutting-edge software versioning for minimalists</i></div><br/>
 
-Pretty much every project in the open-source world agrees: **Major
-versions are over**. So what does the past, present, and future of
-software versioning look like?
+With software releases at an all-time high, the consensus has never
+been clearer: **Major versions are over**. So what does the past,
+present, and future of software versioning look like?
 
 [TOC]
 
 <h2><span style="font-family:monospace">0</span>verview</h2>
 
-The ZeroVer ([0ver][0ver] for short) versioning scheme is simple: Your
+The ZeroVer versioning scheme (AKA [0ver][0ver]) is simple: **Your
 software's major version should never exceed the first and most
-important number in computing: zero.
+important number in computing: zero.** For instance:
 
 **OK**: 0.0.1, 0.1.0dev, 0.4.0, 0.4.1, 0.9.8n, [0.999999999][html5lib_ouch]
 
 **NOT OK**: 1.0, 1.0.0-rc1, 18.0, 2018.04.01
 
-Clearly, software's best versions are like its lists and arrays:
-0-based.
+In short, software versioning best practice is remarkably like the
+modern list/array: 0-based.
 
 We'll leave it to computer scientists to determine exactly how master
-coders channel the power of the "[zero-point][zpe]" to
-produce top-notch software. Meanwhile, open-source and industry agree:
-ZeroVer is software's most popular versioning scheme. And as the examples
-below demonstrate, 0ver shows no sign of slowing down.
+coders channel the power of the "[zero-point][zpe]" to produce
+top-notch software. Meanwhile, open-source and industry developers
+agree: ZeroVer is software's most popular versioning scheme. And as
+the examples below demonstrate, 0ver shows no sign of slowing down.
 
 [0ver]: 0ver.org
 [zpe]: https://en.wikipedia.org/wiki/Zero-point_energy
@@ -36,8 +36,8 @@ below demonstrate, 0ver shows no sign of slowing down.
 
 # Featured Use Cases
 
-Just a few of ZeroVer's flagships: projects getting the most out of
-their zeroes.
+These flagship ZeroVer projects know how to get the most out of their
+zeroes.
 
 ## TOML
 
@@ -98,7 +98,7 @@ thanks to streamlined minimal versioning.
 [ssleay_cpan]: http://search.cpan.org/~mikem/Net-SSLeay-1.85/lib/Net/SSLeay.pod
 [openssl_changelog]: https://www.openssl.org/news/changelog.html
 
-# ZeroVer Projects
+# Popular ZeroVer Projects
 
 The vanguard of the versioning revolution.
 
