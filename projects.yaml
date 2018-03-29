@@ -12,8 +12,9 @@ projects:
     gh_url: https://github.com/pallets/flask
   - name: datadogpy
     gh_url: https://github.com/DataDog/datadogpy
-  - name: SciPy  # honorable mention
+  - name: SciPy
     gh_url: https://github.com/scipy/scipy
+    alumnus: true
   - name: Pandas
     gh_url: https://github.com/pandas-dev/pandas
   - name: Wheel
@@ -28,8 +29,9 @@ projects:
     gh_url: https://github.com/certbot/certbot
   - name: sshuttle
     gh_url: https://github.com/sshuttle/sshuttle
-  - name: Theano  # honorable mention
+  - name: Theano
     gh_url: https://github.com/Theano/Theano
+    alumnus: true
   - name: Bokeh
     gh_url: https://github.com/bokeh/bokeh
   - name: Magic Wormhole
@@ -37,7 +39,7 @@ projects:
   - name: docopt
     gh_url: https://github.com/docopt/docopt
   - name: httpbin
-    gh_url: https://github.com/kennethreitz/httpbin/releases
+    gh_url: https://github.com/kennethreitz/httpbin
   - name: bottle
     gh_url: https://github.com/bottlepy/bottle
   - name: rq
@@ -56,7 +58,9 @@ projects:
     gh_url: https://github.com/mist64/xhyve
   - name: zeal
     gh_url: https://github.com/zealdocs/zeal
-
+  - name: html5lib-python
+    gh_url: https://github.com/html5lib/html5lib-python/
+    alumnus: true
 zv_entries:
   - name: Dash
     url: https://git.kernel.org/pub/scm/utils/dash/dash.git
