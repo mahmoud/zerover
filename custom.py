@@ -31,9 +31,14 @@ def _autotag_entries(chert_obj):
 
 ###########
 
+# TODO: build a json file out of the following, have the custom.py
+# just turn that json into a table.
+# add note about getting a token from here: https://github.com/settings/tokens
+
 import re
 import sys
 import json
+import base64
 import urllib2
 
 import yaml
@@ -44,14 +49,23 @@ from boltons.tableutils import Table
 vtag_re = re.compile(r'^v?(?P<major>\d+)\.[0-9.]+')
 
 def _get_gh_json(url):
-    resp = json.loads(urllib2.urlopen(url).read())
+    gh_user = os.getenv('GH_USER', '')
+    gh_token = os.getenv('GH_TOKEN', '')
+    req = urllib2.Request(url)
+    if gh_user and gh_token:
+        auth_header_val = 'Basic %s' % base64.b64encode('%s:%s' % (gh_user, gh_token))
+        req.add_header('Authorization', auth_header_val)
+    resp = json.loads(urllib2.urlopen(req).read())
     if not isinstance(resp, list) or not resp:
         return resp
     page = 2
     ret = resp
     while resp:
         paged_url = url + '?page=%s' % page
-        resp = json.loads(urllib2.urlopen(paged_url).read())
+        req = urllib2.Request(paged_url)
+        if gh_user and gh_token:
+            req.add_header('Authorization', auth_header_val)
+        resp = json.loads(urllib2.urlopen(req).read())
         ret.extend(resp)
         page += 1
     return ret
