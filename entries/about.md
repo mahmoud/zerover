@@ -16,12 +16,17 @@ were harmed as a result of this humble attempt at programmer humor.
 
 # Real talk
 
-Software is hard. Versioning is nuanced. Creative projects
-rarely obey strict schedules.
+Software is hard. Versioning is nuanced. Creative projects rarely obey
+strict schedules. There are many reasons why software stays in
+prerelease mode.
 
 But, if your project has made the ZeroVer list, it definitely meets
-consensus criteria for having a public release. Here are some of the
-recommended guidelines:
+consensus criteria for having a public release. You've built something
+useful and great, and continuing to advertise prerelease status hurts
+adoption, especially for adopters trying to convince others that your
+software is as dependable as actual practice shows it is. Here are
+recommended guidelines from two of the most popular versioning
+schemes:
 
 * [CalVer][calver_criterion]: *"If both you and someone you don't know
   use your project seriously, then use a serious version."*
@@ -36,13 +41,15 @@ For additional ZeroVer criteria, check out the submission template.
 
 # What to do
 
-[0ver.org][0ver] may list some auspicious names, but it's not a very good
-look. If you're having trouble picking a version, or are stuck
+[0ver.org][0ver] may list some auspicious names, but it's not a very
+good look. If you're having trouble picking a version, or are stuck
 asymptotically approaching an "actual" release, do yourself a favor
-and slap a CalVer on it. [You'll be in much better company][calver_users].
+and slap a [CalVer][calver] on it. [You'll be in much better
+company][calver_users].
 
 [mahmoud]: https://github.com/mahmoud/
 [calver_criterion]: https://sedimental.org/designing_a_version.html#fn:2
 [semver_criterion]: https://semver.org/#faq
 [calver_users]: https://calver.org/users.html
+[calver]: https://calver.org
 [0ver]: https://0ver.org
