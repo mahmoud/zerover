@@ -24,7 +24,7 @@ consensus criteria for having a public release. Here are some of the
 recommended guidelines:
 
 * [CalVer][calver_criterion]: *"If both you and someone you don't know
-  are seriously using a project, you need a version."*
+  use your project seriously, then use a serious version."*
 * [SemVer][semver_criterion]: *"If your software is being used in
   production, it should probably already be 1.0.0."*
 
