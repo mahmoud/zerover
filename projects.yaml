@@ -1,5 +1,7 @@
 ---
 projects:
+  # GitHub projects are at the top for convenience
+  # Up-to-date details are filled in automatically by tools/gen_entry_json.py
   - name: Werkzeug
     gh_url: https://github.com/pallets/werkzeug
   - name: docutils
@@ -31,7 +33,6 @@ projects:
     gh_url: https://github.com/sshuttle/sshuttle
   - name: Theano
     gh_url: https://github.com/Theano/Theano
-    skip: true  # TODO: rel-* release pattern
     alumnus: true
   - name: Bokeh
     gh_url: https://github.com/bokeh/bokeh
@@ -64,18 +65,44 @@ projects:
     alumnus: true
   - name: MyPy
     gh_url: https://github.com/python/mypy
-  # TODO: https://github.com/wbond/asn1crypto ?
-zv_entries:
-  - name: Dash
-    url: https://git.kernel.org/pub/scm/utils/dash/dash.git
-  - name: Inkscape
-    url: https://launchpad.net/inkscape
+  - name: asn1crypto
+    gh_url: https://github.com/wbond/asn1crypto
+    reason: Depended on by pyca/cryptography
   - name: Orc (liborc)
     url: https://cgit.freedesktop.org/gstreamer/orc
+    gh_url: https://github.com/GStreamer/orc
+    reason: Depended on by Ubuntu and other free desktop operating systems
+
+  # Non-GitHub projects below, manually updated
+
+  - name: Dash
+    url: https://git.kernel.org/pub/scm/utils/dash/dash.git
+    first_release_date: 1997-06-19T09:29:16
+    first_release_name: 0.3.1
+    latest_release_date: 2016-09-23T14:51:58
+    latest_release_name: 0.5.9.1
+  - name: Inkscape
+    url: https://launchpad.net/inkscape
+    first_release_date: 2000-09-01
+    first_release_name: 0.16  # sodipodi cvs import according to changelog
+    latest_release_date: 2018-03-11
+    latest_release_name: 0.92.3
   - name: Compiz
+    first_release_date: 2006-05-22
+    latest_release_date: 2016-11-11
+    latest_release_name: 0.9.13.1
     url: https://launchpad.net/compiz
-  - name: PyASN1
-    url: https://github.com/etingof/pyasn1 or https://pypi.org/project/pyasn1/#history
-hm_entries:
+  - name: distlib
+    first_release_name: 0.1.0
+    first_release_date: 2013-03-02
+    latest_release_name: 0.2.6
+    latest_release_date: 2017-10-28
+    url: https://bitbucket.org/pypa/distlib
+    reason: Depended on by pypa/pip
   - name: OpenSSL
     url: https://github.com/openssl/openssl
+    alumnus: true
+    first_release_date: 1998-12-23
+    first_release_name: 0.9.1
+    last_zv_release_name: 0.9.8n
+    last_zv_release_date: 2010-03-29
