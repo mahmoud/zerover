@@ -7,7 +7,7 @@ projects:
   - name: Cython
     gh_url: https://github.com/cython/cython
   - name: TOML
-    gh_url: https://github.com/toml-lang/toml/
+    gh_url: https://github.com/toml-lang/toml
   - name: Flask
     gh_url: https://github.com/pallets/flask
   - name: datadogpy
@@ -31,6 +31,7 @@ projects:
     gh_url: https://github.com/sshuttle/sshuttle
   - name: Theano
     gh_url: https://github.com/Theano/Theano
+    skip: true  # TODO: rel-* release pattern
     alumnus: true
   - name: Bokeh
     gh_url: https://github.com/bokeh/bokeh
@@ -59,17 +60,22 @@ projects:
   - name: zeal
     gh_url: https://github.com/zealdocs/zeal
   - name: html5lib-python
-    gh_url: https://github.com/html5lib/html5lib-python/
+    gh_url: https://github.com/html5lib/html5lib-python
     alumnus: true
+  - name: MyPy
+    gh_url: https://github.com/python/mypy
+  # TODO: https://github.com/wbond/asn1crypto ?
 zv_entries:
   - name: Dash
     url: https://git.kernel.org/pub/scm/utils/dash/dash.git
   - name: Inkscape
     url: https://launchpad.net/inkscape
   - name: Orc (liborc)
-    url: https://cgit.freedesktop.org/gstreamer/orc/
+    url: https://cgit.freedesktop.org/gstreamer/orc
   - name: Compiz
     url: https://launchpad.net/compiz
+  - name: PyASN1
+    url: https://github.com/etingof/pyasn1 or https://pypi.org/project/pyasn1/#history
 hm_entries:
   - name: OpenSSL
     url: https://github.com/openssl/openssl
