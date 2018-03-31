@@ -48,7 +48,7 @@ the light himself!
 
 So hats off to [Tom][toml_tom], it must not have been easy to turn his
 back on his own SemVer, [TOML's stated versioning scheme since 0.1 in
-2013][toml_2013]. In SemVer Tom's words:
+2013][toml_2013]. In SemVer Tom's own words:
 
 > *If your software is being used in production, it should probably already be 1.0.0.*
 
@@ -103,6 +103,10 @@ thanks to streamlined minimal versioning.
 The vanguard of the versioning revolution.
 
 [ZEROVER_PROJECT_TABLE]
+
+<br/>At the time of writing, the list is somewhat biased toward Python
+projects. If you know of some prominent ZeroVer projects, submit them
+here!
 
 # Selected Alumni
 

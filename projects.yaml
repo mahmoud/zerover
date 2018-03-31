@@ -81,24 +81,24 @@ projects:
   - name: Dash
     url: https://git.kernel.org/pub/scm/utils/dash/dash.git
     first_release_date: 1997-06-19T09:29:16
-    first_release_name: 0.3.1
+    first_release_version: 0.3.1
     latest_release_date: 2016-09-23T14:51:58
-    latest_release_name: 0.5.9.1
+    latest_release_version: 0.5.9.1
   - name: Inkscape
     url: https://launchpad.net/inkscape
     first_release_date: 2000-09-01
-    first_release_name: 0.16  # sodipodi cvs import according to changelog
+    first_release_version: 0.16  # sodipodi cvs import according to changelog
     latest_release_date: 2018-03-11
-    latest_release_name: 0.92.3
+    latest_release_version: 0.92.3
   - name: Compiz
     first_release_date: 2006-05-22
     latest_release_date: 2016-11-11
-    latest_release_name: 0.9.13.1
+    latest_release_version: 0.9.13.1
     url: https://launchpad.net/compiz
   - name: distlib
-    first_release_name: 0.1.0
+    first_release_version: 0.1.0
     first_release_date: 2013-03-02
-    latest_release_name: 0.2.6
+    latest_release_version: 0.2.6
     latest_release_date: 2017-10-28
     url: https://bitbucket.org/pypa/distlib
     reason: Depended on by pypa/pip
@@ -106,6 +106,6 @@ projects:
     url: https://github.com/openssl/openssl
     alumnus: true
     first_release_date: 1998-12-23
-    first_release_name: 0.9.1
-    last_zv_release_name: 0.9.8n
+    first_release_version: 0.9.1
+    last_zv_release_version: 0.9.8n
     last_zv_release_date: 2010-03-29

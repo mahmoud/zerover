@@ -22,8 +22,8 @@ def chert_post_load(chert_obj):
             if '[ZEROVER_PROJECT_TABLE]' not in content and '[ALUMNI_PROJECT_TABLE]' not in content:
                 continue
             if zv_project_table is None:
-                zv_project_table = _entries_to_mdtable(zv_projects)
-                alumni_project_table = _entries_to_mdtable(alumni_projects)
+                zv_project_table = _zv_to_htmltable(zv_projects)
+                alumni_project_table = _zv_to_htmltable(alumni_projects)  # TODO: alumni table format
             content = content.replace('[ZEROVER_PROJECT_TABLE]', zv_project_table)
             content = content.replace('[ALUMNI_PROJECT_TABLE]', alumni_project_table)
             part['content'] = content
@@ -34,39 +34,61 @@ def chert_post_load(chert_obj):
 
 import sys
 import json
+import datetime
 
 from boltons.iterutils import partition
 from boltons.tableutils import Table
 from boltons.timeutils import isoparse
 
-def _entries_to_mdtable(entries):
-    headers = ['Project', 'Stars', 'Initial release', 'Releases', 'Current Version']
+class ZVTable(Table):
+    _html_table_tag = '<table class="zv-table">'
+
+    def get_cell_html(self, data):
+        # Table escapes html by default
+        return data
+
+
+def tooltipped(content, tip):
+    if not tip:
+        return '%s' % content
+    return '<span title="%s">%s</span>' % (tip, content)
+
+
+def _zv_to_htmltable(entries):
+    headers = ['Project', 'Stars', 'First Released', 'Releases', 'Current Version', '0ver years']
+
     rows = []
     for entry in entries:
-        initial_release_year = isoparse(entry['first_release_date'].replace('Z', '')).year
-        lrel_dt = None
+        irel_dt = isoparse(entry['first_release_date'].replace('Z', ''))  # TODO: boltons Z handling
+        lrel_dt, zv_streak = None, None
         if entry.get('latest_release_date'):
             lrel_dt = isoparse(entry['latest_release_date'].replace('Z', ''))
+        zv_streak = datetime.datetime.utcnow() - irel_dt
+        zv_streak_years = round(zv_streak.days / 365.0, 1)
 
-        row = ['[{0}][{0}]'.format(entry['name']),
-               '%s' % entry.get('star_count', '-'),
-               '%s (%s)' % (entry.get('first_release_name', '0.0.1'), initial_release_year),
+        row = [tooltipped('<a href="%s">%s</a>' % (entry['url'], entry['name']),
+                          entry.get('reason')),
+               tooltipped('{:,}'.format(entry['star_count']) if entry.get('star_count') else '---',
+                          entry.get('reason')),
+               tooltipped(irel_dt.year, entry.get('first_release_version')),
                '%s' % entry.get('release_count', '-')]
         if lrel_dt:
-            row.append('%s (%s-%s-%s)' % (entry.get('latest_release_name', '-'), lrel_dt.year, lrel_dt.month, lrel_dt.day))
+            row.append('%s (%s)' % (entry.get('latest_release_version', '-'), lrel_dt.year))
         else:
             row.append('-')
+
+        row.append('%s' % zv_streak_years)
+
         rows.append(row)
 
-    table = Table.from_data(rows, headers=headers)
+    table = ZVTable.from_data(rows, headers=headers)
 
-    ret = table.to_text()
+    ret = table.to_html()
+
+    # table sorting js at bottom of base.html uses the stars class on
+    # the heading to sort properly
+    ret = ret.replace('<th>Stars</th>', '<th class="stars">Stars</th>')
     ret += '\n\n'
-    for entry in entries:
-        ret += '\n[%s]: %s' % (entry['name'], entry.get('url', '-'))
-
-    ret = ret.replace('-+-', '-|-')  # TODO: hack until boltons table fixes
-
     return ret
 
 
@@ -77,9 +99,9 @@ def _main():
 
     zv_projects, alumni_projects = partition(projects, lambda p: p['is_zerover'])
 
-    print _entries_to_mdtable(zv_projects)
+    print _zv_to_mdtable(zv_projects)
     print
-    print _entries_to_mdtable(alumni_projects)
+    print _alumni_to_mdtable(alumni_projects)
 
 
 if __name__ == '__main__':

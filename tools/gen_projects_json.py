@@ -21,12 +21,17 @@ PREFIXES = ['v',   # common
 
 VTAG_RE = re.compile(r'^(?P<major>\d+)\.[0-9.]+')
 
-def match_zv_tag(tag_name, prefixes):
+def strip_prefix(tag_name, prefixes):
     # TODO: could combine these all into the re
     for prefix in prefixes:
         if tag_name.startswith(prefix):
             tag_name = tag_name[len(prefix):]
             break
+    return tag_name
+
+
+def match_vtag(tag_name, prefixes):
+    tag_name = strip_prefix(tag_name, prefixes)
     return VTAG_RE.match(tag_name)
 
 
@@ -66,9 +71,12 @@ def _get_gh_json(url):
     return ret
 
 
-def _get_gh_rel_data(rel_info):
+def _get_gh_rel_data(rel_info, prefixes):
     ret = {}
-    ret['name'] = rel_info['name']
+    ret['tag'] = rel_info['name']
+    ret['version'] = None
+    if match_vtag(ret['tag'], prefixes):
+        ret['version'] = strip_prefix(ret['tag'], prefixes)
     ret['api_commit_url'] = rel_info['commit']['url']
     rel_data = _get_gh_json(ret['api_commit_url'])
     ret['date'] = rel_data['commit']['author']['date']
@@ -90,21 +98,21 @@ def get_gh_project_info(url):
     gh_url.path_parts += ('tags',)
     tags_url = gh_url.to_text()
     tags_data = _get_gh_json(tags_url)
-    vtags_data = [td for td in tags_data if match_zv_tag(td['name'], PREFIXES)]
+    vtags_data = [td for td in tags_data if match_vtag(td['name'], PREFIXES)]
     ret['release_count'] = len(vtags_data)
 
     first_release = vtags_data[-1]
-    first_release_data = _get_gh_rel_data(first_release)
+    first_release_data = _get_gh_rel_data(first_release, PREFIXES)
     for k, v in first_release_data.items():
         ret['first_release_%s' % k] = v
 
     latest_release = vtags_data[0]
-    latest_release_data = _get_gh_rel_data(latest_release)
+    latest_release_data = _get_gh_rel_data(latest_release, PREFIXES)
     for k, v in latest_release_data.items():
         ret['latest_release_%s' % k] = v
 
     zv_releases = [rel for rel in vtags_data
-                   if match_zv_tag(rel['name'], PREFIXES).group('major') == '0']
+                   if match_vtag(rel['name'], PREFIXES).group('major') == '0']
     print ' .. %s releases, %s 0ver' % (ret['release_count'], len(zv_releases))
 
     is_zerover = zv_releases[0] == latest_release
@@ -115,7 +123,7 @@ def get_gh_project_info(url):
         return ret
 
     last_zv_release = zv_releases[0]
-    last_zv_release_data = _get_gh_rel_data(last_zv_release)
+    last_zv_release_data = _get_gh_rel_data(last_zv_release, PREFIXES)
 
     for k, v in last_zv_release_data.items():
         ret['last_zv_release_%s' % k] = v

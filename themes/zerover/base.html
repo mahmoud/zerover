@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="/css/skeleton.css">
   <link rel="stylesheet" href="/css/github.css">
   <link rel="stylesheet" href="/css/zerover.css">
+  <link rel="stylesheet" href="/css/datatables.min.css">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/img/favicon.png">
@@ -77,6 +78,32 @@
       </div>
     </div>  <!-- end table block footer div -->
   </div>
+  <script type="text/javascript" src="/js/jquery-1.12.3.min.js"></script>
+  <script type="text/javascript" src="/js/datatables.min.js"></script>
+  <script type="text/javascript" src="/js/datatables.fixedHeader.min.js"></script>
+  <script>
+  $(document).ready( function () {
+
+  $.extend( $.fn.dataTableExt.oSort, {
+                                   "numeric-comma-pre": function ( a ) {
+                                       a = $(a).text() || a;
+                                       a = parseInt(a.replace( /,/, "" ));
+                                       if (isNaN(a)) { return 0; }
+                                       return a;
+                                   }}
+        );
+
+    $('.zv-table').DataTable({
+        paging: false,
+        searching: false,
+        info: false,
+        columnDefs: [
+            {targets: "stars", type: 'numeric-comma'},  // stars sorting
+        ],
+    });
+    } );
+  </script>
+
   <!-- Last generated: {site.last_generated_utc} -->
 </body>
 </html>
