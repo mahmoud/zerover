@@ -4,8 +4,10 @@ projects:
   # Up-to-date details are filled in automatically by tools/gen_entry_json.py
   - name: Werkzeug
     gh_url: https://github.com/pallets/werkzeug
+    reason: Depended on by Flask and many other web frameworks.
   - name: docutils
     gh_url: https://github.com/docutils-mirror/docutils
+    reason: Depended on by Sphinx and most of the content on ReadTheDocs. The reference implementation of ReStructuredText, the inspiration for Markdown.
   - name: Cython
     gh_url: https://github.com/cython/cython
   - name: TOML
@@ -14,6 +16,7 @@ projects:
     gh_url: https://github.com/pallets/flask
   - name: datadogpy
     gh_url: https://github.com/DataDog/datadogpy
+    reason: Part of a paid product.
   - name: SciPy
     gh_url: https://github.com/scipy/scipy
     alumnus: true
@@ -50,11 +53,11 @@ projects:
     gh_url: https://github.com/gohugoio/hugo
   - name: drone
     gh_url: https://github.com/drone/drone
-  - name: terraform
+  - name: HashiCorp Terraform
     gh_url: https://github.com/hashicorp/terraform
-  - name: nomad
+  - name: HashiCorp Nomad
     gh_url: https://github.com/hashicorp/nomad
-  - name: vault
+  - name: HashiCorp Vault
     gh_url: https://github.com/hashicorp/vault
   - name: xhyve
     gh_url: https://github.com/mist64/xhyve

@@ -1,6 +1,6 @@
 {
-  "gen_date": "2018-03-31T07:09:41.129381", 
-  "gen_duration": 75.40587306022644, 
+  "gen_date": "2018-03-31T08:44:30.785586", 
+  "gen_duration": 54.63441300392151, 
   "projects": [
     {
       "first_release_api_commit_url": "https://api.github.com/repos/pallets/werkzeug/commits/f930a7821eff188a663252c390fa5ad2319d31c1", 
@@ -15,7 +15,8 @@
       "latest_release_name": "0.14.1", 
       "name": "Werkzeug", 
       "release_count": 52, 
-      "star_count": 3887
+      "star_count": 3887, 
+      "url": "https://github.com/pallets/werkzeug"
     }, 
     {
       "first_release_api_commit_url": "https://api.github.com/repos/docutils-mirror/docutils/commits/fc3262f5e0145c9c59a6e0e2a367317bafcee930", 
@@ -30,7 +31,8 @@
       "latest_release_name": "0.12", 
       "name": "docutils", 
       "release_count": 19, 
-      "star_count": 9
+      "star_count": 9, 
+      "url": "https://github.com/docutils-mirror/docutils"
     }, 
     {
       "first_release_api_commit_url": "https://api.github.com/repos/cython/cython/commits/5e809b84839f46dc1fe8b1e7478036d09c1716d7", 
@@ -45,7 +47,8 @@
       "latest_release_name": "0.28.1", 
       "name": "Cython", 
       "release_count": 130, 
-      "star_count": 2981
+      "star_count": 2981, 
+      "url": "https://github.com/cython/cython"
     }, 
     {
       "first_release_api_commit_url": "https://api.github.com/repos/toml-lang/toml/commits/5ef84d506bd3632d898d6bccce4d9ce713a4614e", 
@@ -60,7 +63,8 @@
       "latest_release_name": "v0.4.0", 
       "name": "TOML", 
       "release_count": 5, 
-      "star_count": 7334
+      "star_count": 7334, 
+      "url": "https://github.com/toml-lang/toml"
     }, 
     {
       "first_release_api_commit_url": "https://api.github.com/repos/pallets/flask/commits/8605cc310d260c3b08160881b09da26c2cc95f8d", 
@@ -75,7 +79,8 @@
       "latest_release_name": "0.12.2", 
       "name": "Flask", 
       "release_count": 21, 
-      "star_count": 34296
+      "star_count": 34298, 
+      "url": "https://github.com/pallets/flask"
     }, 
     {
       "first_release_api_commit_url": "https://api.github.com/repos/DataDog/datadogpy/commits/282ac7bb4ba2533f6140816ab9c9036b1411e4a0", 
@@ -90,7 +95,8 @@
       "latest_release_name": "v0.20.0", 
       "name": "datadogpy", 
       "release_count": 25, 
-      "star_count": 163
+      "star_count": 163, 
+      "url": "https://github.com/DataDog/datadogpy"
     }, 
     {
       "alumnus": true, 
@@ -110,7 +116,8 @@
       "latest_release_name": "v1.0.1", 
       "name": "SciPy", 
       "release_count": 97, 
-      "star_count": 4289
+      "star_count": 4289, 
+      "url": "https://github.com/scipy/scipy"
     }, 
     {
       "first_release_api_commit_url": "https://api.github.com/repos/pandas-dev/pandas/commits/4906ee79d730f77be02ec586ec7f66c95a0433da", 
@@ -125,7 +132,8 @@
       "latest_release_name": "v0.23.0.dev0", 
       "name": "Pandas", 
       "release_count": 75, 
-      "star_count": 13654
+      "star_count": 13656, 
+      "url": "https://github.com/pandas-dev/pandas"
     }, 
     {
       "first_release_api_commit_url": "https://api.github.com/repos/pypa/wheel/commits/d02f91dceda7c4a16cc26ea80f0eecfff638e4b2", 
@@ -140,7 +148,8 @@
       "latest_release_name": "0.30.0", 
       "name": "Wheel", 
       "release_count": 28, 
-      "star_count": 61
+      "star_count": 61, 
+      "url": "https://github.com/pypa/wheel"
     }, 
     {
       "first_release_api_commit_url": "https://api.github.com/repos/pytorch/pytorch/commits/2aee2d312fcdd56dcc30e956cb5ed4e492e503d3", 
@@ -155,7 +164,8 @@
       "latest_release_name": "v0.3.1", 
       "name": "PyTorch", 
       "release_count": 15, 
-      "star_count": 13387
+      "star_count": 13388, 
+      "url": "https://github.com/pytorch/pytorch"
     }, 
     {
       "first_release_api_commit_url": "https://api.github.com/repos/jakubroztocil/httpie/commits/1a88ae647ef806cfbdbaf2cd069854139ca73a72", 
@@ -170,7 +180,8 @@
       "latest_release_name": "0.9.8", 
       "name": "HTTPie", 
       "release_count": 29, 
-      "star_count": 34693
+      "star_count": 34693, 
+      "url": "https://github.com/jakubroztocil/httpie"
     }, 
     {
       "first_release_api_commit_url": "https://api.github.com/repos/scikit-learn/scikit-learn/commits/e6989efd71a2adddd03979d1fe7a2e82e37ea51f", 
@@ -185,7 +196,8 @@
       "latest_release_name": "0.19.1", 
       "name": "scikit-learn", 
       "release_count": 60, 
-      "star_count": 27010
+      "star_count": 27012, 
+      "url": "https://github.com/scikit-learn/scikit-learn"
     }, 
     {
       "first_release_api_commit_url": "https://api.github.com/repos/certbot/certbot/commits/5fae1def66c4bfc6f3e9752dad1b8c7dd057d627", 
@@ -200,7 +212,8 @@
       "latest_release_name": "v0.22.2", 
       "name": "certbot", 
       "release_count": 52, 
-      "star_count": 21706
+      "star_count": 21706, 
+      "url": "https://github.com/certbot/certbot"
     }, 
     {
       "first_release_api_commit_url": "https://api.github.com/repos/sshuttle/sshuttle/commits/780997e8a72a1321f2469635d9e0abdf86a4c7b3", 
@@ -215,7 +228,8 @@
       "latest_release_name": "v0.78.3", 
       "name": "sshuttle", 
       "release_count": 10, 
-      "star_count": 1493
+      "star_count": 1494, 
+      "url": "https://github.com/sshuttle/sshuttle"
     }, 
     {
       "alumnus": true, 
@@ -235,7 +249,8 @@
       "latest_release_name": "rel-1.0.1", 
       "name": "Theano", 
       "release_count": 30, 
-      "star_count": 8079
+      "star_count": 8079, 
+      "url": "https://github.com/Theano/Theano"
     }, 
     {
       "first_release_api_commit_url": "https://api.github.com/repos/bokeh/bokeh/commits/494db4e99c21697f0d3ef9cfed9206cb05316f51", 
@@ -250,7 +265,8 @@
       "latest_release_name": "0.12.15", 
       "name": "Bokeh", 
       "release_count": 63, 
-      "star_count": 7415
+      "star_count": 7415, 
+      "url": "https://github.com/bokeh/bokeh"
     }, 
     {
       "first_release_api_commit_url": "https://api.github.com/repos/warner/magic-wormhole/commits/c9e0246266c63902ea2b01a80a6402f0aafbca1e", 
@@ -265,7 +281,8 @@
       "latest_release_name": "0.10.5", 
       "name": "Magic Wormhole", 
       "release_count": 30, 
-      "star_count": 7428
+      "star_count": 7427, 
+      "url": "https://github.com/warner/magic-wormhole"
     }, 
     {
       "first_release_api_commit_url": "https://api.github.com/repos/docopt/docopt/commits/387ccebcad588a6207c7b122cf500c97634f46d2", 
@@ -280,7 +297,8 @@
       "latest_release_name": "0.6.2", 
       "name": "docopt", 
       "release_count": 11, 
-      "star_count": 5801
+      "star_count": 5800, 
+      "url": "https://github.com/docopt/docopt"
     }, 
     {
       "first_release_api_commit_url": "https://api.github.com/repos/kennethreitz/httpbin/commits/8c9922de879c4c8676c752ce81237c6e1b22aec4", 
@@ -295,7 +313,8 @@
       "latest_release_name": "v0.6.2", 
       "name": "httpbin", 
       "release_count": 12, 
-      "star_count": 5750
+      "star_count": 5750, 
+      "url": "https://github.com/kennethreitz/httpbin"
     }, 
     {
       "first_release_api_commit_url": "https://api.github.com/repos/bottlepy/bottle/commits/16a131de2ed3c9b7fe6bcfcff71a85a71bfe9342", 
@@ -310,7 +329,8 @@
       "latest_release_name": "0.12.13", 
       "name": "bottle", 
       "release_count": 70, 
-      "star_count": 5340
+      "star_count": 5340, 
+      "url": "https://github.com/bottlepy/bottle"
     }, 
     {
       "first_release_api_commit_url": "https://api.github.com/repos/rq/rq/commits/100d23b72e9bb48ead94f0d2ba72bdde9323e57f", 
@@ -325,7 +345,8 @@
       "latest_release_name": "v0.10.0", 
       "name": "rq", 
       "release_count": 44, 
-      "star_count": 4600
+      "star_count": 4600, 
+      "url": "https://github.com/rq/rq"
     }, 
     {
       "first_release_api_commit_url": "https://api.github.com/repos/gohugoio/hugo/commits/3ec920ac0f4348d8039e51aed9c9a8ab813a5511", 
@@ -340,7 +361,8 @@
       "latest_release_name": "v0.37.1", 
       "name": "hugo", 
       "release_count": 52, 
-      "star_count": 24511
+      "star_count": 24513, 
+      "url": "https://github.com/gohugoio/hugo"
     }, 
     {
       "first_release_api_commit_url": "https://api.github.com/repos/drone/drone/commits/2241b5bb81de4738ca99084731884cc470e43987", 
@@ -355,7 +377,8 @@
       "latest_release_name": "v0.8.5", 
       "name": "drone", 
       "release_count": 25, 
-      "star_count": 13669
+      "star_count": 13671, 
+      "url": "https://github.com/drone/drone"
     }, 
     {
       "first_release_api_commit_url": "https://api.github.com/repos/hashicorp/terraform/commits/fa6a83ebdc323f2b415779786e102e69ddbf9a48", 
@@ -370,7 +393,8 @@
       "latest_release_name": "v0.11.5", 
       "name": "terraform", 
       "release_count": 100, 
-      "star_count": 11579
+      "star_count": 11579, 
+      "url": "https://github.com/hashicorp/terraform"
     }, 
     {
       "first_release_api_commit_url": "https://api.github.com/repos/hashicorp/nomad/commits/bab9f6b1960e7c12d03565ed5286a744cad9de23", 
@@ -385,7 +409,8 @@
       "latest_release_name": "v0.8.0-rc1", 
       "name": "nomad", 
       "release_count": 58, 
-      "star_count": 3377
+      "star_count": 3377, 
+      "url": "https://github.com/hashicorp/nomad"
     }, 
     {
       "first_release_api_commit_url": "https://api.github.com/repos/hashicorp/vault/commits/c8d2dfa67886a80cb4347c25f332a74f91313d23", 
@@ -400,7 +425,8 @@
       "latest_release_name": "v0.9.6", 
       "name": "vault", 
       "release_count": 51, 
-      "star_count": 8818
+      "star_count": 8818, 
+      "url": "https://github.com/hashicorp/vault"
     }, 
     {
       "first_release_api_commit_url": "https://api.github.com/repos/mist64/xhyve/commits/84868be7a65305a3a7ab8f3c197d6df93ebbe5dc", 
@@ -415,7 +441,8 @@
       "latest_release_name": "v0.2.0", 
       "name": "xhyve", 
       "release_count": 2, 
-      "star_count": 4862
+      "star_count": 4862, 
+      "url": "https://github.com/mist64/xhyve"
     }, 
     {
       "first_release_api_commit_url": "https://api.github.com/repos/zealdocs/zeal/commits/1ebe5eddd8b2b65c208d3ea8b70fb8178570955d", 
@@ -430,7 +457,8 @@
       "latest_release_name": "v0.6.0", 
       "name": "zeal", 
       "release_count": 9, 
-      "star_count": 5712
+      "star_count": 5712, 
+      "url": "https://github.com/zealdocs/zeal"
     }, 
     {
       "alumnus": true, 
@@ -450,7 +478,8 @@
       "latest_release_name": "1.0.1", 
       "name": "html5lib-python", 
       "release_count": 26, 
-      "star_count": 675
+      "star_count": 675, 
+      "url": "https://github.com/html5lib/html5lib-python"
     }, 
     {
       "first_release_api_commit_url": "https://api.github.com/repos/python/mypy/commits/14702418afc3bde9511ee50e5b76db7ad565f86e", 
@@ -465,7 +494,8 @@
       "latest_release_name": "v0.580", 
       "name": "MyPy", 
       "release_count": 24, 
-      "star_count": 3639
+      "star_count": 3639, 
+      "url": "https://github.com/python/mypy"
     }, 
     {
       "first_release_api_commit_url": "https://api.github.com/repos/wbond/asn1crypto/commits/3855a15533b5a8f9f51dd301d245ce92bb58e48e", 
@@ -481,7 +511,8 @@
       "name": "asn1crypto", 
       "reason": "Depended on by pyca/cryptography", 
       "release_count": 29, 
-      "star_count": 97
+      "star_count": 97, 
+      "url": "https://github.com/wbond/asn1crypto"
     }, 
     {
       "first_release_api_commit_url": "https://api.github.com/repos/GStreamer/orc/commits/58d51af4e8788cdbdcac60172fdf9837e3c08021", 
@@ -503,6 +534,7 @@
     {
       "first_release_date": "1997-06-19T09:29:16", 
       "first_release_name": "0.3.1", 
+      "is_zerover": true, 
       "latest_release_date": "2016-09-23T14:51:58", 
       "latest_release_name": "0.5.9.1", 
       "name": "Dash", 
@@ -511,6 +543,7 @@
     {
       "first_release_date": "2000-09-01", 
       "first_release_name": 0.16, 
+      "is_zerover": true, 
       "latest_release_date": "2018-03-11", 
       "latest_release_name": "0.92.3", 
       "name": "Inkscape", 
@@ -518,6 +551,7 @@
     }, 
     {
       "first_release_date": "2006-05-22", 
+      "is_zerover": true, 
       "latest_release_date": "2016-11-11", 
       "latest_release_name": "0.9.13.1", 
       "name": "Compiz", 
@@ -526,6 +560,7 @@
     {
       "first_release_date": "2013-03-02", 
       "first_release_name": "0.1.0", 
+      "is_zerover": true, 
       "latest_release_date": "2017-10-28", 
       "latest_release_name": "0.2.6", 
       "name": "distlib", 
@@ -536,6 +571,7 @@
       "alumnus": true, 
       "first_release_date": "1998-12-23", 
       "first_release_name": "0.9.1", 
+      "is_zerover": false, 
       "last_zv_release_date": "2010-03-29", 
       "last_zv_release_name": "0.9.8n", 
       "name": "OpenSSL", 
