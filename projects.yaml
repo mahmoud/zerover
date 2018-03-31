@@ -104,6 +104,8 @@ projects:
     reason: Depended on by pypa/pip
   - name: OpenSSL
     url: https://github.com/openssl/openssl
+    star_count: 6706  # release name convention is weird, hardcode counts 2018-03-31
+    release_count_zv: 51
     alumnus: true
     first_release_date: 1998-12-23
     first_release_version: 0.9.1

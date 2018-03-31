@@ -113,7 +113,8 @@ def get_gh_project_info(url):
 
     zv_releases = [rel for rel in vtags_data
                    if match_vtag(rel['name'], PREFIXES).group('major') == '0']
-    print ' .. %s releases, %s 0ver' % (ret['release_count'], len(zv_releases))
+    ret['release_count_zv'] = len(zv_releases)
+    print ' .. %s releases, %s 0ver' % (ret['release_count'], ret['release_count_zv'])
 
     is_zerover = zv_releases[0] == latest_release
 

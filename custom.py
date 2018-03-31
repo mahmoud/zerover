@@ -6,6 +6,8 @@ import os
 CUR_PATH = os.path.dirname(os.path.abspath(__file__))
 PROJECTS_JSON_PATH = os.path.join(CUR_PATH, 'projects.json')
 
+NA_VAL = '---'
+
 
 def chert_post_load(chert_obj):
     with open(PROJECTS_JSON_PATH) as f:
@@ -23,7 +25,7 @@ def chert_post_load(chert_obj):
                 continue
             if zv_project_table is None:
                 zv_project_table = _zv_to_htmltable(zv_projects)
-                alumni_project_table = _zv_to_htmltable(alumni_projects)  # TODO: alumni table format
+                alumni_project_table = _alumni_to_htmltable(alumni_projects)  # TODO: alumni table format
             content = content.replace('[ZEROVER_PROJECT_TABLE]', zv_project_table)
             content = content.replace('[ALUMNI_PROJECT_TABLE]', alumni_project_table)
             part['content'] = content
@@ -68,14 +70,52 @@ def _zv_to_htmltable(entries):
 
         row = [tooltipped('<a href="%s">%s</a>' % (entry['url'], entry['name']),
                           entry.get('reason')),
-               tooltipped('{:,}'.format(entry['star_count']) if entry.get('star_count') else '---',
+               tooltipped('{:,}'.format(entry['star_count']) if entry.get('star_count') else NA_VAL,
                           entry.get('reason')),
                tooltipped(irel_dt.year, entry.get('first_release_version')),
-               '%s' % entry.get('release_count', '-')]
+               '%s' % entry.get('release_count', NA_VAL)]
         if lrel_dt:
-            row.append('%s (%s)' % (entry.get('latest_release_version', '-'), lrel_dt.year))
+            row.append('%s (%s)' % (entry.get('latest_release_version', NA_VAL), lrel_dt.year))
         else:
-            row.append('-')
+            row.append(NA_VAL)
+
+        row.append('%s' % zv_streak_years)
+
+        rows.append(row)
+
+    table = ZVTable.from_data(rows, headers=headers)
+
+    ret = table.to_html()
+
+    # table sorting js at bottom of base.html uses the stars class on
+    # the heading to sort properly
+    ret = ret.replace('<th>Stars</th>', '<th class="stars">Stars</th>')
+    ret += '\n\n'
+    return ret
+
+
+def _alumni_to_htmltable(entries):
+    headers = ['Project', 'Stars', 'First Released', '0ver Releases', 'Last 0ver release', '0ver years']
+
+    rows = []
+    for entry in entries:
+        irel_dt = isoparse(entry['first_release_date'].replace('Z', ''))  # TODO: boltons Z handling
+        lrel_dt, zv_streak = None, None
+        if entry.get('last_zv_release_date'):
+            lrel_dt = isoparse(entry['last_zv_release_date'].replace('Z', ''))
+        zv_streak = lrel_dt - irel_dt
+        zv_streak_years = round(zv_streak.days / 365.0, 1)
+
+        row = [tooltipped('<a href="%s">%s</a>' % (entry['url'], entry['name']),
+                          entry.get('reason')),
+               tooltipped('{:,}'.format(entry['star_count']) if entry.get('star_count') else NA_VAL,
+                          entry.get('reason')),
+               tooltipped(irel_dt.year, entry.get('first_release_version')),
+               '%s' % entry.get('release_count_zv', NA_VAL)]
+        if lrel_dt:
+            row.append('%s (%s)' % (entry.get('last_zv_release_version', NA_VAL), lrel_dt.year))
+        else:
+            row.append(NA_VAL)
 
         row.append('%s' % zv_streak_years)
 
@@ -99,9 +139,7 @@ def _main():
 
     zv_projects, alumni_projects = partition(projects, lambda p: p['is_zerover'])
 
-    print _zv_to_mdtable(zv_projects)
-    print
-    print _alumni_to_mdtable(alumni_projects)
+    return
 
 
 if __name__ == '__main__':

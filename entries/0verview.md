@@ -41,7 +41,7 @@ zeroes.
 
 ## TOML
 
-Versioning scheme like [SemVer][semver] and [CalVer][calver] attempt
+Versioning schemes like [SemVer][semver] and [CalVer][calver] attempt
 to guide developers away from the natural light of ZeroVer. In a
 surprising and exciting move, the creator of SemVer has returned to
 the light himself!
