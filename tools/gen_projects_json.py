@@ -143,14 +143,16 @@ def _main():
         if p.get('skip'):
             continue
 
-        p['url'] = p.get('url', p.get('gh_url'))
+        info['url'] = p.get('url', p.get('gh_url'))
 
         if p.get('gh_url'):
             gh_info = get_gh_project_info(p['gh_url'])
             info.update(gh_info)
 
         if p.get('alumnus'):
-            p['is_zerover'] = p.get('is_zerover', False)
+            info['is_zerover'] = p.get('is_zerover', False)
+        else:
+            info['is_zerover'] = True
 
         entries.append(info)
 

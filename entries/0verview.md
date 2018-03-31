@@ -21,8 +21,8 @@ important number in computing: zero.** For instance:
 
 **NOT OK**: 1.0, 1.0.0-rc1, 18.0, 2018.04.01
 
-In short, software versioning best practice is remarkably like the
-modern list/array: 0-based.
+In short, software versioning best practice is like the modern
+list/array: 0-based.
 
 We'll leave it to computer scientists to determine exactly how master
 coders channel the power of the "[zero-point][zpe]" to produce
@@ -46,8 +46,8 @@ to guide developers away from the natural light of ZeroVer. In a
 surprising and exciting move, the creator of SemVer has returned to
 the light himself!
 
-So kudos to [Tom][toml_tom], for helping ZeroVer triumph over his own
-SemVer, [TOML's stated versioning scheme since 0.1 in
+So hats off to [Tom][toml_tom], it must not have been easy to turn his
+back on his own SemVer, [TOML's stated versioning scheme since 0.1 in
 2013][toml_2013]. In SemVer Tom's words:
 
 > *If your software is being used in production, it should probably already be 1.0.0.*
@@ -111,8 +111,6 @@ from legend. We remember them fondly.
 
 [ALUMNI_PROJECT_TABLE]
 
+# More info
 
-   Project           |  Initial release | Number of releases |  Current version
----------------------|------------------|--------------------|-----------------
-[Werkzeug][werkzeug] |  0.1 (2007)      |  52                |   0.14.1 (2018-04-01)
-[docutils][docutils] |  0.3 (2003)      |  19                |   0.14 (2018-04-01)
+Check out the [About](/about.html) page.
