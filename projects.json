@@ -1,6 +1,6 @@
 {
-  "gen_date": "2018-04-01T17:55:23.535471", 
-  "gen_duration": 72.77897596359253, 
+  "gen_date": "2018-04-01T18:11:13.019868", 
+  "gen_duration": 73.17065095901489, 
   "projects": [
     {
       "first_release_api_commit_url": "https://api.github.com/repos/bitcoin/bitcoin/commits/8dca7864f793072701f810e4c5ea12a6e1087085", 
@@ -20,6 +20,25 @@
       "release_count_zv": 191, 
       "star_count": 30114, 
       "url": "https://github.com/bitcoin/bitcoin"
+    }, 
+    {
+      "first_release_api_commit_url": "https://api.github.com/repos/mholt/caddy/commits/2cf06bc3eeab0196bb51818d858123cc711deeb6", 
+      "first_release_date": "2015-04-28T05:20:58Z", 
+      "first_release_link": "https://github.com/mholt/caddy/commit/2cf06bc3eeab0196bb51818d858123cc711deeb6", 
+      "first_release_tag": "v0.5.0", 
+      "first_release_version": "0.5.0", 
+      "gh_url": "https://github.com/mholt/caddy", 
+      "is_zerover": true, 
+      "latest_release_api_commit_url": "https://api.github.com/repos/mholt/caddy/commits/f379bf3421bb65becde8bbeb3f940fc4c4215d1f", 
+      "latest_release_date": "2018-03-27T04:09:10Z", 
+      "latest_release_link": "https://github.com/mholt/caddy/commit/f379bf3421bb65becde8bbeb3f940fc4c4215d1f", 
+      "latest_release_tag": "v0.10.12", 
+      "latest_release_version": "0.10.12", 
+      "name": "Caddy", 
+      "release_count": 39, 
+      "release_count_zv": 39, 
+      "star_count": 16587, 
+      "url": "https://github.com/mholt/caddy"
     }, 
     {
       "first_release_api_commit_url": "https://api.github.com/repos/pallets/werkzeug/commits/f930a7821eff188a663252c390fa5ad2319d31c1", 
@@ -376,7 +395,7 @@
       "name": "docopt", 
       "release_count": 11, 
       "release_count_zv": 11, 
-      "star_count": 5802, 
+      "star_count": 5803, 
       "url": "https://github.com/docopt/docopt"
     }, 
     {
@@ -452,7 +471,7 @@
       "name": "hugo", 
       "release_count": 52, 
       "release_count_zv": 52, 
-      "star_count": 24535, 
+      "star_count": 24536, 
       "url": "https://github.com/gohugoio/hugo"
     }, 
     {
@@ -610,7 +629,7 @@
       "name": "MyPy", 
       "release_count": 24, 
       "release_count_zv": 24, 
-      "star_count": 3645, 
+      "star_count": 3646, 
       "url": "https://github.com/python/mypy"
     }, 
     {
@@ -700,6 +719,16 @@
       "release_count_zv": 51, 
       "star_count": 6706, 
       "url": "https://github.com/openssl/openssl"
+    }, 
+    {
+      "first_release_date": "2012-12-24", 
+      "first_release_version": "0.1.0", 
+      "is_zerover": true, 
+      "latest_release_date": "2018-03-22", 
+      "latest_release_version": "0.16.36", 
+      "name": "Factorio", 
+      "reason": "Popular, for-profit game.", 
+      "url": "https://factorio.com/"
     }
   ]
 }
