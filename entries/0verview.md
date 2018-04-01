@@ -1,6 +1,6 @@
 ---
 title: "ZeroVer: 0-based Versions"
-publish_date: March 3, 2018
+publish_date: March 31, 2018
 ---
 
 <div style="text-align:center"><i>Cutting-edge software versioning for minimalists</i></div><br/>
@@ -102,6 +102,7 @@ thanks to streamlined minimal versioning.
 
 The vanguard of the versioning revolution.
 
+<!-- see projects.yaml/json for source material of table below -->
 [ZEROVER_PROJECT_TABLE]
 
 <br/>At the time of writing, the list is somewhat biased toward Python
@@ -113,7 +114,11 @@ here!
 Graduates from the school of ZeroVer, either from the table above or
 from legend. We remember them fondly.
 
+<!-- see projects.yaml/json for source material of table below -->
 [ALUMNI_PROJECT_TABLE]
+
+<br/>With any luck, these projects will realize their folly and this list
+shrinks back to glorious 0.
 
 # More info
 

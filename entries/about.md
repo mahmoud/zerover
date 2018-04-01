@@ -37,7 +37,7 @@ In the spirit of things, let's make the ZeroVer criteria a bit more lighthearted
 
 * ZeroVer: *If a project has a logo, but not a major version, it's officially 0ver.*
 
-For additional ZeroVer criteria, check out the submission template.
+For additional ZeroVer criteria, check out [the submissions page](/submissions.html).
 
 # What to do
 
