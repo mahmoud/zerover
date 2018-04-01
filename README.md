@@ -5,7 +5,7 @@ and the only one shown to harness the innovative power of zero. The
 benefits are innumerable and the effects on the software world are
 profound.
 
-Read more at **[https://0ver.org](https://0ver.org)**.
+Read more at **[0ver.org](https://0ver.org)**.
 
 ## Building
 
