@@ -1,6 +1,5 @@
 ---
 title: About
-publish_date: April 1, 2018
 special: true
 ---
 
@@ -16,17 +15,20 @@ were harmed as a result of this humble attempt at programmer humor.
 
 # Real talk
 
-Software is hard. Versioning is nuanced. Creative projects rarely obey
-strict schedules. There are many reasons why software stays in
-prerelease mode.
+<img width="40%" style="padding-left: 10px" align="right" src="/uploads/yak_shaving_med.png">
 
-But, if your project has made the ZeroVer list, it definitely meets
+Software is hard. Versioning is nuanced. Creative projects rarely obey
+strict schedules. There are many reasons why software gets left in
+prerelease mode. But there's no shortage of yak to shave.
+
+If your project has made the ZeroVer list, it definitely meets
 consensus criteria for having a public release. You've built something
 useful and great, and continuing to advertise prerelease status hurts
 adoption, especially for adopters trying to convince others that your
-software is as dependable as actual practice shows it is. Here are
-recommended guidelines from two of the most popular versioning
-schemes:
+software is as dependable as practice shows.
+
+Here are recommended guidelines from two of the most popular
+versioning schemes:
 
 * [CalVer][calver_criterion]: *"If both you and someone you don't know
   use your project seriously, then use a serious version."*
@@ -35,7 +37,7 @@ schemes:
 
 In the spirit of things, let's make the ZeroVer criteria a bit more lighthearted:
 
-* ZeroVer: *If a project has a logo, but not a major version, it's officially 0ver.*
+* **ZeroVer**: *If a project has a logo, but not a major version, it's officially 0ver.*
 
 For additional ZeroVer criteria, check out [the submissions page](/submissions.html).
 
