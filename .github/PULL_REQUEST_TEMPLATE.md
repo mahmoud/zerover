@@ -1,9 +1,11 @@
 
 Thanks for considering contributing to ZeroVer! If you're not
-suggesting adding a ZeroVer project, you can stop reading now and
+adding a ZeroVer project, you can stop reading now and
 delete this whole template.
 
 ---
+
+(Please title your PR `"Add project: <project name>"`)
 
 ## Basic info
 
@@ -37,10 +39,5 @@ or notes about research here.
 
 ## One more thing
 
-Since you've made it this far, why not consider filing [a PR](https://github.com/mahmoud/zerover/pulls)?
-
-If your suggestion is a GitHub project, it's as easy as adding 2-3
-lines to the `projects.yaml` file. There are comments and plenty of
-examples in the file. Here's [an edit link](https://github.com/mahmoud/zerover/edit/master/projects.yaml).
-
-No pressure or anything, feel free to smack that submit button, too! Thanks again!
+For the most part, the notability info above should also be in the
+projects.yaml, summarized under a `"reason"` key in the project entry.
