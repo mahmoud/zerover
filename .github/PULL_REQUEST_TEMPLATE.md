@@ -1,3 +1,4 @@
+<!--
 
 Thanks for considering contributing to ZeroVer! If you're not
 adding a ZeroVer project, you can stop reading now and
@@ -6,6 +7,8 @@ delete this whole template.
 ---
 
 (Please title your PR `"Add project: <project name>"`)
+
+-->
 
 ## Basic info
 
@@ -26,18 +29,22 @@ criterion apply:
 
 ## Additional notability info
 
-*(Prominent uses or users, or promotional material, ideally written
+<!-- Prominent uses or users, or promotional material, ideally written
 for an audience not familiar with that project's particular
-technologies)*
+technologies -->
 
 ## Citation info
 
-For manually entered/non-GitHub project entries, please put any links
-or notes about research here.
+<!-- For manually entered/non-GitHub project entries, please put any links
+or notes about research here. -->
 
 ---
+
+<!--
 
 ## One more thing
 
 For the most part, the notability info above should also be in the
 projects.yaml, summarized under a `"reason"` key in the project entry.
+
+-->

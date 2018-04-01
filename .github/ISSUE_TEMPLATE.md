@@ -1,9 +1,14 @@
+<!--
 
 Thanks for considering contributing to ZeroVer! If you're not
 suggesting adding a ZeroVer project, you can stop reading now and
 delete this whole template.
 
 ---
+
+(Please title your issue `"Add project: <project name>"`)
+
+-->
 
 ## Basic info
 
@@ -24,16 +29,18 @@ criterion apply:
 
 ## Additional notability info
 
-*(Prominent uses or users, or promotional material, ideally written
+<!-- Prominent uses or users, or promotional material, ideally written
 for an audience not familiar with that project's particular
-technologies)*
+technologies) -->
 
 ## Citation info
 
-For manually entered/non-GitHub project entries, please put any links
-or notes about research here.
+<!-- For manually entered/non-GitHub project entries, please put any links
+or notes about research here. -->
 
 ---
+
+<!--
 
 ## One more thing
 
@@ -44,3 +51,5 @@ lines to the `projects.yaml` file. There are comments and plenty of
 examples in the file. Here's [an edit link](https://github.com/mahmoud/zerover/edit/master/projects.yaml).
 
 No pressure or anything, feel free to smack that submit button, too! Thanks again!
+
+-->
