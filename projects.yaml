@@ -13,6 +13,9 @@
 projects:
   # GitHub projects are at the top for convenience
   # Up-to-date details are filled in automatically by tools/gen_entry_json.py
+  - name: dep (Go)
+    gh_url: https://github.com/golang/dep
+    reason: "Official dependency management tool from Golang. To quote the first line of the readme, 'dep is safe for production use.'"
   - name: Apache Kafka
     gh_url: https://github.com/apache/kafka
   - name: Nim
@@ -96,7 +99,7 @@ projects:
     url: https://cgit.freedesktop.org/gstreamer/orc
     gh_url: https://github.com/GStreamer/orc
     reason: Depended on by Ubuntu and other free desktop operating systems
-  - name: Cataclysm: Dark Days Ahead
+  - name: "Cataclysm: Dark Days Ahead"
     url: https://cataclysmdda.irg
     gh_url: https://github.com/CleverRaven/Cataclysm-DDA
     reason: Immensely popular cross-platform open-source game under continuous development for 6 years.
