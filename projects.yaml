@@ -96,6 +96,10 @@ projects:
     url: https://cgit.freedesktop.org/gstreamer/orc
     gh_url: https://github.com/GStreamer/orc
     reason: Depended on by Ubuntu and other free desktop operating systems
+  - name: Cataclysm: Dark Days Ahead
+    url: https://cataclysmdda.irg
+    gh_url: https://github.com/CleverRaven/Cataclysm-DDA
+    reason: Immensely popular cross-platform open-source game under continuous development for 6 years.
 
   # Non-GitHub projects below, manually updated
 
