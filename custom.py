@@ -90,6 +90,7 @@ def _zv_to_htmltable(entries):
     # table sorting js at bottom of base.html uses the stars class on
     # the heading to sort properly
     ret = ret.replace('<th>Stars</th>', '<th class="stars">Stars</th>')
+    ret = ret.replace('<th>Releases</th>', '<th class="releases">Releases</th>')
     ret += '\n\n'
     return ret
 
