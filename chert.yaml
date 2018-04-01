@@ -10,7 +10,7 @@ site:
       href: /about.html
     - text: Submissions
       href: /submissions.html
-    - text: Github
+    - text: Source
       href: https://github.com/mahmoud/zerover
       desc: zer0ver source code
   # change to your own analytics code from analytics.google.com

@@ -19,7 +19,7 @@ projects:
     reason: Part of a paid product.
   - name: SciPy
     gh_url: https://github.com/scipy/scipy
-    alumnus: true
+    emeritus: true
   - name: Pandas
     gh_url: https://github.com/pandas-dev/pandas
   - name: Wheel
@@ -37,7 +37,7 @@ projects:
     gh_url: https://github.com/sshuttle/sshuttle
   - name: Theano
     gh_url: https://github.com/Theano/Theano
-    alumnus: true
+    emeritus: true
   - name: Bokeh
     gh_url: https://github.com/bokeh/bokeh
   - name: Magic Wormhole
@@ -66,7 +66,7 @@ projects:
     gh_url: https://github.com/zealdocs/zeal
   - name: html5lib-python
     gh_url: https://github.com/html5lib/html5lib-python
-    alumnus: true
+    emeritus: true
   - name: MyPy
     gh_url: https://github.com/python/mypy
   - name: asn1crypto
@@ -107,7 +107,7 @@ projects:
     url: https://github.com/openssl/openssl
     star_count: 6706  # release name convention is weird, hardcode counts 2018-03-31
     release_count_zv: 51
-    alumnus: true
+    emeritus: true
     first_release_date: 1998-12-23
     first_release_version: 0.9.1
     last_zv_release_version: 0.9.8n

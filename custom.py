@@ -14,20 +14,20 @@ def chert_post_load(chert_obj):
         data = json.load(f)
         projects = data['projects']
 
-    zv_projects, alumni_projects = partition(projects, lambda p: p['is_zerover'])
+    zv_projects, emeritus_projects = partition(projects, lambda p: p['is_zerover'])
     zv_project_table = None
-    alumni_project_table = None
+    emeritus_project_table = None
 
     for entry in chert_obj.all_entries:
         for part in entry.loaded_parts:
             content = part['content']
-            if '[ZEROVER_PROJECT_TABLE]' not in content and '[ALUMNI_PROJECT_TABLE]' not in content:
+            if '[ZEROVER_PROJECT_TABLE]' not in content and '[EMERITUS_PROJECT_TABLE]' not in content:
                 continue
             if zv_project_table is None:
                 zv_project_table = _zv_to_htmltable(zv_projects)
-                alumni_project_table = _alumni_to_htmltable(alumni_projects)  # TODO: alumni table format
+                emeritus_project_table = _emeritus_to_htmltable(emeritus_projects)  # TODO: emeritus table format
             content = content.replace('[ZEROVER_PROJECT_TABLE]', zv_project_table)
-            content = content.replace('[ALUMNI_PROJECT_TABLE]', alumni_project_table)
+            content = content.replace('[EMERITUS_PROJECT_TABLE]', emeritus_project_table)
             part['content'] = content
     return
 
@@ -94,7 +94,7 @@ def _zv_to_htmltable(entries):
     return ret
 
 
-def _alumni_to_htmltable(entries):
+def _emeritus_to_htmltable(entries):
     headers = ['Project', 'Stars', 'First Released', '0ver Releases', 'Last 0ver release', '0ver years']
 
     rows = []
@@ -137,7 +137,7 @@ def _main():
         data = json.load(f)
         projects = data['projects']
 
-    zv_projects, alumni_projects = partition(projects, lambda p: p['is_zerover'])
+    zv_projects, emeritus_projects = partition(projects, lambda p: p['is_zerover'])
 
     return
 

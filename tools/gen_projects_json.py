@@ -158,7 +158,7 @@ def _main():
             gh_info = get_gh_project_info(p['gh_url'])
             info.update(gh_info)
 
-        if p.get('alumnus'):
+        if p.get('emeritus'):
             info['is_zerover'] = p.get('is_zerover', False)
         else:
             info['is_zerover'] = True
