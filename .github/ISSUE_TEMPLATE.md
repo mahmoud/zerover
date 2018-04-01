@@ -1,7 +1,7 @@
 
-Thanks for considering contributing to ZeroVer! If the issue you're
-filing is unrelated to submitting a ZeroVer project, you can stop
-reading now and delete this whole template.
+Thanks for considering contributing to ZeroVer! If you're not
+suggesting adding a ZeroVer project, you can stop reading now and
+delete this whole template.
 
 ---
 
@@ -28,11 +28,13 @@ criterion apply:
 for an audience not familiar with that project's particular
 technologies)*
 
+---
+
 ## One more thing
 
-Since you've made it this far, why not file [a PR](https://github.com/mahmoud/zerover/pulls)?
+Since you've made it this far, why not consider filing [a PR](https://github.com/mahmoud/zerover/pulls)?
 
-If your suggestion is a GitHub project, it's as easy as adding two
+If your suggestion is a GitHub project, it's as easy as adding 2-3
 lines to the `projects.yaml` file. Here's [an edit
 link](https://github.com/mahmoud/zerover/edit/master/projects.yaml).
 

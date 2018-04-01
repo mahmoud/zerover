@@ -1,4 +1,15 @@
 ---
+# To add a project to ZeroVer, simply add an entry to the projects list below.
+#
+# An entry can consist of a name, GitHub url (without trailing slash),
+# and reason, with the rest of the data pulled in from the API, so long
+# as the project follows normal release tagging conventions.
+#
+# For non-GitHub projects, check out the manually-populated entries at
+# the bottom of the list for the data format. Note that current ZeroVer
+# and past ZeroVer projects have slightly different formats.
+
+
 projects:
   # GitHub projects are at the top for convenience
   # Up-to-date details are filled in automatically by tools/gen_entry_json.py
