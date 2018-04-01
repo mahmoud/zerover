@@ -13,6 +13,9 @@
 projects:
   # GitHub projects are at the top for convenience
   # Up-to-date details are filled in automatically by tools/gen_entry_json.py
+  - name: Bitcoin
+    gh_url: https://github.com/bitcoin/bitcoin
+    # first_release_date: 2009-01-12
   - name: Werkzeug
     gh_url: https://github.com/pallets/werkzeug
     reason: Depended on by Flask and many other web frameworks.
