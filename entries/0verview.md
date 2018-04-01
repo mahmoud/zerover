@@ -1,6 +1,6 @@
 ---
 title: "ZeroVer: 0-based Versioning"
-publish_date: March 31, 2018
+publish_date: April 1, 2018
 ---
 
 <div style="text-align:center"><i>Cutting-edge software versioning for minimalists</i></div><br/>
@@ -115,11 +115,12 @@ as no surprise that OpenSSL has its roots in ZeroVer.
 While no longer technically a ZeroVer project, [OpenSSL][openssl] held
 out from 1998 to 2010 before finally succumbing to 1.0. What happened
 after that is beyond the scope of this document, but let it serve as a
-warning to those who might stray beyond 0. In the meantime, the
-project managed to change its name (from [SSLeay][ssleay]) and
-implementation technology (from [Perl][ssleay_cpan] to C), not to
-mention [run through half the alphabet][openssl_changelog] in micro
-versioning.
+warning to those who might stray beyond 0.
+
+In the good old days of 0ver OpenSSL, the project managed to change its name (from
+[SSLeay][ssleay]) and implementation technology (from
+[Perl][ssleay_cpan] to C), not to mention [run through half the
+alphabet][openssl_changelog] in micro versioning.
 
 That's the power of a streamlined and minimal ZeroVer version.
 
