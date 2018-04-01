@@ -13,6 +13,10 @@
 projects:
   # GitHub projects are at the top for convenience
   # Up-to-date details are filled in automatically by tools/gen_entry_json.py
+  - name: Apache Kafka
+    gh_url: https://github.com/apache/kafka
+  - name: Nim
+    gh_url: https://github.com/nim-lang/Nim
   - name: Bitcoin
     gh_url: https://github.com/bitcoin/bitcoin
     # first_release_date: 2009-01-12
@@ -62,7 +66,7 @@ projects:
     gh_url: https://github.com/docopt/docopt
   - name: httpbin
     gh_url: https://github.com/kennethreitz/httpbin
-  - name: bottle
+  - name: bottle.py
     gh_url: https://github.com/bottlepy/bottle
   - name: rq
     gh_url: https://github.com/rq/rq
@@ -122,7 +126,7 @@ projects:
   - name: OpenSSL
     url: https://github.com/openssl/openssl
     star_count: 6706  # release name convention is weird, hardcode counts 2018-03-31
-    release_count_zv: 51
+    release_count_zv: 51  # technically only counts til 1.0 by date (2010). 0.9.8zh was the last 0ver and came out in 2015.
     emeritus: true
     first_release_date: 1998-12-23
     first_release_version: 0.9.1
@@ -135,3 +139,12 @@ projects:
     latest_release_version:  0.16.36
     latest_release_date: 2018-03-22
     reason: Popular, for-profit game.
+  - name: pg (Ruby)
+    url: https://rubygems.org/gems/pg
+    first_release_version: 0.7.9.2008.01.28
+    first_release_date: 2008-01-26
+    last_zv_release_version: 0.21.0
+    last_zv_release_date: 2017-06-13
+    release_count_zv: 123
+    reason: Leading library for connecting Ruby to Postgres
+    emeritus: true

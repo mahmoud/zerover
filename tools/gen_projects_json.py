@@ -149,19 +149,16 @@ def _main():
     for p in projects:
         print 'processing', p['name']
         info = dict(p)
-        if p.get('skip'):
+        if info.get('skip'):
             continue
 
-        info['url'] = p.get('url', p.get('gh_url'))
+        info['url'] = info.get('url', info.get('gh_url'))
 
-        if p.get('gh_url'):
-            gh_info = get_gh_project_info(p['gh_url'])
+        if info.get('gh_url'):
+            gh_info = get_gh_project_info(info['gh_url'])
             info.update(gh_info)
 
-        if p.get('emeritus'):
-            info['is_zerover'] = p.get('is_zerover', False)
-        else:
-            info['is_zerover'] = True
+        info['is_zerover'] = info.get('is_zerover', not info.get('emeritus', False))
 
         entries.append(info)
 

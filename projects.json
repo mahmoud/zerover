@@ -1,7 +1,50 @@
 {
-  "gen_date": "2018-04-01T18:11:13.019868", 
-  "gen_duration": 73.17065095901489, 
+  "gen_date": "2018-04-01T23:01:58.637746", 
+  "gen_duration": 77.41873097419739, 
   "projects": [
+    {
+      "first_release_api_commit_url": "https://api.github.com/repos/apache/kafka/commits/5bd33c1517bb2e7734166dc3e787ac90a4ef8f86", 
+      "first_release_date": "2013-06-13T03:50:38Z", 
+      "first_release_link": "https://github.com/apache/kafka/commit/5bd33c1517bb2e7734166dc3e787ac90a4ef8f86", 
+      "first_release_tag": "0.8.0-beta1-candidate1", 
+      "first_release_version": "0.8.0-beta1-candidate1", 
+      "gh_url": "https://github.com/apache/kafka", 
+      "is_zerover": false, 
+      "last_zv_release_api_commit_url": "https://api.github.com/repos/apache/kafka/commits/73be1e1168f91ee2a9d68e1d1c75c14018cf7d3a", 
+      "last_zv_release_date": "2017-11-10T23:47:23Z", 
+      "last_zv_release_link": "https://github.com/apache/kafka/commit/73be1e1168f91ee2a9d68e1d1c75c14018cf7d3a", 
+      "last_zv_release_tag": "0.11.0.2", 
+      "last_zv_release_version": "0.11.0.2", 
+      "latest_release_api_commit_url": "https://api.github.com/repos/apache/kafka/commits/fdcf75ea326b8e07d8d7c4f5cc14f1e70451bcd4", 
+      "latest_release_date": "2018-03-23T22:51:56Z", 
+      "latest_release_link": "https://github.com/apache/kafka/commit/fdcf75ea326b8e07d8d7c4f5cc14f1e70451bcd4", 
+      "latest_release_tag": "1.1.0", 
+      "latest_release_version": "1.1.0", 
+      "name": "Apache Kafka", 
+      "release_count": 65, 
+      "release_count_zv": 49, 
+      "star_count": 7850, 
+      "url": "https://github.com/apache/kafka"
+    }, 
+    {
+      "first_release_api_commit_url": "https://api.github.com/repos/nim-lang/Nim/commits/32b4192b3f0771af11e9d850046e5f3dd42a9a5f", 
+      "first_release_date": "2012-02-09T00:18:33Z", 
+      "first_release_link": "https://github.com/nim-lang/Nim/commit/32b4192b3f0771af11e9d850046e5f3dd42a9a5f", 
+      "first_release_tag": "v0.8.14", 
+      "first_release_version": "0.8.14", 
+      "gh_url": "https://github.com/nim-lang/Nim", 
+      "is_zerover": true, 
+      "latest_release_api_commit_url": "https://api.github.com/repos/nim-lang/Nim/commits/855956bf617f68ac0be3717329e9e1181e5dc0c6", 
+      "latest_release_date": "2018-03-01T20:39:00Z", 
+      "latest_release_link": "https://github.com/nim-lang/Nim/commit/855956bf617f68ac0be3717329e9e1181e5dc0c6", 
+      "latest_release_tag": "v0.18.0", 
+      "latest_release_version": "0.18.0", 
+      "name": "Nim", 
+      "release_count": 18, 
+      "release_count_zv": 18, 
+      "star_count": 4735, 
+      "url": "https://github.com/nim-lang/Nim"
+    }, 
     {
       "first_release_api_commit_url": "https://api.github.com/repos/bitcoin/bitcoin/commits/8dca7864f793072701f810e4c5ea12a6e1087085", 
       "first_release_date": "2009-09-16T13:26:04Z", 
@@ -18,7 +61,7 @@
       "name": "Bitcoin", 
       "release_count": 191, 
       "release_count_zv": 191, 
-      "star_count": 30114, 
+      "star_count": 30118, 
       "url": "https://github.com/bitcoin/bitcoin"
     }, 
     {
@@ -37,7 +80,7 @@
       "name": "Caddy", 
       "release_count": 39, 
       "release_count_zv": 39, 
-      "star_count": 16587, 
+      "star_count": 16588, 
       "url": "https://github.com/mholt/caddy"
     }, 
     {
@@ -134,7 +177,7 @@
       "name": "Flask", 
       "release_count": 21, 
       "release_count_zv": 21, 
-      "star_count": 34327, 
+      "star_count": 34332, 
       "url": "https://github.com/pallets/flask"
     }, 
     {
@@ -198,7 +241,7 @@
       "name": "Pandas", 
       "release_count": 75, 
       "release_count_zv": 75, 
-      "star_count": 13671, 
+      "star_count": 13673, 
       "url": "https://github.com/pandas-dev/pandas"
     }, 
     {
@@ -209,15 +252,15 @@
       "first_release_version": "0.5", 
       "gh_url": "https://github.com/pypa/wheel", 
       "is_zerover": true, 
-      "latest_release_api_commit_url": "https://api.github.com/repos/pypa/wheel/commits/3c9cc212a76b334307985cebfa7ebf269a419223", 
-      "latest_release_date": "2017-09-10T21:53:40Z", 
-      "latest_release_link": "https://github.com/pypa/wheel/commit/3c9cc212a76b334307985cebfa7ebf269a419223", 
-      "latest_release_tag": "0.30.0", 
-      "latest_release_version": "0.30.0", 
+      "latest_release_api_commit_url": "https://api.github.com/repos/pypa/wheel/commits/13d6ff3e8ef509b469d6bb6dd9cd8870ac3f2a16", 
+      "latest_release_date": "2018-04-01T20:34:19Z", 
+      "latest_release_link": "https://github.com/pypa/wheel/commit/13d6ff3e8ef509b469d6bb6dd9cd8870ac3f2a16", 
+      "latest_release_tag": "0.31.0", 
+      "latest_release_version": "0.31.0", 
       "name": "Wheel", 
       "reason": "Depended on by production Python deployments everywhere.", 
-      "release_count": 28, 
-      "release_count_zv": 28, 
+      "release_count": 29, 
+      "release_count_zv": 29, 
       "star_count": 61, 
       "url": "https://github.com/pypa/wheel"
     }, 
@@ -237,7 +280,7 @@
       "name": "PyTorch", 
       "release_count": 15, 
       "release_count_zv": 15, 
-      "star_count": 13419, 
+      "star_count": 13422, 
       "url": "https://github.com/pytorch/pytorch"
     }, 
     {
@@ -256,7 +299,7 @@
       "name": "HTTPie", 
       "release_count": 29, 
       "release_count_zv": 29, 
-      "star_count": 34701, 
+      "star_count": 34703, 
       "url": "https://github.com/jakubroztocil/httpie"
     }, 
     {
@@ -275,7 +318,7 @@
       "name": "scikit-learn", 
       "release_count": 60, 
       "release_count_zv": 60, 
-      "star_count": 27028, 
+      "star_count": 27031, 
       "url": "https://github.com/scikit-learn/scikit-learn"
     }, 
     {
@@ -294,7 +337,7 @@
       "name": "certbot", 
       "release_count": 52, 
       "release_count_zv": 52, 
-      "star_count": 21711, 
+      "star_count": 21712, 
       "url": "https://github.com/certbot/certbot"
     }, 
     {
@@ -313,7 +356,7 @@
       "name": "sshuttle", 
       "release_count": 10, 
       "release_count_zv": 10, 
-      "star_count": 1500, 
+      "star_count": 1501, 
       "url": "https://github.com/sshuttle/sshuttle"
     }, 
     {
@@ -338,7 +381,7 @@
       "name": "Theano", 
       "release_count": 30, 
       "release_count_zv": 27, 
-      "star_count": 8080, 
+      "star_count": 8081, 
       "url": "https://github.com/Theano/Theano"
     }, 
     {
@@ -357,7 +400,7 @@
       "name": "Bokeh", 
       "release_count": 63, 
       "release_count_zv": 63, 
-      "star_count": 7418, 
+      "star_count": 7419, 
       "url": "https://github.com/bokeh/bokeh"
     }, 
     {
@@ -376,7 +419,7 @@
       "name": "Magic Wormhole", 
       "release_count": 30, 
       "release_count_zv": 30, 
-      "star_count": 7429, 
+      "star_count": 7430, 
       "url": "https://github.com/warner/magic-wormhole"
     }, 
     {
@@ -395,7 +438,7 @@
       "name": "docopt", 
       "release_count": 11, 
       "release_count_zv": 11, 
-      "star_count": 5803, 
+      "star_count": 5804, 
       "url": "https://github.com/docopt/docopt"
     }, 
     {
@@ -430,7 +473,7 @@
       "latest_release_link": "https://github.com/bottlepy/bottle/commit/7423aa0f64e381507d1e06a6bcab48888baf9a7b", 
       "latest_release_tag": "0.12.13", 
       "latest_release_version": "0.12.13", 
-      "name": "bottle", 
+      "name": "bottle.py", 
       "release_count": 70, 
       "release_count_zv": 70, 
       "star_count": 5346, 
@@ -452,7 +495,7 @@
       "name": "rq", 
       "release_count": 44, 
       "release_count_zv": 44, 
-      "star_count": 4601, 
+      "star_count": 4602, 
       "url": "https://github.com/rq/rq"
     }, 
     {
@@ -471,7 +514,7 @@
       "name": "hugo", 
       "release_count": 52, 
       "release_count_zv": 52, 
-      "star_count": 24536, 
+      "star_count": 24538, 
       "url": "https://github.com/gohugoio/hugo"
     }, 
     {
@@ -490,7 +533,7 @@
       "name": "drone", 
       "release_count": 25, 
       "release_count_zv": 25, 
-      "star_count": 13682, 
+      "star_count": 13683, 
       "url": "https://github.com/drone/drone"
     }, 
     {
@@ -509,7 +552,7 @@
       "name": "HashiCorp Terraform", 
       "release_count": 100, 
       "release_count_zv": 100, 
-      "star_count": 11587, 
+      "star_count": 11588, 
       "url": "https://github.com/hashicorp/terraform"
     }, 
     {
@@ -566,7 +609,7 @@
       "name": "xhyve", 
       "release_count": 2, 
       "release_count_zv": 2, 
-      "star_count": 4866, 
+      "star_count": 4868, 
       "url": "https://github.com/mist64/xhyve"
     }, 
     {
@@ -585,7 +628,7 @@
       "name": "zeal", 
       "release_count": 9, 
       "release_count_zv": 9, 
-      "star_count": 5720, 
+      "star_count": 5719, 
       "url": "https://github.com/zealdocs/zeal"
     }, 
     {
@@ -629,7 +672,7 @@
       "name": "MyPy", 
       "release_count": 24, 
       "release_count_zv": 24, 
-      "star_count": 3646, 
+      "star_count": 3647, 
       "url": "https://github.com/python/mypy"
     }, 
     {
@@ -729,6 +772,18 @@
       "name": "Factorio", 
       "reason": "Popular, for-profit game.", 
       "url": "https://factorio.com/"
+    }, 
+    {
+      "emeritus": true, 
+      "first_release_date": "2008-01-26", 
+      "first_release_version": "0.7.9.2008.01.28", 
+      "is_zerover": false, 
+      "last_zv_release_date": "2017-06-13", 
+      "last_zv_release_version": "0.21.0", 
+      "name": "pg (Ruby)", 
+      "reason": "Leading library for connecting Ruby to Postgres", 
+      "release_count_zv": 123, 
+      "url": "https://rubygems.org/gems/pg"
     }
   ]
 }
