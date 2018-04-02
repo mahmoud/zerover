@@ -11,7 +11,7 @@ profound.
 Version 0.0.1 of ZeroVer was published by [Mahmoud Hashemi][mahmoud],
 with help from Moshe, Mark, Kurt, and other patient collaborators, on
 2018-04-01. ZeroVer is satire, [please do not use it][poes]. We
-sincereley hope no project release schedules were harmed as a result
+sincerely hope no project release schedules were harmed as a result
 of this humble attempt at programmer humor.
 
 [poes]: https://en.wikipedia.org/wiki/Poe%27s_law

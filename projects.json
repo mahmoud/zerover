@@ -1,6 +1,6 @@
 {
-  "gen_date": "2018-04-01T23:26:44.164504", 
-  "gen_duration": 81.05954194068909, 
+  "gen_date": "2018-04-02T00:24:51.465186", 
+  "gen_duration": 83.20888710021973, 
   "projects": [
     {
       "first_release_api_commit_url": "https://api.github.com/repos/golang/dep/commits/05c40eba7fa5512c3a161e4e9df6c8fefde75158", 
@@ -47,6 +47,25 @@
       "url": "https://github.com/apache/kafka"
     }, 
     {
+      "first_release_api_commit_url": "https://api.github.com/repos/kubernetes/minikube/commits/599cf8a3321ff60b3f835ebe05567bd8453d9aed", 
+      "first_release_date": "2016-05-30T16:20:58Z", 
+      "first_release_link": "https://github.com/kubernetes/minikube/commit/599cf8a3321ff60b3f835ebe05567bd8453d9aed", 
+      "first_release_tag": "v0.1.0", 
+      "first_release_version": "0.1.0", 
+      "gh_url": "https://github.com/kubernetes/minikube", 
+      "is_zerover": true, 
+      "latest_release_api_commit_url": "https://api.github.com/repos/kubernetes/minikube/commits/67a6b02320bf14757bcaa4396c4bf8dd01600e81", 
+      "latest_release_date": "2018-03-22T22:03:23Z", 
+      "latest_release_link": "https://github.com/kubernetes/minikube/commit/67a6b02320bf14757bcaa4396c4bf8dd01600e81", 
+      "latest_release_tag": "v0.25.2", 
+      "latest_release_version": "0.25.2", 
+      "name": "Minikube", 
+      "release_count": 37, 
+      "release_count_zv": 37, 
+      "star_count": 8211, 
+      "url": "https://github.com/kubernetes/minikube"
+    }, 
+    {
       "first_release_api_commit_url": "https://api.github.com/repos/nim-lang/Nim/commits/32b4192b3f0771af11e9d850046e5f3dd42a9a5f", 
       "first_release_date": "2012-02-09T00:18:33Z", 
       "first_release_link": "https://github.com/nim-lang/Nim/commit/32b4192b3f0771af11e9d850046e5f3dd42a9a5f", 
@@ -81,7 +100,7 @@
       "name": "Bitcoin", 
       "release_count": 191, 
       "release_count_zv": 191, 
-      "star_count": 30119, 
+      "star_count": 30120, 
       "url": "https://github.com/bitcoin/bitcoin"
     }, 
     {
@@ -100,7 +119,7 @@
       "name": "Caddy", 
       "release_count": 39, 
       "release_count_zv": 39, 
-      "star_count": 16588, 
+      "star_count": 16589, 
       "url": "https://github.com/mholt/caddy"
     }, 
     {
@@ -178,7 +197,7 @@
       "name": "TOML", 
       "release_count": 5, 
       "release_count_zv": 5, 
-      "star_count": 7340, 
+      "star_count": 7341, 
       "url": "https://github.com/toml-lang/toml"
     }, 
     {
@@ -197,7 +216,7 @@
       "name": "Flask", 
       "release_count": 21, 
       "release_count_zv": 21, 
-      "star_count": 34332, 
+      "star_count": 34334, 
       "url": "https://github.com/pallets/flask"
     }, 
     {
@@ -338,7 +357,7 @@
       "name": "scikit-learn", 
       "release_count": 60, 
       "release_count_zv": 60, 
-      "star_count": 27031, 
+      "star_count": 27032, 
       "url": "https://github.com/scikit-learn/scikit-learn"
     }, 
     {
@@ -401,7 +420,7 @@
       "name": "Theano", 
       "release_count": 30, 
       "release_count_zv": 27, 
-      "star_count": 8081, 
+      "star_count": 8082, 
       "url": "https://github.com/Theano/Theano"
     }, 
     {
@@ -420,7 +439,7 @@
       "name": "Bokeh", 
       "release_count": 63, 
       "release_count_zv": 63, 
-      "star_count": 7419, 
+      "star_count": 7420, 
       "url": "https://github.com/bokeh/bokeh"
     }, 
     {
@@ -439,7 +458,7 @@
       "name": "Magic Wormhole", 
       "release_count": 30, 
       "release_count_zv": 30, 
-      "star_count": 7430, 
+      "star_count": 7431, 
       "url": "https://github.com/warner/magic-wormhole"
     }, 
     {
@@ -553,7 +572,7 @@
       "name": "drone", 
       "release_count": 25, 
       "release_count_zv": 25, 
-      "star_count": 13683, 
+      "star_count": 13684, 
       "url": "https://github.com/drone/drone"
     }, 
     {
@@ -572,7 +591,7 @@
       "name": "HashiCorp Terraform", 
       "release_count": 100, 
       "release_count_zv": 100, 
-      "star_count": 11588, 
+      "star_count": 11589, 
       "url": "https://github.com/hashicorp/terraform"
     }, 
     {

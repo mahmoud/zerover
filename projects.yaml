@@ -18,6 +18,8 @@ projects:
     reason: "Official dependency management tool from Golang. To quote the first line of the readme, 'dep is safe for production use.'"
   - name: Apache Kafka
     gh_url: https://github.com/apache/kafka
+  - name: Minikube
+    gh_url: https://github.com/kubernetes/minikube
   - name: Nim
     gh_url: https://github.com/nim-lang/Nim
   - name: Bitcoin
