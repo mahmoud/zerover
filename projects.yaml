@@ -192,3 +192,12 @@ projects:
     latest_release_version: 0.70
     latest_release_date: 2017-07-04T19:29:54
     reason: Probably the most popular SSH client in Windows history
+  - name: MAME
+    url: https://github.com/mamedev/mame
+    wp_url: https://en.wikipedia.org/wiki/MAME
+    first_release_version: 0.1
+    first_release_date: 1997-02-05
+    latest_release_version: 0.196
+    latest_release_date: 2018-03-28
+    release_count: 196
+    release_count_zv: 196

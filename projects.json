@@ -1,6 +1,6 @@
 {
-  "gen_date": "2018-04-02T02:58:59.531527", 
-  "gen_duration": 103.84451484680176, 
+  "gen_date": "2018-04-02T04:53:01.110058", 
+  "gen_duration": 98.23550605773926, 
   "projects": [
     {
       "first_release_api_commit_url": "https://api.github.com/repos/golang/dep/commits/05c40eba7fa5512c3a161e4e9df6c8fefde75158", 
@@ -43,7 +43,7 @@
       "name": "Apache Kafka", 
       "release_count": 65, 
       "release_count_zv": 49, 
-      "star_count": 7854, 
+      "star_count": 7856, 
       "url": "https://github.com/apache/kafka"
     }, 
     {
@@ -63,7 +63,7 @@
       "reason": "Official kubernetes project with a logo, but no major release.", 
       "release_count": 37, 
       "release_count_zv": 37, 
-      "star_count": 8212, 
+      "star_count": 8216, 
       "url": "https://github.com/kubernetes/minikube"
     }, 
     {
@@ -101,7 +101,7 @@
       "name": "Home Assistant", 
       "release_count": 183, 
       "release_count_zv": 183, 
-      "star_count": 13507, 
+      "star_count": 13509, 
       "url": "https://github.com/home-assistant/home-assistant"
     }, 
     {
@@ -158,7 +158,7 @@
       "name": "Bitcoin", 
       "release_count": 191, 
       "release_count_zv": 191, 
-      "star_count": 30123, 
+      "star_count": 30127, 
       "url": "https://github.com/bitcoin/bitcoin"
     }, 
     {
@@ -177,7 +177,7 @@
       "name": "Caddy", 
       "release_count": 39, 
       "release_count_zv": 39, 
-      "star_count": 16591, 
+      "star_count": 16593, 
       "url": "https://github.com/mholt/caddy"
     }, 
     {
@@ -274,7 +274,7 @@
       "name": "Flask", 
       "release_count": 21, 
       "release_count_zv": 21, 
-      "star_count": 34337, 
+      "star_count": 34339, 
       "url": "https://github.com/pallets/flask"
     }, 
     {
@@ -319,7 +319,7 @@
       "name": "SciPy", 
       "release_count": 97, 
       "release_count_zv": 92, 
-      "star_count": 4294, 
+      "star_count": 4295, 
       "url": "https://github.com/scipy/scipy"
     }, 
     {
@@ -338,7 +338,7 @@
       "name": "Pandas", 
       "release_count": 75, 
       "release_count_zv": 75, 
-      "star_count": 13675, 
+      "star_count": 13680, 
       "url": "https://github.com/pandas-dev/pandas"
     }, 
     {
@@ -377,7 +377,7 @@
       "name": "PyTorch", 
       "release_count": 15, 
       "release_count_zv": 15, 
-      "star_count": 13428, 
+      "star_count": 13431, 
       "url": "https://github.com/pytorch/pytorch"
     }, 
     {
@@ -396,7 +396,7 @@
       "name": "HTTPie", 
       "release_count": 29, 
       "release_count_zv": 29, 
-      "star_count": 34704, 
+      "star_count": 34705, 
       "url": "https://github.com/jakubroztocil/httpie"
     }, 
     {
@@ -415,7 +415,7 @@
       "name": "scikit-learn", 
       "release_count": 60, 
       "release_count_zv": 60, 
-      "star_count": 27036, 
+      "star_count": 27038, 
       "url": "https://github.com/scikit-learn/scikit-learn"
     }, 
     {
@@ -434,7 +434,7 @@
       "name": "certbot", 
       "release_count": 52, 
       "release_count_zv": 52, 
-      "star_count": 21712, 
+      "star_count": 21713, 
       "url": "https://github.com/certbot/certbot"
     }, 
     {
@@ -497,7 +497,7 @@
       "name": "Bokeh", 
       "release_count": 63, 
       "release_count_zv": 63, 
-      "star_count": 7421, 
+      "star_count": 7422, 
       "url": "https://github.com/bokeh/bokeh"
     }, 
     {
@@ -516,7 +516,7 @@
       "name": "Magic Wormhole", 
       "release_count": 30, 
       "release_count_zv": 30, 
-      "star_count": 7431, 
+      "star_count": 7432, 
       "url": "https://github.com/warner/magic-wormhole"
     }, 
     {
@@ -554,7 +554,7 @@
       "name": "httpbin", 
       "release_count": 12, 
       "release_count_zv": 12, 
-      "star_count": 5756, 
+      "star_count": 5757, 
       "url": "https://github.com/kennethreitz/httpbin"
     }, 
     {
@@ -592,7 +592,7 @@
       "name": "rq", 
       "release_count": 44, 
       "release_count_zv": 44, 
-      "star_count": 4603, 
+      "star_count": 4604, 
       "url": "https://github.com/rq/rq"
     }, 
     {
@@ -611,7 +611,7 @@
       "name": "hugo", 
       "release_count": 52, 
       "release_count_zv": 52, 
-      "star_count": 24540, 
+      "star_count": 24542, 
       "url": "https://github.com/gohugoio/hugo"
     }, 
     {
@@ -630,7 +630,7 @@
       "name": "drone", 
       "release_count": 25, 
       "release_count_zv": 25, 
-      "star_count": 13685, 
+      "star_count": 13686, 
       "url": "https://github.com/drone/drone"
     }, 
     {
@@ -668,7 +668,7 @@
       "name": "HashiCorp Nomad", 
       "release_count": 58, 
       "release_count_zv": 58, 
-      "star_count": 3381, 
+      "star_count": 3382, 
       "url": "https://github.com/hashicorp/nomad"
     }, 
     {
@@ -687,7 +687,7 @@
       "name": "HashiCorp Vault", 
       "release_count": 51, 
       "release_count_zv": 51, 
-      "star_count": 8825, 
+      "star_count": 8827, 
       "url": "https://github.com/hashicorp/vault"
     }, 
     {
@@ -725,7 +725,7 @@
       "name": "zeal", 
       "release_count": 9, 
       "release_count_zv": 9, 
-      "star_count": 5719, 
+      "star_count": 5720, 
       "url": "https://github.com/zealdocs/zeal"
     }, 
     {
@@ -813,11 +813,11 @@
       "url": "https://cgit.freedesktop.org/gstreamer/orc"
     }, 
     {
-      "first_release_api_commit_url": "https://api.github.com/repos/CleverRaven/Cataclysm-DDA/commits/c79fcdca2f1af501291e3cdef04aa49b57274105", 
-      "first_release_date": "2013-02-26T22:12:32Z", 
-      "first_release_link": "https://github.com/CleverRaven/Cataclysm-DDA/commit/c79fcdca2f1af501291e3cdef04aa49b57274105", 
-      "first_release_tag": "0.1", 
-      "first_release_version": "0.1", 
+      "first_release_api_commit_url": "https://api.github.com/repos/CleverRaven/Cataclysm-DDA/commits/49d4d71acefb29f71553df7901bd7937ff9ae87d", 
+      "first_release_date": "2014-03-02T03:54:43Z", 
+      "first_release_link": "https://github.com/CleverRaven/Cataclysm-DDA/commit/49d4d71acefb29f71553df7901bd7937ff9ae87d", 
+      "first_release_tag": "0.A", 
+      "first_release_version": "0.A", 
       "gh_url": "https://github.com/CleverRaven/Cataclysm-DDA", 
       "is_zerover": true, 
       "latest_release_api_commit_url": "https://api.github.com/repos/CleverRaven/Cataclysm-DDA/commits/fe75ac9bd64389cd46a6367c3457fc890f7ce572", 
@@ -827,8 +827,8 @@
       "latest_release_version": "0.9", 
       "name": "Cataclysm: Dark Days Ahead", 
       "reason": "Immensely popular cross-platform open-source game under continuous development for 6 years.", 
-      "release_count": 12, 
-      "release_count_zv": 12, 
+      "release_count": 15, 
+      "release_count_zv": 15, 
       "star_count": 1775, 
       "url": "https://cataclysmdda.irg"
     }, 
@@ -886,7 +886,7 @@
       "name": "Julia", 
       "release_count": 54, 
       "release_count_zv": 54, 
-      "star_count": 10538, 
+      "star_count": 10540, 
       "url": "https://github.com/JuliaLang/julia"
     }, 
     {
@@ -1106,6 +1106,18 @@
       "name": "PuTTY", 
       "reason": "Probably the most popular SSH client in Windows history", 
       "url": "https://www.chiark.greenend.org.uk/~sgtatham/putty/"
+    }, 
+    {
+      "first_release_date": "1997-02-05", 
+      "first_release_version": 0.1, 
+      "is_zerover": true, 
+      "latest_release_date": "2018-03-28", 
+      "latest_release_version": 0.196, 
+      "name": "MAME", 
+      "release_count": 196, 
+      "release_count_zv": 196, 
+      "url": "https://github.com/mamedev/mame", 
+      "wp_url": "https://en.wikipedia.org/wiki/MAME"
     }
   ]
 }
