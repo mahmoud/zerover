@@ -40,9 +40,13 @@ versioning schemes:
 
 In the spirit of things, let's make the ZeroVer criteria a bit more lighthearted:
 
-* **ZeroVer**: *If a project has a logo, but not a major version, it's officially 0ver.*
+* **ZeroVer**: *If a project has a logo or Wikipedia article, but not a major version, it's officially 0ver.*
 
 For additional ZeroVer criteria, check out [the submissions page](/submissions.html).
+
+[Here's a Wikidata Query][wd_query] that helped find some notable 0ver users.
+
+[wd_query]: https://query.wikidata.org/#SELECT%20%3Fsoftware%20%3FsoftwareLabel%20%3Fsoftware_version%20WHERE%20%7B%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%20%20%3Fsoftware%20wdt%3AP31%20wd%3AQ7397.%0A%20%20%3Fsoftware%20wdt%3AP348%20%3Fsoftware_version.%0A%20%20FILTER%20REGEX%20%28%3Fsoftware_version%2C%20%22%5E0%5C%5C..%2a%22%29.%0A%0A%7D%0ALIMIT%20100
 
 # What to do
 

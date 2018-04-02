@@ -15,9 +15,10 @@ import yaml
 from boltons.urlutils import URL
 from boltons.fileutils import atomic_save
 
-PREFIXES = ['v',   # common
+PREFIXES = ['v',     # common
             'rel-',  # theano
-            'orc-']  # orc
+            'orc-',  # orc
+            'tor-']  # tor
 
 VTAG_RE = re.compile(r'^(?P<major>\d+)\.[0-9.]+')
 

@@ -20,6 +20,14 @@ projects:
     gh_url: https://github.com/apache/kafka
   - name: Minikube
     gh_url: https://github.com/kubernetes/minikube
+    reason: Official kubernetes project with a logo, but no major release.
+  - name: Tor
+    gh_url: https://github.com/torproject/tor
+    url: https://blog.torproject.org/
+  - name: Home Assistant
+    gh_url: https://github.com/home-assistant/home-assistant
+  - name: Onion
+    gh_url: https://github.com/davidmoreno/onion
   - name: Nim
     gh_url: https://github.com/nim-lang/Nim
   - name: Bitcoin
@@ -105,6 +113,26 @@ projects:
     url: https://cataclysmdda.irg
     gh_url: https://github.com/CleverRaven/Cataclysm-DDA
     reason: Immensely popular cross-platform open-source game under continuous development for 6 years.
+  - name: Gephi
+    gh_url: https://github.com/gephi/gephi
+  - name: vim-airline
+    gh_url: https://github.com/vim-airline/vim-airline
+  - name: Julia
+    gh_url: https://github.com/JuliaLang/julia
+  - name: Flatpak
+    gh_url: https://github.com/flatpak/flatpak
+  - name: Meson Build System
+    gh_url: https://github.com/mesonbuild/meson
+  - name: zsh-completions
+    gh_url: https://github.com/zsh-users/zsh-completions
+  - name: Wekan
+    gh_url: https://github.com/wekan/wekan
+  - name: runc
+    gh_url: https://github.com/opencontainers/runc
+  - name: MechanicalSoup
+    gh_url: https://github.com/MechanicalSoup/MechanicalSoup
+  - name: Sway Window Manager
+    gh_url: https://github.com/swaywm/sway
 
   # Non-GitHub projects below, manually updated
 
@@ -157,3 +185,10 @@ projects:
     release_count_zv: 123
     reason: Leading library for connecting Ruby to Postgres
     emeritus: true
+  - name: PuTTY
+    url: https://www.chiark.greenend.org.uk/~sgtatham/putty/
+    first_release_version: 0.43beta
+    first_release_date: 1999-01-08
+    latest_release_version: 0.70
+    latest_release_date: 2017-07-04T19:29:54
+    reason: Probably the most popular SSH client in Windows history
