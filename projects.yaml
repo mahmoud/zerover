@@ -195,9 +195,19 @@ projects:
   - name: MAME
     url: https://github.com/mamedev/mame
     wp_url: https://en.wikipedia.org/wiki/MAME
+    star_count: 2796
     first_release_version: 0.1
     first_release_date: 1997-02-05
     latest_release_version: 0.196
     latest_release_date: 2018-03-28
     release_count: 196
     release_count_zv: 196
+  - name: slrn  # thanks hynek
+    url: http://slrn.sourceforge.net/
+    wp_url: https://en.wikipedia.org/wiki/Slrn
+    first_release_date: 1994
+    latest_release_date: 2016-10-23
+    latest_release_version: 1.0.3
+    last_zv_release_version: 0.9.9p1
+    last_zv_release_date: 2012
+    release_count: 71  # changelog_text.count('\nChanges since 0')
