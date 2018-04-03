@@ -110,9 +110,13 @@ projects:
     gh_url: https://github.com/GStreamer/orc
     reason: Depended on by Ubuntu and other free desktop operating systems
   - name: "Cataclysm: Dark Days Ahead"
-    url: https://cataclysmdda.irg
+    url: https://cataclysmdda.org
     gh_url: https://github.com/CleverRaven/Cataclysm-DDA
     reason: Immensely popular cross-platform open-source game under continuous development for 6 years.
+    first_release_version: 0.1
+    first_release_date: 2013-02-26
+    latest_release_version: 0.C
+    latest_release_date: 2015-03-19
   - name: Gephi
     gh_url: https://github.com/gephi/gephi
   - name: vim-airline
