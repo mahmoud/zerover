@@ -21,6 +21,11 @@ projects:
   - name: Minikube
     gh_url: https://github.com/kubernetes/minikube
     reason: Official kubernetes project with a logo, but no major release.
+  - name: NeoVIM
+    gh_url: https://github.com/neovim/neovim
+  - name: ProsodyIM
+    gh_url: https://github.com/bjc/prosody
+    url: https://prosody.im/
   - name: Tor
     gh_url: https://github.com/torproject/tor
     url: https://blog.torproject.org/
@@ -109,14 +114,6 @@ projects:
     url: https://cgit.freedesktop.org/gstreamer/orc
     gh_url: https://github.com/GStreamer/orc
     reason: Depended on by Ubuntu and other free desktop operating systems
-  - name: "Cataclysm: Dark Days Ahead"
-    url: https://cataclysmdda.org
-    gh_url: https://github.com/CleverRaven/Cataclysm-DDA
-    reason: Immensely popular cross-platform open-source game under continuous development for 6 years.
-    first_release_version: 0.1
-    first_release_date: 2013-02-26
-    latest_release_version: 0.C
-    latest_release_date: 2015-03-19
   - name: Gephi
     gh_url: https://github.com/gephi/gephi
   - name: vim-airline
@@ -209,9 +206,29 @@ projects:
   - name: slrn  # thanks hynek
     url: http://slrn.sourceforge.net/
     wp_url: https://en.wikipedia.org/wiki/Slrn
-    first_release_date: 1994
+    first_release_date: 1994-08-13  # https://sourceforge.net/p/slrn/mailman/message/6405527/
+    first_release_version: 0.1.0.0
     latest_release_date: 2016-10-23
     latest_release_version: 1.0.3
     last_zv_release_version: 0.9.9p1
-    last_zv_release_date: 2012
+    last_zv_release_date: 2012-12-21
+    emeritus: true
     release_count: 71  # changelog_text.count('\nChanges since 0')
+  - name: Dwarf Fortress
+    url: http://www.bay12games.com/dwarves/
+    first_release_date: 2006-08-08
+    first_release_version: 0.21.93.19a
+    latest_release_date: 2018-04-01
+    latest_release_version: 0.44.09
+    release_count: 142  # appx, based on df wiki release history
+  - name: "Cataclysm: Dark Days Ahead"
+    url: https://cataclysmdda.org
+    # gh_url: https://github.com/CleverRaven/Cataclysm-DDA  # gh is returning tags out of order
+    reason: Immensely popular cross-platform open-source game under continuous development for 6 years.
+    first_release_version: 0.1
+    first_release_date: 2013-02-26
+    latest_release_version: 0.C
+    latest_release_date: 2015-03-19
+    release_count: 15
+    release_count_zv: 15
+    star_count: 1775

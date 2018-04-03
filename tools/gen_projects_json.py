@@ -20,7 +20,7 @@ PREFIXES = ['v',     # common
             'orc-',  # orc
             'tor-']  # tor
 
-VTAG_RE = re.compile(r'^(?P<major>\d+)\.[0-9.]+')
+VTAG_RE = re.compile(r'^(?P<major>\d+)\.[0-9a-zA-Z_.]+')
 
 def strip_prefix(tag_name, prefixes):
     # TODO: could combine these all into the re
