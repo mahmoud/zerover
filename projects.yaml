@@ -13,6 +13,9 @@
 projects:
   # GitHub projects are at the top for convenience
   # Up-to-date details are filled in automatically by tools/gen_entry_json.py
+  - name: semver (Rust)
+    gh_url: https://github.com/steveklabnik/semver
+    reason: The irony.  # kudos to David R. MacIver
   - name: dep (Go)
     gh_url: https://github.com/golang/dep
     reason: "Official dependency management tool from Golang. To quote the first line of the readme, 'dep is safe for production use.'"
@@ -21,11 +24,10 @@ projects:
   - name: Minikube
     gh_url: https://github.com/kubernetes/minikube
     reason: Official kubernetes project with a logo, but no major release.
+  - name: Arrow (Python)
+    gh_url: https://github.com/crsmithdev/arrow
   - name: NeoVIM
     gh_url: https://github.com/neovim/neovim
-  - name: ProsodyIM
-    gh_url: https://github.com/bjc/prosody
-    url: https://prosody.im/
   - name: Tor
     gh_url: https://github.com/torproject/tor
     url: https://blog.torproject.org/
@@ -134,6 +136,9 @@ projects:
     gh_url: https://github.com/MechanicalSoup/MechanicalSoup
   - name: Sway Window Manager
     gh_url: https://github.com/swaywm/sway
+  - name: ProsodyIM
+    gh_url: https://github.com/bjc/prosody
+    url: https://prosody.im/
 
   # Non-GitHub projects below, manually updated
 
@@ -232,3 +237,11 @@ projects:
     release_count: 15
     release_count_zv: 15
     star_count: 1775
+  - name: Window Maker
+    url: https://windowmaker.org/
+    wp_url: https://en.wikipedia.org/wiki/Window_Maker
+    first_release_date: 1997-01-01  # exact date unknown
+    first_release_version: 0.0.3
+    latest_release_version: 0.95.8
+    latest_release_date: 2017-03-11
+    release_count: 92

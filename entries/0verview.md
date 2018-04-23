@@ -105,6 +105,42 @@ ZeroVer conventions. <span title="Thom">Thanks Tom</span>!
 [toml_2013]: https://github.com/toml-lang/toml/releases/tag/v0.1.0
 [toml_impls]: https://github.com/toml-lang/toml/wiki#implementations
 
+## Apache Kafka
+
+<img align="right" width="30%" style="padding-left: 15px" src="/uploads/kafka_logo.png">
+One of the strongest brands in modern software also subscribed to the
+strongest versioning scheme. To understand the version scheme, we have
+to understand the name, as the software shares quite a bit in common
+with its namesake.
+
+[Apache Kafka][a_kafka] was named after [Franz Kafka][f_kafka], who
+lived as an author in turn-of-the-20th-century Austria. Like the
+project named after him, he was [slow to start][kafka_slow_start],
+[inconsistent in delivery][kafka_jepsen], and left [a mess of
+unpublished work][kafka_unpublished] after a tragically early
+death. Most experts have come to agree, for all their complexity and
+absurdity, Kafka's writings have been influential, despite [the
+prevalence of bugs][kafka_bugs]. Still, true consensus is only found
+in the one true Kafka fact: most invocations of the name "Kafka" are
+attempts at appearing smart by those with relatively little experience
+on the topic.
+
+So how does ZeroVer fit in to the Kafka brand? Whereas the Kafka name
+mirrors his writing style, for over four years, Apache Kafka's ZeroVer
+policy mirrored Franz Kafka's own life and relationships: short,
+intense, and [rarely conjugated or
+consummated](https://en.wikipedia.org/wiki/Franz_Kafka#Private_life).
+
+*ZeroVer: the most [Kafkaesque][kafkaesque] versioning scheme.*
+
+[a_kafka]: https://en.wikipedia.org/wiki/Apache_Kafka
+[f_kafka]: https://en.wikipedia.org/wiki/Franz_Kafka
+[kafka_slow_start]: http://mail-archives.apache.org/mod_mbox/kafka-dev/201709.mbox/%3C04F3F442-0BD3-4A2D-A93D-AFF0C108FFC8@simplemachines.com.au%3E
+[kafka_jepsen]: https://aphyr.com/posts/293-jepsen-kafka
+[kafka_unpublished]: https://qz.com/754322/kafkaesque-instructions-on-what-to-do-with-franz-kafkas-manuscripts-produce-a-kafkaesque-legal-battle/
+[kafka_bugs]: https://en.wikipedia.org/wiki/The_Metamorphosis
+[kafkaesque]: https://www.theguardian.com/books/booksblog/2016/may/18/kafkaesque-a-word-so-overused-it-has-lost-all-meaning
+
 ## OpenSSL
 
 Has there ever been a library more auspicious? By now it should come
