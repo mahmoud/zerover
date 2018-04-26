@@ -52,8 +52,6 @@ projects:
     gh_url: https://github.com/cython/cython
   - name: TOML
     gh_url: https://github.com/toml-lang/toml
-  - name: Flask
-    gh_url: https://github.com/pallets/flask
   - name: datadogpy
     gh_url: https://github.com/DataDog/datadogpy
     reason: Part of a paid product.
