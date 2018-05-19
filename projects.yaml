@@ -33,6 +33,8 @@ projects:
     url: https://blog.torproject.org/
   - name: Home Assistant
     gh_url: https://github.com/home-assistant/home-assistant
+  - name: Vala
+    gh_url: https://github.com/GNOME/vala
   - name: Onion
     gh_url: https://github.com/davidmoreno/onion
   - name: Nim
