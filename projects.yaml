@@ -139,6 +139,9 @@ projects:
   - name: ProsodyIM
     gh_url: https://github.com/bjc/prosody
     url: https://prosody.im/
+  - name: Pilosa
+    gh_url: https://github.com/pilosa/pilosa
+    url: https://www.pilosa.com/
 
   # Non-GitHub projects below, manually updated
 
