@@ -250,3 +250,14 @@ projects:
     latest_release_version: 0.95.8
     latest_release_date: 2017-03-11
     release_count: 92
+  - name: ReactOS
+    url: https://www.reactos.org/
+    gh_url: https://github.com/reactos/reactos
+    reason: A free Windows-compatible Operating System
+    first_release_version: 0.0.7
+    first_release_date: 1996-01-23
+    latest_release_version: 0.4.9
+    latest_release_date: 2018-07-23
+    release_count: 55  # ignore github saying >250 releases, ~80% of them are some kind of weird backup non-releases
+    release_count_zv: 55
+    star_count: 4912
