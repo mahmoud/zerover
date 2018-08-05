@@ -252,7 +252,7 @@ projects:
     release_count: 92
   - name: ReactOS
     url: https://www.reactos.org/
-    gh_url: https://github.com/reactos/reactos
+    _gh_url: https://github.com/reactos/reactos  # underscore prefix prevents overriding data below
     reason: A free Windows-compatible Operating System
     first_release_version: 0.0.7
     first_release_date: 1996-01-23

@@ -1,6 +1,6 @@
 {
-  "gen_date": "2018-08-05T21:49:49.971171", 
-  "gen_duration": 140.91989707946777, 
+  "gen_date": "2018-08-05T21:58:35.397234", 
+  "gen_duration": 123.42827892303467, 
   "projects": [
     {
       "first_release_api_commit_url": "https://api.github.com/repos/steveklabnik/semver/commits/71b2153ec4b26d581364c8274800ed335ec5d67c", 
@@ -39,7 +39,7 @@
       "reason": "Official dependency management tool from Golang. To quote the first line of the readme, 'dep is safe for production use.'", 
       "release_count": 9, 
       "release_count_zv": 9, 
-      "star_count": 9945, 
+      "star_count": 9946, 
       "url": "https://github.com/golang/dep"
     }, 
     {
@@ -603,7 +603,7 @@
       "name": "Magic Wormhole", 
       "release_count": 30, 
       "release_count_zv": 30, 
-      "star_count": 7770, 
+      "star_count": 7771, 
       "url": "https://github.com/warner/magic-wormhole"
     }, 
     {
@@ -1289,23 +1289,17 @@
       "wp_url": "https://en.wikipedia.org/wiki/Window_Maker"
     }, 
     {
-      "first_release_api_commit_url": "https://api.github.com/repos/reactos/reactos/commits/f9df6b72bf873c668eb3ebd0b7b1fff500c48828", 
-      "first_release_date": "2017-07-30T08:54:09Z", 
-      "first_release_link": "https://github.com/reactos/reactos/commit/f9df6b72bf873c668eb3ebd0b7b1fff500c48828", 
-      "first_release_tag": "0.4.7-dev", 
-      "first_release_version": "0.4.7-dev", 
-      "gh_url": "https://github.com/reactos/reactos", 
+      "_gh_url": "https://github.com/reactos/reactos", 
+      "first_release_date": "1996-01-23", 
+      "first_release_version": "0.0.7", 
       "is_zerover": true, 
-      "latest_release_api_commit_url": "https://api.github.com/repos/reactos/reactos/commits/cfb8f97968aae849ca148fbc3e009a33e07a347b", 
-      "latest_release_date": "2018-05-20T18:35:12Z", 
-      "latest_release_link": "https://github.com/reactos/reactos/commit/cfb8f97968aae849ca148fbc3e009a33e07a347b", 
-      "latest_release_tag": "0.4.10-dev", 
-      "latest_release_version": "0.4.10-dev", 
+      "latest_release_date": "2018-07-23", 
+      "latest_release_version": "0.4.9", 
       "name": "ReactOS", 
       "reason": "A free Windows-compatible Operating System", 
-      "release_count": 10, 
-      "release_count_zv": 10, 
-      "star_count": 4915, 
+      "release_count": 55, 
+      "release_count_zv": 55, 
+      "star_count": 4912, 
       "url": "https://www.reactos.org/"
     }
   ]
