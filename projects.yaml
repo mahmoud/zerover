@@ -146,8 +146,6 @@ projects:
     url: https://www.pilosa.com/
   - name: fail2ban
     gh_url: https://github.com/fail2ban/fail2ban
-  - name: meson
-    gh_url: https://github.com/mesonbuild/meson
   - name: qtile
     gh_url: https://github.com/qtile/qtile
 
