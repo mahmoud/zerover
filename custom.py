@@ -129,6 +129,7 @@ def _emeritus_to_htmltable(entries):
     # table sorting js at bottom of base.html uses the stars class on
     # the heading to sort properly
     ret = ret.replace('<th>Stars</th>', '<th class="stars">Stars</th>')
+    ret = ret.replace('<th>0ver Releases</th>', '<th class="releases">0ver Releases</th>')
     ret += '\n\n'
     return ret
 
