@@ -147,6 +147,12 @@ def _main():
 
     entries = []
 
+    if os.getenv('CI', True):  # TODO
+        # keep things a little faster for now
+        projects.sort()
+        projects = projects[:5] + projects[-5:]
+
+
     for p in projects:
         print 'processing', p['name']
         info = dict(p)
