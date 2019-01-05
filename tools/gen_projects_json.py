@@ -15,6 +15,9 @@ import yaml
 from boltons.urlutils import URL
 from boltons.fileutils import atomic_save
 
+TOOLS_PATH = os.path.dirname(os.path.abspath(__file__))
+PROJ_PATH = os.path.dirname(TOOLS_PATH)
+
 PREFIXES = ['v',     # common
             'rel-',  # theano
             'orc-',  # orc
@@ -142,14 +145,14 @@ def _json_default(obj):
 
 def _main():
     start_time = time.time()
-    with open('projects.yaml') as f:
+    with open(PROJ_PATH + '/projects.yaml') as f:
         projects = yaml.load(f)['projects']
 
     entries = []
 
     if os.getenv('CI', True):  # TODO
         # keep things a little faster for now
-        projects.sort()
+        projects.sort(key=lambda x: x['name'])
         projects = projects[:5] + projects[-5:]
 
 
@@ -177,7 +180,7 @@ def _main():
            'gen_date': datetime.datetime.utcnow().isoformat(),
            'gen_duration': time.time() - start_time}
 
-    with atomic_save('projects.json') as f:
+    with atomic_save(PROJ_PATH + '/projects.json') as f:
         f.write(json.dumps(res, indent=2, sort_keys=True, default=_json_default))
 
     return
@@ -187,6 +190,8 @@ if __name__ == '__main__':
     try:
         sys.exit(_main() or 0)
     except Exception as e:
+        if os.getenv('CI'):
+            raise
         print(' !! debugging unexpected %r' % e)
         import pdb;pdb.post_mortem()
         raise
