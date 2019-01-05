@@ -1,5 +1,7 @@
 ---
-# To add a project to ZeroVer, simply add an entry to the projects list below.
+# To add a project to ZeroVer, simply add an entry to the projects
+# list below. If after reading the directions, more help is needed,
+# simply open an issue and we'll get that project added.
 #
 # An entry can consist of a name, GitHub url (without trailing slash),
 # and reason, with the rest of the data pulled in from the API, so long
@@ -148,9 +150,23 @@ projects:
     gh_url: https://github.com/fail2ban/fail2ban
   - name: qtile
     gh_url: https://github.com/qtile/qtile
+  - name: autokey
+    gh_url: https://github.com/autokey/autokey
+  - name: ClamAV Antivirus
+    gh_url: https://github.com/Cisco-Talos/clamav-devel
+  - name: bup
+    gh_url: https://github.com/bup/bup
 
   # Non-GitHub projects below, manually updated
 
+  - name: ASCEND
+    repo_url: http://code.ascend4.org/ascend/trunk/
+    wp_url: https://en.wikipedia.org/wiki/ASCEND
+    url: http://ascend4.org/Main_Page
+    first_release_date: 1978-06-01
+    first_release_version: 0.0.1
+    latest_release_date: 2012-12-13
+    latest_release_version: 0.9.8
   - name: Dash
     url: https://git.kernel.org/pub/scm/utils/dash/dash.git
     first_release_date: 1997-06-19T09:29:16
