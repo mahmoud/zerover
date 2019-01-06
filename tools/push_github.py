@@ -38,7 +38,7 @@ def main():
     checkout_or_create(branch_name)
 
     call(['git', 'add', AUTOCOMMIT_TARGET])
-    call(['git', 'commit', '--message', AUTOCOMMIT_PREFIX + ': ' + os.getenv('TRAVIS_JOB_WEB_URL')])
+    call(['git', 'commit', '--message', '%s: %s [skip ci]' % (AUTOCOMMIT_PREFIX, os.getenv('TRAVIS_JOB_WEB_URL'))])
 
     call(['git', 'remote', 'add', 'origin-autocommit', 'https://%s@github.com/mahmoud/zerover.git' % AUTOCOMMIT_LOGIN])  # TODO
     call(['git', 'push', '--set-upstream', 'origin-autocommit', branch_name])
