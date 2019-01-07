@@ -1,0 +1,14 @@
+language: python
+cache: pip
+
+# Python targets, as defined by https://github.com/travis-ci/travis-build/blob
+# /master/spec/build/script/python_spec.rb and https://github.com/travis-ci
+# /travis-build/blob/master/lib/travis/build/script/python.rb
+python:
+  - "2.7"
+
+install: "pip install -r requirements.txt"
+script:
+  - "python -u tools/check_projects_yaml.py"
+  - "python -u tools/gen_projects_json.py"
+  - "python -u tools/push_github.py"
