@@ -10,10 +10,15 @@ import time
 import base64
 import urllib2
 import datetime
+from pprint import pprint
 
 import yaml
 from boltons.urlutils import URL
 from boltons.fileutils import atomic_save
+from boltons.timeutils import isoparse
+
+TOOLS_PATH = os.path.dirname(os.path.abspath(__file__))
+PROJ_PATH = os.path.dirname(TOOLS_PATH)
 
 PREFIXES = ['v',     # common
             'rel-',  # theano
@@ -140,11 +145,7 @@ def _json_default(obj):
     raise TypeError ("%r is not serializable" % obj)
 
 
-def _main():
-    start_time = time.time()
-    with open('projects.yaml') as f:
-        projects = yaml.load(f)['projects']
-
+def fetch_entries(projects):
     entries = []
 
     for p in projects:
@@ -163,7 +164,37 @@ def _main():
 
         entries.append(info)
 
-    from pprint import pprint
+    return entries
+
+
+def _main():
+    start_time = time.time()
+    with open(PROJ_PATH + '/projects.yaml') as f:
+        projects = yaml.load(f)['projects']
+
+    try:
+        with open(PROJ_PATH + '/projects.json') as f:
+            cur_data = json.load(f)
+            cur_projects = cur_data['projects']
+            cur_gen_date = isoparse(cur_data['gen_date'])
+    except (IOError, KeyError):
+        cur_projects = []
+        cur_gen_date = None
+
+    if cur_gen_date:
+        fetch_outdated = (datetime.datetime.utcnow() - cur_gen_date) > datetime.timedelta(seconds=3600)
+    else:
+        fetch_outdated = True
+    cur_names = sorted([c['name'] for c in cur_projects])
+    new_names = sorted([n['name'] for n in projects])
+    if os.getenv('TRAVIS_PULL_REQUEST'):
+        print('Pull request detected. Skipping data update until merged.')
+        return
+    if fetch_outdated or cur_names != new_names or os.getenv('ZV_DISABLE_CACHING'):
+        entries = fetch_entries(projects)
+    else:
+        print('Current data already up to date, exiting.')
+        return
 
     pprint(entries)
 
@@ -171,7 +202,7 @@ def _main():
            'gen_date': datetime.datetime.utcnow().isoformat(),
            'gen_duration': time.time() - start_time}
 
-    with atomic_save('projects.json') as f:
+    with atomic_save(PROJ_PATH + '/projects.json') as f:
         f.write(json.dumps(res, indent=2, sort_keys=True, default=_json_default))
 
     return
@@ -181,6 +212,8 @@ if __name__ == '__main__':
     try:
         sys.exit(_main() or 0)
     except Exception as e:
+        if os.getenv('CI'):
+            raise
         print(' !! debugging unexpected %r' % e)
         import pdb;pdb.post_mortem()
         raise
