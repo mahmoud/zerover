@@ -1,5 +1,6 @@
 
 import os
+import sys
 from subprocess import check_output, CalledProcessError, STDOUT
 
 
@@ -37,6 +38,10 @@ def main():
         raise RuntimeError('expected HTTPS git remote url, not %r' % remote_url)
     if remote_url != AUTOCOMMIT_CANONICAL_REPO:
         print('only committing back to canonical repo (%r), not %r' % (AUTOCOMMIT_CANONICAL_REPO, remote_url))
+        return 0
+    if not call(['git', 'status', '--porcelain']).strip():
+        print('nothing to autocommit, exiting.')
+        return 0
 
     call(['git', 'config', '--global', 'user.email', AUTOCOMMIT_EMAIL])
     call(['git', 'config', '--global', 'user.name', AUTOCOMMIT_NAME])
@@ -55,4 +60,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    sys.exit(main() or 0)
