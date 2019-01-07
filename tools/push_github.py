@@ -1,6 +1,6 @@
 
 import os
-from subprocess import check_output, CalledProcessError
+from subprocess import check_output, CalledProcessError, STDOUT
 
 
 AUTOCOMMIT_LOGIN = os.getenv('GH_TOKEN', '')
@@ -16,7 +16,7 @@ AUTOCOMMIT_CANONICAL_REPO = os.getenv('AUTOCOMMIT_CANONICAL_REPO',
 def call(args):
     args = [unicode(a) for a in args]
     print(['$'] + args)
-    ret = check_output(args)
+    ret = check_output(args, stderr=STDOUT)
     print(ret)
     return ret
 
