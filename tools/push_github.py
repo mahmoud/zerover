@@ -1,6 +1,6 @@
 
 import os
-from subprocess import check_call, CalledProcessError
+from subprocess import check_output, CalledProcessError
 
 
 AUTOCOMMIT_LOGIN = os.getenv('GH_TOKEN', '')
@@ -9,12 +9,14 @@ AUTOCOMMIT_NAME = os.getenv('AUTOCOMMIT_NAME', 'Travis CI')
 AUTOCOMMIT_BRANCH = os.getenv('AUTOCOMMIT_BRANCH', os.getenv('TRAVIS_BRANCH'))
 AUTOCOMMIT_TARGET = os.getenv('AUTOCOMMIT_TARGET', '.')
 AUTOCOMMIT_PREFIX = os.getenv('AUTOCOMMIT_PREFIX', 'CI autocommit')
+AUTOCOMMIT_CANONICAL_REPO = os.getenv('AUTOCOMMIT_CANONICAL_REPO',
+                                      'https://github.com/mahmoud/zerover.git')
 
 
 def call(args):
     args = [unicode(a) for a in args]
     print(['$'] + args)
-    ret = check_call(args)
+    ret = check_output(args)
     print(ret)
     return ret
 
@@ -30,6 +32,12 @@ def main():
     branch_name = AUTOCOMMIT_BRANCH
     if not branch_name:
         raise RuntimeError('expected AUTOCOMMIT_BRANCH env var to be set')
+    remote_url = call(['git', 'remote', 'get-url', '--push', 'origin']).strip()
+    if not remote_url.startswith('https'):
+        raise RuntimeError('expected HTTPS git remote url, not %r' % remote_url)
+    if remote_url != AUTOCOMMIT_CANONICAL_REPO:
+        print('only committing back to canonical repo (%r), not %r' % (AUTOCOMMIT_CANONICAL_REPO, remote_url))
+
     call(['git', 'config', '--global', 'user.email', AUTOCOMMIT_EMAIL])
     call(['git', 'config', '--global', 'user.name', AUTOCOMMIT_NAME])
 
