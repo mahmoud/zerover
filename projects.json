@@ -1,6 +1,6 @@
 {
-  "gen_date": "2019-01-07T01:54:29.370095", 
-  "gen_duration": 0.09421706199645996, 
+  "gen_date": "2019-01-07T01:42:23.337113", 
+  "gen_duration": 84.62863802909851, 
   "projects": [
     {
       "first_release_api_commit_url": "https://api.github.com/repos/steveklabnik/semver/commits/71b2153ec4b26d581364c8274800ed335ec5d67c", 
@@ -39,7 +39,7 @@
       "reason": "Official dependency management tool from Golang. To quote the first line of the readme, 'dep is safe for production use.'", 
       "release_count": 9, 
       "release_count_zv": 9, 
-      "star_count": 11290, 
+      "star_count": 11289, 
       "url": "https://github.com/golang/dep"
     }, 
     {
@@ -159,7 +159,7 @@
       "name": "Home Assistant", 
       "release_count": 325, 
       "release_count_zv": 325, 
-      "star_count": 20319, 
+      "star_count": 20320, 
       "url": "https://github.com/home-assistant/home-assistant"
     }, 
     {
@@ -313,7 +313,7 @@
       "name": "Cython", 
       "release_count": 141, 
       "release_count_zv": 141, 
-      "star_count": 3740, 
+      "star_count": 3741, 
       "url": "https://github.com/cython/cython"
     }, 
     {
@@ -356,7 +356,7 @@
       "name": "Flask", 
       "release_count": 26, 
       "release_count_zv": 23, 
-      "star_count": 41062, 
+      "star_count": 41065, 
       "url": "https://github.com/pallets/flask"
     }, 
     {
@@ -464,7 +464,7 @@
       "name": "PyTorch", 
       "release_count": 20, 
       "release_count_zv": 17, 
-      "star_count": 23491, 
+      "star_count": 23492, 
       "url": "https://github.com/pytorch/pytorch"
     }, 
     {
@@ -488,7 +488,7 @@
       "name": "HTTPie", 
       "release_count": 33, 
       "release_count_zv": 30, 
-      "star_count": 38896, 
+      "star_count": 38897, 
       "url": "https://github.com/jakubroztocil/httpie"
     }, 
     {
@@ -570,7 +570,7 @@
       "name": "Theano", 
       "release_count": 32, 
       "release_count_zv": 27, 
-      "star_count": 8639, 
+      "star_count": 8640, 
       "url": "https://github.com/Theano/Theano"
     }, 
     {
@@ -594,7 +594,7 @@
       "name": "Bokeh", 
       "release_count": 48, 
       "release_count_zv": 44, 
-      "star_count": 8801, 
+      "star_count": 8802, 
       "url": "https://github.com/bokeh/bokeh"
     }, 
     {
@@ -670,7 +670,7 @@
       "name": "bottle.py", 
       "release_count": 73, 
       "release_count_zv": 73, 
-      "star_count": 5917, 
+      "star_count": 5916, 
       "url": "https://github.com/bottlepy/bottle"
     }, 
     {
@@ -708,7 +708,7 @@
       "name": "hugo", 
       "release_count": 79, 
       "release_count_zv": 79, 
-      "star_count": 31557, 
+      "star_count": 31558, 
       "url": "https://github.com/gohugoio/hugo"
     }, 
     {
@@ -727,7 +727,7 @@
       "name": "drone", 
       "release_count": 30, 
       "release_count_zv": 30, 
-      "star_count": 16758, 
+      "star_count": 16759, 
       "url": "https://github.com/drone/drone"
     }, 
     {
@@ -1207,7 +1207,7 @@
       "name": "qtile", 
       "release_count": 19, 
       "release_count_zv": 19, 
-      "star_count": 1440, 
+      "star_count": 1441, 
       "url": "https://github.com/qtile/qtile"
     }, 
     {
