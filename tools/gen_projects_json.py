@@ -187,7 +187,9 @@ def _main():
         fetch_outdated = True
     cur_names = sorted([c['name'] for c in cur_projects])
     new_names = sorted([n['name'] for n in projects])
-    if os.getenv('TRAVIS_PULL_REQUEST'):
+
+    tpr = os.getenv('TRAVIS_PULL_REQUEST')
+    if tpr and tpr != 'false':
         print('Pull request detected. Skipping data update until merged.')
         return
     if fetch_outdated or cur_names != new_names or os.getenv('ZV_DISABLE_CACHING'):
