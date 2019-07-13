@@ -158,6 +158,8 @@ projects:
     gh_url: https://github.com/bup/bup
   - name: You-Get
     gh_url: https://github.com/soimort/you-get
+  - name: Ramda
+    gh_url: https://github.com/ramda/ramda
 
   # Non-GitHub projects below, manually updated
 
