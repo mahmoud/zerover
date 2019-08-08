@@ -1,6 +1,6 @@
 {
-  "gen_date": "2019-08-05T08:53:11.750051", 
-  "gen_duration": 293.212522983551, 
+  "gen_date": "2019-08-08T08:51:53.213290", 
+  "gen_duration": 126.54474902153015, 
   "projects": [
     {
       "first_release_api_commit_url": "https://api.github.com/repos/steveklabnik/semver/commits/71b2153ec4b26d581364c8274800ed335ec5d67c", 
@@ -39,7 +39,7 @@
       "reason": "Official dependency management tool from Golang. To quote the first line of the readme, 'dep is safe for production use.'", 
       "release_count": 13, 
       "release_count_zv": 13, 
-      "star_count": 12558, 
+      "star_count": 12564, 
       "url": "https://github.com/golang/dep"
     }, 
     {
@@ -63,7 +63,7 @@
       "name": "Apache Kafka", 
       "release_count": 102, 
       "release_count_zv": 53, 
-      "star_count": 13106, 
+      "star_count": 13149, 
       "url": "https://github.com/apache/kafka"
     }, 
     {
@@ -79,16 +79,16 @@
       "last_zv_release_link": "https://github.com/kubernetes/minikube/commit/75db64825c213ad3ec8ce17206002fb74d30ab69", 
       "last_zv_release_tag": "v0.35.0", 
       "last_zv_release_version": "0.35.0", 
-      "latest_release_api_commit_url": "https://api.github.com/repos/kubernetes/minikube/commits/33aa3bd9d9f5420a43105d1e500389a1eb717f44", 
-      "latest_release_date": "2019-08-03T16:53:26Z", 
-      "latest_release_link": "https://github.com/kubernetes/minikube/commit/33aa3bd9d9f5420a43105d1e500389a1eb717f44", 
+      "latest_release_api_commit_url": "https://api.github.com/repos/kubernetes/minikube/commits/43969594266d77b555a207b0f3e9b3fa1dc92b1f", 
+      "latest_release_date": "2019-08-06T01:46:48Z", 
+      "latest_release_link": "https://github.com/kubernetes/minikube/commit/43969594266d77b555a207b0f3e9b3fa1dc92b1f", 
       "latest_release_tag": "v1.3.0", 
       "latest_release_version": "1.3.0", 
       "name": "Minikube", 
       "reason": "Official kubernetes project with a logo, but no major release.", 
       "release_count": 58, 
       "release_count_zv": 52, 
-      "star_count": 15154, 
+      "star_count": 15199, 
       "url": "https://github.com/kubernetes/minikube"
     }, 
     {
@@ -107,7 +107,7 @@
       "name": "Arrow (Python)", 
       "release_count": 31, 
       "release_count_zv": 31, 
-      "star_count": 5650, 
+      "star_count": 5660, 
       "url": "https://github.com/crsmithdev/arrow"
     }, 
     {
@@ -126,7 +126,7 @@
       "name": "NeoVIM", 
       "release_count": 20, 
       "release_count_zv": 20, 
-      "star_count": 32402, 
+      "star_count": 32445, 
       "url": "https://github.com/neovim/neovim"
     }, 
     {
@@ -145,7 +145,7 @@
       "name": "Tor", 
       "release_count": 426, 
       "release_count_zv": 426, 
-      "star_count": 1145, 
+      "star_count": 1147, 
       "url": "https://blog.torproject.org/"
     }, 
     {
@@ -156,15 +156,15 @@
       "first_release_version": "0.7-rc.1", 
       "gh_url": "https://github.com/home-assistant/home-assistant", 
       "is_zerover": true, 
-      "latest_release_api_commit_url": "https://api.github.com/repos/home-assistant/home-assistant/commits/6e61b21919276403871b7e8f49482df6d8baea9c", 
-      "latest_release_date": "2019-08-05T05:50:46Z", 
-      "latest_release_link": "https://github.com/home-assistant/home-assistant/commit/6e61b21919276403871b7e8f49482df6d8baea9c", 
-      "latest_release_tag": "0.97.0b2", 
-      "latest_release_version": "0.97.0b2", 
+      "latest_release_api_commit_url": "https://api.github.com/repos/home-assistant/home-assistant/commits/dffdbda8e2a2b334f4449af078a32a83111cfada", 
+      "latest_release_date": "2019-08-07T18:23:42Z", 
+      "latest_release_link": "https://github.com/home-assistant/home-assistant/commit/dffdbda8e2a2b334f4449af078a32a83111cfada", 
+      "latest_release_tag": "0.97.0", 
+      "latest_release_version": "0.97.0", 
       "name": "Home Assistant", 
-      "release_count": 436, 
-      "release_count_zv": 436, 
-      "star_count": 25623, 
+      "release_count": 438, 
+      "release_count_zv": 438, 
+      "star_count": 25685, 
       "url": "https://github.com/home-assistant/home-assistant"
     }, 
     {
@@ -181,8 +181,8 @@
       "latest_release_tag": "0.45.90", 
       "latest_release_version": "0.45.90", 
       "name": "Vala", 
-      "release_count": 212, 
-      "release_count_zv": 212, 
+      "release_count": 213, 
+      "release_count_zv": 213, 
       "star_count": 500, 
       "url": "https://github.com/GNOME/vala"
     }, 
@@ -221,7 +221,7 @@
       "name": "Nim", 
       "release_count": 24, 
       "release_count_zv": 24, 
-      "star_count": 7483, 
+      "star_count": 7505, 
       "url": "https://github.com/nim-lang/Nim"
     }, 
     {
@@ -240,7 +240,7 @@
       "name": "Bitcoin", 
       "release_count": 219, 
       "release_count_zv": 219, 
-      "star_count": 39574, 
+      "star_count": 39606, 
       "url": "https://github.com/bitcoin/bitcoin"
     }, 
     {
@@ -264,7 +264,7 @@
       "name": "Caddy", 
       "release_count": 51, 
       "release_count_zv": 47, 
-      "star_count": 23150, 
+      "star_count": 23179, 
       "url": "https://github.com/mholt/caddy"
     }, 
     {
@@ -284,7 +284,7 @@
       "reason": "Depended on by Flask and many other web frameworks.", 
       "release_count": 58, 
       "release_count_zv": 58, 
-      "star_count": 4868, 
+      "star_count": 4871, 
       "url": "https://github.com/pallets/werkzeug"
     }, 
     {
@@ -323,7 +323,7 @@
       "name": "Cython", 
       "release_count": 152, 
       "release_count_zv": 152, 
-      "star_count": 4253, 
+      "star_count": 4263, 
       "url": "https://github.com/cython/cython"
     }, 
     {
@@ -342,7 +342,7 @@
       "name": "TOML", 
       "release_count": 6, 
       "release_count_zv": 6, 
-      "star_count": 11602, 
+      "star_count": 11630, 
       "url": "https://github.com/toml-lang/toml"
     }, 
     {
@@ -366,7 +366,7 @@
       "name": "Flask", 
       "release_count": 30, 
       "release_count_zv": 23, 
-      "star_count": 45721, 
+      "star_count": 45778, 
       "url": "https://github.com/pallets/flask"
     }, 
     {
@@ -411,7 +411,7 @@
       "name": "SciPy", 
       "release_count": 107, 
       "release_count_zv": 92, 
-      "star_count": 6124, 
+      "star_count": 6139, 
       "url": "https://github.com/scipy/scipy"
     }, 
     {
@@ -430,7 +430,7 @@
       "name": "Pandas", 
       "release_count": 91, 
       "release_count_zv": 91, 
-      "star_count": 20654, 
+      "star_count": 20705, 
       "url": "https://github.com/pandas-dev/pandas"
     }, 
     {
@@ -474,7 +474,7 @@
       "name": "PyTorch", 
       "release_count": 22, 
       "release_count_zv": 17, 
-      "star_count": 30479, 
+      "star_count": 30569, 
       "url": "https://github.com/pytorch/pytorch"
     }, 
     {
@@ -498,7 +498,7 @@
       "name": "HTTPie", 
       "release_count": 33, 
       "release_count_zv": 30, 
-      "star_count": 42533, 
+      "star_count": 42576, 
       "url": "https://github.com/jakubroztocil/httpie"
     }, 
     {
@@ -517,7 +517,7 @@
       "name": "scikit-learn", 
       "release_count": 74, 
       "release_count_zv": 74, 
-      "star_count": 36444, 
+      "star_count": 36497, 
       "url": "https://github.com/scikit-learn/scikit-learn"
     }, 
     {
@@ -528,15 +528,15 @@
       "first_release_version": "0.0.0.dev20151006", 
       "gh_url": "https://github.com/certbot/certbot", 
       "is_zerover": true, 
-      "latest_release_api_commit_url": "https://api.github.com/repos/certbot/certbot/commits/cbd0a37c7a5b277b2d69edb03b56f24f244fdf61", 
-      "latest_release_date": "2019-07-11T19:31:51Z", 
-      "latest_release_link": "https://github.com/certbot/certbot/commit/cbd0a37c7a5b277b2d69edb03b56f24f244fdf61", 
-      "latest_release_tag": "v0.36.0", 
-      "latest_release_version": "0.36.0", 
+      "latest_release_api_commit_url": "https://api.github.com/repos/certbot/certbot/commits/987ce2c6b29d30d898e8032f3f19d174adbd4c48", 
+      "latest_release_date": "2019-08-07T17:35:11Z", 
+      "latest_release_link": "https://github.com/certbot/certbot/commit/987ce2c6b29d30d898e8032f3f19d174adbd4c48", 
+      "latest_release_tag": "v0.37.0", 
+      "latest_release_version": "0.37.0", 
       "name": "certbot", 
-      "release_count": 76, 
-      "release_count_zv": 76, 
-      "star_count": 25428, 
+      "release_count": 77, 
+      "release_count_zv": 77, 
+      "star_count": 25444, 
       "url": "https://github.com/certbot/certbot"
     }, 
     {
@@ -555,7 +555,7 @@
       "name": "sshuttle", 
       "release_count": 12, 
       "release_count_zv": 12, 
-      "star_count": 3578, 
+      "star_count": 3595, 
       "url": "https://github.com/sshuttle/sshuttle"
     }, 
     {
@@ -580,7 +580,7 @@
       "name": "Theano", 
       "release_count": 33, 
       "release_count_zv": 27, 
-      "star_count": 8863, 
+      "star_count": 8868, 
       "url": "https://github.com/Theano/Theano"
     }, 
     {
@@ -596,15 +596,15 @@
       "last_zv_release_link": "https://github.com/bokeh/bokeh/commit/30aea2646c9b2f682826361ffe45b1209fd96823", 
       "last_zv_release_tag": "0.13.0", 
       "last_zv_release_version": "0.13.0", 
-      "latest_release_api_commit_url": "https://api.github.com/repos/bokeh/bokeh/commits/1ca01c4c22cdf4bb22e4dae269949f72b865c752", 
-      "latest_release_date": "2019-08-04T20:42:12Z", 
-      "latest_release_link": "https://github.com/bokeh/bokeh/commit/1ca01c4c22cdf4bb22e4dae269949f72b865c752", 
-      "latest_release_tag": "1.3.2", 
-      "latest_release_version": "1.3.2", 
+      "latest_release_api_commit_url": "https://api.github.com/repos/bokeh/bokeh/commits/de4587452d2b9275872c23d9a2a5eab95e0d86ff", 
+      "latest_release_date": "2019-08-07T03:40:44Z", 
+      "latest_release_link": "https://github.com/bokeh/bokeh/commit/de4587452d2b9275872c23d9a2a5eab95e0d86ff", 
+      "latest_release_tag": "1.3.4", 
+      "latest_release_version": "1.3.4", 
       "name": "Bokeh", 
-      "release_count": 68, 
+      "release_count": 64, 
       "release_count_zv": 44, 
-      "star_count": 11127, 
+      "star_count": 11159, 
       "url": "https://github.com/bokeh/bokeh"
     }, 
     {
@@ -623,7 +623,7 @@
       "name": "Magic Wormhole", 
       "release_count": 33, 
       "release_count_zv": 33, 
-      "star_count": 9195, 
+      "star_count": 9203, 
       "url": "https://github.com/warner/magic-wormhole"
     }, 
     {
@@ -642,7 +642,7 @@
       "name": "docopt", 
       "release_count": 11, 
       "release_count_zv": 11, 
-      "star_count": 6693, 
+      "star_count": 6697, 
       "url": "https://github.com/docopt/docopt"
     }, 
     {
@@ -661,7 +661,7 @@
       "name": "httpbin", 
       "release_count": 13, 
       "release_count_zv": 13, 
-      "star_count": 7813, 
+      "star_count": 7825, 
       "url": "https://github.com/kennethreitz/httpbin"
     }, 
     {
@@ -680,7 +680,7 @@
       "name": "bottle.py", 
       "release_count": 74, 
       "release_count_zv": 74, 
-      "star_count": 6281, 
+      "star_count": 6286, 
       "url": "https://github.com/bottlepy/bottle"
     }, 
     {
@@ -704,7 +704,7 @@
       "name": "rq", 
       "release_count": 49, 
       "release_count_zv": 47, 
-      "star_count": 5739, 
+      "star_count": 5748, 
       "url": "https://github.com/rq/rq"
     }, 
     {
@@ -723,7 +723,7 @@
       "name": "hugo", 
       "release_count": 91, 
       "release_count_zv": 91, 
-      "star_count": 37156, 
+      "star_count": 37226, 
       "url": "https://github.com/gohugoio/hugo"
     }, 
     {
@@ -747,7 +747,7 @@
       "name": "drone", 
       "release_count": 38, 
       "release_count_zv": 30, 
-      "star_count": 18999, 
+      "star_count": 19048, 
       "url": "https://github.com/drone/drone"
     }, 
     {
@@ -766,7 +766,7 @@
       "name": "HashiCorp Terraform", 
       "release_count": 126, 
       "release_count_zv": 126, 
-      "star_count": 18137, 
+      "star_count": 18180, 
       "url": "https://github.com/hashicorp/terraform"
     }, 
     {
@@ -777,15 +777,15 @@
       "first_release_version": "0.0.0", 
       "gh_url": "https://github.com/hashicorp/nomad", 
       "is_zerover": true, 
-      "latest_release_api_commit_url": "https://api.github.com/repos/hashicorp/nomad/commits/6c4863c5f61b0cdfb609927f6f67e17d90454197", 
-      "latest_release_date": "2019-07-30T20:51:17Z", 
-      "latest_release_link": "https://github.com/hashicorp/nomad/commit/6c4863c5f61b0cdfb609927f6f67e17d90454197", 
-      "latest_release_tag": "v0.9.4", 
-      "latest_release_version": "0.9.4", 
+      "latest_release_api_commit_url": "https://api.github.com/repos/hashicorp/nomad/commits/0a30814b5b7a9fabe48469935cede6beac752e15", 
+      "latest_release_date": "2019-07-09T13:40:22Z", 
+      "latest_release_link": "https://github.com/hashicorp/nomad/commit/0a30814b5b7a9fabe48469935cede6beac752e15", 
+      "latest_release_tag": "v0.10.0-connect1", 
+      "latest_release_version": "0.10.0-connect1", 
       "name": "HashiCorp Nomad", 
-      "release_count": 79, 
-      "release_count_zv": 79, 
-      "star_count": 5027, 
+      "release_count": 80, 
+      "release_count_zv": 80, 
+      "star_count": 5045, 
       "url": "https://github.com/hashicorp/nomad"
     }, 
     {
@@ -801,15 +801,15 @@
       "last_zv_release_link": "https://github.com/hashicorp/vault/commit/dad2b6048153fea5efbc0c06a5f35c06c767b308", 
       "last_zv_release_tag": "v0.11.6", 
       "last_zv_release_version": "0.11.6", 
-      "latest_release_api_commit_url": "https://api.github.com/repos/hashicorp/vault/commits/33d368eac2d24501209d6874379c8cc4d4736e3d", 
-      "latest_release_date": "2019-07-30T05:05:06Z", 
-      "latest_release_link": "https://github.com/hashicorp/vault/commit/33d368eac2d24501209d6874379c8cc4d4736e3d", 
-      "latest_release_tag": "v1.2.0", 
-      "latest_release_version": "1.2.0", 
+      "latest_release_api_commit_url": "https://api.github.com/repos/hashicorp/vault/commits/e16495da552c996068e05574cddf69875199f949", 
+      "latest_release_date": "2019-08-06T02:15:50Z", 
+      "latest_release_link": "https://github.com/hashicorp/vault/commit/e16495da552c996068e05574cddf69875199f949", 
+      "latest_release_tag": "v1.2.1", 
+      "latest_release_version": "1.2.1", 
       "name": "HashiCorp Vault", 
-      "release_count": 84, 
+      "release_count": 85, 
       "release_count_zv": 65, 
-      "star_count": 13490, 
+      "star_count": 13517, 
       "url": "https://github.com/hashicorp/vault"
     }, 
     {
@@ -828,7 +828,7 @@
       "name": "xhyve", 
       "release_count": 2, 
       "release_count_zv": 2, 
-      "star_count": 5437, 
+      "star_count": 5439, 
       "url": "https://github.com/mist64/xhyve"
     }, 
     {
@@ -847,7 +847,7 @@
       "name": "zeal", 
       "release_count": 10, 
       "release_count_zv": 10, 
-      "star_count": 7050, 
+      "star_count": 7059, 
       "url": "https://github.com/zealdocs/zeal"
     }, 
     {
@@ -872,7 +872,7 @@
       "name": "html5lib-python", 
       "release_count": 26, 
       "release_count_zv": 15, 
-      "star_count": 786, 
+      "star_count": 788, 
       "url": "https://github.com/html5lib/html5lib-python"
     }, 
     {
@@ -891,7 +891,7 @@
       "name": "MyPy", 
       "release_count": 39, 
       "release_count_zv": 39, 
-      "star_count": 6500, 
+      "star_count": 6515, 
       "url": "https://github.com/python/mypy"
     }, 
     {
@@ -911,7 +911,7 @@
       "reason": "Depended on by pyca/cryptography", 
       "release_count": 29, 
       "release_count_zv": 29, 
-      "star_count": 147, 
+      "star_count": 148, 
       "url": "https://github.com/wbond/asn1crypto"
     }, 
     {
@@ -950,7 +950,7 @@
       "name": "Gephi", 
       "release_count": 12, 
       "release_count_zv": 12, 
-      "star_count": 3390, 
+      "star_count": 3398, 
       "url": "https://github.com/gephi/gephi"
     }, 
     {
@@ -969,7 +969,7 @@
       "name": "vim-airline", 
       "release_count": 10, 
       "release_count_zv": 10, 
-      "star_count": 12554, 
+      "star_count": 12566, 
       "url": "https://github.com/vim-airline/vim-airline"
     }, 
     {
@@ -993,7 +993,7 @@
       "name": "Julia", 
       "release_count": 76, 
       "release_count_zv": 63, 
-      "star_count": 23140, 
+      "star_count": 23201, 
       "url": "https://github.com/JuliaLang/julia"
     }, 
     {
@@ -1017,7 +1017,7 @@
       "name": "Flatpak", 
       "release_count": 115, 
       "release_count_zv": 89, 
-      "star_count": 1969, 
+      "star_count": 1972, 
       "url": "https://github.com/flatpak/flatpak"
     }, 
     {
@@ -1036,7 +1036,7 @@
       "name": "Meson Build System", 
       "release_count": 70, 
       "release_count_zv": 70, 
-      "star_count": 2212, 
+      "star_count": 2215, 
       "url": "https://github.com/mesonbuild/meson"
     }, 
     {
@@ -1055,7 +1055,7 @@
       "name": "zsh-completions", 
       "release_count": 34, 
       "release_count_zv": 34, 
-      "star_count": 2872, 
+      "star_count": 2875, 
       "url": "https://github.com/zsh-users/zsh-completions"
     }, 
     {
@@ -1071,15 +1071,15 @@
       "last_zv_release_link": "https://github.com/wekan/wekan/commit/9c09d926e3e02ac5a7c09bad4869b6ac9b4adb4d", 
       "last_zv_release_tag": "v0.99", 
       "last_zv_release_version": "0.99", 
-      "latest_release_api_commit_url": "https://api.github.com/repos/wekan/wekan/commits/833f19a5cd09e805b46b96e5cb93b4d01b2db719", 
-      "latest_release_date": "2019-08-04T15:11:49Z", 
-      "latest_release_link": "https://github.com/wekan/wekan/commit/833f19a5cd09e805b46b96e5cb93b4d01b2db719", 
-      "latest_release_tag": "v3.03", 
-      "latest_release_version": "3.03", 
+      "latest_release_api_commit_url": "https://api.github.com/repos/wekan/wekan/commits/b7628050be6e171de4d5a33458a1522970901070", 
+      "latest_release_date": "2019-08-07T17:00:34Z", 
+      "latest_release_link": "https://github.com/wekan/wekan/commit/b7628050be6e171de4d5a33458a1522970901070", 
+      "latest_release_tag": "v3.11", 
+      "latest_release_version": "3.11", 
       "name": "Wekan", 
-      "release_count": 327, 
+      "release_count": 335, 
       "release_count_zv": 99, 
-      "star_count": 14694, 
+      "star_count": 14710, 
       "url": "https://github.com/wekan/wekan"
     }, 
     {
@@ -1103,7 +1103,7 @@
       "name": "runc", 
       "release_count": 20, 
       "release_count_zv": 12, 
-      "star_count": 6123, 
+      "star_count": 6136, 
       "url": "https://github.com/opencontainers/runc"
     }, 
     {
@@ -1122,7 +1122,7 @@
       "name": "MechanicalSoup", 
       "release_count": 22, 
       "release_count_zv": 22, 
-      "star_count": 3278, 
+      "star_count": 3281, 
       "url": "https://github.com/MechanicalSoup/MechanicalSoup"
     }, 
     {
@@ -1146,7 +1146,7 @@
       "name": "Sway Window Manager", 
       "release_count": 60, 
       "release_count_zv": 41, 
-      "star_count": 6344, 
+      "star_count": 6355, 
       "url": "https://github.com/swaywm/sway"
     }, 
     {
@@ -1189,7 +1189,7 @@
       "name": "Pilosa", 
       "release_count": 38, 
       "release_count_zv": 29, 
-      "star_count": 1851, 
+      "star_count": 1855, 
       "url": "https://www.pilosa.com/"
     }, 
     {
@@ -1208,7 +1208,7 @@
       "name": "fail2ban", 
       "release_count": 58, 
       "release_count_zv": 58, 
-      "star_count": 4213, 
+      "star_count": 4219, 
       "url": "https://github.com/fail2ban/fail2ban"
     }, 
     {
@@ -1246,7 +1246,7 @@
       "name": "autokey", 
       "release_count": 14, 
       "release_count_zv": 14, 
-      "star_count": 926, 
+      "star_count": 931, 
       "url": "https://github.com/autokey/autokey"
     }, 
     {
@@ -1265,7 +1265,7 @@
       "name": "ClamAV Antivirus", 
       "release_count": 2, 
       "release_count_zv": 2, 
-      "star_count": 849, 
+      "star_count": 853, 
       "url": "https://github.com/Cisco-Talos/clamav-devel"
     }, 
     {
@@ -1284,7 +1284,7 @@
       "name": "bup", 
       "release_count": 28, 
       "release_count_zv": 28, 
-      "star_count": 5954, 
+      "star_count": 5957, 
       "url": "https://github.com/bup/bup"
     }, 
     {
@@ -1303,7 +1303,7 @@
       "name": "You-Get", 
       "release_count": 136, 
       "release_count_zv": 136, 
-      "star_count": 26223, 
+      "star_count": 26285, 
       "url": "https://github.com/soimort/you-get"
     }, 
     {
@@ -1322,7 +1322,7 @@
       "name": "Ramda", 
       "release_count": 51, 
       "release_count_zv": 51, 
-      "star_count": 16800, 
+      "star_count": 16826, 
       "url": "https://github.com/ramda/ramda"
     }, 
     {
