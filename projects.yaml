@@ -160,6 +160,12 @@ projects:
     gh_url: https://github.com/soimort/you-get
   - name: Ramda
     gh_url: https://github.com/ramda/ramda
+  - name: dateparser
+    gh_url: https://github.com/scrapinghub/dateparser
+  - name: kubectx
+    gh_url: https://github.com/ahmetb/kubectx
+  - name: rollup
+    gh_url: https://github.com/rollup/rollup
 
   # Non-GitHub projects below, manually updated
 
