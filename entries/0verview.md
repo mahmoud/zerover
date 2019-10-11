@@ -21,7 +21,7 @@ important number in computing: *zero*.**
 
 A down-to-earth demo:
 
-**YES**: 0.0.1, 0.1.0dev, 0.4.0, 0.4.1, 0.9.8n, [0.999999999][html5lib_ouch]
+**YES**: 0.0.1, 0.1.0dev, 0.4.0, 0.4.1, 0.9.8n, [0.999999999][html5lib_ouch], [0.0](/uploads/sensor_0.0.jpg)
 
 **NO**: 1.0, 1.0.0-rc1, 18.0, 2018.04.01
 
