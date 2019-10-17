@@ -93,7 +93,7 @@ def _get_gh_rel_data(rel_info, prefixes):
 def get_gh_project_info(url):
     ret = {}
 
-    org, repo = URL(url).path_parts[1:]
+    org, repo = URL(url.rstrip('/')).path_parts[1:]
     gh_url = URL('https://api.github.com/repos')
     gh_url.path_parts += (org, repo)
 

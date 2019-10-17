@@ -168,7 +168,7 @@ projects:
     gh_url: https://github.com/rollup/rollup
   - name: Music Player Daemon (mpd)
     url: https://www.musicpd.org/
-    gh_url: https://github.com/MusicPlayerDaemon/MPD/
+    gh_url: https://github.com/MusicPlayerDaemon/MPD
 
   # Non-GitHub projects below, manually updated
 
