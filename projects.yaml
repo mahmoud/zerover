@@ -169,6 +169,9 @@ projects:
   - name: Music Player Daemon (mpd)
     url: https://www.musicpd.org/
     gh_url: https://github.com/MusicPlayerDaemon/MPD
+  - name: wkhtmltopdf
+    url: https://wkhtmltopdf.org/
+    gh_url: https://github.com/wkhtmltopdf/wkhtmltopdf
 
   # Non-GitHub projects below, manually updated
 
