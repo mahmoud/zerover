@@ -172,6 +172,10 @@ projects:
   - name: wkhtmltopdf
     url: https://wkhtmltopdf.org/
     gh_url: https://github.com/wkhtmltopdf/wkhtmltopdf
+  - name: VS Code C/C++ extension
+    url: https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools
+    gh_url: https://github.com/microsoft/vscode-cpptools
+    reason: Created by Microsoft and with almost 8 million installs, this is the standard extension you want if working with C or C++ in VS Code.
 
   # Non-GitHub projects below, manually updated
 
