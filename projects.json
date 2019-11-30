@@ -1,6 +1,6 @@
 {
-  "gen_date": "2019-11-30T22:57:20.908940", 
-  "gen_duration": 130.66236805915833, 
+  "gen_date": "2019-11-30T23:30:56.833044", 
+  "gen_duration": 124.66881322860718, 
   "projects": [
     {
       "first_release_api_commit_url": "https://api.github.com/repos/steveklabnik/semver/commits/71b2153ec4b26d581364c8274800ed335ec5d67c", 
@@ -126,7 +126,7 @@
       "name": "NeoVIM", 
       "release_count": 24, 
       "release_count_zv": 24, 
-      "star_count": 34199, 
+      "star_count": 34200, 
       "url": "https://github.com/neovim/neovim"
     }, 
     {
@@ -164,7 +164,7 @@
       "name": "Home Assistant", 
       "release_count": 483, 
       "release_count_zv": 483, 
-      "star_count": 28899, 
+      "star_count": 28903, 
       "url": "https://github.com/home-assistant/home-assistant"
     }, 
     {
@@ -269,7 +269,7 @@
       "name": "Caddy", 
       "release_count": 64, 
       "release_count_zv": 47, 
-      "star_count": 25226, 
+      "star_count": 25227, 
       "url": "https://github.com/mholt/caddy"
     }, 
     {
@@ -522,7 +522,7 @@
       "name": "scikit-learn", 
       "release_count": 78, 
       "release_count_zv": 78, 
-      "star_count": 38303, 
+      "star_count": 38304, 
       "url": "https://github.com/scikit-learn/scikit-learn"
     }, 
     {
@@ -1003,7 +1003,7 @@
       "name": "Julia", 
       "release_count": 85, 
       "release_count_zv": 63, 
-      "star_count": 24527, 
+      "star_count": 24528, 
       "url": "https://github.com/JuliaLang/julia"
     }, 
     {
@@ -1132,7 +1132,7 @@
       "name": "MechanicalSoup", 
       "release_count": 23, 
       "release_count_zv": 23, 
-      "star_count": 3353, 
+      "star_count": 3354, 
       "url": "https://github.com/MechanicalSoup/MechanicalSoup"
     }, 
     {
@@ -1256,7 +1256,7 @@
       "name": "autokey", 
       "release_count": 15, 
       "release_count_zv": 15, 
-      "star_count": 1048, 
+      "star_count": 1049, 
       "url": "https://github.com/autokey/autokey"
     }, 
     {
@@ -1434,6 +1434,26 @@
       "release_count_zv": 49, 
       "star_count": 8932, 
       "url": "https://wkhtmltopdf.org/"
+    }, 
+    {
+      "first_release_api_commit_url": "https://api.github.com/repos/microsoft/vscode-cpptools/commits/3bbfed643ffcd8e7b60fd26d28d51e60efda6d58", 
+      "first_release_date": "2018-03-28T03:36:40Z", 
+      "first_release_link": "https://github.com/microsoft/vscode-cpptools/commit/3bbfed643ffcd8e7b60fd26d28d51e60efda6d58", 
+      "first_release_tag": "0.16.0", 
+      "first_release_version": "0.16.0", 
+      "gh_url": "https://github.com/microsoft/vscode-cpptools", 
+      "is_zerover": true, 
+      "latest_release_api_commit_url": "https://api.github.com/repos/microsoft/vscode-cpptools/commits/757f1f94bedca376a6916b22c8888202e9f6dc38", 
+      "latest_release_date": "2018-08-17T18:08:28Z", 
+      "latest_release_link": "https://github.com/microsoft/vscode-cpptools/commit/757f1f94bedca376a6916b22c8888202e9f6dc38", 
+      "latest_release_tag": "v0.18.1", 
+      "latest_release_version": "0.18.1", 
+      "name": "VS Code C/C++ extension", 
+      "reason": "Created by Microsoft and with almost 8 million installs, this is the standard extension you want if working with C or C++ in VS Code.", 
+      "release_count": 81, 
+      "release_count_zv": 81, 
+      "star_count": 2924, 
+      "url": "https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools"
     }, 
     {
       "first_release_api_commit_url": "https://api.github.com/repos/pywinauto/pywinauto/commits/21e6a97eb725cca4586f92c08b88cb5d07854e35", 
