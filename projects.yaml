@@ -172,6 +172,9 @@ projects:
   - name: wkhtmltopdf
     url: https://wkhtmltopdf.org/
     gh_url: https://github.com/wkhtmltopdf/wkhtmltopdf
+  - name: pywinauto
+    url: http://pywinauto.github.io/
+    gh_url: https://github.com/pywinauto/pywinauto
 
   # Non-GitHub projects below, manually updated
 
