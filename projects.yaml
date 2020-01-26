@@ -41,6 +41,9 @@ projects:
     gh_url: https://github.com/davidmoreno/onion
   - name: Nim
     gh_url: https://github.com/nim-lang/Nim
+  - name: Windows Terminal
+    url: https://www.microsoft.com/en-ca/p/windows-terminal-preview/9n0dx20hk701
+    gh_url: https://github.com/microsoft/terminal
   - name: Bitcoin
     gh_url: https://github.com/bitcoin/bitcoin
     # first_release_date: 2009-01-12
