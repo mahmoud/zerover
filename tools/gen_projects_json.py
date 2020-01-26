@@ -23,7 +23,9 @@ PROJ_PATH = os.path.dirname(TOOLS_PATH)
 PREFIXES = ['v',     # common
             'rel-',  # theano
             'orc-',  # orc
-            'tor-']  # tor
+            'tor-',  # tor
+            'clamav-']
+
 
 VTAG_RE = re.compile(r'^(?P<major>\d+)\.[0-9a-zA-Z_.]+')
 
@@ -41,10 +43,10 @@ def match_vtag(tag_name, prefixes):
     return VTAG_RE.match(tag_name)
 
 
-def version_key(version, prefixes):
+def version_key(version, prefixes=PREFIXES):
     return tuple([int(x) for x in
-                  match_vtag(version, prefixes).group(0).split('.')
-                  if x.isdigit()])
+                  re.split('\D', match_vtag(version, prefixes).group(0))
+                  if x and x.isdigit()])
 
 
 def _get_gh_json(url):
@@ -114,30 +116,32 @@ def get_gh_project_info(info):
     tags_url = gh_url.to_text()
     tags_data = _get_gh_json(tags_url)
     vtags_data = [td for td in tags_data if match_vtag(td['name'], PREFIXES)]
-    vtags_data.sort(key=lambda x: version_key(x['name'], PREFIXES), reverse=True)
 
     ret['release_count'] = len(vtags_data)
-
-    first_release_version = info.get('first_release_version')
-    if first_release_version is None:
-        first_release = vtags_data[-1]
-    else:
-        first_release = [v for v in vtags_data if v['name'] == first_release_version][0]
-    first_release_data = _get_gh_rel_data(first_release, PREFIXES)
-    for k, v in first_release_data.items():
-        ret['first_release_%s' % k] = v
 
     latest_release = vtags_data[0]
     latest_release_data = _get_gh_rel_data(latest_release, PREFIXES)
     for k, v in latest_release_data.items():
         ret['latest_release_%s' % k] = v
 
+    vtags_data.sort(key=lambda x: version_key(x['name'], PREFIXES), reverse=True)
+
+    first_release_version = info.get('first_release_version')
+    if first_release_version is None:
+        first_release = [v for v in vtags_data
+                         if version_key(v['name']) < version_key(latest_release['name'])][-1]
+    else:
+        first_release = [v for v in vtags_data if v['name'] == first_release_version][0]
+    first_release_data = _get_gh_rel_data(first_release, PREFIXES)
+    for k, v in first_release_data.items():
+        ret['first_release_%s' % k] = v
+
     zv_releases = [rel for rel in vtags_data
                    if match_vtag(rel['name'], PREFIXES).group('major') == '0']
     ret['release_count_zv'] = len(zv_releases)
     print ' .. %s releases, %s 0ver' % (ret['release_count'], ret['release_count_zv'])
 
-    is_zerover = zv_releases[0] == latest_release
+    is_zerover = latest_release in zv_releases
 
     ret['is_zerover'] = is_zerover
 
@@ -190,7 +194,7 @@ def _main():
     start_time = time.time()
     with open(PROJ_PATH + '/projects.yaml') as f:
         projects = yaml.load(f)['projects']
-    #projects = [p for p in projects if p['name'] == 'React']
+    #projects = [p for p in projects if p['name'] == 'scikit-learn']
     #if not projects:
     #    return
     try:
