@@ -41,6 +41,12 @@ def match_vtag(tag_name, prefixes):
     return VTAG_RE.match(tag_name)
 
 
+def version_key(version, prefixes):
+    return tuple([int(x) for x in
+                  match_vtag(version, prefixes).group(0).split('.')
+                  if x.isdigit()])
+
+
 def _get_gh_json(url):
     """"
     Get paginated results from GitHub, possibly authorized based on
@@ -105,6 +111,8 @@ def get_gh_project_info(url):
     tags_url = gh_url.to_text()
     tags_data = _get_gh_json(tags_url)
     vtags_data = [td for td in tags_data if match_vtag(td['name'], PREFIXES)]
+    vtags_data.sort(key=lambda x: version_key(x['name'], PREFIXES), reverse=True)
+
     ret['release_count'] = len(vtags_data)
 
     first_release = vtags_data[-1]
@@ -130,10 +138,12 @@ def get_gh_project_info(url):
         return ret
 
     last_zv_release = zv_releases[0]
-    last_zv_release_data = _get_gh_rel_data(last_zv_release, PREFIXES)
+    first_nonzv_release = vtags_data[vtags_data.index(last_zv_release) - 1]
+    first_nonzv_release_data = _get_gh_rel_data(first_nonzv_release, PREFIXES)
 
-    for k, v in last_zv_release_data.items():
-        ret['last_zv_release_%s' % k] = v
+    ret['last_zv_release_version'] = last_zv_release['name']
+    for k, v in first_nonzv_release_data.items():
+        ret['first_nonzv_release_%s' % k] = v
 
     return ret
 
@@ -171,7 +181,9 @@ def _main():
     start_time = time.time()
     with open(PROJ_PATH + '/projects.yaml') as f:
         projects = yaml.load(f)['projects']
-
+    #projects = [p for p in projects if p['name'] == 'Wekan']
+    #if not projects:
+    #    return
     try:
         with open(PROJ_PATH + '/projects.json') as f:
             cur_data = json.load(f)

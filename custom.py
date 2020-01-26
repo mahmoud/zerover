@@ -102,8 +102,8 @@ def _emeritus_to_htmltable(entries):
     for entry in entries:
         irel_dt = isoparse(entry['first_release_date'].replace('Z', ''))  # TODO: boltons Z handling
         lrel_dt, zv_streak = None, None
-        if entry.get('last_zv_release_date'):
-            lrel_dt = isoparse(entry['last_zv_release_date'].replace('Z', ''))
+        if entry.get('first_nonzv_release_date'):
+            lrel_dt = isoparse(entry['first_nonzv_release_date'].replace('Z', ''))
         zv_streak = lrel_dt - irel_dt
         zv_streak_years = round(zv_streak.days / 365.0, 1)
 

@@ -41,6 +41,9 @@ projects:
     gh_url: https://github.com/davidmoreno/onion
   - name: Nim
     gh_url: https://github.com/nim-lang/Nim
+  - name: Windows Terminal
+    url: https://www.microsoft.com/en-ca/p/windows-terminal-preview/9n0dx20hk701
+    gh_url: https://github.com/microsoft/terminal
   - name: Bitcoin
     gh_url: https://github.com/bitcoin/bitcoin
     # first_release_date: 2009-01-12
@@ -187,6 +190,9 @@ projects:
     gh_url: https://github.com/ruby/rake
     emeritus: true
     reason: The pioneer of the zero-to-double-digits jump.
+  - name: Chocolatey
+    url: https://chocolatey.org/
+    gh_url: https://github.com/chocolatey/choco
 
   # Non-GitHub projects below, manually updated
 
@@ -230,7 +236,7 @@ projects:
     first_release_date: 1998-12-23
     first_release_version: 0.9.1
     last_zv_release_version: 0.9.8n
-    last_zv_release_date: 2010-03-29
+    first_nonzv_release_date: 2010-03-29
   - name: Factorio
     url: https://factorio.com/
     first_release_date: 2012-12-24
@@ -243,7 +249,7 @@ projects:
     first_release_version: 0.7.9.2008.01.28
     first_release_date: 2008-01-26
     last_zv_release_version: 0.21.0
-    last_zv_release_date: 2017-06-13
+    first_nonzv_release_date: 2017-06-13
     release_count_zv: 123
     reason: Leading library for connecting Ruby to Postgres
     emeritus: true
@@ -272,7 +278,7 @@ projects:
     latest_release_date: 2016-10-23
     latest_release_version: 1.0.3
     last_zv_release_version: 0.9.9p1
-    last_zv_release_date: 2012-12-21
+    first_nonzv_release_date: 2012-12-21
     emeritus: true
     release_count: 71  # changelog_text.count('\nChanges since 0')
   - name: Dwarf Fortress
