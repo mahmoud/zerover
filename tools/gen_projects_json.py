@@ -96,8 +96,11 @@ def _get_gh_rel_data(rel_info, prefixes):
     return ret
 
 
-def get_gh_project_info(url):
+def get_gh_project_info(info):
     ret = {}
+    url = info.get('gh_url')
+    if url is None:
+        return ret
 
     org, repo = URL(url.rstrip('/')).path_parts[1:]
     gh_url = URL('https://api.github.com/repos')
@@ -115,7 +118,11 @@ def get_gh_project_info(url):
 
     ret['release_count'] = len(vtags_data)
 
-    first_release = vtags_data[-1]
+    first_release_version = info.get('first_release_version')
+    if first_release_version is None:
+        first_release = vtags_data[-1]
+    else:
+        first_release = [v for v in vtags_data if v['name'] == first_release_version][0]
     first_release_data = _get_gh_rel_data(first_release, PREFIXES)
     for k, v in first_release_data.items():
         ret['first_release_%s' % k] = v
@@ -145,6 +152,8 @@ def get_gh_project_info(url):
     for k, v in first_nonzv_release_data.items():
         ret['first_nonzv_release_%s' % k] = v
 
+    #import pdb;pdb.set_trace()
+
     return ret
 
 
@@ -167,7 +176,7 @@ def fetch_entries(projects):
         info['url'] = info.get('url', info.get('gh_url'))
 
         if info.get('gh_url'):
-            gh_info = get_gh_project_info(info['gh_url'])
+            gh_info = get_gh_project_info(info)
             info.update(gh_info)
 
         info['is_zerover'] = info.get('is_zerover', not info.get('emeritus', False))
@@ -181,7 +190,7 @@ def _main():
     start_time = time.time()
     with open(PROJ_PATH + '/projects.yaml') as f:
         projects = yaml.load(f)['projects']
-    #projects = [p for p in projects if p['name'] == 'Wekan']
+    #projects = [p for p in projects if p['name'] == 'React']
     #if not projects:
     #    return
     try:

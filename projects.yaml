@@ -184,6 +184,7 @@ projects:
     gh_url: https://github.com/pywinauto/pywinauto
   - name: React
     url: https://reactjs.org
+    first_release_version: v0.3.0
     gh_url: https://github.com/facebook/react
     emeritus: true
   - name: Rake
