@@ -182,6 +182,14 @@ projects:
   - name: pywinauto
     url: http://pywinauto.github.io/
     gh_url: https://github.com/pywinauto/pywinauto
+  - name: React
+    url: https://reactjs.org
+    gh_url: https://github.com/facebook/react
+    emeritus: true
+  - name: Rake
+    gh_url: https://github.com/ruby/rake
+    emeritus: true
+    reason: The pioneer of the zero-to-double-digits jump.
   - name: Chocolatey
     url: https://chocolatey.org/
     gh_url: https://github.com/chocolatey/choco
