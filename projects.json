@@ -1,6 +1,6 @@
 {
-  "gen_date": "2020-01-26T08:23:49.913855", 
-  "gen_duration": 245.87474298477173, 
+  "gen_date": "2020-01-26T08:36:51.523663", 
+  "gen_duration": 146.56885886192322, 
   "projects": [
     {
       "first_release_api_commit_url": "https://api.github.com/repos/steveklabnik/semver/commits/71b2153ec4b26d581364c8274800ed335ec5d67c", 
@@ -147,7 +147,7 @@
       "name": "Tor", 
       "release_count": 438, 
       "release_count_zv": 438, 
-      "star_count": 1429, 
+      "star_count": 1430, 
       "url": "https://blog.torproject.org/"
     }, 
     {
@@ -231,6 +231,31 @@
       "release_count_zv": 24, 
       "star_count": 8707, 
       "url": "https://github.com/nim-lang/Nim"
+    }, 
+    {
+      "first_nonzv_release_api_commit_url": "https://api.github.com/repos/microsoft/terminal/commits/7899586b81f1cc07a6730be93b51caec5a705dc0", 
+      "first_nonzv_release_date": "2017-08-14T19:36:27Z", 
+      "first_nonzv_release_link": "https://github.com/microsoft/terminal/commit/7899586b81f1cc07a6730be93b51caec5a705dc0", 
+      "first_nonzv_release_tag": "1708.14008", 
+      "first_nonzv_release_version": "1708.14008", 
+      "first_release_api_commit_url": "https://api.github.com/repos/microsoft/terminal/commits/d4d59fa3395012ca37ba12665da4ec11c7dcf9cb", 
+      "first_release_date": "2019-05-02T22:29:04Z", 
+      "first_release_link": "https://github.com/microsoft/terminal/commit/d4d59fa3395012ca37ba12665da4ec11c7dcf9cb", 
+      "first_release_tag": "v0.1.1002.0", 
+      "first_release_version": "0.1.1002.0", 
+      "gh_url": "https://github.com/microsoft/terminal", 
+      "is_zerover": false, 
+      "last_zv_release_version": "v0.8.10091.0", 
+      "latest_release_api_commit_url": "https://api.github.com/repos/microsoft/terminal/commits/723efc70e2373be6eaabe76a6db3a9d6cd52081f", 
+      "latest_release_date": "2019-04-29T19:12:01Z", 
+      "latest_release_link": "https://github.com/microsoft/terminal/commit/723efc70e2373be6eaabe76a6db3a9d6cd52081f", 
+      "latest_release_tag": "1904.29002", 
+      "latest_release_version": "1904.29002", 
+      "name": "Windows Terminal", 
+      "release_count": 31, 
+      "release_count_zv": 28, 
+      "star_count": 56957, 
+      "url": "https://www.microsoft.com/en-ca/p/windows-terminal-preview/9n0dx20hk701"
     }, 
     {
       "first_release_api_commit_url": "https://api.github.com/repos/bitcoin/bitcoin/commits/e2c2648c14f4b87d331dbc30f0f2bd4aab9ce7e6", 
@@ -1094,7 +1119,7 @@
       "name": "zsh-completions", 
       "release_count": 35, 
       "release_count_zv": 35, 
-      "star_count": 3207, 
+      "star_count": 3208, 
       "url": "https://github.com/zsh-users/zsh-completions"
     }, 
     {
@@ -1119,7 +1144,7 @@
       "name": "Wekan", 
       "release_count": 394, 
       "release_count_zv": 99, 
-      "star_count": 15355, 
+      "star_count": 15356, 
       "url": "https://github.com/wekan/wekan"
     }, 
     {
@@ -1507,6 +1532,25 @@
       "release_count_zv": 33, 
       "star_count": 1986, 
       "url": "http://pywinauto.github.io/"
+    }, 
+    {
+      "first_release_api_commit_url": "https://api.github.com/repos/chocolatey/choco/commits/d6f16578b41a68cb2d7f70f97f99cf1dbb884795", 
+      "first_release_date": "2015-02-04T07:11:00Z", 
+      "first_release_link": "https://github.com/chocolatey/choco/commit/d6f16578b41a68cb2d7f70f97f99cf1dbb884795", 
+      "first_release_tag": "0.9.9-beta3", 
+      "first_release_version": "0.9.9-beta3", 
+      "gh_url": "https://github.com/chocolatey/choco", 
+      "is_zerover": true, 
+      "latest_release_api_commit_url": "https://api.github.com/repos/chocolatey/choco/commits/70f5e373ae3bbc74f27ca51e5ddafb46d2b7fc0c", 
+      "latest_release_date": "2019-06-03T21:06:31Z", 
+      "latest_release_link": "https://github.com/chocolatey/choco/commit/70f5e373ae3bbc74f27ca51e5ddafb46d2b7fc0c", 
+      "latest_release_tag": "0.10.15", 
+      "latest_release_version": "0.10.15", 
+      "name": "Chocolatey", 
+      "release_count": 53, 
+      "release_count_zv": 53, 
+      "star_count": 6207, 
+      "url": "https://chocolatey.org/"
     }, 
     {
       "first_release_date": "1978-06-01", 
