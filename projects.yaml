@@ -194,6 +194,8 @@ projects:
   - name: Chocolatey
     url: https://chocolatey.org/
     gh_url: https://github.com/chocolatey/choco
+  - name: Perkeep
+    gh_url: https://github.com/perkeep/perkeep
 
   # Non-GitHub projects below, manually updated
 
