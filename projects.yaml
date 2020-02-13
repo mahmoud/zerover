@@ -198,6 +198,8 @@ projects:
     gh_url: https://github.com/perkeep/perkeep
   - name: asn1c
     gh_url: https://github.com/vlm/asn1c
+  - name: React Native
+    gh_url: https://github.com/facebook/react-native
 
   # Non-GitHub projects below, manually updated
 
