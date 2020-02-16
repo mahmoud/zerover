@@ -200,6 +200,8 @@ projects:
     gh_url: https://github.com/vlm/asn1c
   - name: React Native
     gh_url: https://github.com/facebook/react-native
+  - name: PHPStan
+    gh_url: https://github.com/phpstan/phpstan
 
   # Non-GitHub projects below, manually updated
 
