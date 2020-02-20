@@ -200,6 +200,9 @@ projects:
     gh_url: https://github.com/vlm/asn1c
   - name: React Native
     gh_url: https://github.com/facebook/react-native
+  - name: Nuitka
+    url: https://nuitka.net/
+    gh_url: https://github.com/Nuitka/Nuitka
 
   # Non-GitHub projects below, manually updated
 
