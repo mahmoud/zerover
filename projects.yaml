@@ -202,6 +202,9 @@ projects:
     gh_url: https://github.com/facebook/react-native
   - name: PHPStan
     gh_url: https://github.com/phpstan/phpstan
+  - name: Nuitka
+    url: https://nuitka.net/
+    gh_url: https://github.com/Nuitka/Nuitka
 
   # Non-GitHub projects below, manually updated
 
