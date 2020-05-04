@@ -224,10 +224,11 @@ projects:
     latest_release_version: 0.5.9.1
   - name: Inkscape
     url: https://launchpad.net/inkscape
+    emeritus: true
     first_release_date: 2000-09-01
     first_release_version: 0.16  # sodipodi cvs import according to changelog
-    latest_release_date: 2018-03-11
-    latest_release_version: 0.92.3
+    first_nonzv_release_date: 2020-05-01
+    last_zv_release_version: 0.92.5
   - name: Compiz
     first_release_date: 2006-05-22
     latest_release_date: 2016-11-11
