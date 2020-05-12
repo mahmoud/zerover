@@ -205,7 +205,8 @@ projects:
   - name: Nuitka
     url: https://nuitka.net/
     gh_url: https://github.com/Nuitka/Nuitka
-
+  - name: StreamEx
+    url: https://github.com/amaembo/streamex
   # Non-GitHub projects below, manually updated
 
   - name: ASCEND
