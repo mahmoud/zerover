@@ -24,7 +24,9 @@ PREFIXES = ['v',     # common
             'rel-',  # theano
             'orc-',  # orc
             'tor-',  # tor
-            'clamav-']
+            'clamav-',  # ...
+            'streamex-',  # ...
+]
 
 
 VTAG_RE = re.compile(r'^(?P<major>\d+)\.[0-9a-zA-Z_.]+')
