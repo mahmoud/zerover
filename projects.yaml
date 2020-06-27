@@ -206,9 +206,9 @@ projects:
     url: https://nuitka.net/
     gh_url: https://github.com/Nuitka/Nuitka
   - name: StreamEx
-    url: https://github.com/amaembo/streamex
+    gh_url: https://github.com/amaembo/streamex
   - name: 3proxy
-    url: https://github.com/z3APA3A/3proxy
+    gh_url: https://github.com/z3APA3A/3proxy
 
   # Non-GitHub projects below, manually updated
 

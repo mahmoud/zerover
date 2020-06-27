@@ -24,7 +24,11 @@ def chert_post_load(chert_obj):
             if '[ZEROVER_PROJECT_TABLE]' not in content and '[EMERITUS_PROJECT_TABLE]' not in content:
                 continue
             if zv_project_table is None:
-                zv_project_table = _zv_to_htmltable(zv_projects)
+                try:
+                    zv_project_table = _zv_to_htmltable(zv_projects)
+                except Exception as e:
+                    # import pdb;pdb.post_mortem()
+                    raise
                 emeritus_project_table = _emeritus_to_htmltable(emeritus_projects)  # TODO: emeritus table format
             content = content.replace('[ZEROVER_PROJECT_TABLE]', zv_project_table)
             content = content.replace('[EMERITUS_PROJECT_TABLE]', emeritus_project_table)
