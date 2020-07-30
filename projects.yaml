@@ -209,6 +209,8 @@ projects:
     gh_url: https://github.com/amaembo/streamex
   - name: 3proxy
     gh_url: https://github.com/z3APA3A/3proxy
+  - name: Flow
+    gh_url: https://github.com/facebook/flow
 
   # Non-GitHub projects below, manually updated
 
