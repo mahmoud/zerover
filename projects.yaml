@@ -211,6 +211,8 @@ projects:
     gh_url: https://github.com/z3APA3A/3proxy
   - name: Flow
     gh_url: https://github.com/facebook/flow
+  - name: GoReleaser
+    gh_url: https://github.com/goreleaser/goreleaser
 
   # Non-GitHub projects below, manually updated
 
