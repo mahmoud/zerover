@@ -213,6 +213,8 @@ projects:
     gh_url: https://github.com/facebook/flow
   - name: GoReleaser
     gh_url: https://github.com/goreleaser/goreleaser
+  - name: JaCoCo
+    gh_url: https://github.com/jacoco/jacoco
 
   # Non-GitHub projects below, manually updated
 
