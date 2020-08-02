@@ -215,6 +215,8 @@ projects:
     gh_url: https://github.com/goreleaser/goreleaser
   - name: JaCoCo
     gh_url: https://github.com/jacoco/jacoco
+  - name: iodine
+    gh_url: https://github.com/yarrick/iodine
 
   # Non-GitHub projects below, manually updated
 
