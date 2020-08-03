@@ -217,7 +217,9 @@ projects:
     gh_url: https://github.com/jacoco/jacoco
   - name: iodine
     gh_url: https://github.com/yarrick/iodine
-
+  - name: foreman
+    gh_url: https://github.com/ddollar/foreman
+    
   # Non-GitHub projects below, manually updated
 
   - name: ASCEND
