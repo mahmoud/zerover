@@ -219,6 +219,8 @@ projects:
     gh_url: https://github.com/yarrick/iodine
   - name: foreman
     gh_url: https://github.com/ddollar/foreman
+  - name: axios
+    gh_url: https://github.com/axios/axios
     
   # Non-GitHub projects below, manually updated
 
