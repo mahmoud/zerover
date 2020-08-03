@@ -1,6 +1,6 @@
 {
-  "gen_date": "2020-08-03T15:18:12.543007", 
-  "gen_duration": 180.75254201889038, 
+  "gen_date": "2020-08-03T15:46:44.722413", 
+  "gen_duration": 125.02397799491882, 
   "projects": [
     {
       "first_release_api_commit_url": "https://api.github.com/repos/steveklabnik/semver/commits/71b2153ec4b26d581364c8274800ed335ec5d67c", 
@@ -64,7 +64,7 @@
       "name": "Apache Kafka", 
       "release_count": 126, 
       "release_count_zv": 53, 
-      "star_count": 16492, 
+      "star_count": 16495, 
       "url": "https://github.com/apache/kafka"
     }, 
     {
@@ -166,7 +166,7 @@
       "name": "Home Assistant", 
       "release_count": 620, 
       "release_count_zv": 620, 
-      "star_count": 34659, 
+      "star_count": 34661, 
       "url": "https://github.com/home-assistant/home-assistant"
     }, 
     {
@@ -254,7 +254,7 @@
       "name": "Windows Terminal", 
       "release_count": 46, 
       "release_count_zv": 37, 
-      "star_count": 66630, 
+      "star_count": 66632, 
       "url": "https://www.microsoft.com/en-ca/p/windows-terminal-preview/9n0dx20hk701"
     }, 
     {
@@ -273,7 +273,7 @@
       "name": "Bitcoin", 
       "release_count": 235, 
       "release_count_zv": 235, 
-      "star_count": 44410, 
+      "star_count": 44414, 
       "url": "https://github.com/bitcoin/bitcoin"
     }, 
     {
@@ -419,7 +419,7 @@
       "name": "Flask", 
       "release_count": 32, 
       "release_count_zv": 24, 
-      "star_count": 51460, 
+      "star_count": 51461, 
       "url": "https://github.com/pallets/flask"
     }, 
     {
@@ -490,7 +490,7 @@
       "name": "Pandas", 
       "release_count": 105, 
       "release_count_zv": 94, 
-      "star_count": 25990, 
+      "star_count": 25991, 
       "url": "https://github.com/pandas-dev/pandas"
     }, 
     {
@@ -535,7 +535,7 @@
       "name": "PyTorch", 
       "release_count": 48, 
       "release_count_zv": 17, 
-      "star_count": 40714, 
+      "star_count": 40715, 
       "url": "https://github.com/pytorch/pytorch"
     }, 
     {
@@ -579,7 +579,7 @@
       "name": "scikit-learn", 
       "release_count": 85, 
       "release_count_zv": 85, 
-      "star_count": 41812, 
+      "star_count": 41813, 
       "url": "https://github.com/scikit-learn/scikit-learn"
     }, 
     {
@@ -800,7 +800,7 @@
       "name": "hugo", 
       "release_count": 134, 
       "release_count_zv": 134, 
-      "star_count": 45821, 
+      "star_count": 45822, 
       "url": "https://github.com/gohugoio/hugo"
     }, 
     {
@@ -1237,7 +1237,7 @@
       "name": "Sway Window Manager", 
       "release_count": 70, 
       "release_count_zv": 41, 
-      "star_count": 7793, 
+      "star_count": 7794, 
       "url": "https://github.com/swaywm/sway"
     }, 
     {
@@ -1580,7 +1580,7 @@
       "name": "React", 
       "release_count": 130, 
       "release_count_zv": 45, 
-      "star_count": 153343, 
+      "star_count": 153344, 
       "url": "https://reactjs.org"
     }, 
     {
@@ -1626,7 +1626,7 @@
       "name": "Chocolatey", 
       "release_count": 53, 
       "release_count_zv": 53, 
-      "star_count": 6773, 
+      "star_count": 6774, 
       "url": "https://chocolatey.org/"
     }, 
     {
@@ -1683,7 +1683,7 @@
       "name": "React Native", 
       "release_count": 345, 
       "release_count_zv": 345, 
-      "star_count": 89071, 
+      "star_count": 89072, 
       "url": "https://github.com/facebook/react-native"
     }, 
     {
@@ -1856,6 +1856,25 @@
       "release_count_zv": 128, 
       "star_count": 5348, 
       "url": "https://github.com/ddollar/foreman"
+    }, 
+    {
+      "first_release_api_commit_url": "https://api.github.com/repos/axios/axios/commits/00724fdd0bb5bfa66f466cbf459e590a5d7c0c9d", 
+      "first_release_date": "2014-08-29T23:07:25Z", 
+      "first_release_link": "https://github.com/axios/axios/commit/00724fdd0bb5bfa66f466cbf459e590a5d7c0c9d", 
+      "first_release_tag": "v0.1.0", 
+      "first_release_version": "0.1.0", 
+      "gh_url": "https://github.com/axios/axios", 
+      "is_zerover": true, 
+      "latest_release_api_commit_url": "https://api.github.com/repos/axios/axios/commits/ffea03453f77a8176c51554d5f6c3c6829294649", 
+      "latest_release_date": "2020-07-15T16:04:59Z", 
+      "latest_release_link": "https://github.com/axios/axios/commit/ffea03453f77a8176c51554d5f6c3c6829294649", 
+      "latest_release_tag": "v0.20.0-0", 
+      "latest_release_version": "0.20.0-0", 
+      "name": "axios", 
+      "release_count": 44, 
+      "release_count_zv": 44, 
+      "star_count": 75719, 
+      "url": "https://github.com/axios/axios"
     }, 
     {
       "first_release_date": "1978-06-01", 
