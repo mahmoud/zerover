@@ -221,6 +221,8 @@ projects:
     gh_url: https://github.com/ddollar/foreman
   - name: axios
     gh_url: https://github.com/axios/axios
+  - name: Pry
+    gh_url: https://github.com/pry/pry
     
   # Non-GitHub projects below, manually updated
 
