@@ -223,6 +223,8 @@ projects:
     gh_url: https://github.com/axios/axios
   - name: Pry
     gh_url: https://github.com/pry/pry
+  - name: Forge
+    gh_url: https://github.com/digitalbazaar/forge
     
   # Non-GitHub projects below, manually updated
 
