@@ -277,6 +277,8 @@ projects:
     first_release_version: 0.1.0
     latest_release_version:  1.0.0
     latest_release_date: 2020-08-14
+    first_nonzv_release_date: 2020-08-14
+    last_zv_release_version: 0.18.47
     reason: Popular, for-profit game.
   - name: pg (Ruby)
     url: https://rubygems.org/gems/pg
