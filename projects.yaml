@@ -33,8 +33,6 @@ projects:
   - name: Tor
     gh_url: https://github.com/torproject/tor
     url: https://blog.torproject.org/
-  - name: Home Assistant
-    gh_url: https://github.com/home-assistant/home-assistant
   - name: Vala
     gh_url: https://github.com/GNOME/vala
   - name: Onion
