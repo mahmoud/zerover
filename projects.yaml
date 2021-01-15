@@ -48,7 +48,7 @@ projects:
     gh_url: https://github.com/bitcoin/bitcoin
     # first_release_date: 2009-01-12
   - name: Caddy
-    gh_url: https://github.com/mholt/caddy
+    gh_url: https://github.com/caddyserver/caddy
   - name: Werkzeug
     gh_url: https://github.com/pallets/werkzeug
     reason: Depended on by Flask and many other web frameworks.
@@ -225,7 +225,7 @@ projects:
     gh_url: https://github.com/pry/pry
   - name: Forge
     gh_url: https://github.com/digitalbazaar/forge
-    
+
   # Non-GitHub projects below, manually updated
 
   - name: ASCEND
