@@ -59,6 +59,7 @@ projects:
     gh_url: https://github.com/cython/cython
   - name: TOML
     gh_url: https://github.com/toml-lang/toml
+    emeritus: true
   - name: Flask
     gh_url: https://github.com/pallets/flask
   - name: datadogpy

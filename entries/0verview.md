@@ -81,30 +81,6 @@ business-critical products, sold and supported.
 [vault]: https://www.vaultproject.io/
 [terraform]: https://www.terraform.io/
 
-## TOML
-
-Versioning schemes like [SemVer][semver] and [CalVer][calver] attempt
-to guide developers away from the natural light of ZeroVer. In a
-surprising and exciting move, the creator of SemVer
-[himself][toml_tom] has seen the light.
-
-Aside from [one small typo in 2013][toml_2013], his new project, TOML,
-has been a model ZeroVer user. These days TOML [advertises dozens of
-public implementations][toml_impls], many of which missed the ZeroVer
-message. They're probably caught up in Tom's own words from 2011:
-
-> *"If your software is being used in production, it should probably already be 1.0.0."*
-
-No doubt older and wiser, [Tom][toml_tom] has shown great versioning
-fortitude in averting a rise in TOML's major version and promoting
-ZeroVer conventions. <span title="Thom">Thanks Tom</span>!
-
-[semver]: http://semver.org/
-[calver]: https://calver.org/
-[toml_tom]: http://github.com/mojombo
-[toml_2013]: https://github.com/toml-lang/toml/releases/tag/v0.1.0
-[toml_impls]: https://github.com/toml-lang/toml/wiki#implementations
-
 ## Apache Kafka
 
 <img align="right" width="30%" style="padding-left: 15px" src="/uploads/kafka_logo.png">
