@@ -225,6 +225,8 @@ projects:
     gh_url: https://github.com/pry/pry
   - name: Forge
     gh_url: https://github.com/digitalbazaar/forge
+  - name: Stellarium
+    gh_url: https://github.com/Stellarium/stellarium
 
   # Non-GitHub projects below, manually updated
 
