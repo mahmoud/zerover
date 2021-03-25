@@ -12,7 +12,7 @@ pluggy==0.4.0
 py==1.4.33
 Pygments==1.6
 python-dateutil==2.7.5
-PyYAML==3.13
+PyYAML==5.4
 schema==0.6.8
 six==1.12.0
 tox==2.7.0
