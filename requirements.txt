@@ -10,7 +10,7 @@ lithoxyl==0.4.3
 Markdown==2.6.2
 pluggy==0.4.0
 py==1.4.33
-Pygments==1.6
+Pygments==2.7.4
 python-dateutil==2.7.5
 PyYAML==3.13
 schema==0.6.8
