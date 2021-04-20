@@ -9,7 +9,7 @@ idna==2.8
 lithoxyl==0.4.3
 Markdown==2.6.2
 pluggy==0.4.0
-py==1.4.33
+py==1.10.0
 Pygments==1.6
 python-dateutil==2.7.5
 PyYAML==3.13
