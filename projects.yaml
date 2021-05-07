@@ -230,6 +230,10 @@ projects:
   - name: Teeworlds
     url: https://teeworlds.com/
     gh_url: https://github.com/teeworlds/teeworlds
+  - name: Numba
+    url: https://numba.pydata.org
+    gh_url: https://github.com/numba/numba
+    reason: Widely used throughout the PyData and Python scientific computing ecosystems.
 
   # Non-GitHub projects below, manually updated
 
