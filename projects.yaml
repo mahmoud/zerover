@@ -227,6 +227,10 @@ projects:
     gh_url: https://github.com/digitalbazaar/forge
   - name: Stellarium
     gh_url: https://github.com/Stellarium/stellarium
+  - name: Numba
+    url: https://numba.pydata.org
+    gh_url: https://github.com/numba/numba
+    reason: Widely used throughout the PyData and Python scientific computing ecosystems.
 
   # Non-GitHub projects below, manually updated
 
