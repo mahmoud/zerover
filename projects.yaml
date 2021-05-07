@@ -227,6 +227,9 @@ projects:
     gh_url: https://github.com/digitalbazaar/forge
   - name: Stellarium
     gh_url: https://github.com/Stellarium/stellarium
+  - name: Teeworlds
+    url: https://teeworlds.com/
+    gh_url: https://github.com/teeworlds/teeworlds
   - name: Numba
     url: https://numba.pydata.org
     gh_url: https://github.com/numba/numba
