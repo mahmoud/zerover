@@ -1,6 +1,6 @@
 {
-  "gen_date": "2021-05-08T16:45:21.275188", 
-  "gen_duration": 183.01482105255127, 
+  "gen_date": "2021-05-10T16:47:49.699460", 
+  "gen_duration": 201.0765130519867, 
   "projects": [
     {
       "first_release_api_commit_url": "https://api.github.com/repos/steveklabnik/semver/commits/71b2153ec4b26d581364c8274800ed335ec5d67c", 
@@ -62,9 +62,9 @@
       "latest_release_tag": "2.8.0", 
       "latest_release_version": "2.8.0", 
       "name": "Apache Kafka", 
-      "release_count": 151, 
+      "release_count": 152, 
       "release_count_zv": 53, 
-      "star_count": 18796, 
+      "star_count": 18815, 
       "url": "https://github.com/apache/kafka"
     }, 
     {
@@ -90,7 +90,7 @@
       "reason": "Official kubernetes project with a logo, but no major release.", 
       "release_count": 118, 
       "release_count_zv": 52, 
-      "star_count": 20821, 
+      "star_count": 20838, 
       "url": "https://github.com/kubernetes/minikube"
     }, 
     {
@@ -134,7 +134,7 @@
       "name": "NeoVIM", 
       "release_count": 25, 
       "release_count_zv": 25, 
-      "star_count": 43559, 
+      "star_count": 43591, 
       "url": "https://github.com/neovim/neovim"
     }, 
     {
@@ -151,9 +151,9 @@
       "latest_release_tag": "tor-0.4.7.0-alpha-dev", 
       "latest_release_version": "0.4.7.0-alpha-dev", 
       "name": "Tor", 
-      "release_count": 476, 
-      "release_count_zv": 476, 
-      "star_count": 2351, 
+      "release_count": 478, 
+      "release_count_zv": 478, 
+      "star_count": 2354, 
       "url": "https://blog.torproject.org/"
     }, 
     {
@@ -178,7 +178,7 @@
       "name": "Home Assistant", 
       "release_count": 754, 
       "release_count_zv": 686, 
-      "star_count": 42269, 
+      "star_count": 42355, 
       "url": "https://github.com/home-assistant/home-assistant"
     }, 
     {
@@ -197,7 +197,7 @@
       "name": "Vala", 
       "release_count": 289, 
       "release_count_zv": 289, 
-      "star_count": 646, 
+      "star_count": 647, 
       "url": "https://github.com/GNOME/vala"
     }, 
     {
@@ -216,7 +216,7 @@
       "name": "Onion", 
       "release_count": 11, 
       "release_count_zv": 11, 
-      "star_count": 1741, 
+      "star_count": 1742, 
       "url": "https://github.com/davidmoreno/onion"
     }, 
     {
@@ -241,7 +241,7 @@
       "name": "Nim", 
       "release_count": 41, 
       "release_count_zv": 24, 
-      "star_count": 11207, 
+      "star_count": 11213, 
       "url": "https://github.com/nim-lang/Nim"
     }, 
     {
@@ -266,7 +266,7 @@
       "name": "Windows Terminal", 
       "release_count": 66, 
       "release_count_zv": 37, 
-      "star_count": 73798, 
+      "star_count": 73838, 
       "url": "https://www.microsoft.com/en-ca/p/windows-terminal-preview/9n0dx20hk701"
     }, 
     {
@@ -285,7 +285,7 @@
       "name": "Bitcoin", 
       "release_count": 246, 
       "release_count_zv": 246, 
-      "star_count": 53091, 
+      "star_count": 53200, 
       "url": "https://github.com/bitcoin/bitcoin"
     }, 
     {
@@ -310,7 +310,7 @@
       "name": "Caddy", 
       "release_count": 96, 
       "release_count_zv": 47, 
-      "star_count": 33284, 
+      "star_count": 33304, 
       "url": "https://github.com/caddyserver/caddy"
     }, 
     {
@@ -336,7 +336,7 @@
       "reason": "Depended on by Flask and many other web frameworks.", 
       "release_count": 69, 
       "release_count_zv": 61, 
-      "star_count": 5708, 
+      "star_count": 5710, 
       "url": "https://github.com/pallets/werkzeug"
     }, 
     {
@@ -381,7 +381,7 @@
       "name": "Cython", 
       "release_count": 168, 
       "release_count_zv": 162, 
-      "star_count": 6049, 
+      "star_count": 6055, 
       "url": "https://github.com/cython/cython"
     }, 
     {
@@ -406,7 +406,7 @@
       "name": "TOML", 
       "release_count": 10, 
       "release_count_zv": 6, 
-      "star_count": 15272, 
+      "star_count": 15278, 
       "url": "https://github.com/toml-lang/toml"
     }, 
     {
@@ -431,7 +431,7 @@
       "name": "Flask", 
       "release_count": 34, 
       "release_count_zv": 24, 
-      "star_count": 54830, 
+      "star_count": 54852, 
       "url": "https://github.com/pallets/flask"
     }, 
     {
@@ -477,7 +477,7 @@
       "name": "SciPy", 
       "release_count": 128, 
       "release_count_zv": 92, 
-      "star_count": 8215, 
+      "star_count": 8221, 
       "url": "https://github.com/scipy/scipy"
     }, 
     {
@@ -502,7 +502,7 @@
       "name": "Pandas", 
       "release_count": 117, 
       "release_count_zv": 94, 
-      "star_count": 29606, 
+      "star_count": 29638, 
       "url": "https://github.com/pandas-dev/pandas"
     }, 
     {
@@ -547,7 +547,7 @@
       "name": "PyTorch", 
       "release_count": 67, 
       "release_count_zv": 17, 
-      "star_count": 48057, 
+      "star_count": 48096, 
       "url": "https://github.com/pytorch/pytorch"
     }, 
     {
@@ -572,7 +572,7 @@
       "name": "HTTPie", 
       "release_count": 39, 
       "release_count_zv": 30, 
-      "star_count": 3, 
+      "star_count": 4, 
       "url": "https://github.com/jakubroztocil/httpie"
     }, 
     {
@@ -591,7 +591,7 @@
       "name": "scikit-learn", 
       "release_count": 90, 
       "release_count_zv": 90, 
-      "star_count": 45668, 
+      "star_count": 45685, 
       "url": "https://github.com/scikit-learn/scikit-learn"
     }, 
     {
@@ -616,7 +616,7 @@
       "name": "certbot", 
       "release_count": 100, 
       "release_count_zv": 83, 
-      "star_count": 27948, 
+      "star_count": 27950, 
       "url": "https://github.com/certbot/certbot"
     }, 
     {
@@ -641,7 +641,7 @@
       "name": "sshuttle", 
       "release_count": 18, 
       "release_count_zv": 12, 
-      "star_count": 6732, 
+      "star_count": 6734, 
       "url": "https://github.com/sshuttle/sshuttle"
     }, 
     {
@@ -684,15 +684,15 @@
       "gh_url": "https://github.com/bokeh/bokeh", 
       "is_zerover": false, 
       "last_zv_release_version": "0.13.0", 
-      "latest_release_api_commit_url": "https://api.github.com/repos/bokeh/bokeh/commits/2b28da76baf0af6adfed737375ca16c92fc15f65", 
-      "latest_release_date": "2021-05-04T19:57:32Z", 
-      "latest_release_link": "https://github.com/bokeh/bokeh/commit/2b28da76baf0af6adfed737375ca16c92fc15f65", 
-      "latest_release_tag": "2.3.2rc1", 
-      "latest_release_version": "2.3.2rc1", 
+      "latest_release_api_commit_url": "https://api.github.com/repos/bokeh/bokeh/commits/6ca7c8b8005cb229d3c999bf60d6e815b43c0684", 
+      "latest_release_date": "2021-05-10T03:50:27Z", 
+      "latest_release_link": "https://github.com/bokeh/bokeh/commit/6ca7c8b8005cb229d3c999bf60d6e815b43c0684", 
+      "latest_release_tag": "2.3.2rc2", 
+      "latest_release_version": "2.3.2rc2", 
       "name": "Bokeh", 
-      "release_count": 89, 
+      "release_count": 90, 
       "release_count_zv": 44, 
-      "star_count": 15074, 
+      "star_count": 15084, 
       "url": "https://github.com/bokeh/bokeh"
     }, 
     {
@@ -711,7 +711,7 @@
       "name": "Magic Wormhole", 
       "release_count": 34, 
       "release_count_zv": 34, 
-      "star_count": 12173, 
+      "star_count": 12176, 
       "url": "https://github.com/warner/magic-wormhole"
     }, 
     {
@@ -730,7 +730,7 @@
       "name": "docopt", 
       "release_count": 11, 
       "release_count_zv": 11, 
-      "star_count": 7364, 
+      "star_count": 7365, 
       "url": "https://github.com/docopt/docopt"
     }, 
     {
@@ -749,7 +749,7 @@
       "name": "httpbin", 
       "release_count": 13, 
       "release_count_zv": 13, 
-      "star_count": 9813, 
+      "star_count": 9818, 
       "url": "https://github.com/kennethreitz/httpbin"
     }, 
     {
@@ -768,7 +768,7 @@
       "name": "bottle.py", 
       "release_count": 76, 
       "release_count_zv": 76, 
-      "star_count": 7254, 
+      "star_count": 7255, 
       "url": "https://github.com/bottlepy/bottle"
     }, 
     {
@@ -793,7 +793,7 @@
       "name": "rq", 
       "release_count": 64, 
       "release_count_zv": 47, 
-      "star_count": 7682, 
+      "star_count": 7686, 
       "url": "https://github.com/rq/rq"
     }, 
     {
@@ -812,7 +812,7 @@
       "name": "hugo", 
       "release_count": 154, 
       "release_count_zv": 154, 
-      "star_count": 51723, 
+      "star_count": 51764, 
       "url": "https://github.com/gohugoio/hugo"
     }, 
     {
@@ -837,7 +837,7 @@
       "name": "drone", 
       "release_count": 57, 
       "release_count_zv": 30, 
-      "star_count": 23051, 
+      "star_count": 23063, 
       "url": "https://github.com/drone/drone"
     }, 
     {
@@ -856,7 +856,7 @@
       "name": "HashiCorp Terraform", 
       "release_count": 193, 
       "release_count_zv": 193, 
-      "star_count": 26597, 
+      "star_count": 26615, 
       "url": "https://github.com/hashicorp/terraform"
     }, 
     {
@@ -881,7 +881,7 @@
       "name": "HashiCorp Nomad", 
       "release_count": 134, 
       "release_count_zv": 125, 
-      "star_count": 8492, 
+      "star_count": 8497, 
       "url": "https://github.com/hashicorp/nomad"
     }, 
     {
@@ -906,7 +906,7 @@
       "name": "HashiCorp Vault", 
       "release_count": 133, 
       "release_count_zv": 65, 
-      "star_count": 20645, 
+      "star_count": 20656, 
       "url": "https://github.com/hashicorp/vault"
     }, 
     {
@@ -925,7 +925,7 @@
       "name": "xhyve", 
       "release_count": 2, 
       "release_count_zv": 2, 
-      "star_count": 6081, 
+      "star_count": 6079, 
       "url": "https://github.com/mist64/xhyve"
     }, 
     {
@@ -944,7 +944,7 @@
       "name": "zeal", 
       "release_count": 10, 
       "release_count_zv": 10, 
-      "star_count": 8763, 
+      "star_count": 8768, 
       "url": "https://github.com/zealdocs/zeal"
     }, 
     {
@@ -989,7 +989,7 @@
       "name": "MyPy", 
       "release_count": 53, 
       "release_count_zv": 53, 
-      "star_count": 10631, 
+      "star_count": 10637, 
       "url": "https://github.com/python/mypy"
     }, 
     {
@@ -1073,7 +1073,7 @@
       "name": "vim-airline", 
       "release_count": 11, 
       "release_count_zv": 11, 
-      "star_count": 15140, 
+      "star_count": 15146, 
       "url": "https://github.com/vim-airline/vim-airline"
     }, 
     {
@@ -1098,7 +1098,7 @@
       "name": "Julia", 
       "release_count": 105, 
       "release_count_zv": 63, 
-      "star_count": 33577, 
+      "star_count": 33598, 
       "url": "https://github.com/JuliaLang/julia"
     }, 
     {
@@ -1123,7 +1123,7 @@
       "name": "Flatpak", 
       "release_count": 144, 
       "release_count_zv": 89, 
-      "star_count": 2635, 
+      "star_count": 2636, 
       "url": "https://github.com/flatpak/flatpak"
     }, 
     {
@@ -1142,7 +1142,7 @@
       "name": "Meson Build System", 
       "release_count": 98, 
       "release_count_zv": 98, 
-      "star_count": 3280, 
+      "star_count": 3283, 
       "url": "https://github.com/mesonbuild/meson"
     }, 
     {
@@ -1161,7 +1161,7 @@
       "name": "zsh-completions", 
       "release_count": 37, 
       "release_count_zv": 37, 
-      "star_count": 4362, 
+      "star_count": 4367, 
       "url": "https://github.com/zsh-users/zsh-completions"
     }, 
     {
@@ -1186,7 +1186,7 @@
       "name": "Wekan", 
       "release_count": 549, 
       "release_count_zv": 99, 
-      "star_count": 17248, 
+      "star_count": 17252, 
       "url": "https://github.com/wekan/wekan"
     }, 
     {
@@ -1203,15 +1203,15 @@
       "gh_url": "https://github.com/opencontainers/runc", 
       "is_zerover": false, 
       "last_zv_release_version": "v0.1.1", 
-      "latest_release_api_commit_url": "https://api.github.com/repos/opencontainers/runc/commits/12644e614e25b05da6fd08a38ffa0cfe1903fdec", 
-      "latest_release_date": "2021-02-03T00:57:49Z", 
-      "latest_release_link": "https://github.com/opencontainers/runc/commit/12644e614e25b05da6fd08a38ffa0cfe1903fdec", 
-      "latest_release_tag": "v1.0.0-rc93", 
-      "latest_release_version": "1.0.0-rc93", 
+      "latest_release_api_commit_url": "https://api.github.com/repos/opencontainers/runc/commits/2c7861bc5e1b3e756392236553ec14a78a09f8bf", 
+      "latest_release_date": "2021-05-01T15:25:48Z", 
+      "latest_release_link": "https://github.com/opencontainers/runc/commit/2c7861bc5e1b3e756392236553ec14a78a09f8bf", 
+      "latest_release_tag": "v1.0.0-rc94", 
+      "latest_release_version": "1.0.0-rc94", 
       "name": "runc", 
-      "release_count": 26, 
+      "release_count": 27, 
       "release_count_zv": 12, 
-      "star_count": 7937, 
+      "star_count": 7940, 
       "url": "https://github.com/opencontainers/runc"
     }, 
     {
@@ -1261,7 +1261,7 @@
       "name": "Sway Window Manager", 
       "release_count": 75, 
       "release_count_zv": 41, 
-      "star_count": 8853, 
+      "star_count": 8862, 
       "url": "https://github.com/swaywm/sway"
     }, 
     {
@@ -1305,7 +1305,7 @@
       "name": "Pilosa", 
       "release_count": 41, 
       "release_count_zv": 29, 
-      "star_count": 2154, 
+      "star_count": 2155, 
       "url": "https://www.pilosa.com/"
     }, 
     {
@@ -1324,7 +1324,7 @@
       "name": "fail2ban", 
       "release_count": 62, 
       "release_count_zv": 62, 
-      "star_count": 6049, 
+      "star_count": 6052, 
       "url": "https://github.com/fail2ban/fail2ban"
     }, 
     {
@@ -1343,7 +1343,7 @@
       "name": "qtile", 
       "release_count": 27, 
       "release_count_zv": 27, 
-      "star_count": 2491, 
+      "star_count": 2494, 
       "url": "https://github.com/qtile/qtile"
     }, 
     {
@@ -1362,7 +1362,7 @@
       "name": "autokey", 
       "release_count": 21, 
       "release_count_zv": 21, 
-      "star_count": 1780, 
+      "star_count": 1784, 
       "url": "https://github.com/autokey/autokey"
     }, 
     {
@@ -1381,7 +1381,7 @@
       "name": "ClamAV Antivirus", 
       "release_count": 160, 
       "release_count_zv": 160, 
-      "star_count": 1345, 
+      "star_count": 1347, 
       "url": "https://github.com/Cisco-Talos/clamav-devel"
     }, 
     {
@@ -1400,7 +1400,7 @@
       "name": "bup", 
       "release_count": 33, 
       "release_count_zv": 33, 
-      "star_count": 6495, 
+      "star_count": 6496, 
       "url": "https://github.com/bup/bup"
     }, 
     {
@@ -1419,7 +1419,7 @@
       "name": "You-Get", 
       "release_count": 148, 
       "release_count_zv": 148, 
-      "star_count": 40271, 
+      "star_count": 40285, 
       "url": "https://github.com/soimort/you-get"
     }, 
     {
@@ -1438,7 +1438,7 @@
       "name": "Ramda", 
       "release_count": 52, 
       "release_count_zv": 52, 
-      "star_count": 20673, 
+      "star_count": 20677, 
       "url": "https://github.com/ramda/ramda"
     }, 
     {
@@ -1482,7 +1482,7 @@
       "name": "kubectx", 
       "release_count": 19, 
       "release_count_zv": 19, 
-      "star_count": 10208, 
+      "star_count": 10230, 
       "url": "https://github.com/ahmetb/kubectx"
     }, 
     {
@@ -1507,7 +1507,7 @@
       "name": "rollup", 
       "release_count": 514, 
       "release_count_zv": 260, 
-      "star_count": 20150, 
+      "star_count": 20155, 
       "url": "https://github.com/rollup/rollup"
     }, 
     {
@@ -1526,7 +1526,7 @@
       "name": "Music Player Daemon (mpd)", 
       "release_count": 170, 
       "release_count_zv": 170, 
-      "star_count": 1321, 
+      "star_count": 1323, 
       "url": "https://www.musicpd.org/"
     }, 
     {
@@ -1545,7 +1545,7 @@
       "name": "wkhtmltopdf", 
       "release_count": 50, 
       "release_count_zv": 50, 
-      "star_count": 11045, 
+      "star_count": 11051, 
       "url": "https://wkhtmltopdf.org/"
     }, 
     {
@@ -1565,7 +1565,7 @@
       "reason": "Created by Microsoft and with almost 8 million installs, this is the standard extension you want if working with C or C++ in VS Code.", 
       "release_count": 136, 
       "release_count_zv": 109, 
-      "star_count": 4054, 
+      "star_count": 4056, 
       "url": "https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools"
     }, 
     {
@@ -1610,7 +1610,7 @@
       "name": "React", 
       "release_count": 137, 
       "release_count_zv": 47, 
-      "star_count": 168070, 
+      "star_count": 168142, 
       "url": "https://reactjs.org"
     }, 
     {
@@ -1637,7 +1637,7 @@
       "reason": "The pioneer of the zero-to-double-digits jump.", 
       "release_count": 37, 
       "release_count_zv": 4, 
-      "star_count": 1959, 
+      "star_count": 1961, 
       "url": "https://github.com/ruby/rake"
     }, 
     {
@@ -1656,7 +1656,7 @@
       "name": "Chocolatey", 
       "release_count": 54, 
       "release_count_zv": 54, 
-      "star_count": 7440, 
+      "star_count": 7449, 
       "url": "https://chocolatey.org/"
     }, 
     {
@@ -1675,7 +1675,7 @@
       "name": "Perkeep", 
       "release_count": 11, 
       "release_count_zv": 11, 
-      "star_count": 5511, 
+      "star_count": 5512, 
       "url": "https://github.com/perkeep/perkeep"
     }, 
     {
@@ -1694,7 +1694,7 @@
       "name": "asn1c", 
       "release_count": 3, 
       "release_count_zv": 3, 
-      "star_count": 715, 
+      "star_count": 717, 
       "url": "https://github.com/vlm/asn1c"
     }, 
     {
@@ -1713,7 +1713,7 @@
       "name": "React Native", 
       "release_count": 355, 
       "release_count_zv": 355, 
-      "star_count": 95229, 
+      "star_count": 95260, 
       "url": "https://github.com/facebook/react-native"
     }, 
     {
@@ -1732,7 +1732,7 @@
       "name": "PHPStan", 
       "release_count": 146, 
       "release_count_zv": 146, 
-      "star_count": 9816, 
+      "star_count": 9823, 
       "url": "https://github.com/phpstan/phpstan"
     }, 
     {
@@ -1743,15 +1743,15 @@
       "first_release_version": "0.3.11a", 
       "gh_url": "https://github.com/Nuitka/Nuitka", 
       "is_zerover": true, 
-      "latest_release_api_commit_url": "https://api.github.com/repos/Nuitka/Nuitka/commits/830efce05006ca2155afb0da75ee645cc6f5920e", 
-      "latest_release_date": "2021-04-23T07:43:07Z", 
-      "latest_release_link": "https://github.com/Nuitka/Nuitka/commit/830efce05006ca2155afb0da75ee645cc6f5920e", 
-      "latest_release_tag": "0.6.14.5", 
-      "latest_release_version": "0.6.14.5", 
+      "latest_release_api_commit_url": "https://api.github.com/repos/Nuitka/Nuitka/commits/944678efe0bcc6e9b37726c4a727102365b3940e", 
+      "latest_release_date": "2021-05-04T07:33:20Z", 
+      "latest_release_link": "https://github.com/Nuitka/Nuitka/commit/944678efe0bcc6e9b37726c4a727102365b3940e", 
+      "latest_release_tag": "0.6.14.6", 
+      "latest_release_version": "0.6.14.6", 
       "name": "Nuitka", 
-      "release_count": 230, 
-      "release_count_zv": 230, 
-      "star_count": 4149, 
+      "release_count": 231, 
+      "release_count_zv": 231, 
+      "star_count": 4154, 
       "url": "https://nuitka.net/"
     }, 
     {
@@ -1770,7 +1770,7 @@
       "name": "StreamEx", 
       "release_count": 40, 
       "release_count_zv": 40, 
-      "star_count": 1650, 
+      "star_count": 1651, 
       "url": "https://github.com/amaembo/streamex"
     }, 
     {
@@ -1789,7 +1789,7 @@
       "name": "3proxy", 
       "release_count": 15, 
       "release_count_zv": 15, 
-      "star_count": 1970, 
+      "star_count": 1971, 
       "url": "https://github.com/z3APA3A/3proxy"
     }, 
     {
@@ -1808,7 +1808,7 @@
       "name": "Flow", 
       "release_count": 205, 
       "release_count_zv": 205, 
-      "star_count": 21337, 
+      "star_count": 21341, 
       "url": "https://github.com/facebook/flow"
     }, 
     {
@@ -1827,7 +1827,7 @@
       "name": "GoReleaser", 
       "release_count": 434, 
       "release_count_zv": 434, 
-      "star_count": 7989, 
+      "star_count": 7996, 
       "url": "https://github.com/goreleaser/goreleaser"
     }, 
     {
@@ -1846,7 +1846,7 @@
       "name": "JaCoCo", 
       "release_count": 43, 
       "release_count_zv": 43, 
-      "star_count": 2693, 
+      "star_count": 2699, 
       "url": "https://github.com/jacoco/jacoco"
     }, 
     {
@@ -1884,7 +1884,7 @@
       "name": "foreman", 
       "release_count": 129, 
       "release_count_zv": 129, 
-      "star_count": 5515, 
+      "star_count": 5517, 
       "url": "https://github.com/ddollar/foreman"
     }, 
     {
@@ -1903,7 +1903,7 @@
       "name": "axios", 
       "release_count": 47, 
       "release_count_zv": 47, 
-      "star_count": 84223, 
+      "star_count": 84265, 
       "url": "https://github.com/axios/axios"
     }, 
     {
@@ -1922,7 +1922,7 @@
       "name": "Pry", 
       "release_count": 73, 
       "release_count_zv": 73, 
-      "star_count": 6196, 
+      "star_count": 6198, 
       "url": "https://github.com/pry/pry"
     }, 
     {
@@ -1941,7 +1941,7 @@
       "name": "Forge", 
       "release_count": 129, 
       "release_count_zv": 129, 
-      "star_count": 3943, 
+      "star_count": 3945, 
       "url": "https://github.com/digitalbazaar/forge"
     }, 
     {
@@ -1960,7 +1960,7 @@
       "name": "Stellarium", 
       "release_count": 31, 
       "release_count_zv": 31, 
-      "star_count": 2583, 
+      "star_count": 2589, 
       "url": "https://github.com/Stellarium/stellarium"
     }, 
     {
@@ -1979,7 +1979,7 @@
       "name": "Teeworlds", 
       "release_count": 22, 
       "release_count_zv": 22, 
-      "star_count": 1588, 
+      "star_count": 1591, 
       "url": "https://teeworlds.com/"
     }, 
     {
@@ -1999,7 +1999,7 @@
       "reason": "Widely used throughout the PyData and Python scientific computing ecosystems.", 
       "release_count": 170, 
       "release_count_zv": 170, 
-      "star_count": 6474, 
+      "star_count": 6482, 
       "url": "https://numba.pydata.org"
     }, 
     {
