@@ -234,6 +234,9 @@ projects:
     url: https://numba.pydata.org
     gh_url: https://github.com/numba/numba
     reason: Widely used throughout the PyData and Python scientific computing ecosystems.
+  - name: Semgrep
+    url: https://semgrep.dev/
+    gh_url: https://github.com/returntocorp/semgrep
 
   # Non-GitHub projects below, manually updated
 
