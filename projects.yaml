@@ -366,3 +366,12 @@ projects:
     release_count: 55  # ignore github saying >250 releases, ~80% of them are some kind of weird backup non-releases
     release_count_zv: 55
     star_count: 4912
+  - name: three.js
+    url: https://threejs.org/
+    _gh_url: https://github.com/mrdoob/three.js
+    first_release_version: 0.1  # github releases are r1-r130
+    first_release_date: 2013-07-03T11:49:48Z
+    latest_release_version: 0.130
+    latest_release_date: 2021-07-05T18:49:30Z
+    release_count: 130
+    release_count_zc: 130
