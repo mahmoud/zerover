@@ -375,3 +375,13 @@ projects:
     latest_release_date: 2021-07-05T18:49:30
     release_count: 130
     release_count_zc: 130
+  - name: yup
+    url: https://www.npmjs.com/package/yup
+    _gh_url: https://github.com/jquense/yup
+    reason: +7 years of history, over 2M weekly downloads on npm
+    first_release_version: 0.1.0
+    first_release_date: 2014-10-18
+    latest_release_version: 0.32.9
+    latest_release_date: 2021-02-17
+    release_count: 104
+    star_count: 14.3k
