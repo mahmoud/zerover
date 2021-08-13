@@ -375,3 +375,13 @@ projects:
     latest_release_date: 2021-07-05T18:49:30
     release_count: 130
     release_count_zc: 130
+  - name: LocalStack
+    url: https://localstack.cloud
+    _gh_url: https://github.com/localstack/localstack
+    reason: large community, 250k+ daily Docker pulls
+    first_release_version: 0.1.0
+    first_release_date: 2017-06-01
+    latest_release_version: 0.12.16
+    latest_release_date: 2021-07-31
+    release_count: 95
+    star_count: 31.7k
