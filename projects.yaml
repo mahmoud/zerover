@@ -237,6 +237,9 @@ projects:
   - name: Semgrep
     url: https://semgrep.dev/
     gh_url: https://github.com/returntocorp/semgrep
+  - name: XMonad
+    url: https://xmonad.org/
+    gh_url: https://github.com/xmonad/xmonad
 
   # Non-GitHub projects below, manually updated
 
