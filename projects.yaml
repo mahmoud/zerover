@@ -254,6 +254,9 @@ projects:
   - name: Elm Language
     gh_url: https://github.com/elm/compiler
     reason: Two years ago, wrote, Elm 0.19.1 will be stable for quite some time. Also, Enforces SemVer at a package level, does not follow it itself.
+  - name: pry (ruby)
+    gh_url: https://github.com/pry/pry
+    reason: Narrowly avoided a brush with 1.0 in 2013.
 
 
   # Non-GitHub projects below, manually updated
