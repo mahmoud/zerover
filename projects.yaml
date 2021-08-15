@@ -259,6 +259,8 @@ projects:
     reason: Dependency of Rails since 2014, still 0.5.2 in 2021
   - name: winapi-rs (Rust)
     gh_url: https://github.com/retep998/winapi-rs
+  - name: Paper.js
+    gh_url: https://github.com/paperjs/paper.js
 
   # Non-GitHub projects below, manually updated
 
