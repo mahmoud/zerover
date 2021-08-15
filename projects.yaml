@@ -366,6 +366,16 @@ projects:
     release_count: 55  # ignore github saying >250 releases, ~80% of them are some kind of weird backup non-releases
     release_count_zv: 55
     star_count: 4912
+  - name: OpenStreetMap API/website
+    url: https://openstreetmap.org/
+    wp_url: https://en.wikipedia.org/wiki/OpenStreetMap
+    _gh_url: https://github.com/openstreetmap/openstreetmap-website  # Dosen't use releases on GitHub
+    reason: "Open map data used almost anywhere there's a non-Google map."
+    first_release_version: 0.3
+    first_release_date: 2004-8-9
+    latest_release_version: 0.6 February 2021  # See https://wiki.openstreetmap.org/wiki/API_v0.6#Semantic_versioning
+    latest_release_date: 2021-02-01
+    release_count: 14  # 0.3 → 0.6 and then the dated changes to 0.6
   - name: three.js
     url: https://threejs.org/
     _gh_url: https://github.com/mrdoob/three.js
