@@ -237,6 +237,10 @@ projects:
   - name: Semgrep
     url: https://semgrep.dev/
     gh_url: https://github.com/returntocorp/semgrep
+  - name: Tendermint
+    gh_url: https://github.com/tendermint/tendermint/
+  - name: Cosmos-sdk
+    gh_url: https://github.com/cosmos/cosmos-sdk
 
   # Non-GitHub projects below, manually updated
 
@@ -366,6 +370,16 @@ projects:
     release_count: 55  # ignore github saying >250 releases, ~80% of them are some kind of weird backup non-releases
     release_count_zv: 55
     star_count: 4912
+  - name: OpenStreetMap API/website
+    url: https://openstreetmap.org/
+    wp_url: https://en.wikipedia.org/wiki/OpenStreetMap
+    _gh_url: https://github.com/openstreetmap/openstreetmap-website  # Dosen't use releases on GitHub
+    reason: "Open map data used almost anywhere there's a non-Google map."
+    first_release_version: 0.3
+    first_release_date: 2004-8-9
+    latest_release_version: 0.6 February 2021  # See https://wiki.openstreetmap.org/wiki/API_v0.6#Semantic_versioning
+    latest_release_date: 2021-02-01
+    release_count: 14  # 0.3 → 0.6 and then the dated changes to 0.6
   - name: three.js
     url: https://threejs.org/
     _gh_url: https://github.com/mrdoob/three.js
@@ -378,10 +392,14 @@ projects:
   - name: yup
     url: https://www.npmjs.com/package/yup
     _gh_url: https://github.com/jquense/yup
-    reason: +7 years of history, over 2M weekly downloads on npm
-    first_release_version: 0.1.0
-    first_release_date: 2014-10-18
-    latest_release_version: 0.32.9
-    latest_release_date: 2021-02-17
-    release_count: 104
-    star_count: 14.3k
+    reason: 7+ years of history, over 2M weekly downloads on npm
+  - name: google-api-client (ruby)
+    url: https://rubygems.org/gems/google-api-client/
+    _gh_url: https://github.com/googleapis/google-api-ruby-client
+    first_release_version: 0.1.0 
+    first_release_date: 2010-10-14
+    latest_release_version: 0.53.0 
+    latest_release_date: 2021-01-18
+    release_count: 201
+    star_count: 2400
+
