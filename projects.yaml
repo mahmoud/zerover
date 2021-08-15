@@ -227,6 +227,16 @@ projects:
     gh_url: https://github.com/digitalbazaar/forge
   - name: Stellarium
     gh_url: https://github.com/Stellarium/stellarium
+  - name: Teeworlds
+    url: https://teeworlds.com/
+    gh_url: https://github.com/teeworlds/teeworlds
+  - name: Numba
+    url: https://numba.pydata.org
+    gh_url: https://github.com/numba/numba
+    reason: Widely used throughout the PyData and Python scientific computing ecosystems.
+  - name: Semgrep
+    url: https://semgrep.dev/
+    gh_url: https://github.com/returntocorp/semgrep
 
   # Non-GitHub projects below, manually updated
 
@@ -364,5 +374,24 @@ projects:
     first_release_version: 0.3
     first_release_date: 2004-8-9
     latest_release_version: 0.6 February 2021  # See https://wiki.openstreetmap.org/wiki/API_v0.6#Semantic_versioning
-    latest_release_date: 2021-02
+    latest_release_date: 2021-02-01
     release_count: 14  # 0.3 → 0.6 and then the dated changes to 0.6
+  - name: three.js
+    url: https://threejs.org/
+    _gh_url: https://github.com/mrdoob/three.js
+    first_release_version: 0.1  # github releases are r1-r130
+    first_release_date: 2013-07-03T11:49:48
+    latest_release_version: 0.130
+    latest_release_date: 2021-07-05T18:49:30
+    release_count: 130
+    release_count_zc: 130
+  - name: google-api-client (ruby)
+    reason: official ruby REST client for Google API's
+    url: https://rubygems.org/gems/google-api-client/
+    _gh_url: https://github.com/googleapis/google-api-ruby-client
+    first_release_version: 0.1.0 
+    first_release_date: 2010-10-14
+    latest_release_version: 0.53.0 
+    latest_release_date: 2021-01-18
+    release_count: 201
+    star_count: 2400
