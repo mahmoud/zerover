@@ -237,6 +237,9 @@ projects:
   - name: Semgrep
     url: https://semgrep.dev/
     gh_url: https://github.com/returntocorp/semgrep
+  - name: Datasette
+    url: https://datasette.io/
+    gh_url: https://github.com/simonw/datasette
   - name: Tendermint
     gh_url: https://github.com/tendermint/tendermint/
   - name: Cosmos-sdk
