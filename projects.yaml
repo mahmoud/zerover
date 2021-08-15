@@ -392,6 +392,10 @@ projects:
     latest_release_date: 2021-07-05T18:49:30
     release_count: 130
     release_count_zc: 130
+  - name: LocalStack
+    url: https://localstack.cloud
+    _gh_url: https://github.com/localstack/localstack
+    reason: 250k+ daily Docker pulls in 2021
   - name: yup
     url: https://www.npmjs.com/package/yup
     _gh_url: https://github.com/jquense/yup
