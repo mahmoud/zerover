@@ -257,7 +257,8 @@ projects:
   - name: globalid (ruby)
     gh_url: https://github.com/rails/globalid
     reason: Dependency of Rails since 2014, still 0.5.2 in 2021
-
+  - name: winapi-rs (Rust)
+    gh_url: https://github.com/retep998/winapi-rs
 
   # Non-GitHub projects below, manually updated
 
