@@ -261,6 +261,8 @@ projects:
     gh_url: https://github.com/retep998/winapi-rs
   - name: Paper.js
     gh_url: https://github.com/paperjs/paper.js
+  - name: Knex.js
+    gh_url: https://github.com/knex/knex
 
   # Non-GitHub projects below, manually updated
 
