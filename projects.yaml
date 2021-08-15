@@ -237,6 +237,10 @@ projects:
   - name: Semgrep
     url: https://semgrep.dev/
     gh_url: https://github.com/returntocorp/semgrep
+  - name: Tendermint
+    gh_url: https://github.com/tendermint/tendermint/
+  - name: Cosmos-sdk
+    gh_url: https://github.com/cosmos/cosmos-sdk
 
   # Non-GitHub projects below, manually updated
 
