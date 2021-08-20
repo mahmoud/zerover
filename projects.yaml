@@ -263,6 +263,8 @@ projects:
     gh_url: https://github.com/paperjs/paper.js
   - name: Knex.js
     gh_url: https://github.com/knex/knex
+  - name: zoxide
+    gh_url: https://github.com/ajeetdsouza/zoxide
 
   # Non-GitHub projects below, manually updated
 
