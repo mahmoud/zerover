@@ -263,6 +263,8 @@ projects:
     gh_url: https://github.com/paperjs/paper.js
   - name: Knex.js
     gh_url: https://github.com/knex/knex
+  - name: three.js
+    gh_url: https://github.com/mrdoob/three.js
 
   # Non-GitHub projects below, manually updated
 
