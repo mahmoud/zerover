@@ -428,3 +428,10 @@ projects:
   - name: esbuild
     url: https://esbuild.github.io
     gh_url: https://github.com/evanw/esbuild
+  - name: suhosin
+    url: https://suhosin.org/
+    _gh_url: https://github.com/sektioneins/suhosin
+    first_release_version: 0.9.1
+    first_release_date: 2006-09-16T00:00:00
+    latest_release_version: 0.9.38
+    latest_release_date: 2015-05-21T00:00:00
