@@ -229,6 +229,8 @@ projects:
     gh_url: https://github.com/Stellarium/stellarium
   - name: xonsh
     gh_url: https://github.com/xonsh/xonsh
+  - name: ccls
+    gh_url: https://github.com/MaskRay/ccls
   - name: Teeworlds
     url: https://teeworlds.com/
     gh_url: https://github.com/teeworlds/teeworlds
