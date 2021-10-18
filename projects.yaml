@@ -229,6 +229,44 @@ projects:
     gh_url: https://github.com/Stellarium/stellarium
   - name: xonsh
     gh_url: https://github.com/xonsh/xonsh
+  - name: Teeworlds
+    url: https://teeworlds.com/
+    gh_url: https://github.com/teeworlds/teeworlds
+  - name: Numba
+    url: https://numba.pydata.org
+    gh_url: https://github.com/numba/numba
+    reason: Widely used throughout the PyData and Python scientific computing ecosystems.
+  - name: Semgrep
+    url: https://semgrep.dev/
+    gh_url: https://github.com/returntocorp/semgrep
+  - name: XMonad
+    url: https://xmonad.org/
+    gh_url: https://github.com/xmonad/xmonad
+  - name: Datasette
+    url: https://datasette.io/
+    gh_url: https://github.com/simonw/datasette
+  - name: Tendermint
+    gh_url: https://github.com/tendermint/tendermint/
+  - name: Cosmos-sdk
+    gh_url: https://github.com/cosmos/cosmos-sdk
+  - name: LocalStack
+    url: https://localstack.cloud
+    gh_url: https://github.com/localstack/localstack
+    reason: 250k+ daily Docker pulls in 2021
+  - name: Elm Language
+    gh_url: https://github.com/elm/compiler
+    reason: Two years ago, wrote, Elm 0.19.1 will be stable for quite some time. Also, Enforces SemVer at a package level, does not follow it itself.
+  - name: globalid (ruby)
+    gh_url: https://github.com/rails/globalid
+    reason: Dependency of Rails since 2014, still 0.5.2 in 2021
+  - name: winapi-rs (Rust)
+    gh_url: https://github.com/retep998/winapi-rs
+  - name: Paper.js
+    gh_url: https://github.com/paperjs/paper.js
+  - name: Knex.js
+    gh_url: https://github.com/knex/knex
+  - name: zoxide
+    gh_url: https://github.com/ajeetdsouza/zoxide
 
   # Non-GitHub projects below, manually updated
 
@@ -358,3 +396,56 @@ projects:
     release_count: 55  # ignore github saying >250 releases, ~80% of them are some kind of weird backup non-releases
     release_count_zv: 55
     star_count: 4912
+  - name: OpenStreetMap API/website
+    url: https://openstreetmap.org/
+    wp_url: https://en.wikipedia.org/wiki/OpenStreetMap
+    _gh_url: https://github.com/openstreetmap/openstreetmap-website  # Dosen't use releases on GitHub
+    reason: "Open map data used almost anywhere there's a non-Google map."
+    first_release_version: 0.3
+    first_release_date: 2004-8-9
+    latest_release_version: 0.6 February 2021  # See https://wiki.openstreetmap.org/wiki/API_v0.6#Semantic_versioning
+    latest_release_date: 2021-02-01
+    release_count: 14  # 0.3 → 0.6 and then the dated changes to 0.6
+  - name: three.js
+    url: https://threejs.org/
+    _gh_url: https://github.com/mrdoob/three.js
+    first_release_version: 0.1  # github releases are r1-r130
+    first_release_date: 2013-07-03T11:49:48
+    latest_release_version: 0.130
+    latest_release_date: 2021-10-04T18:49:30
+    release_count: 133
+    release_count_zc: 133
+    star_count: 75000
+  - name: yup
+    url: https://www.npmjs.com/package/yup
+    gh_url: https://github.com/jquense/yup
+    reason: 7+ years of history, over 2M weekly downloads on npm
+  - name: google-api-client (ruby)
+    url: https://rubygems.org/gems/google-api-client/
+    _gh_url: https://github.com/googleapis/google-api-ruby-client
+    first_release_version: 0.1.0
+    first_release_date: 2010-10-14
+    latest_release_version: 0.53.0
+    latest_release_date: 2021-01-18
+    release_count: 201
+    star_count: 2400
+  - name: rand
+    url: https://rust-random.github.io/book/
+    gh_url: https://github.com/rust-random/rand
+    reason: The most downloaded Rust crate
+    first_release_version: 0.1.1
+    first_release_date: 2015-02-03
+    latest_release_version: 0.8.4
+    latest_release_date: 2021-06-15
+    release_count: 67
+    star_count: 881
+  - name: esbuild
+    url: https://esbuild.github.io
+    gh_url: https://github.com/evanw/esbuild
+  - name: suhosin
+    url: https://suhosin.org/
+    _gh_url: https://github.com/sektioneins/suhosin
+    first_release_version: 0.9.1
+    first_release_date: 2006-09-16T00:00:00
+    latest_release_version: 0.9.38
+    latest_release_date: 2015-05-21T00:00:00
