@@ -271,6 +271,9 @@ projects:
     gh_url: https://github.com/knex/knex
   - name: zoxide
     gh_url: https://github.com/ajeetdsouza/zoxide
+  - name: Englightenment
+    url: http://www.enlightenment.org/
+    gh_url: https://github.com/Enlightenment/enlightenment
 
   # Non-GitHub projects below, manually updated
 
