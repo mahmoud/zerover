@@ -425,6 +425,16 @@ projects:
     latest_release_date: 2021-01-18
     release_count: 201
     star_count: 2400
+  - name: rand
+    url: https://rust-random.github.io/book/
+    gh_url: https://github.com/rust-random/rand
+    reason: The most downloaded Rust crate
+    first_release_version: 0.1.1
+    first_release_date: 2015-02-03
+    latest_release_version: 0.8.4
+    latest_release_date: 2021-06-15
+    release_count: 67
+    star_count: 881
   - name: esbuild
     url: https://esbuild.github.io
     gh_url: https://github.com/evanw/esbuild
