@@ -408,9 +408,10 @@ projects:
     first_release_version: 0.1  # github releases are r1-r130
     first_release_date: 2013-07-03T11:49:48
     latest_release_version: 0.130
-    latest_release_date: 2021-07-05T18:49:30
-    release_count: 130
-    release_count_zc: 130
+    latest_release_date: 2021-10-04T18:49:30
+    release_count: 133
+    release_count_zc: 133
+    star_count: 75000
   - name: yup
     url: https://www.npmjs.com/package/yup
     gh_url: https://github.com/jquense/yup
