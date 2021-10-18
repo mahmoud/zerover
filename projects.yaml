@@ -425,3 +425,6 @@ projects:
     latest_release_date: 2021-01-18
     release_count: 201
     star_count: 2400
+  - name: esbuild
+    url: https://esbuild.github.io
+    gh_url: https://github.com/evanw/esbuild
