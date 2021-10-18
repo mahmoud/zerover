@@ -68,7 +68,7 @@ def _get_gh_json(url):
     rate_rem = int(resp.info().dict.get('x-ratelimit-remaining', '-1'))
 
     if not isinstance(res, list) or not res:
-        print ' (( %s requests remaining' % rate_rem
+        print(' (( %s requests remaining' % rate_rem)
         return res
     page = 2
     ret = res
@@ -83,7 +83,7 @@ def _get_gh_json(url):
         ret.extend(res)
         page += 1
     rate_rem = int(resp.info().dict.get('x-ratelimit-remaining', '-1'))
-    print ' (( %s requests remaining' % rate_rem
+    print(' (( %s requests remaining' % rate_rem)
     return ret
 
 
@@ -141,7 +141,7 @@ def get_gh_project_info(info):
     zv_releases = [rel for rel in vtags_data
                    if match_vtag(rel['name'], PREFIXES).group('major') == '0']
     ret['release_count_zv'] = len(zv_releases)
-    print ' .. %s releases, %s 0ver' % (ret['release_count'], ret['release_count_zv'])
+    print(' .. %s releases, %s 0ver' % (ret['release_count'], ret['release_count_zv']))
 
     is_zerover = latest_release in zv_releases
 
@@ -174,7 +174,7 @@ def fetch_entries(projects):
     entries = []
 
     for p in projects:
-        print 'processing', p['name']
+        print('processing', p['name'])
         info = dict(p)
         if info.get('skip'):
             continue
