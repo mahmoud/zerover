@@ -231,6 +231,8 @@ projects:
     gh_url: https://github.com/xonsh/xonsh
   - name: ccls
     gh_url: https://github.com/MaskRay/ccls
+  - name: Colyseus
+    gh_url: https://github.com/colyseus/colyseus
   - name: Teeworlds
     url: https://teeworlds.com/
     gh_url: https://github.com/teeworlds/teeworlds
