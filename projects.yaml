@@ -271,13 +271,13 @@ projects:
     gh_url: https://github.com/knex/knex
   - name: zoxide
     gh_url: https://github.com/ajeetdsouza/zoxide
-  - name: Enlightenment
-    url: http://www.enlightenment.org/
-    gh_url: https://github.com/Enlightenment/enlightenment
   - name: OpenRC
     gh_url: https://github.com/OpenRC/openrc
   - name: Notary
     gh_url: https://github.com/notaryproject/notary
+  - name: Enlightenment
+    url: http://www.enlightenment.org/
+    gh_url: https://github.com/Enlightenment/enlightenment
 
   # Non-GitHub projects below, manually updated
 
