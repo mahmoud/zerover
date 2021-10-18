@@ -227,6 +227,8 @@ projects:
     gh_url: https://github.com/digitalbazaar/forge
   - name: Stellarium
     gh_url: https://github.com/Stellarium/stellarium
+  - name: xonsh
+    gh_url: https://github.com/xonsh/xonsh
   - name: Teeworlds
     url: https://teeworlds.com/
     gh_url: https://github.com/teeworlds/teeworlds
