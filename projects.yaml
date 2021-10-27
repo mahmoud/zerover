@@ -460,3 +460,10 @@ projects:
     first_release_date: 2006-09-16T00:00:00
     latest_release_version: 0.9.38
     latest_release_date: 2015-05-21T00:00:00
+  - name: CalendarKit
+    url: https://github.com/richardtop/CalendarKit
+    _gh_url: https://github.com/richardtop/CalendarKit
+    first_release_version: 0.1.0
+    first_release_date: 2017-01-26T00:00:00
+    latest_release_version: 1.0.14
+    latest_release_date: 2021-10-22T00:00:00
