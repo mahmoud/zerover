@@ -460,3 +460,13 @@ projects:
     first_release_date: 2006-09-16T00:00:00
     latest_release_version: 0.9.38
     latest_release_date: 2015-05-21T00:00:00
+  - name: nw.js
+    reason: Very popular Electron alternative.
+    url: https://nwjs.io/
+    _gh_url: https://github.com/nwjs/nw.js
+    first_release_version: 0.6.0
+    first_release_date: 2013-06-17
+    latest_release_version: 0.58.0
+    latest_release_date: 2021-10-25
+    release_count: 292
+    star_count: 38500
