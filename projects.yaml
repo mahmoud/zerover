@@ -278,7 +278,9 @@ projects:
   - name: Enlightenment
     url: http://www.enlightenment.org/
     gh_url: https://github.com/Enlightenment/enlightenment
-
+  - name: Stylus
+    url: https://stylus-lang.com/
+    gh_url: https://github.com/stylus/stylus
   # Non-GitHub projects below, manually updated
 
   - name: ASCEND
