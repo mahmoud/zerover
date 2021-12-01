@@ -23,9 +23,6 @@ projects:
     reason: "Official dependency management tool from Golang. To quote the first line of the readme, 'dep is safe for production use.'"
   - name: Apache Kafka
     gh_url: https://github.com/apache/kafka
-  - name: Minikube
-    gh_url: https://github.com/kubernetes/minikube
-    reason: Official kubernetes project with a logo, but no major release.
   - name: Arrow (Python)
     gh_url: https://github.com/crsmithdev/arrow
   - name: NeoVIM
