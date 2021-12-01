@@ -278,6 +278,10 @@ projects:
   - name: Enlightenment
     url: http://www.enlightenment.org/
     gh_url: https://github.com/Enlightenment/enlightenment
+  - name: Neovim
+    url: https://neovim.io/
+    gh_url: https://github.com/neovim/neovim
+    reason: Vim fork aimed at extensibility and usability
 
   # Non-GitHub projects below, manually updated
 
