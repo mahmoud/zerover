@@ -279,9 +279,9 @@ projects:
     url: http://www.enlightenment.org/
     gh_url: https://github.com/Enlightenment/enlightenment
   - name: mpv
-    url: https://github.com/mpv-player/mpv
+    gh_url: https://github.com/mpv-player/mpv
   - name: PyTransitions
-    url: https://github.com/pytransitions/transitions
+    gh_url: https://github.com/pytransitions/transitions
   - name: Stylus
     url: https://stylus-lang.com/
     gh_url: https://github.com/stylus/stylus

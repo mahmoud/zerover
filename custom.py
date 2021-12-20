@@ -63,8 +63,7 @@ def tooltipped(content, tip):
 def _zv_to_htmltable(entries):
     headers = ['Project', 'Stars', 'First Released', 'Releases', 'Current Version', '0ver years']
 
-    rows = []
-    for entry in entries:
+    def _get_row(entry):
         irel_dt = isoparse(entry['first_release_date'].replace('Z', ''))  # TODO: boltons Z handling
         lrel_dt, zv_streak = None, None
         if entry.get('latest_release_date'):
@@ -85,6 +84,15 @@ def _zv_to_htmltable(entries):
 
         row.append('%s' % zv_streak_years)
 
+        return row
+
+    rows = []
+    for entry in entries:
+        try:
+            row = _get_row(entry)
+        except Exception:
+            print('failed to load entry: %r' % entry)
+            raise
         rows.append(row)
 
     table = ZVTable.from_data(rows, headers=headers)
