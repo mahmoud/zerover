@@ -278,6 +278,8 @@ projects:
   - name: Enlightenment
     url: http://www.enlightenment.org/
     gh_url: https://github.com/Enlightenment/enlightenment
+  - name: mpv
+    url: https://github.com/mpv-player/mpv
 
   # Non-GitHub projects below, manually updated
 
