@@ -26,6 +26,7 @@ PREFIXES = ['v',     # common
             'tor-',  # tor
             'clamav-',  # ...
             'streamex-',  # ...
+            'nw-v',  # nw.js
 ]
 
 
