@@ -460,3 +460,11 @@ projects:
     first_release_date: 2006-09-16T00:00:00
     latest_release_version: 0.9.38
     latest_release_date: 2015-05-21T00:00:00
+  - name: Pure Data
+    wp_url: https://en.wikipedia.org/wiki/Pure_Data
+    _gh_url: https://github.com/pure-data/pure-data/
+    url: https://puredata.info/
+    first_release_date: 1996-06-01
+    first_release_version: 0.1
+    latest_version: 0.52-1
+    latest_release_date: 2021-12-19
