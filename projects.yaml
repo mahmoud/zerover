@@ -280,6 +280,8 @@ projects:
     gh_url: https://github.com/Enlightenment/enlightenment
   - name: mpv
     url: https://github.com/mpv-player/mpv
+  - name: PyTransitions
+    url: https://github.com/pytransitions/transitions
 
   # Non-GitHub projects below, manually updated
 
