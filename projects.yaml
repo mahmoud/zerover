@@ -475,5 +475,12 @@ projects:
     url: https://puredata.info/
     first_release_date: 1996-06-01
     first_release_version: 0.1
-    latest_version: 0.52-1
+    latest_release_version: 0.52-1
     latest_release_date: 2021-12-19
+  - name: XeTeX
+    wp_url: https://en.wikipedia.org/wiki/XeTeX
+    url: http://xetex.sourceforge.net/
+    first_release_date: 2004-04-07
+    first_release_version: 0.3
+    latest_release_version: 0.999992
+    latest_release_date: 2020-01-20
