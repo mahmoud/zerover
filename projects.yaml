@@ -287,6 +287,9 @@ projects:
     gh_url: https://github.com/stylus/stylus
   - name: nw.js
     gh_url: https://github.com/nwjs/nw.js
+  - name: Video Speed Controller
+    gh_url: https://github.com/igrigorik/videospeed
+    url: https://chrome.google.com/webstore/detail/video-speed-controller/nffaoalbilbmmfgbnbgppjihopabppdk
 
   # Non-GitHub projects below, manually updated
 
@@ -484,10 +487,3 @@ projects:
     first_release_version: 0.3
     latest_release_version: 0.999992
     latest_release_date: 2020-01-20
-  - name: Video Speed Controller
-    gh_url: https://github.com/igrigorik/videospeed
-    url: https://chrome.google.com/webstore/detail/video-speed-controller/nffaoalbilbmmfgbnbgppjihopabppdk
-    first_release_date: 2014-03-02
-    first_release_version: 0.1.0
-    latest_release_version: 0.7.1
-    latest_release_date: 2021-09-28
