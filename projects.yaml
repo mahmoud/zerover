@@ -290,6 +290,9 @@ projects:
   - name: Video Speed Controller
     gh_url: https://github.com/igrigorik/videospeed
     url: https://chrome.google.com/webstore/detail/video-speed-controller/nffaoalbilbmmfgbnbgppjihopabppdk
+  - name: Pyre
+    url: https://pyre-check.org
+    gh_url: https://github.com/facebook/pyre-check
 
   # Non-GitHub projects below, manually updated
 
