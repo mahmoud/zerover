@@ -191,9 +191,6 @@ projects:
     gh_url: https://github.com/ruby/rake
     emeritus: true
     reason: The pioneer of the zero-to-double-digits jump.
-  - name: Chocolatey
-    url: https://chocolatey.org/
-    gh_url: https://github.com/chocolatey/choco
   - name: Perkeep
     gh_url: https://github.com/perkeep/perkeep
   - name: asn1c
