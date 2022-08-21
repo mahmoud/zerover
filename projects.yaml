@@ -293,6 +293,9 @@ projects:
   - name: Pyre
     url: https://pyre-check.org
     gh_url: https://github.com/facebook/pyre-check
+  - name: pbkit
+    url: https://pbkit.dev/
+    gh_url: https://github.com/pbkit/pbkit
 
   # Non-GitHub projects below, manually updated
 
