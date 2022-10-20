@@ -293,6 +293,9 @@ projects:
   - name: Pyre
     url: https://pyre-check.org
     gh_url: https://github.com/facebook/pyre-check
+  - name: Zig
+    url: https://ziglang.org
+    gh_url: https://github.com/ziglang/zig
 
   # Non-GitHub projects below, manually updated
 
