@@ -155,8 +155,6 @@ projects:
     gh_url: https://github.com/qtile/qtile
   - name: autokey
     gh_url: https://github.com/autokey/autokey
-  - name: ClamAV Antivirus
-    gh_url: https://github.com/Cisco-Talos/clamav-devel
   - name: bup
     gh_url: https://github.com/bup/bup
   - name: You-Get
