@@ -293,6 +293,8 @@ projects:
   - name: Pyre
     url: https://pyre-check.org
     gh_url: https://github.com/facebook/pyre-check
+  - name: Ruff
+    gh_url: https://github.com/charliermarsh/ruff
 
   # Non-GitHub projects below, manually updated
 
