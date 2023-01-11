@@ -293,6 +293,12 @@ projects:
   - name: Pyre
     url: https://pyre-check.org
     gh_url: https://github.com/facebook/pyre-check
+  - name: FreeCol
+    url: https://www.freecol.org/
+    first_release_version: 0.1.0
+    first_release_date: 2003-01-02
+    gh_url: https://github.com/FreeCol/freecol
+    emeritus: true
 
   # Non-GitHub projects below, manually updated
 
