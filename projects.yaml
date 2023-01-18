@@ -296,6 +296,7 @@ projects:
   - name: Qiskit
     url: https://qiskit.org/
     gh_url: https://github.com/Qiskit/qiskit
+    reason: Qiskit is the most popular quantum computing SDK according to Unitary Fund Quantum Open Source Software survey in 2022.
 
   # Non-GitHub projects below, manually updated
 
