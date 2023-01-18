@@ -293,6 +293,9 @@ projects:
   - name: Pyre
     url: https://pyre-check.org
     gh_url: https://github.com/facebook/pyre-check
+  - name: Qiskit
+    url: https://qiskit.org/
+    gh_url: https://github.com/Qiskit/qiskit
 
   # Non-GitHub projects below, manually updated
 
