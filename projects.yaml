@@ -290,6 +290,9 @@ projects:
   - name: Pyre
     url: https://pyre-check.org
     gh_url: https://github.com/facebook/pyre-check
+  - name: graphile-worker
+    url: https://www.graphile.org/
+    gh_url: https://github.com/graphile/worker
 
   # Non-GitHub projects below, manually updated
 
