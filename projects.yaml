@@ -297,6 +297,9 @@ projects:
   - name: graphile-worker
     url: https://www.graphile.org/
     gh_url: https://github.com/graphile/worker
+  - name: Monero
+    url: https://getmonero.org
+    gh_url: https://github.com/monero-project/monero
 
   # Non-GitHub projects below, manually updated
 
