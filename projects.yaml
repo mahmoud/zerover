@@ -515,3 +515,11 @@ projects:
     first_release_version: 0.1.0
     latest_release_date: 2023-06-26
     latest_release_version: 0.3.72
+  - name: gettext
+    wp_url: https://en.wikipedia.org/wiki/Gettext
+    url: https://www.gnu.org/software/gettext/
+    first_release_date: 1987-01-01  # https://web.archive.org/web/20120323032211/http://compgroups.net/comp.unix.solaris/History-of-gettext-et-al
+    first_release_version: 0.1  # earliest version still on gnu.org is 0.10.40 from 2001-09-15
+    latest_release_date: 2023-06-17
+    latest_release_version: 0.22
+    
