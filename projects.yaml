@@ -300,6 +300,10 @@ projects:
   - name: Monero
     url: https://getmonero.org
     gh_url: https://github.com/monero-project/monero
+  - name: MultiMC Launcher
+    url: https://multimc.org/
+    gh_url: https://github.com/MultiMC/Launcher
+    reason: Prominent launcher for maintaining multiple instances of MineCraft.
 
   # Non-GitHub projects below, manually updated
 
