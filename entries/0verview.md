@@ -86,23 +86,25 @@ business-critical products, sold and supported.
 Versioning schemes like [SemVer][semver] and [CalVer][calver] attempt
 to guide developers away from the natural light of ZeroVer. In a
 surprising and exciting move, the creator of SemVer
-[himself][toml_tom] has seen the light.
+[himself][toml_tom] saw the light of ZeroVer with his new project, [TOML][toml].
 
-Aside from [one small typo in 2013][toml_2013], his new project, TOML,
-has been a model ZeroVer user. These days TOML [advertises dozens of
-public implementations][toml_impls], many of which missed the ZeroVer
-message. They're probably caught up in Tom's own words from 2011:
+From 2013 until 2021, TOML was a model ZeroVer user, barely cresting 
+[half a version][toml_2018]. Unfortunately, Tom's passing of the 
+TOML maintainer torch resulted in the confusing situation 
+where new maintainers reverted to Tom's outdated 2011-era versioning philosophy:
 
 > *"If your software is being used in production, it should probably already be 1.0.0."*
 
-No doubt older and wiser, [Tom][toml_tom] has shown great versioning
-fortitude in averting a rise in TOML's major version and promoting
-ZeroVer conventions. <span title="Thom">Thanks Tom</span>!
+Despite this turn, the ZeroVer academy salute [Tom][toml_tom] for showing 
+great versioning fortitude in forestalling TOML's major version uptick 
+for so long. <span title="Thom">Thanks Tom</span>!
 
 [semver]: http://semver.org/
 [calver]: https://calver.org/
+[toml]: https://github.com/toml-lang/toml/
 [toml_tom]: http://github.com/mojombo
 [toml_2013]: https://github.com/toml-lang/toml/releases/tag/v0.1.0
+[toml_2018]: https://github.com/toml-lang/toml/releases/tag/v0.5.0
 [toml_impls]: https://github.com/toml-lang/toml/wiki#implementations
 
 ## Apache Kafka

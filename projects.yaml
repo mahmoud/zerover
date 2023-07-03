@@ -52,9 +52,6 @@ projects:
   - name: Werkzeug
     gh_url: https://github.com/pallets/werkzeug
     reason: Depended on by Flask and many other web frameworks.
-  - name: docutils
-    gh_url: https://github.com/docutils-mirror/docutils
-    reason: Depended on by Sphinx and most of the content on ReadTheDocs. The reference implementation of ReStructuredText, the inspiration for Markdown.
   - name: Cython
     gh_url: https://github.com/cython/cython
   - name: TOML
@@ -297,6 +294,9 @@ projects:
     url: https://qiskit.org/
     gh_url: https://github.com/Qiskit/qiskit
     reason: Qiskit is the most popular quantum computing SDK according to Unitary Fund Quantum Open Source Software survey in 2022.
+  - name: graphile-worker
+    url: https://www.graphile.org/
+    gh_url: https://github.com/graphile/worker
 
   # Non-GitHub projects below, manually updated
 
@@ -314,6 +314,13 @@ projects:
     first_release_version: 0.3.1
     latest_release_date: 2016-09-23T14:51:58
     latest_release_version: 0.5.9.1
+  - name: docutils
+    repo_url: https://github.com/docutils/docutils
+    reason: Depended on by Sphinx and most of the content on ReadTheDocs. The reference implementation of ReStructuredText, the inspiration for Markdown.
+    first_release_date: 2002-01-01
+    first_release_version: 0.1
+    latest_release_version: 0.19
+    latest_release_date: 2022-07-05
   - name: Inkscape
     url: https://launchpad.net/inkscape
     emeritus: true
