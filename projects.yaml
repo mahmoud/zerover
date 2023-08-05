@@ -304,6 +304,10 @@ projects:
     url: https://multimc.org/
     gh_url: https://github.com/MultiMC/Launcher
     reason: Prominent launcher for maintaining multiple instances of MineCraft.
+  - name: Flipper
+    url: https://www.flippercloud.io/docs
+    gh_url: https://github.com/flippercloud/flipper
+    reason: The main gem for managing feature flags in Ruby with 44 million downloads.
 
   # Non-GitHub projects below, manually updated
 
