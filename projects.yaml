@@ -308,6 +308,9 @@ projects:
     url: https://www.flippercloud.io/docs
     gh_url: https://github.com/flippercloud/flipper
     reason: The main gem for managing feature flags in Ruby with 44 million downloads.
+  - name: CorsixTH
+    url: https://corsixth.com
+    gh_url: https://github.com/CorsixTH/CorsixTH
 
   # Non-GitHub projects below, manually updated
 
