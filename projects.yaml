@@ -311,6 +311,10 @@ projects:
   - name: CorsixTH
     url: https://corsixth.com
     gh_url: https://github.com/CorsixTH/CorsixTH
+  - name: Apache Druid
+    url: https://druid.apache.org/
+    gh_url: https://github.com/apache/druid/
+    emeritus: true
 
   # Non-GitHub projects below, manually updated
 
