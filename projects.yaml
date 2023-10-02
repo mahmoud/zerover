@@ -311,6 +311,9 @@ projects:
   - name: CorsixTH
     url: https://corsixth.com
     gh_url: https://github.com/CorsixTH/CorsixTH
+  - name: seaborn
+    url: https://seaborn.pydata.org/
+    gh_url: https://github.com/mwaskom/seaborn
 
   # Non-GitHub projects below, manually updated
 
