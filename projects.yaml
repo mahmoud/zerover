@@ -290,6 +290,10 @@ projects:
   - name: Pyre
     url: https://pyre-check.org
     gh_url: https://github.com/facebook/pyre-check
+  - name: python-dotenv
+    url: https://github.com/theskumar/python-dotenv
+    gh_url: https://github.com/theskumar/python-dotenv
+    reason: 8 years under development, core part of many libraries, just got to 0.20.0
   - name: Zig
     url: https://ziglang.org
     gh_url: https://github.com/ziglang/zig
