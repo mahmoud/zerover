@@ -290,6 +290,8 @@ projects:
   - name: Pyre
     url: https://pyre-check.org
     gh_url: https://github.com/facebook/pyre-check
+  - name: Ruff
+    gh_url: https://github.com/astral-sh/ruff
   - name: Qiskit
     url: https://qiskit.org/
     gh_url: https://github.com/Qiskit/qiskit
@@ -304,7 +306,17 @@ projects:
     url: https://multimc.org/
     gh_url: https://github.com/MultiMC/Launcher
     reason: Prominent launcher for maintaining multiple instances of MineCraft.
-
+  - name: Flipper
+    url: https://www.flippercloud.io/docs
+    gh_url: https://github.com/flippercloud/flipper
+    reason: The main gem for managing feature flags in Ruby with 44 million downloads.
+  - name: CorsixTH
+    url: https://corsixth.com
+    gh_url: https://github.com/CorsixTH/CorsixTH
+  - name: seaborn
+    url: https://seaborn.pydata.org/
+    gh_url: https://github.com/mwaskom/seaborn
+    
   # Non-GitHub projects below, manually updated
 
   - name: ASCEND
@@ -530,4 +542,5 @@ projects:
     first_nonzv_release_date: 2008-06-17
     last_zv_release_version: 0.9.61
     emeritus: true
+
     
