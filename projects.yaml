@@ -52,9 +52,6 @@ projects:
   - name: Werkzeug
     gh_url: https://github.com/pallets/werkzeug
     reason: Depended on by Flask and many other web frameworks.
-  - name: docutils
-    gh_url: https://github.com/docutils-mirror/docutils
-    reason: Depended on by Sphinx and most of the content on ReadTheDocs. The reference implementation of ReStructuredText, the inspiration for Markdown.
   - name: Cython
     gh_url: https://github.com/cython/cython
   - name: TOML
@@ -296,6 +293,58 @@ projects:
   - name: MultiMC
     gh_url: https://github.com/MultiMC/Launcher
     url: https://multimc.org/
+  - name: brick/math
+    gh_url: https://github.com/brick/math
+  - name: Tachiyomi
+    url: https://tachiyomi.org/
+    gh_url: https://github.com/tachiyomiorg/tachiyomi
+    reason: Rewrite is supposed to release as 1.0.0, but it has been stale and in progress for several years with no finish line in sight.
+  - name: python-dotenv
+    url: https://github.com/theskumar/python-dotenv
+    gh_url: https://github.com/theskumar/python-dotenv
+    reason: 8 years under development, core part of many libraries, just got to 0.20.0
+  - name: Zig
+    url: https://ziglang.org
+    gh_url: https://github.com/ziglang/zig
+  - name: FreeCol
+    url: https://www.freecol.org/
+    gh_url: https://github.com/FreeCol/freecol
+  - name: Ruff
+    gh_url: https://github.com/astral-sh/ruff
+  - name: Qiskit
+    url: https://qiskit.org/
+    gh_url: https://github.com/Qiskit/qiskit
+    reason: Qiskit is the most popular quantum computing SDK according to Unitary Fund Quantum Open Source Software survey in 2022.
+  - name: graphile-worker
+    url: https://www.graphile.org/
+    gh_url: https://github.com/graphile/worker
+  - name: Monero
+    url: https://getmonero.org
+    gh_url: https://github.com/monero-project/monero
+  - name: MultiMC Launcher
+    url: https://multimc.org/
+    gh_url: https://github.com/MultiMC/Launcher
+    reason: Prominent launcher for maintaining multiple instances of MineCraft.
+  - name: Factor
+    url: https://factorcode.org/
+    gh_url: https://github.com/factor/factor
+    reason: A concatenative stack-based programming language.
+  - name: Flipper
+    url: https://www.flippercloud.io/docs
+    gh_url: https://github.com/flippercloud/flipper
+    reason: The main gem for managing feature flags in Ruby with 44 million downloads.
+  - name: CorsixTH
+    url: https://corsixth.com
+    gh_url: https://github.com/CorsixTH/CorsixTH
+  - name: Apache Druid
+    url: https://druid.apache.org/
+    gh_url: https://github.com/apache/druid/
+  - name: seaborn
+    url: https://seaborn.pydata.org/
+    gh_url: https://github.com/mwaskom/seaborn
+  - name: Cartopy
+    url: https://scitools.org.uk/cartopy/docs/latest/
+    gh_url: https://github.com/SciTools/cartopy
 
   # Non-GitHub projects below, manually updated
 
@@ -313,6 +362,13 @@ projects:
     first_release_version: 0.3.1
     latest_release_date: 2016-09-23T14:51:58
     latest_release_version: 0.5.9.1
+  - name: docutils
+    repo_url: https://github.com/docutils/docutils
+    reason: Depended on by Sphinx and most of the content on ReadTheDocs. The reference implementation of ReStructuredText, the inspiration for Markdown.
+    first_release_date: 2002-01-01
+    first_release_version: 0.1
+    latest_release_version: 0.19
+    latest_release_date: 2022-07-05
   - name: Inkscape
     url: https://launchpad.net/inkscape
     emeritus: true
@@ -493,3 +549,27 @@ projects:
     first_release_version: 0.3
     latest_release_version: 0.999992
     latest_release_date: 2020-01-20
+  - name: PipeWire
+    wp_url: https://en.wikipedia.org/wiki/PipeWire
+    url: https://pipewire.org/
+    first_release_date: 2017-06-20
+    first_release_version: 0.1.0
+    latest_release_date: 2023-06-26
+    latest_release_version: 0.3.72
+  - name: gettext
+    wp_url: https://en.wikipedia.org/wiki/Gettext
+    url: https://www.gnu.org/software/gettext/
+    first_release_date: 1987-01-01  # https://web.archive.org/web/20120323032211/http://compgroups.net/comp.unix.solaris/History-of-gettext-et-al
+    first_release_version: 0.1  # earliest version still on gnu.org is 0.10.40 from 2001-09-15
+    latest_release_date: 2023-06-17
+    latest_release_version: 0.22
+  - name: Wine
+    wp_url: https://en.wikipedia.org/wiki/Wine_(software)
+    url: https://www.winehq.org/
+    first_release_date: 1993-06-29
+    first_release_version: 0.0.2
+    first_nonzv_release_date: 2008-06-17
+    last_zv_release_version: 0.9.61
+    emeritus: true
+
+    
