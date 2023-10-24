@@ -306,6 +306,10 @@ projects:
     url: https://multimc.org/
     gh_url: https://github.com/MultiMC/Launcher
     reason: Prominent launcher for maintaining multiple instances of MineCraft.
+  - name: Factor
+    url: https://factorcode.org/
+    gh_url: https://github.com/factor/factor
+    reason: A concatenative stack-based programming language.
   - name: Flipper
     url: https://www.flippercloud.io/docs
     gh_url: https://github.com/flippercloud/flipper
