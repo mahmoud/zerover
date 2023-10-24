@@ -316,6 +316,9 @@ projects:
   - name: seaborn
     url: https://seaborn.pydata.org/
     gh_url: https://github.com/mwaskom/seaborn
+  - name: Cartopy
+    url: https://scitools.org.uk/cartopy/docs/latest/
+    gh_url: https://github.com/SciTools/cartopy
     
   # Non-GitHub projects below, manually updated
 
