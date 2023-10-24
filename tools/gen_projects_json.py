@@ -8,7 +8,7 @@ import sys
 import json
 import time
 import base64
-import urllib2
+import urllib.request
 import datetime
 from pprint import pprint
 
@@ -53,20 +53,22 @@ def version_key(version, prefixes=PREFIXES):
 
 
 def _get_gh_json(url):
-    """"
+    """
     Get paginated results from GitHub, possibly authorized based on
     GH_USER/GH_TOKEN env vars.
     """
     gh_user = os.getenv('GH_USER', '')
     gh_token = os.getenv('GH_TOKEN', '')
-    req = urllib2.Request(url)
+    req = urllib.request.Request(url)
     if gh_user and gh_token:
-        auth_header_val = 'Basic %s' % base64.b64encode('%s:%s' % (gh_user, gh_token))
+        auth_str = '%s:%s' % (gh_user, gh_token)
+        auth_bytes = auth_str.encode('ascii')
+        auth_header_val = 'Basic %s' % base64.b64encode(auth_bytes).decode('ascii')
         req.add_header('Authorization', auth_header_val)
-    resp = urllib2.urlopen(req)
+    resp = urllib.request.urlopen(req)
     body = resp.read()
     res = json.loads(body)
-    rate_rem = int(resp.info().dict.get('x-ratelimit-remaining', '-1'))
+    rate_rem = int(resp.info().get('x-ratelimit-remaining', '-1'))
 
     if not isinstance(res, list) or not res:
         print(' (( %s requests remaining' % rate_rem)
@@ -75,15 +77,15 @@ def _get_gh_json(url):
     ret = res
     while res:
         paged_url = url + '?page=%s' % page
-        req = urllib2.Request(paged_url)
+        req = urllib.request.Request(paged_url)
         if gh_user and gh_token:
             req.add_header('Authorization', auth_header_val)
-        resp = urllib2.urlopen(req)
+        resp = urllib.request.urlopen(req)
         body = resp.read()
         res = json.loads(body)
         ret.extend(res)
         page += 1
-    rate_rem = int(resp.info().dict.get('x-ratelimit-remaining', '-1'))
+    rate_rem = int(resp.info().get('x-ratelimit-remaining', '-1'))
     print(' (( %s requests remaining' % rate_rem)
     return ret
 
@@ -232,7 +234,7 @@ def _main():
            'gen_date': datetime.datetime.utcnow().isoformat(),
            'gen_duration': time.time() - start_time}
 
-    with atomic_save(PROJ_PATH + '/projects.json') as f:
+    with atomic_save(PROJ_PATH + '/projects.json', text_mode=True) as f:
         f.write(json.dumps(res, indent=2, sort_keys=True, default=_json_default))
 
     return
