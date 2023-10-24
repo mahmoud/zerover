@@ -294,7 +294,7 @@ projects:
     url: https://pyre-check.org
     gh_url: https://github.com/facebook/pyre-check
   - name: Ruff
-    gh_url: https://github.com/charliermarsh/ruff
+    gh_url: https://github.com/astral-sh/ruff
 
   # Non-GitHub projects below, manually updated
 
