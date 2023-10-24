@@ -290,6 +290,8 @@ projects:
   - name: Pyre
     url: https://pyre-check.org
     gh_url: https://github.com/facebook/pyre-check
+  - name: brick/math
+    gh_url: https://github.com/brick/math
   - name: Tachiyomi
     url: https://tachiyomi.org/
     gh_url: https://github.com/tachiyomiorg/tachiyomi
