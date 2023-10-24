@@ -290,6 +290,8 @@ projects:
   - name: Pyre
     url: https://pyre-check.org
     gh_url: https://github.com/facebook/pyre-check
+  - name: Ruff
+    gh_url: https://github.com/astral-sh/ruff
   - name: Qiskit
     url: https://qiskit.org/
     gh_url: https://github.com/Qiskit/qiskit
@@ -308,6 +310,22 @@ projects:
     url: https://factorcode.org/
     gh_url: https://github.com/factor/factor
     reason: A concatenative stack-based programming language.
+  - name: Flipper
+    url: https://www.flippercloud.io/docs
+    gh_url: https://github.com/flippercloud/flipper
+    reason: The main gem for managing feature flags in Ruby with 44 million downloads.
+  - name: CorsixTH
+    url: https://corsixth.com
+    gh_url: https://github.com/CorsixTH/CorsixTH
+  - name: Apache Druid
+    url: https://druid.apache.org/
+    gh_url: https://github.com/apache/druid/
+  - name: seaborn
+    url: https://seaborn.pydata.org/
+    gh_url: https://github.com/mwaskom/seaborn
+  - name: Cartopy
+    url: https://scitools.org.uk/cartopy/docs/latest/
+    gh_url: https://github.com/SciTools/cartopy
 
   # Non-GitHub projects below, manually updated
 
@@ -526,4 +544,13 @@ projects:
     first_release_version: 0.1  # earliest version still on gnu.org is 0.10.40 from 2001-09-15
     latest_release_date: 2023-06-17
     latest_release_version: 0.22
+  - name: Wine
+    wp_url: https://en.wikipedia.org/wiki/Wine_(software)
+    url: https://www.winehq.org/
+    first_release_date: 1993-06-29
+    first_release_version: 0.0.2
+    first_nonzv_release_date: 2008-06-17
+    last_zv_release_version: 0.9.61
+    emeritus: true
+
     
