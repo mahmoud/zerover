@@ -290,6 +290,10 @@ projects:
   - name: Pyre
     url: https://pyre-check.org
     gh_url: https://github.com/facebook/pyre-check
+  - name: Tachiyomi
+    url: https://tachiyomi.org/
+    gh_url: https://github.com/tachiyomiorg/tachiyomi
+    reason: Rewrite is supposed to release as 1.0.0, but it has been stale and in progress for several years with no finish line in sight.
   - name: python-dotenv
     url: https://github.com/theskumar/python-dotenv
     gh_url: https://github.com/theskumar/python-dotenv
