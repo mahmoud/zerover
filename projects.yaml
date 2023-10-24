@@ -476,11 +476,11 @@ projects:
     reason: A free Windows-compatible Operating System
     first_release_version: 0.0.7
     first_release_date: 1996-01-23
-    latest_release_version: 0.4.9
-    latest_release_date: 2018-07-23
-    release_count: 55  # ignore github saying >250 releases, ~80% of them are some kind of weird backup non-releases
-    release_count_zv: 55
-    star_count: 4912
+    latest_release_version: 0.4.14
+    latest_release_date: 2021-12-16
+    release_count: 59  # ignore github saying >250 releases, ~80% of them are some kind of weird backup non-releases
+    release_count_zv: 59
+    star_count: 13301
   - name: OpenStreetMap API/website
     url: https://openstreetmap.org/
     wp_url: https://en.wikipedia.org/wiki/OpenStreetMap
