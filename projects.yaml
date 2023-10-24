@@ -290,6 +290,8 @@ projects:
   - name: Pyre
     url: https://pyre-check.org
     gh_url: https://github.com/facebook/pyre-check
+  - name: Ruff
+    gh_url: https://github.com/astral-sh/ruff
   - name: Qiskit
     url: https://qiskit.org/
     gh_url: https://github.com/Qiskit/qiskit
@@ -314,7 +316,7 @@ projects:
   - name: seaborn
     url: https://seaborn.pydata.org/
     gh_url: https://github.com/mwaskom/seaborn
-
+    
   # Non-GitHub projects below, manually updated
 
   - name: ASCEND
