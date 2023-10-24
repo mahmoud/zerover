@@ -290,6 +290,9 @@ projects:
   - name: Pyre
     url: https://pyre-check.org
     gh_url: https://github.com/facebook/pyre-check
+  - name: FreeCol
+    url: https://www.freecol.org/
+    gh_url: https://github.com/FreeCol/freecol
   - name: Ruff
     gh_url: https://github.com/astral-sh/ruff
   - name: Qiskit
