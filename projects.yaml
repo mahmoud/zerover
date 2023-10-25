@@ -309,6 +309,8 @@ projects:
   - name: FreeCol
     url: https://www.freecol.org/
     gh_url: https://github.com/FreeCol/freecol
+  - name: asdf
+    gh_url: https://github.com/asdf-vm/asdf
   - name: Ruff
     gh_url: https://github.com/astral-sh/ruff
   - name: Qiskit
