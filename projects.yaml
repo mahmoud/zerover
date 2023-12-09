@@ -344,6 +344,10 @@ projects:
   - name: Cartopy
     url: https://scitools.org.uk/cartopy/docs/latest/
     gh_url: https://github.com/SciTools/cartopy
+  - name: fzf
+    url: https://github.com/junegunn/fzf#table-of-contents
+    gh_url: https://github.com/junegunn/fzf
+    reason: fzf is probably the most famous terminal fuzzy finder
 
   # Non-GitHub projects below, manually updated
 
