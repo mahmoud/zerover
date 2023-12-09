@@ -1,6 +1,6 @@
 {
-  "gen_date": "2023-12-09T20:53:53.397330",
-  "gen_duration": 412.9517071247101,
+  "gen_date": "2023-12-09T21:26:31.463303",
+  "gen_duration": 434.5094919204712,
   "projects": [
     {
       "first_nonzv_release_api_commit_url": "https://api.github.com/repos/dtolnay/semver/commits/a4017089ed6c2cc3a04e44f6bee187db69436e32",
@@ -184,7 +184,7 @@
       "name": "Home Assistant",
       "release_count": 1189,
       "release_count_zv": 686,
-      "star_count": 64481,
+      "star_count": 64483,
       "url": "https://github.com/home-assistant/home-assistant"
     },
     {
@@ -297,7 +297,7 @@
       "name": "Bitcoin",
       "release_count": 298,
       "release_count_zv": 258,
-      "star_count": 72580,
+      "star_count": 72581,
       "url": "https://github.com/bitcoin/bitcoin"
     },
     {
@@ -322,7 +322,7 @@
       "name": "Caddy",
       "release_count": 127,
       "release_count_zv": 47,
-      "star_count": 50951,
+      "star_count": 50950,
       "url": "https://github.com/caddyserver/caddy"
     },
     {
@@ -494,7 +494,7 @@
       "name": "Pandas",
       "release_count": 156,
       "release_count_zv": 94,
-      "star_count": 40551,
+      "star_count": 40552,
       "url": "https://github.com/pandas-dev/pandas"
     },
     {
@@ -810,7 +810,7 @@
       "name": "hugo",
       "release_count": 248,
       "release_count_zv": 248,
-      "star_count": 70279,
+      "star_count": 70280,
       "url": "https://github.com/gohugoio/hugo"
     },
     {
@@ -885,7 +885,7 @@
       "name": "HashiCorp Nomad",
       "release_count": 253,
       "release_count_zv": 126,
-      "star_count": 14135,
+      "star_count": 14134,
       "url": "https://github.com/hashicorp/nomad"
     },
     {
@@ -999,7 +999,7 @@
       "name": "MyPy",
       "release_count": 85,
       "release_count_zv": 72,
-      "star_count": 16871,
+      "star_count": 16872,
       "url": "https://github.com/python/mypy"
     },
     {
@@ -1644,7 +1644,7 @@
       "name": "React",
       "release_count": 140,
       "release_count_zv": 47,
-      "star_count": 216060,
+      "star_count": 216062,
       "url": "https://reactjs.org"
     },
     {
@@ -1753,7 +1753,7 @@
       "name": "React Native",
       "release_count": 492,
       "release_count_zv": 492,
-      "star_count": 113189,
+      "star_count": 113190,
       "url": "https://github.com/facebook/react-native"
     },
     {
@@ -2265,7 +2265,7 @@
       "reason": "250k+ daily Docker pulls in 2021",
       "release_count": 71,
       "release_count_zv": 50,
-      "star_count": 50444,
+      "star_count": 50446,
       "url": "https://localstack.cloud"
     },
     {
@@ -2393,7 +2393,7 @@
       "name": "zoxide",
       "release_count": 30,
       "release_count_zv": 30,
-      "star_count": 12684,
+      "star_count": 12685,
       "url": "https://github.com/ajeetdsouza/zoxide"
     },
     {
@@ -2469,7 +2469,7 @@
       "name": "mpv",
       "release_count": 84,
       "release_count_zv": 84,
-      "star_count": 24278,
+      "star_count": 24280,
       "url": "https://github.com/mpv-player/mpv"
     },
     {
@@ -2648,7 +2648,7 @@
       "name": "Zig",
       "release_count": 16,
       "release_count_zv": 16,
-      "star_count": 27322,
+      "star_count": 27324,
       "url": "https://ziglang.org"
     },
     {
@@ -2711,7 +2711,7 @@
       "name": "Ruff",
       "release_count": 281,
       "release_count_zv": 281,
-      "star_count": 21146,
+      "star_count": 21147,
       "url": "https://github.com/astral-sh/ruff"
     },
     {
@@ -2925,6 +2925,26 @@
       "release_count_zv": 40,
       "star_count": 1305,
       "url": "https://scitools.org.uk/cartopy/docs/latest/"
+    },
+    {
+      "first_release_api_commit_url": "https://api.github.com/repos/junegunn/fzf/commits/79fbcb2244936e9a456d53682b6590d1fd9296d2",
+      "first_release_date": "2013-10-31T15:41:37Z",
+      "first_release_link": "https://github.com/junegunn/fzf/commit/79fbcb2244936e9a456d53682b6590d1fd9296d2",
+      "first_release_tag": "0.1.0",
+      "first_release_version": "0.1.0",
+      "gh_url": "https://github.com/junegunn/fzf",
+      "is_zerover": true,
+      "latest_release_api_commit_url": "https://api.github.com/repos/junegunn/fzf/commits/d7d2ac39513f2068f70fbe717d212c9bce8750ed",
+      "latest_release_date": "2023-11-17T10:17:00Z",
+      "latest_release_link": "https://github.com/junegunn/fzf/commit/d7d2ac39513f2068f70fbe717d212c9bce8750ed",
+      "latest_release_tag": "0.44.1",
+      "latest_release_version": "0.44.1",
+      "name": "fzf",
+      "reason": "fzf is probably the most famous terminal fuzzy finder",
+      "release_count": 127,
+      "release_count_zv": 127,
+      "star_count": 55968,
+      "url": "https://github.com/junegunn/fzf#table-of-contents"
     },
     {
       "first_release_date": "1978-06-01",
