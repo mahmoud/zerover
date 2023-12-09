@@ -290,9 +290,6 @@ projects:
   - name: Pyre
     url: https://pyre-check.org
     gh_url: https://github.com/facebook/pyre-check
-  - name: MultiMC
-    gh_url: https://github.com/MultiMC/Launcher
-    url: https://multimc.org/
   - name: brick/math
     gh_url: https://github.com/brick/math
   - name: Tachiyomi
