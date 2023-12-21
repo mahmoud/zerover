@@ -552,13 +552,6 @@ projects:
     first_release_version: 0.3
     latest_release_version: 0.999992
     latest_release_date: 2020-01-20
-  - name: PipeWire
-    wp_url: https://en.wikipedia.org/wiki/PipeWire
-    url: https://pipewire.org/
-    first_release_date: 2017-06-20
-    first_release_version: 0.1.0
-    latest_release_date: 2023-06-26
-    latest_release_version: 0.3.72
   - name: gettext
     wp_url: https://en.wikipedia.org/wiki/Gettext
     url: https://www.gnu.org/software/gettext/
