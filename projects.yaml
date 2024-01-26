@@ -348,6 +348,9 @@ projects:
     url: https://github.com/junegunn/fzf#table-of-contents
     gh_url: https://github.com/junegunn/fzf
     reason: fzf is probably the most famous terminal fuzzy finder
+  - name: Pint
+    url: https://pint.readthedocs.io
+    gh_url: https://github.com/hgrecco/pint
 
   # Non-GitHub projects below, manually updated
 
