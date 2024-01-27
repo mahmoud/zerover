@@ -11,13 +11,12 @@
 # the bottom of the list for the data format. Note that current ZeroVer
 # and past ZeroVer projects have slightly different formats.
 
-
 projects:
   # GitHub projects are at the top for convenience
   # Up-to-date details are filled in automatically by tools/gen_entry_json.py
   - name: semver (Rust)
     gh_url: https://github.com/steveklabnik/semver
-    reason: The irony.  # kudos to David R. MacIver
+    reason: The irony. # kudos to David R. MacIver
   - name: dep (Go)
     gh_url: https://github.com/golang/dep
     reason: "Official dependency management tool from Golang. To quote the first line of the readme, 'dep is safe for production use.'"
@@ -292,10 +291,11 @@ projects:
     gh_url: https://github.com/facebook/pyre-check
   - name: brick/math
     gh_url: https://github.com/brick/math
-  - name: Tachiyomi
-    url: https://tachiyomi.org/
-    gh_url: https://github.com/tachiyomiorg/tachiyomi
-    reason: Rewrite is supposed to release as 1.0.0, but it has been stale and in progress for several years with no finish line in sight.
+  #- name: Tachiyomi
+  #  url: https://tachiyomi.org/
+  #  gh_url: https://github.com/tachiyomiorg/tachiyomi
+  #  reason: Rewrite is supposed to release as 1.0.0, but it has been stale and in progress for several years with no finish line in sight.
+  #  dead: https://tachiyomi.org/news/2024-01-13-goodbye / https://pastebin.com/ScYsKtia
   - name: python-dotenv
     url: https://github.com/theskumar/python-dotenv
     gh_url: https://github.com/theskumar/python-dotenv
@@ -379,7 +379,7 @@ projects:
     url: https://launchpad.net/inkscape
     emeritus: true
     first_release_date: 2000-09-01
-    first_release_version: 0.16  # sodipodi cvs import according to changelog
+    first_release_version: 0.16 # sodipodi cvs import according to changelog
     first_nonzv_release_date: 2020-05-01
     last_zv_release_version: 0.92.5
   - name: Compiz
@@ -396,8 +396,8 @@ projects:
     reason: Depended on by pypa/pip
   - name: OpenSSL
     url: https://github.com/openssl/openssl
-    star_count: 6706  # release name convention is weird, hardcode counts 2018-03-31
-    release_count_zv: 51  # technically only counts til 1.0 by date (2010). 0.9.8zh was the last 0ver and came out in 2015.
+    star_count: 6706 # release name convention is weird, hardcode counts 2018-03-31
+    release_count_zv: 51 # technically only counts til 1.0 by date (2010). 0.9.8zh was the last 0ver and came out in 2015.
     emeritus: true
     first_release_date: 1998-12-23
     first_release_version: 0.9.1
@@ -408,7 +408,7 @@ projects:
     emeritus: true
     first_release_date: 2012-12-24
     first_release_version: 0.1.0
-    latest_release_version:  1.0.0
+    latest_release_version: 1.0.0
     latest_release_date: 2020-08-14
     first_nonzv_release_date: 2020-08-14
     last_zv_release_version: 0.18.47
@@ -439,24 +439,24 @@ projects:
     latest_release_date: 2023-09-28
     release_count: 259
     release_count_zv: 259
-  - name: slrn  # thanks hynek
+  - name: slrn # thanks hynek
     url: http://slrn.sourceforge.net/
     wp_url: https://en.wikipedia.org/wiki/Slrn
-    first_release_date: 1994-08-13  # https://sourceforge.net/p/slrn/mailman/message/6405527/
+    first_release_date: 1994-08-13 # https://sourceforge.net/p/slrn/mailman/message/6405527/
     first_release_version: 0.1.0.0
     latest_release_date: 2016-10-23
     latest_release_version: 1.0.3
     last_zv_release_version: 0.9.9p1
     first_nonzv_release_date: 2012-12-21
     emeritus: true
-    release_count: 71  # changelog_text.count('\nChanges since 0')
+    release_count: 71 # changelog_text.count('\nChanges since 0')
   - name: Dwarf Fortress
     url: http://www.bay12games.com/dwarves/
     first_release_date: 2006-08-08
     first_release_version: 0.21.93.19a
     latest_release_date: 2018-04-01
     latest_release_version: 0.44.09
-    release_count: 142  # appx, based on df wiki release history
+    release_count: 142 # appx, based on df wiki release history
   - name: "Cataclysm: Dark Days Ahead"
     url: https://cataclysmdda.org
     # gh_url: https://github.com/CleverRaven/Cataclysm-DDA  # gh is returning tags out of order
@@ -471,36 +471,36 @@ projects:
   - name: Window Maker
     url: https://windowmaker.org/
     wp_url: https://en.wikipedia.org/wiki/Window_Maker
-    first_release_date: 1997-01-01  # exact date unknown
+    first_release_date: 1997-01-01 # exact date unknown
     first_release_version: 0.0.3
     latest_release_version: 0.95.8
     latest_release_date: 2017-03-11
     release_count: 92
   - name: ReactOS
     url: https://www.reactos.org/
-    _gh_url: https://github.com/reactos/reactos  # underscore prefix prevents overriding data below
+    _gh_url: https://github.com/reactos/reactos # underscore prefix prevents overriding data below
     reason: A free Windows-compatible Operating System
     first_release_version: 0.0.7
     first_release_date: 1996-01-23
     latest_release_version: 0.4.14
     latest_release_date: 2021-12-16
-    release_count: 59  # ignore github saying >250 releases, ~80% of them are some kind of weird backup non-releases
+    release_count: 59 # ignore github saying >250 releases, ~80% of them are some kind of weird backup non-releases
     release_count_zv: 59
     star_count: 13301
   - name: OpenStreetMap API/website
     url: https://openstreetmap.org/
     wp_url: https://en.wikipedia.org/wiki/OpenStreetMap
-    _gh_url: https://github.com/openstreetmap/openstreetmap-website  # Dosen't use releases on GitHub
+    _gh_url: https://github.com/openstreetmap/openstreetmap-website # Dosen't use releases on GitHub
     reason: "Open map data used almost anywhere there's a non-Google map."
     first_release_version: 0.3
     first_release_date: 2004-8-9
-    latest_release_version: 0.6 February 2021  # See https://wiki.openstreetmap.org/wiki/API_v0.6#Semantic_versioning
+    latest_release_version: 0.6 February 2021 # See https://wiki.openstreetmap.org/wiki/API_v0.6#Semantic_versioning
     latest_release_date: 2021-02-01
-    release_count: 14  # 0.3 → 0.6 and then the dated changes to 0.6
+    release_count: 14 # 0.3 → 0.6 and then the dated changes to 0.6
   - name: three.js
     url: https://threejs.org/
     _gh_url: https://github.com/mrdoob/three.js
-    first_release_version: 0.1  # github releases are r1-r130
+    first_release_version: 0.1 # github releases are r1-r130
     first_release_date: 2013-07-03T11:49:48
     latest_release_version: 0.130
     latest_release_date: 2021-10-04T18:49:30
@@ -565,8 +565,8 @@ projects:
   - name: gettext
     wp_url: https://en.wikipedia.org/wiki/Gettext
     url: https://www.gnu.org/software/gettext/
-    first_release_date: 1987-01-01  # https://web.archive.org/web/20120323032211/http://compgroups.net/comp.unix.solaris/History-of-gettext-et-al
-    first_release_version: 0.1  # earliest version still on gnu.org is 0.10.40 from 2001-09-15
+    first_release_date: 1987-01-01 # https://web.archive.org/web/20120323032211/http://compgroups.net/comp.unix.solaris/History-of-gettext-et-al
+    first_release_version: 0.1 # earliest version still on gnu.org is 0.10.40 from 2001-09-15
     latest_release_date: 2023-06-17
     latest_release_version: 0.22
   - name: Wine
@@ -577,5 +577,3 @@ projects:
     first_nonzv_release_date: 2008-06-17
     last_zv_release_version: 0.9.61
     emeritus: true
-
-    
