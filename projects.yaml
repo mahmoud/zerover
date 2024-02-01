@@ -473,9 +473,9 @@ projects:
     wp_url: https://en.wikipedia.org/wiki/Window_Maker
     first_release_date: 1997-01-01 # exact date unknown
     first_release_version: 0.0.3
-    latest_release_version: 0.95.8
-    latest_release_date: 2017-03-11
-    release_count: 92
+    latest_release_version: 0.96.0
+    latest_release_date: 2023-08-05
+    release_count: 94
   - name: ReactOS
     url: https://www.reactos.org/
     _gh_url: https://github.com/reactos/reactos # underscore prefix prevents overriding data below
