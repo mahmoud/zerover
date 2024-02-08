@@ -296,6 +296,10 @@ projects:
   #  gh_url: https://github.com/tachiyomiorg/tachiyomi
   #  reason: Rewrite is supposed to release as 1.0.0, but it has been stale and in progress for several years with no finish line in sight.
   #  dead: https://tachiyomi.org/news/2024-01-13-goodbye / https://pastebin.com/ScYsKtia
+  - name: Mihon
+    url: https://mihon.app/
+    gh_url: https://github.com/mihonapp/mihon
+    reason: Spiritual succesor of Tachiyomi. As such follows its versioning convention.
   - name: python-dotenv
     url: https://github.com/theskumar/python-dotenv
     gh_url: https://github.com/theskumar/python-dotenv
