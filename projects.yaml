@@ -314,10 +314,6 @@ projects:
     gh_url: https://github.com/asdf-vm/asdf
   - name: Ruff
     gh_url: https://github.com/astral-sh/ruff
-  - name: Qiskit
-    url: https://qiskit.org/
-    gh_url: https://github.com/Qiskit/qiskit
-    reason: Qiskit is the most popular quantum computing SDK according to Unitary Fund Quantum Open Source Software survey in 2022.
   - name: graphile-worker
     url: https://www.graphile.org/
     gh_url: https://github.com/graphile/worker
