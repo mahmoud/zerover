@@ -48,6 +48,7 @@ from boltons.timeutils import isoparse
 
 class ZVTable(Table):
     _html_table_tag = '<table class="zv-table">'
+    _html_thead = '<thead style="position: sticky; top: 0; background: white;">'
 
     def get_cell_html(self, data):
         # Table escapes html by default
