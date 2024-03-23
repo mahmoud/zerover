@@ -357,6 +357,8 @@ projects:
     gh_url: https://github.com/hgrecco/pint
   - name: Helmfile
     gh_url: https://github.com/helmfile/helmfile
+  - name: Google Go CDK
+    gh_url: https://github.com/google/go-cloud/
   - name: FreeCAD
     url: https://www.freecad.org/
     gh_url: https://github.com/FreeCAD/FreeCAD
