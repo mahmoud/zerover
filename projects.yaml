@@ -364,11 +364,14 @@ projects:
     gh_url: https://github.com/FreeCAD/FreeCAD
     # first_release_date: 2002-10-29
     # first_release_version: 0.0.1  # this tag's not on github, commented for now (2024-02-20)
+  - name: Create
+    url: https://createmod.net/
+    gh_url: https://github.com/Creators-of-Create/Create
 
   # Non-GitHub projects below, manually updated
 
   - name: ASCEND
-    repo_url: http://code.ascend4.org/ascend/trunk/
+		repo_url: http://code.ascend4.org/ascend/trunk/
     wp_url: https://en.wikipedia.org/wiki/ASCEND
     url: http://ascend4.org/Main_Page
     first_release_date: 1978-06-01
