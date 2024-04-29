@@ -321,6 +321,9 @@ projects:
   - name: graphile-worker
     url: https://www.graphile.org/
     gh_url: https://github.com/graphile/worker
+  - name: cargo-audit
+    url: https://rustsec.org/
+    gh_url: https://github.com/rustsec/rustsec
   - name: Monero
     url: https://getmonero.org
     gh_url: https://github.com/monero-project/monero
