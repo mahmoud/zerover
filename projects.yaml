@@ -332,6 +332,10 @@ projects:
     url: https://factorcode.org/
     gh_url: https://github.com/factor/factor
     reason: A concatenative stack-based programming language.
+  - name: Tectonic
+    url: https://tectonic-typesetting.github.io/
+    gh_url: https://github.com/tectonic-typesetting/tectonic
+    reason: A TeX distributon that has been version 0 since 2016
   - name: Flipper
     url: https://www.flippercloud.io/docs
     gh_url: https://github.com/flippercloud/flipper
