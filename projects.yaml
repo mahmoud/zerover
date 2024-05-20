@@ -364,6 +364,9 @@ projects:
     gh_url: https://github.com/FreeCAD/FreeCAD
     # first_release_date: 2002-10-29
     # first_release_version: 0.0.1  # this tag's not on github, commented for now (2024-02-20)
+  - name: Zola
+    url: https://www.getzola.org/
+    gh_url: https://github.com/getzola/zola
   - name: Hy
     gh_url: https://github.com/hylang/hy
   - name: Create
