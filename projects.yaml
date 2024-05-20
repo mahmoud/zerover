@@ -367,6 +367,11 @@ projects:
   - name: Zola
     url: https://www.getzola.org/
     gh_url: https://github.com/getzola/zola
+  - name: Hy
+    gh_url: https://github.com/hylang/hy
+  - name: Create
+    url: https://createmod.net/
+    gh_url: https://github.com/Creators-of-Create/Create
 
   # Non-GitHub projects below, manually updated
 
