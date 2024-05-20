@@ -321,6 +321,9 @@ projects:
   - name: graphile-worker
     url: https://www.graphile.org/
     gh_url: https://github.com/graphile/worker
+  - name: cargo-audit
+    url: https://rustsec.org/
+    gh_url: https://github.com/rustsec/rustsec
   - name: Monero
     url: https://getmonero.org
     gh_url: https://github.com/monero-project/monero
@@ -332,6 +335,10 @@ projects:
     url: https://factorcode.org/
     gh_url: https://github.com/factor/factor
     reason: A concatenative stack-based programming language.
+  - name: Tectonic
+    url: https://tectonic-typesetting.github.io/
+    gh_url: https://github.com/tectonic-typesetting/tectonic
+    reason: A TeX distributon that has been version 0 since 2016
   - name: Flipper
     url: https://www.flippercloud.io/docs
     gh_url: https://github.com/flippercloud/flipper
@@ -367,7 +374,15 @@ projects:
   - name: restic
     url: https://restic.net/
     gh_url: https://github.com/restic/restic
-
+  - name: Zola
+    url: https://www.getzola.org/
+    gh_url: https://github.com/getzola/zola
+  - name: Hy
+    gh_url: https://github.com/hylang/hy
+  - name: Create
+    url: https://createmod.net/
+    gh_url: https://github.com/Creators-of-Create/Create
+    
   # Non-GitHub projects below, manually updated
 
   - name: ASCEND
