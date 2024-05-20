@@ -35,6 +35,7 @@ VTAG_RE = re.compile(r'^(?P<major>\d+)\.[0-9a-zA-Z_.]+')
 
 def strip_prefix(tag_name, prefixes):
     # TODO: could combine these all into the re
+    _slash_prefix, _, tag_name = tag_name.rpartition('/')
     for prefix in prefixes:
         if tag_name.startswith(prefix):
             tag_name = tag_name[len(prefix):]
