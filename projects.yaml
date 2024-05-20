@@ -88,7 +88,7 @@ projects:
   - name: docopt
     gh_url: https://github.com/docopt/docopt
   - name: httpbin
-    gh_url: https://github.com/kennethreitz/httpbin
+    gh_url: https://github.com/postmanlabs/httpbin
   - name: bottle.py
     gh_url: https://github.com/bottlepy/bottle
   - name: rq
@@ -321,9 +321,6 @@ projects:
   - name: graphile-worker
     url: https://www.graphile.org/
     gh_url: https://github.com/graphile/worker
-  - name: cargo-audit
-    url: https://rustsec.org/
-    gh_url: https://github.com/rustsec/rustsec
   - name: Monero
     url: https://getmonero.org
     gh_url: https://github.com/monero-project/monero
@@ -382,7 +379,7 @@ projects:
   - name: Create
     url: https://createmod.net/
     gh_url: https://github.com/Creators-of-Create/Create
-    
+
   # Non-GitHub projects below, manually updated
 
   - name: ASCEND
@@ -608,3 +605,11 @@ projects:
     first_nonzv_release_date: 2008-06-17
     last_zv_release_version: 0.9.61
     emeritus: true
+  - name: cargo-audit
+    url: https://rustsec.org/
+    first_release_date: 2017-02-27
+    first_release_version: 0.1.0
+    latest_release_date: 2024-02-15
+    latest_release_version: 0.20.0
+    # technically on github, but has a weird monorepo version tagging scheme that'll need code to handle
+    # gh_url: https://github.com/rustsec/rustsec
