@@ -371,6 +371,9 @@ projects:
     gh_url: https://github.com/FreeCAD/FreeCAD
     # first_release_date: 2002-10-29
     # first_release_version: 0.0.1  # this tag's not on github, commented for now (2024-02-20)
+  - name: restic
+    url: https://restic.net/
+    gh_url: https://github.com/restic/restic
   - name: Zola
     url: https://www.getzola.org/
     gh_url: https://github.com/getzola/zola
@@ -379,7 +382,7 @@ projects:
   - name: Create
     url: https://createmod.net/
     gh_url: https://github.com/Creators-of-Create/Create
-
+    
   # Non-GitHub projects below, manually updated
 
   - name: ASCEND
