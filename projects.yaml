@@ -613,3 +613,12 @@ projects:
     latest_release_version: 0.20.0
     # technically on github, but has a weird monorepo version tagging scheme that'll need code to handle
     # gh_url: https://github.com/rustsec/rustsec
+  - name: transformers
+    url: https://hackage.haskell.org/package/transformers
+    repo_url: https://hub.darcs.net/ross/transformers
+    first_release_date: 2009-01-05
+    first_release_version: 0.0.0.0 # Now *they* understand the power of zerover.
+    latest_release_date: 2023-08-01
+    latest_release_version: 0.6.1.1
+    release_count: 39
+    reason: 11444 reverse dependencies on Hackage, including GHC itself.
