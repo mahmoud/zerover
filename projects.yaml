@@ -373,7 +373,8 @@ projects:
     reason: Ships with the Haskell compiler, over 8000 libraries depend on it.
     # first_release_date: ~2007, see https://github.com/mahmoud/zerover/issues/186
     # first_release_version: 0.9
-  -
+  - name: Anthropic Python SDK
+    gh_url: https://github.com/anthropics/anthropic-sdk-python
   - name: restic
     url: https://restic.net/
     gh_url: https://github.com/restic/restic
