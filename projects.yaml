@@ -368,6 +368,10 @@ projects:
     gh_url: https://github.com/FreeCAD/FreeCAD
     # first_release_date: 2002-10-29
     # first_release_version: 0.0.1  # this tag's not on github, commented for now (2024-02-20)
+  - name: Haskell bytestring
+    gh_url: https://github.com/haskell/bytestring
+    # first_release_date: ~2007, see https://github.com/mahmoud/zerover/issues/186
+    # first_release_version: 0.9
   - name: restic
     url: https://restic.net/
     gh_url: https://github.com/restic/restic
