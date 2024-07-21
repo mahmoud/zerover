@@ -375,6 +375,8 @@ projects:
     # first_release_version: 0.9
   - name: Anthropic Python SDK
     gh_url: https://github.com/anthropics/anthropic-sdk-python
+  - name: Excalidraw
+    gh_url: https://github.com/excalidraw/excalidraw/
   - name: restic
     url: https://restic.net/
     gh_url: https://github.com/restic/restic
