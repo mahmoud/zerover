@@ -14,6 +14,10 @@
 projects:
   # GitHub projects are at the top for convenience
   # Up-to-date details are filled in automatically by tools/gen_entry_json.py
+  - name: Tactical RMM
+    url: https://docs.tacticalrmm.com
+    gh_url: https://github.com/amidaware/tacticalrmm
+    reason: One of those forever in beta software even if it is used in critical infrastructure.
   - name: semver (Rust)
     gh_url: https://github.com/steveklabnik/semver
     reason: The irony. # kudos to David R. MacIver
