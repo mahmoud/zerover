@@ -388,6 +388,8 @@ projects:
   - name: Create
     url: https://createmod.net/
     gh_url: https://github.com/Creators-of-Create/Create
+  - name: FastAPI
+    url: https://github.com/fastapi/fastapi
 
   # Non-GitHub projects below, manually updated
 
