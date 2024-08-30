@@ -392,6 +392,9 @@ projects:
   - name: Create
     url: https://createmod.net/
     gh_url: https://github.com/Creators-of-Create/Create
+  - name: atlantis
+    url: https://www.runatlantis.io/
+    gh_url: https://github.com/runatlantis/atlantis
 
   # Non-GitHub projects below, manually updated
 
