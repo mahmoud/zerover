@@ -395,6 +395,9 @@ projects:
   - name: atlantis
     url: https://www.runatlantis.io/
     gh_url: https://github.com/runatlantis/atlantis
+  - name: Fabric API
+    url: https://modrinth.com/mod/fabric-api
+    gh_url: https://github.com/FabricMC/fabric
 
   # Non-GitHub projects below, manually updated
 
