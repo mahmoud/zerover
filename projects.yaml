@@ -470,8 +470,8 @@ projects:
     url: https://www.chiark.greenend.org.uk/~sgtatham/putty/
     first_release_version: 0.43beta
     first_release_date: 1999-01-08
-    latest_release_version: 0.70
-    latest_release_date: 2017-07-04T19:29:54
+    latest_release_version: 0.82
+    latest_release_date: 2024-11-27
     reason: Probably the most popular SSH client in Windows history
   - name: MAME
     url: https://github.com/mamedev/mame
