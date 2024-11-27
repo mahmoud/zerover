@@ -395,6 +395,9 @@ projects:
   - name: atlantis
     url: https://www.runatlantis.io/
     gh_url: https://github.com/runatlantis/atlantis
+  - name: Nushell
+    url: https://www.nushell.sh
+    gh_url: https://github.com/nushell/nushell
 
   # Non-GitHub projects below, manually updated
 
