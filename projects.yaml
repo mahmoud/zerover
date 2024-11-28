@@ -275,6 +275,8 @@ projects:
     gh_url: https://github.com/OpenRC/openrc
   - name: Notary
     gh_url: https://github.com/notaryproject/notary
+  - name: GoodbyeDPI
+    gh_url: https://github.com/ValdikSS/GoodbyeDPI
   - name: Enlightenment
     url: http://www.enlightenment.org/
     gh_url: https://github.com/Enlightenment/enlightenment
