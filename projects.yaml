@@ -14,6 +14,10 @@
 projects:
   # GitHub projects are at the top for convenience
   # Up-to-date details are filled in automatically by tools/gen_entry_json.py
+  - name: Tactical RMM
+    url: https://docs.tacticalrmm.com
+    gh_url: https://github.com/amidaware/tacticalrmm
+    reason: One of those forever in beta software even if it is used in critical infrastructure.
   - name: semver (Rust)
     gh_url: https://github.com/steveklabnik/semver
     reason: The irony. # kudos to David R. MacIver
@@ -390,6 +394,18 @@ projects:
     gh_url: https://github.com/Creators-of-Create/Create
   - name: FastAPI
     url: https://github.com/fastapi/fastapi
+  - name: atlantis
+    url: https://www.runatlantis.io/
+    gh_url: https://github.com/runatlantis/atlantis
+  - name: Fabric API
+    url: https://modrinth.com/mod/fabric-api
+    gh_url: https://github.com/FabricMC/fabric
+  - name: Nushell
+    url: https://www.nushell.sh
+    gh_url: https://github.com/nushell/nushell
+  - name: PyVista
+    url: https://docs.pyvista.org/
+    gh_url: https://github.com/pyvista/pyvista
 
   # Non-GitHub projects below, manually updated
 
@@ -465,8 +481,8 @@ projects:
     url: https://www.chiark.greenend.org.uk/~sgtatham/putty/
     first_release_version: 0.43beta
     first_release_date: 1999-01-08
-    latest_release_version: 0.70
-    latest_release_date: 2017-07-04T19:29:54
+    latest_release_version: 0.82
+    latest_release_date: 2024-11-27
     reason: Probably the most popular SSH client in Windows history
   - name: MAME
     url: https://github.com/mamedev/mame
