@@ -406,6 +406,9 @@ projects:
   - name: PyVista
     url: https://docs.pyvista.org/
     gh_url: https://github.com/pyvista/pyvista
+  - name: Uncrustify
+    url: http://uncrustify.sourceforge.net/
+    gh_url: https://github.com/uncrustify/uncrustify
 
   # Non-GitHub projects below, manually updated
 
