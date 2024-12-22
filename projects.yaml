@@ -406,6 +406,10 @@ projects:
   - name: PyVista
     url: https://docs.pyvista.org/
     gh_url: https://github.com/pyvista/pyvista
+  - name: Phoenix LiveView
+    url: https://hex.pm/packages/phoenix_live_view
+    gh_url: https://github.com/phoenixframework/phoenix_live_view
+    reason: Fullstack framework used by Cars.com, Pepsi, Spotify, and a flood of new startups.
 
   # Non-GitHub projects below, manually updated
 
