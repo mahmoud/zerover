@@ -406,6 +406,9 @@ projects:
   - name: PyVista
     url: https://docs.pyvista.org/
     gh_url: https://github.com/pyvista/pyvista
+  - name: Fabric API
+    url: https://github.com/FabricMC/fabric
+    gh_url: https://github.com/FabricMC/fabric
 
   # Non-GitHub projects below, manually updated
 
