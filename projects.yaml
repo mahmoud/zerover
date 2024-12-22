@@ -406,6 +406,9 @@ projects:
   - name: PyVista
     url: https://docs.pyvista.org/
     gh_url: https://github.com/pyvista/pyvista
+  - name: Video Speed Controller
+    url: https://chrome.google.com/webstore/detail/video-speed-controller/nffaoalbilbmmfgbnbgppjihopabppdk
+    gh_url: https://github.com/igrigorik/videospeed
 
   # Non-GitHub projects below, manually updated
 
