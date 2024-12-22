@@ -406,6 +406,10 @@ projects:
   - name: PyVista
     url: https://docs.pyvista.org/
     gh_url: https://github.com/pyvista/pyvista
+  - name: libc (Rust)
+    url: https://docs.rs/libc
+    gh_url: https://github.com/rust-lang/libc
+    reason: libc is one of the most popular libraries for Rust programming language providing bindings to platforms' system libraries.
 
   # Non-GitHub projects below, manually updated
 
