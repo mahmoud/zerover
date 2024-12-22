@@ -31,7 +31,7 @@ projects:
     reason: Official kubernetes project with a logo, but no major release.
   - name: Arrow (Python)
     gh_url: https://github.com/crsmithdev/arrow
-  - name: NeoVIM
+  - name: Neovim
     gh_url: https://github.com/neovim/neovim
   - name: Tor
     gh_url: https://github.com/torproject/tor
