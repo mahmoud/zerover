@@ -406,6 +406,9 @@ projects:
   - name: PyVista
     url: https://docs.pyvista.org/
     gh_url: https://github.com/pyvista/pyvista
+  - name: Apache Thrift
+    url: https://github.com/apache/thrift
+    gh_url: https://github.com/apache/thrift
 
   # Non-GitHub projects below, manually updated
 
