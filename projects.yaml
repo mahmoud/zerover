@@ -406,6 +406,9 @@ projects:
   - name: PyVista
     url: https://docs.pyvista.org/
     gh_url: https://github.com/pyvista/pyvista
+  - name: OpenBLAS
+    url: http://www.openblas.net/
+    gh_url: https://github.com/OpenMathLib/OpenBLAS
 
   # Non-GitHub projects below, manually updated
 
