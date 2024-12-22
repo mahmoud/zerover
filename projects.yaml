@@ -406,6 +406,10 @@ projects:
   - name: PyVista
     url: https://docs.pyvista.org/
     gh_url: https://github.com/pyvista/pyvista
+  - name: OpenRC
+    url: https://github.com/OpenRC/openrc
+    gh_url: https://github.com/OpenRC/openrc
+    reason: Used in Alpine Linux, Gentoo, different BSD versions.
 
   # Non-GitHub projects below, manually updated
 
