@@ -406,6 +406,9 @@ projects:
   - name: PyVista
     url: https://docs.pyvista.org/
     gh_url: https://github.com/pyvista/pyvista
+  - name: GoodbyeDPI
+    url: https://ntc.party/c/community-software/goodbyedpi
+    gh_url: https://github.com/ValdikSS/GoodbyeDPI
 
   # Non-GitHub projects below, manually updated
 
