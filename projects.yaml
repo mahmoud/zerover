@@ -406,6 +406,9 @@ projects:
   - name: PyVista
     url: https://docs.pyvista.org/
     gh_url: https://github.com/pyvista/pyvista
+  - name: lazygit
+    url: https://github.com/jesseduffield/lazygit
+    gh_url: https://github.com/jesseduffield/lazygit
 
   # Non-GitHub projects below, manually updated
 
