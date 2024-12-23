@@ -406,6 +406,9 @@ projects:
   - name: PyVista
     url: https://docs.pyvista.org/
     gh_url: https://github.com/pyvista/pyvista
+  - name: OpenRCT2
+    url: https://openrct2.io/
+    gh_url: https://github.com/OpenRCT2/OpenRCT2
   - name: GoodbyeDPI
     url: https://ntc.party/c/community-software/goodbyedpi
     gh_url: https://github.com/ValdikSS/GoodbyeDPI
