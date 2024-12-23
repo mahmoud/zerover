@@ -406,6 +406,8 @@ projects:
   - name: PyVista
     url: https://docs.pyvista.org/
     gh_url: https://github.com/pyvista/pyvista
+  - name: Apache Thrift
+    gh_url: https://github.com/apache/thrift
   - name: TypeORM
     url: http://typeorm.io/
     gh_url: https://github.com/typeorm/typeorm
