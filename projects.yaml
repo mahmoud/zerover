@@ -406,6 +406,10 @@ projects:
   - name: PyVista
     url: https://docs.pyvista.org/
     gh_url: https://github.com/pyvista/pyvista
+  - name: The Clipboard project
+    url: https://getclipboard.app/
+    gh_url: https://github.com/Slackadays/Clipboard
+    reason: The only complete clipboard manager for the terminal.
   - name: Uncrustify
     url: http://uncrustify.sourceforge.net/
     gh_url: https://github.com/uncrustify/uncrustify
