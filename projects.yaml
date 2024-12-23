@@ -406,6 +406,9 @@ projects:
   - name: PyVista
     url: https://docs.pyvista.org/
     gh_url: https://github.com/pyvista/pyvista
+  - name: OpenBLAS
+    url: http://www.openblas.net/
+    gh_url: https://github.com/OpenMathLib/OpenBLAS
   - name: libc (Rust)
     url: https://docs.rs/libc
     gh_url: https://github.com/rust-lang/libc
