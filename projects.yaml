@@ -407,7 +407,6 @@ projects:
     url: https://docs.pyvista.org/
     gh_url: https://github.com/pyvista/pyvista
   - name: Sodium
-    url: https://github.com/CaffeineMC/sodium
     gh_url: https://github.com/CaffeineMC/sodium
 
   # Non-GitHub projects below, manually updated
