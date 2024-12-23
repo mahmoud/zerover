@@ -406,6 +406,8 @@ projects:
   - name: PyVista
     url: https://docs.pyvista.org/
     gh_url: https://github.com/pyvista/pyvista
+  - name: Sodium
+    gh_url: https://github.com/CaffeineMC/sodium
   - name: The Clipboard project
     url: https://getclipboard.app/
     gh_url: https://github.com/Slackadays/Clipboard
