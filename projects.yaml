@@ -406,6 +406,9 @@ projects:
   - name: PyVista
     url: https://docs.pyvista.org/
     gh_url: https://github.com/pyvista/pyvista
+  - name: Metabase
+    url: https://www.metabase.com/
+    gh_url: https://github.com/metabase/metabase
 
   # Non-GitHub projects below, manually updated
 
