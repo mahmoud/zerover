@@ -31,7 +31,7 @@ projects:
     reason: Official kubernetes project with a logo, but no major release.
   - name: Arrow (Python)
     gh_url: https://github.com/crsmithdev/arrow
-  - name: NeoVIM
+  - name: Neovim
     gh_url: https://github.com/neovim/neovim
   - name: Tor
     gh_url: https://github.com/torproject/tor
@@ -409,6 +409,33 @@ projects:
   - name: TypeORM
     url: http://typeorm.io/
     gh_url: https://github.com/typeorm/typeorm
+  - name: OpenRCT2
+    url: https://openrct2.io/
+    gh_url: https://github.com/OpenRCT2/OpenRCT2
+  - name: GoodbyeDPI
+    url: https://ntc.party/c/community-software/goodbyedpi
+    gh_url: https://github.com/ValdikSS/GoodbyeDPI
+  - name: Sodium
+    gh_url: https://github.com/CaffeineMC/sodium
+  - name: The Clipboard project
+    url: https://getclipboard.app/
+    gh_url: https://github.com/Slackadays/Clipboard
+    reason: The only complete clipboard manager for the terminal.
+  - name: Uncrustify
+    url: http://uncrustify.sourceforge.net/
+    gh_url: https://github.com/uncrustify/uncrustify
+  - name: lazygit
+    gh_url: https://github.com/jesseduffield/lazygit
+  - name: OpenBLAS
+    url: http://www.openblas.net/
+    gh_url: https://github.com/OpenMathLib/OpenBLAS
+  - name: libc (Rust)
+    url: https://docs.rs/libc
+    gh_url: https://github.com/rust-lang/libc
+    reason: libc is one of the most popular libraries for Rust programming language providing bindings to platforms' system libraries.
+  - name: Metabase
+    url: https://www.metabase.com/
+    gh_url: https://github.com/metabase/metabase
 
   # Non-GitHub projects below, manually updated
 
@@ -652,3 +679,29 @@ projects:
     latest_release_version: 0.6.1.1
     release_count: 39
     reason: 11444 reverse dependencies on Hackage, including GHC itself.
+  - name: Discord for Linux
+    reason: A very popular communication platform with 200+ million monthly users, that has been version 0 since 2015.
+    wp_url: https://en.wikipedia.org/wiki/Discord
+    url: https://discord.com/api/download?platform=linux&format=tar.gz # Latest in tar.gz format
+    first_release_date: 2015-05-13 # According to Wikipedia - however according the files version 0.0.1 on Linux was compiled on 2017-01-04
+    first_release_version: 0.0.1 # https://stable.dl2.discordapp.net/apps/linux/0.0.1/discord-0.0.1.tar.gz
+    latest_release_date: 2024-12-05 # Assuming that the latest patch notes refer to this version (https://discord.com/blog/discord-patch-notes-december-5-2024)
+    latest_release_version: 0.0.77 # https://discord.com/api/download?platform=linux&format=tar.gz -> https://stable.dl2.discordapp.net/apps/linux/0.0.77/discord-0.0.77.tar.gz
+    release_count: 78
+  - name: Discord for OSX
+    reason: A very popular communication platform with 200+ million monthly users, that has been version 0 since 2015.
+    wp_url: https://en.wikipedia.org/wiki/Discord
+    url: https://discord.com/api/download?platform=osx
+    first_release_date: 2015-05-13 # According to Wikipedia - however according the files version 0.0.165 on OSX was compiled on 2015-03-23
+    first_release_version: 0.0.165 # https://stable.dl2.discordapp.net/apps/osx/0.0.165/Discord.dmg
+    latest_release_date: 2024-12-05 # Assuming that the latest patch notes refer to this version (https://discord.com/blog/discord-patch-notes-december-5-2024)
+    latest_release_version: 0.0.329 # https://discord.com/api/download?platform=osx -> https://stable.dl2.discordapp.net/apps/osx/0.0.329/Discord.dmg
+    release_count: 148
+  - name: Thanos
+    url: https://thanos.io
+    repo_url: https://github.com/thanos-io/thanos
+    first_release_date: 2018-05-18
+    first_release_version: 0.1.0-rc.0 # https://github.com/thanos-io/thanos/releases/tag/v0.1.0-rc.0
+    latest_release_date: 2023-08-01
+    release_count: 122
+
