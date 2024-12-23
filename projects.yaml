@@ -649,6 +649,24 @@ projects:
     latest_release_version: 0.6.1.1
     release_count: 39
     reason: 11444 reverse dependencies on Hackage, including GHC itself.
+  - name: Discord for Linux
+    reason: A very popular communication platform with 200+ million monthly users, that has been version 0 since 2015.
+    wp_url: https://en.wikipedia.org/wiki/Discord
+    url: https://discord.com/api/download?platform=linux&format=tar.gz # Latest in tar.gz format
+    first_release_date: 2015-05-13 # According to Wikipedia - however according the files version 0.0.1 on Linux was compiled on 2017-01-04
+    first_release_version: 0.0.1 # https://stable.dl2.discordapp.net/apps/linux/0.0.1/discord-0.0.1.tar.gz
+    latest_release_date: 2024-12-05 # Assuming that the latest patch notes refer to this version (https://discord.com/blog/discord-patch-notes-december-5-2024)
+    latest_release_version: 0.0.77 # https://discord.com/api/download?platform=linux&format=tar.gz -> https://stable.dl2.discordapp.net/apps/linux/0.0.77/discord-0.0.77.tar.gz
+    release_count: 78
+  - name: Discord for OSX
+    reason: A very popular communication platform with 200+ million monthly users, that has been version 0 since 2015.
+    wp_url: https://en.wikipedia.org/wiki/Discord
+    url: https://discord.com/api/download?platform=osx
+    first_release_date: 2015-05-13 # According to Wikipedia - however according the files version 0.0.165 on OSX was compiled on 2015-03-23
+    first_release_version: 0.0.165 # https://stable.dl2.discordapp.net/apps/osx/0.0.165/Discord.dmg
+    latest_release_date: 2024-12-05 # Assuming that the latest patch notes refer to this version (https://discord.com/blog/discord-patch-notes-december-5-2024)
+    latest_release_version: 0.0.329 # https://discord.com/api/download?platform=osx -> https://stable.dl2.discordapp.net/apps/osx/0.0.329/Discord.dmg
+    release_count: 148
   - name: Thanos
     url: https://thanos.io
     repo_url: https://github.com/thanos-io/thanos
