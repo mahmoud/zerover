@@ -158,6 +158,7 @@ projects:
   - name: ClamAV Antivirus
     gh_url: https://github.com/Cisco-Talos/clamav-devel
   - name: OpenRCT2
+    url: https://openrct2.io/
     gh_url: https://github.com/OpenRCT2/OpenRCT2
   - name: bup
     gh_url: https://github.com/bup/bup
@@ -278,6 +279,7 @@ projects:
   - name: Notary
     gh_url: https://github.com/notaryproject/notary
   - name: GoodbyeDPI
+    url: https://ntc.party/c/community-software/goodbyedpi
     gh_url: https://github.com/ValdikSS/GoodbyeDPI
   - name: Enlightenment
     url: http://www.enlightenment.org/
@@ -415,12 +417,6 @@ projects:
   - name: TypeORM
     url: http://typeorm.io/
     gh_url: https://github.com/typeorm/typeorm
-  - name: OpenRCT2
-    url: https://openrct2.io/
-    gh_url: https://github.com/OpenRCT2/OpenRCT2
-  - name: GoodbyeDPI
-    url: https://ntc.party/c/community-software/goodbyedpi
-    gh_url: https://github.com/ValdikSS/GoodbyeDPI
   - name: Sodium
     gh_url: https://github.com/CaffeineMC/sodium
   - name: The Clipboard project
@@ -710,4 +706,3 @@ projects:
     first_release_version: 0.1.0-rc.0 # https://github.com/thanos-io/thanos/releases/tag/v0.1.0-rc.0
     latest_release_date: 2023-08-01
     release_count: 122
-
