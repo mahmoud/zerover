@@ -31,7 +31,7 @@ projects:
     reason: Official kubernetes project with a logo, but no major release.
   - name: Arrow (Python)
     gh_url: https://github.com/crsmithdev/arrow
-  - name: NeoVIM
+  - name: Neovim
     gh_url: https://github.com/neovim/neovim
   - name: Tor
     gh_url: https://github.com/torproject/tor
@@ -667,3 +667,11 @@ projects:
     latest_release_date: 2024-12-05 # Assuming that the latest patch notes refer to this version (https://discord.com/blog/discord-patch-notes-december-5-2024)
     latest_release_version: 0.0.329 # https://discord.com/api/download?platform=osx -> https://stable.dl2.discordapp.net/apps/osx/0.0.329/Discord.dmg
     release_count: 148
+  - name: Thanos
+    url: https://thanos.io
+    repo_url: https://github.com/thanos-io/thanos
+    first_release_date: 2018-05-18
+    first_release_version: 0.1.0-rc.0 # https://github.com/thanos-io/thanos/releases/tag/v0.1.0-rc.0
+    latest_release_date: 2023-08-01
+    release_count: 122
+
