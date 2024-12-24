@@ -706,3 +706,11 @@ projects:
     first_release_version: 0.1.0-rc.0 # https://github.com/thanos-io/thanos/releases/tag/v0.1.0-rc.0
     latest_release_date: 2023-08-01
     release_count: 122
+  - name: Tiny C Compiler
+    url: https://repo.or.cz/tinycc.git
+    _gh_url: https://github.com/TinyCC/TinyCC
+    first_release_date: 2003-04-14
+    first_release_version: release_0_9_18
+    latest_release_date: 2017-12-12
+    latest_release_version: release_0_9_27
+    release_count: 9
