@@ -58,28 +58,21 @@ here](/submissions.html)!
 These flagship ZeroVer projects know how to get the most out of their
 zeroes.
 
-## HashiCorp Vault and Terraform
+## PuTTY
 
-<img align="left" style="padding-right: 15px" width="15%" src="/uploads/vault_logo.png">
-[HashiCorp's Vault][vault] project aims to be an enterprise secret
-management service, comprising the bedrock of a modern,
-microservice-oriented environment. And that's what makes it one of
-ZeroVer's most important adherents.
+For decades, PuTTY had been the go-to tool for professionals for creating SSH
+connections to remote hosts. PuTTY was first released in 1999 by Simon Tatham
+and has continued to resist the lure of [Semantic Versioning][semver] since.
+PuTTY's journey has been nothing short of legendary.
 
-> *Low in the stack, low in the version. That's the HashiCorp way.*
+Much like the tool itself, PuTTY's versioning approach is efficient,
+lightweight, robust, and focused on functionality rather than marketing optics
+like major releases. Its longstanding title as a ZeroVer champion has seen it
+handle everything from protocol migrations to critical security patches while
+under the reassuring banner of 0.x.
 
-<img align="right" width="30%" style="padding-left: 15px" src="/uploads/terraform_logo.png">
-
-To drive the point home, even further down the stack, HashiCorp's
-[Terraform][terraform] also complies with ZeroVer's cutting-edge
-versioning scheme. With Vault and Terraform, HashiCorp demonstrates
-industry recognition of the importance of ZeroVer in infrastructure.
-
-HashiCorp knows ZeroVer works, especially when the projects are
-business-critical products, sold and supported.
-
-[vault]: https://www.vaultproject.io/
-[terraform]: https://www.terraform.io/
+PuTTY's commitment to ZeroVer reminds us that great software doesn't need major
+version numbers to make a major impact.
 
 ## TOML
 
