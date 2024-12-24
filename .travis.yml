@@ -5,7 +5,7 @@ cache: pip
 # /master/spec/build/script/python_spec.rb and https://github.com/travis-ci
 # /travis-build/blob/master/lib/travis/build/script/python.rb
 python:
-  - "2.7"
+  - "3.13"
 
 install: "pip install -r requirements.txt"
 script:
