@@ -438,6 +438,13 @@ projects:
   - name: Metabase
     url: https://www.metabase.com/
     gh_url: https://github.com/metabase/metabase
+  - name: esbuild
+    url: https://esbuild.github.io
+    gh_url: https://github.com/evanw/esbuild
+  - name: yup
+    url: https://www.npmjs.com/package/yup
+    gh_url: https://github.com/jquense/yup
+    reason: 7+ years of history, over 2M weekly downloads on npm
   - name: n8n
     url: https://n8n.io/
     gh_url: https://github.com/n8n-io/n8n
@@ -549,7 +556,7 @@ projects:
     release_count: 142 # appx, based on df wiki release history
   - name: "Cataclysm: Dark Days Ahead"
     url: https://cataclysmdda.org
-    # gh_url: https://github.com/CleverRaven/Cataclysm-DDA  # gh is returning tags out of order
+    _gh_url: https://github.com/CleverRaven/Cataclysm-DDA # gh is returning tags out of order
     reason: Immensely popular cross-platform open-source game under continuous development for 6 years.
     first_release_version: 0.1
     first_release_date: 2013-02-26
@@ -597,10 +604,6 @@ projects:
     release_count: 133
     release_count_zc: 133
     star_count: 75000
-  - name: yup
-    url: https://www.npmjs.com/package/yup
-    gh_url: https://github.com/jquense/yup
-    reason: 7+ years of history, over 2M weekly downloads on npm
   - name: google-api-client (ruby)
     url: https://rubygems.org/gems/google-api-client/
     _gh_url: https://github.com/googleapis/google-api-ruby-client
@@ -620,9 +623,6 @@ projects:
     latest_release_date: 2021-06-15
     release_count: 67
     star_count: 881
-  - name: esbuild
-    url: https://esbuild.github.io
-    gh_url: https://github.com/evanw/esbuild
   - name: suhosin
     url: https://suhosin.org/
     _gh_url: https://github.com/sektioneins/suhosin
@@ -669,12 +669,12 @@ projects:
     emeritus: true
   - name: cargo-audit
     url: https://rustsec.org/
+    # technically on github, but has a weird monorepo version tagging scheme that'll need code to handle
+    _gh_url: https://github.com/rustsec/rustsec
     first_release_date: 2017-02-27
     first_release_version: 0.1.0
     latest_release_date: 2024-02-15
     latest_release_version: 0.20.0
-    # technically on github, but has a weird monorepo version tagging scheme that'll need code to handle
-    # gh_url: https://github.com/rustsec/rustsec
   - name: transformers
     url: https://hackage.haskell.org/package/transformers
     repo_url: https://hub.darcs.net/ross/transformers
