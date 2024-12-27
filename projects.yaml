@@ -18,691 +18,691 @@ projects:
     url: https://docs.tacticalrmm.com
     gh_url: https://github.com/amidaware/tacticalrmm
     reason: One of those forever in beta software even if it is used in critical infrastructure.
-  # - name: semver (Rust)
-  #   gh_url: https://github.com/steveklabnik/semver
-  #   reason: The irony. # kudos to David R. MacIver
-  # - name: dep (Go)
-  #   gh_url: https://github.com/golang/dep
-  #   reason: "Official dependency management tool from Golang. To quote the first line of the readme, 'dep is safe for production use.'"
-  # - name: Apache Kafka
-  #   gh_url: https://github.com/apache/kafka
-  # - name: Minikube
-  #   gh_url: https://github.com/kubernetes/minikube
-  #   reason: Official kubernetes project with a logo, but no major release.
-  # - name: Arrow (Python)
-  #   gh_url: https://github.com/crsmithdev/arrow
-  # - name: Neovim
-  #   gh_url: https://github.com/neovim/neovim
-  # - name: Tor
-  #   gh_url: https://github.com/torproject/tor
-  #   url: https://blog.torproject.org/
-  # - name: Home Assistant
-  #   gh_url: https://github.com/home-assistant/home-assistant
-  # - name: Vala
-  #   gh_url: https://github.com/GNOME/vala
-  # - name: Onion
-  #   gh_url: https://github.com/davidmoreno/onion
-  # - name: Nim
-  #   gh_url: https://github.com/nim-lang/Nim
-  # - name: Windows Terminal
-  #   url: https://www.microsoft.com/en-ca/p/windows-terminal-preview/9n0dx20hk701
-  #   gh_url: https://github.com/microsoft/terminal
-  # - name: Bitcoin
-  #   gh_url: https://github.com/bitcoin/bitcoin
-  #   # first_release_date: 2009-01-12
-  # - name: Caddy
-  #   gh_url: https://github.com/caddyserver/caddy
-  # - name: Werkzeug
-  #   gh_url: https://github.com/pallets/werkzeug
-  #   reason: Depended on by Flask and many other web frameworks.
-  # - name: Cython
-  #   gh_url: https://github.com/cython/cython
-  # - name: TOML
-  #   gh_url: https://github.com/toml-lang/toml
-  # - name: Flask
-  #   gh_url: https://github.com/pallets/flask
-  # - name: datadogpy
-  #   gh_url: https://github.com/DataDog/datadogpy
-  #   reason: Part of a paid product.
-  # - name: SciPy
-  #   gh_url: https://github.com/scipy/scipy
-  #   emeritus: true
-  # - name: Pandas
-  #   gh_url: https://github.com/pandas-dev/pandas
-  # - name: Wheel
-  #   gh_url: https://github.com/pypa/wheel
-  #   reason: Depended on by production Python deployments everywhere.
-  # - name: PyTorch
-  #   gh_url: https://github.com/pytorch/pytorch
-  # - name: HTTPie
-  #   gh_url: https://github.com/jakubroztocil/httpie
-  # - name: scikit-learn
-  #   gh_url: https://github.com/scikit-learn/scikit-learn
-  # - name: certbot
-  #   gh_url: https://github.com/certbot/certbot
-  # - name: sshuttle
-  #   gh_url: https://github.com/sshuttle/sshuttle
-  # - name: Theano
-  #   gh_url: https://github.com/Theano/Theano
-  #   emeritus: true
-  # - name: Bokeh
-  #   gh_url: https://github.com/bokeh/bokeh
-  # - name: Magic Wormhole
-  #   gh_url: https://github.com/warner/magic-wormhole
-  # - name: docopt
-  #   gh_url: https://github.com/docopt/docopt
-  # - name: httpbin
-  #   gh_url: https://github.com/postmanlabs/httpbin
-  # - name: bottle.py
-  #   gh_url: https://github.com/bottlepy/bottle
-  # - name: rq
-  #   gh_url: https://github.com/rq/rq
-  # - name: hugo
-  #   gh_url: https://github.com/gohugoio/hugo
-  # - name: drone
-  #   gh_url: https://github.com/drone/drone
-  # - name: HashiCorp Terraform
-  #   gh_url: https://github.com/hashicorp/terraform
-  # - name: HashiCorp Nomad
-  #   gh_url: https://github.com/hashicorp/nomad
-  # - name: HashiCorp Vault
-  #   gh_url: https://github.com/hashicorp/vault
-  # - name: xhyve
-  #   gh_url: https://github.com/mist64/xhyve
-  # - name: zeal
-  #   gh_url: https://github.com/zealdocs/zeal
-  # - name: html5lib-python
-  #   gh_url: https://github.com/html5lib/html5lib-python
-  #   emeritus: true
-  # - name: MyPy
-  #   gh_url: https://github.com/python/mypy
-  # - name: asn1crypto
-  #   gh_url: https://github.com/wbond/asn1crypto
-  #   reason: Depended on by pyca/cryptography
-  # - name: Orc (liborc)
-  #   url: https://cgit.freedesktop.org/gstreamer/orc
-  #   gh_url: https://github.com/GStreamer/orc
-  #   reason: Depended on by Ubuntu and other free desktop operating systems
-  # - name: Gephi
-  #   gh_url: https://github.com/gephi/gephi
-  # - name: vim-airline
-  #   gh_url: https://github.com/vim-airline/vim-airline
-  # - name: Julia
-  #   gh_url: https://github.com/JuliaLang/julia
-  # - name: Flatpak
-  #   gh_url: https://github.com/flatpak/flatpak
-  # - name: Meson Build System
-  #   gh_url: https://github.com/mesonbuild/meson
-  # - name: zsh-completions
-  #   gh_url: https://github.com/zsh-users/zsh-completions
-  # - name: Wekan
-  #   gh_url: https://github.com/wekan/wekan
-  # - name: runc
-  #   gh_url: https://github.com/opencontainers/runc
-  # - name: MechanicalSoup
-  #   gh_url: https://github.com/MechanicalSoup/MechanicalSoup
-  # - name: Sway Window Manager
-  #   gh_url: https://github.com/swaywm/sway
-  # - name: ProsodyIM
-  #   gh_url: https://github.com/bjc/prosody
-  #   url: https://prosody.im/
-  # - name: Pilosa
-  #   gh_url: https://github.com/pilosa/pilosa
-  #   url: https://www.pilosa.com/
-  # - name: fail2ban
-  #   gh_url: https://github.com/fail2ban/fail2ban
-  # - name: qtile
-  #   gh_url: https://github.com/qtile/qtile
-  # - name: autokey
-  #   gh_url: https://github.com/autokey/autokey
-  # - name: ClamAV Antivirus
-  #   gh_url: https://github.com/Cisco-Talos/clamav-devel
-  # - name: OpenRCT2
-  #   url: https://openrct2.io/
-  #   gh_url: https://github.com/OpenRCT2/OpenRCT2
-  # - name: bup
-  #   gh_url: https://github.com/bup/bup
-  # - name: You-Get
-  #   gh_url: https://github.com/soimort/you-get
-  # - name: Ramda
-  #   gh_url: https://github.com/ramda/ramda
-  # - name: dateparser
-  #   gh_url: https://github.com/scrapinghub/dateparser
-  # - name: kubectx
-  #   gh_url: https://github.com/ahmetb/kubectx
-  # - name: rollup
-  #   gh_url: https://github.com/rollup/rollup
-  # - name: Music Player Daemon (mpd)
-  #   url: https://www.musicpd.org/
-  #   gh_url: https://github.com/MusicPlayerDaemon/MPD
-  # - name: wkhtmltopdf
-  #   url: https://wkhtmltopdf.org/
-  #   gh_url: https://github.com/wkhtmltopdf/wkhtmltopdf
-  # - name: VS Code C/C++ extension
-  #   url: https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools
-  #   gh_url: https://github.com/microsoft/vscode-cpptools
-  #   reason: Created by Microsoft and with almost 8 million installs, this is the standard extension you want if working with C or C++ in VS Code.
-  # - name: pywinauto
-  #   url: http://pywinauto.github.io/
-  #   gh_url: https://github.com/pywinauto/pywinauto
-  # - name: React
-  #   url: https://reactjs.org
-  #   first_release_version: v0.3.0
-  #   gh_url: https://github.com/facebook/react
-  #   emeritus: true
-  # - name: Rake
-  #   gh_url: https://github.com/ruby/rake
-  #   emeritus: true
-  #   reason: The pioneer of the zero-to-double-digits jump.
-  # - name: Chocolatey
-  #   url: https://chocolatey.org/
-  #   gh_url: https://github.com/chocolatey/choco
-  # - name: Perkeep
-  #   gh_url: https://github.com/perkeep/perkeep
-  # - name: asn1c
-  #   gh_url: https://github.com/vlm/asn1c
-  # - name: React Native
-  #   gh_url: https://github.com/facebook/react-native
-  # - name: PHPStan
-  #   gh_url: https://github.com/phpstan/phpstan
-  # - name: Nuitka
-  #   url: https://nuitka.net/
-  #   gh_url: https://github.com/Nuitka/Nuitka
-  # - name: StreamEx
-  #   gh_url: https://github.com/amaembo/streamex
-  # - name: 3proxy
-  #   gh_url: https://github.com/z3APA3A/3proxy
-  # - name: Flow
-  #   gh_url: https://github.com/facebook/flow
-  # - name: GoReleaser
-  #   gh_url: https://github.com/goreleaser/goreleaser
-  # - name: JaCoCo
-  #   gh_url: https://github.com/jacoco/jacoco
-  # - name: iodine
-  #   gh_url: https://github.com/yarrick/iodine
-  # - name: foreman
-  #   gh_url: https://github.com/ddollar/foreman
-  # - name: axios
-  #   gh_url: https://github.com/axios/axios
-  # - name: Pry
-  #   gh_url: https://github.com/pry/pry
-  # - name: Forge
-  #   gh_url: https://github.com/digitalbazaar/forge
-  # - name: Stellarium
-  #   gh_url: https://github.com/Stellarium/stellarium
-  # - name: xonsh
-  #   gh_url: https://github.com/xonsh/xonsh
-  # - name: ccls
-  #   gh_url: https://github.com/MaskRay/ccls
-  # - name: Colyseus
-  #   gh_url: https://github.com/colyseus/colyseus
-  # - name: Teeworlds
-  #   url: https://teeworlds.com/
-  #   gh_url: https://github.com/teeworlds/teeworlds
-  # - name: Numba
-  #   url: https://numba.pydata.org
-  #   gh_url: https://github.com/numba/numba
-  #   reason: Widely used throughout the PyData and Python scientific computing ecosystems.
-  # - name: Semgrep
-  #   url: https://semgrep.dev/
-  #   gh_url: https://github.com/returntocorp/semgrep
-  # - name: XMonad
-  #   url: https://xmonad.org/
-  #   gh_url: https://github.com/xmonad/xmonad
-  # - name: Datasette
-  #   url: https://datasette.io/
-  #   gh_url: https://github.com/simonw/datasette
-  # - name: Tendermint
-  #   gh_url: https://github.com/tendermint/tendermint/
-  # - name: Cosmos-sdk
-  #   gh_url: https://github.com/cosmos/cosmos-sdk
-  # - name: LocalStack
-  #   url: https://localstack.cloud
-  #   gh_url: https://github.com/localstack/localstack
-  #   reason: 250k+ daily Docker pulls in 2021
-  # - name: Elm Language
-  #   gh_url: https://github.com/elm/compiler
-  #   reason: Two years ago, wrote, Elm 0.19.1 will be stable for quite some time. Also, Enforces SemVer at a package level, does not follow it itself.
-  # - name: globalid (ruby)
-  #   gh_url: https://github.com/rails/globalid
-  #   reason: Dependency of Rails since 2014, still 0.5.2 in 2021
-  # - name: winapi-rs (Rust)
-  #   gh_url: https://github.com/retep998/winapi-rs
-  # - name: Paper.js
-  #   gh_url: https://github.com/paperjs/paper.js
-  # - name: Knex.js
-  #   gh_url: https://github.com/knex/knex
-  # - name: zoxide
-  #   gh_url: https://github.com/ajeetdsouza/zoxide
-  # - name: OpenRC
-  #   gh_url: https://github.com/OpenRC/openrc
-  # - name: Notary
-  #   gh_url: https://github.com/notaryproject/notary
-  # - name: GoodbyeDPI
-  #   url: https://ntc.party/c/community-software/goodbyedpi
-  #   gh_url: https://github.com/ValdikSS/GoodbyeDPI
-  # - name: Enlightenment
-  #   url: http://www.enlightenment.org/
-  #   gh_url: https://github.com/Enlightenment/enlightenment
-  # - name: mpv
-  #   gh_url: https://github.com/mpv-player/mpv
-  # - name: PyTransitions
-  #   gh_url: https://github.com/pytransitions/transitions
-  # - name: Stylus
-  #   url: https://stylus-lang.com/
-  #   gh_url: https://github.com/stylus/stylus
-  # - name: nw.js
-  #   gh_url: https://github.com/nwjs/nw.js
-  # - name: Video Speed Controller
-  #   gh_url: https://github.com/igrigorik/videospeed
-  #   url: https://chrome.google.com/webstore/detail/video-speed-controller/nffaoalbilbmmfgbnbgppjihopabppdk
-  # - name: Pyre
-  #   url: https://pyre-check.org
-  #   gh_url: https://github.com/facebook/pyre-check
-  # - name: brick/math
-  #   gh_url: https://github.com/brick/math
-  # #- name: Tachiyomi
-  # #  url: https://tachiyomi.org/
-  # #  gh_url: https://github.com/tachiyomiorg/tachiyomi
-  # #  reason: Rewrite is supposed to release as 1.0.0, but it has been stale and in progress for several years with no finish line in sight.
-  # #  dead: https://tachiyomi.org/news/2024-01-13-goodbye / https://pastebin.com/ScYsKtia
-  # - name: Mihon
-  #   url: https://mihon.app/
-  #   gh_url: https://github.com/mihonapp/mihon
-  #   reason: Spiritual succesor of Tachiyomi. As such follows its versioning convention.
-  # - name: python-dotenv
-  #   url: https://github.com/theskumar/python-dotenv
-  #   gh_url: https://github.com/theskumar/python-dotenv
-  #   reason: 8 years under development, core part of many libraries, just got to 0.20.0
-  # - name: Zig
-  #   url: https://ziglang.org
-  #   gh_url: https://github.com/ziglang/zig
-  # - name: FreeCol
-  #   url: https://www.freecol.org/
-  #   gh_url: https://github.com/FreeCol/freecol
-  # - name: asdf
-  #   gh_url: https://github.com/asdf-vm/asdf
-  # - name: Ruff
-  #   gh_url: https://github.com/astral-sh/ruff
-  # - name: Qiskit
-  #   url: https://qiskit.org/
-  #   gh_url: https://github.com/Qiskit/qiskit
-  #   reason: Qiskit is the most popular quantum computing SDK according to Unitary Fund Quantum Open Source Software survey in 2022.
-  # - name: graphile-worker
-  #   url: https://www.graphile.org/
-  #   gh_url: https://github.com/graphile/worker
-  # - name: Monero
-  #   url: https://getmonero.org
-  #   gh_url: https://github.com/monero-project/monero
-  # - name: MultiMC Launcher
-  #   url: https://multimc.org/
-  #   gh_url: https://github.com/MultiMC/Launcher
-  #   reason: Prominent launcher for maintaining multiple instances of MineCraft.
-  # - name: Factor
-  #   url: https://factorcode.org/
-  #   gh_url: https://github.com/factor/factor
-  #   reason: A concatenative stack-based programming language.
-  # - name: Tectonic
-  #   url: https://tectonic-typesetting.github.io/
-  #   gh_url: https://github.com/tectonic-typesetting/tectonic
-  #   reason: A TeX distributon that has been version 0 since 2016
-  # - name: Flipper
-  #   url: https://www.flippercloud.io/docs
-  #   gh_url: https://github.com/flippercloud/flipper
-  #   reason: The main gem for managing feature flags in Ruby with 44 million downloads.
-  # - name: CorsixTH
-  #   url: https://corsixth.com
-  #   gh_url: https://github.com/CorsixTH/CorsixTH
-  # - name: Apache Druid
-  #   url: https://druid.apache.org/
-  #   gh_url: https://github.com/apache/druid/
-  # - name: seaborn
-  #   url: https://seaborn.pydata.org/
-  #   gh_url: https://github.com/mwaskom/seaborn
-  # - name: Cartopy
-  #   url: https://scitools.org.uk/cartopy/docs/latest/
-  #   gh_url: https://github.com/SciTools/cartopy
-  # - name: fzf
-  #   url: https://github.com/junegunn/fzf#table-of-contents
-  #   gh_url: https://github.com/junegunn/fzf
-  #   reason: fzf is probably the most famous terminal fuzzy finder
-  # - name: Pint
-  #   url: https://pint.readthedocs.io
-  #   gh_url: https://github.com/hgrecco/pint
-  # - name: Helmfile
-  #   gh_url: https://github.com/helmfile/helmfile
-  # - name: Google Go CDK
-  #   gh_url: https://github.com/google/go-cloud/
-  # - name: FreeCAD
-  #   url: https://www.freecad.org/
-  #   gh_url: https://github.com/FreeCAD/FreeCAD
-  #   # first_release_date: 2002-10-29
-  #   # first_release_version: 0.0.1  # this tag's not on github, commented for now (2024-02-20)
-  # - name: Haskell bytestring
-  #   gh_url: https://github.com/haskell/bytestring
-  #   reason: Ships with the Haskell compiler, over 8000 libraries depend on it.
-  #   # first_release_date: ~2007, see https://github.com/mahmoud/zerover/issues/186
-  #   # first_release_version: 0.9
-  # - name: Anthropic Python SDK
-  #   gh_url: https://github.com/anthropics/anthropic-sdk-python
-  # - name: Excalidraw
-  #   gh_url: https://github.com/excalidraw/excalidraw/
-  # - name: restic
-  #   url: https://restic.net/
-  #   gh_url: https://github.com/restic/restic
-  # - name: Zola
-  #   url: https://www.getzola.org/
-  #   gh_url: https://github.com/getzola/zola
-  # - name: Hy
-  #   gh_url: https://github.com/hylang/hy
-  # - name: Create
-  #   url: https://createmod.net/
-  #   gh_url: https://github.com/Creators-of-Create/Create
-  # - name: FastAPI
-  #   url: https://github.com/fastapi/fastapi
-  # - name: atlantis
-  #   url: https://www.runatlantis.io/
-  #   gh_url: https://github.com/runatlantis/atlantis
-  # - name: Fabric API
-  #   url: https://modrinth.com/mod/fabric-api
-  #   gh_url: https://github.com/FabricMC/fabric
-  # - name: Nushell
-  #   url: https://www.nushell.sh
-  #   gh_url: https://github.com/nushell/nushell
-  # - name: PyVista
-  #   url: https://docs.pyvista.org/
-  #   gh_url: https://github.com/pyvista/pyvista
-  # - name: Apache Thrift
-  #   gh_url: https://github.com/apache/thrift
-  # - name: TypeORM
-  #   url: http://typeorm.io/
-  #   gh_url: https://github.com/typeorm/typeorm
-  # - name: Sodium
-  #   gh_url: https://github.com/CaffeineMC/sodium
-  # - name: The Clipboard project
-  #   url: https://getclipboard.app/
-  #   gh_url: https://github.com/Slackadays/Clipboard
-  #   reason: The only complete clipboard manager for the terminal.
-  # - name: Uncrustify
-  #   url: http://uncrustify.sourceforge.net/
-  #   gh_url: https://github.com/uncrustify/uncrustify
-  # - name: lazygit
-  #   gh_url: https://github.com/jesseduffield/lazygit
-  # - name: OpenBLAS
-  #   url: http://www.openblas.net/
-  #   gh_url: https://github.com/OpenMathLib/OpenBLAS
-  # - name: libc (Rust)
-  #   url: https://docs.rs/libc
-  #   gh_url: https://github.com/rust-lang/libc
-  #   reason: libc is one of the most popular libraries for Rust programming language providing bindings to platforms' system libraries.
-  # - name: Metabase
-  #   url: https://www.metabase.com/
-  #   gh_url: https://github.com/metabase/metabase
+  - name: semver (Rust)
+    gh_url: https://github.com/steveklabnik/semver
+    reason: The irony. # kudos to David R. MacIver
+  - name: dep (Go)
+    gh_url: https://github.com/golang/dep
+    reason: "Official dependency management tool from Golang. To quote the first line of the readme, 'dep is safe for production use.'"
+  - name: Apache Kafka
+    gh_url: https://github.com/apache/kafka
+  - name: Minikube
+    gh_url: https://github.com/kubernetes/minikube
+    reason: Official kubernetes project with a logo, but no major release.
+  - name: Arrow (Python)
+    gh_url: https://github.com/crsmithdev/arrow
+  - name: Neovim
+    gh_url: https://github.com/neovim/neovim
+  - name: Tor
+    gh_url: https://github.com/torproject/tor
+    url: https://blog.torproject.org/
+  - name: Home Assistant
+    gh_url: https://github.com/home-assistant/home-assistant
+  - name: Vala
+    gh_url: https://github.com/GNOME/vala
+  - name: Onion
+    gh_url: https://github.com/davidmoreno/onion
+  - name: Nim
+    gh_url: https://github.com/nim-lang/Nim
+  - name: Windows Terminal
+    url: https://www.microsoft.com/en-ca/p/windows-terminal-preview/9n0dx20hk701
+    gh_url: https://github.com/microsoft/terminal
+  - name: Bitcoin
+    gh_url: https://github.com/bitcoin/bitcoin
+    # first_release_date: 2009-01-12
+  - name: Caddy
+    gh_url: https://github.com/caddyserver/caddy
+  - name: Werkzeug
+    gh_url: https://github.com/pallets/werkzeug
+    reason: Depended on by Flask and many other web frameworks.
+  - name: Cython
+    gh_url: https://github.com/cython/cython
+  - name: TOML
+    gh_url: https://github.com/toml-lang/toml
+  - name: Flask
+    gh_url: https://github.com/pallets/flask
+  - name: datadogpy
+    gh_url: https://github.com/DataDog/datadogpy
+    reason: Part of a paid product.
+  - name: SciPy
+    gh_url: https://github.com/scipy/scipy
+    emeritus: true
+  - name: Pandas
+    gh_url: https://github.com/pandas-dev/pandas
+  - name: Wheel
+    gh_url: https://github.com/pypa/wheel
+    reason: Depended on by production Python deployments everywhere.
+  - name: PyTorch
+    gh_url: https://github.com/pytorch/pytorch
+  - name: HTTPie
+    gh_url: https://github.com/jakubroztocil/httpie
+  - name: scikit-learn
+    gh_url: https://github.com/scikit-learn/scikit-learn
+  - name: certbot
+    gh_url: https://github.com/certbot/certbot
+  - name: sshuttle
+    gh_url: https://github.com/sshuttle/sshuttle
+  - name: Theano
+    gh_url: https://github.com/Theano/Theano
+    emeritus: true
+  - name: Bokeh
+    gh_url: https://github.com/bokeh/bokeh
+  - name: Magic Wormhole
+    gh_url: https://github.com/warner/magic-wormhole
+  - name: docopt
+    gh_url: https://github.com/docopt/docopt
+  - name: httpbin
+    gh_url: https://github.com/postmanlabs/httpbin
+  - name: bottle.py
+    gh_url: https://github.com/bottlepy/bottle
+  - name: rq
+    gh_url: https://github.com/rq/rq
+  - name: hugo
+    gh_url: https://github.com/gohugoio/hugo
+  - name: drone
+    gh_url: https://github.com/drone/drone
+  - name: HashiCorp Terraform
+    gh_url: https://github.com/hashicorp/terraform
+  - name: HashiCorp Nomad
+    gh_url: https://github.com/hashicorp/nomad
+  - name: HashiCorp Vault
+    gh_url: https://github.com/hashicorp/vault
+  - name: xhyve
+    gh_url: https://github.com/mist64/xhyve
+  - name: zeal
+    gh_url: https://github.com/zealdocs/zeal
+  - name: html5lib-python
+    gh_url: https://github.com/html5lib/html5lib-python
+    emeritus: true
+  - name: MyPy
+    gh_url: https://github.com/python/mypy
+  - name: asn1crypto
+    gh_url: https://github.com/wbond/asn1crypto
+    reason: Depended on by pyca/cryptography
+  - name: Orc (liborc)
+    url: https://cgit.freedesktop.org/gstreamer/orc
+    gh_url: https://github.com/GStreamer/orc
+    reason: Depended on by Ubuntu and other free desktop operating systems
+  - name: Gephi
+    gh_url: https://github.com/gephi/gephi
+  - name: vim-airline
+    gh_url: https://github.com/vim-airline/vim-airline
+  - name: Julia
+    gh_url: https://github.com/JuliaLang/julia
+  - name: Flatpak
+    gh_url: https://github.com/flatpak/flatpak
+  - name: Meson Build System
+    gh_url: https://github.com/mesonbuild/meson
+  - name: zsh-completions
+    gh_url: https://github.com/zsh-users/zsh-completions
+  - name: Wekan
+    gh_url: https://github.com/wekan/wekan
+  - name: runc
+    gh_url: https://github.com/opencontainers/runc
+  - name: MechanicalSoup
+    gh_url: https://github.com/MechanicalSoup/MechanicalSoup
+  - name: Sway Window Manager
+    gh_url: https://github.com/swaywm/sway
+  - name: ProsodyIM
+    gh_url: https://github.com/bjc/prosody
+    url: https://prosody.im/
+  - name: Pilosa
+    gh_url: https://github.com/pilosa/pilosa
+    url: https://www.pilosa.com/
+  - name: fail2ban
+    gh_url: https://github.com/fail2ban/fail2ban
+  - name: qtile
+    gh_url: https://github.com/qtile/qtile
+  - name: autokey
+    gh_url: https://github.com/autokey/autokey
+  - name: ClamAV Antivirus
+    gh_url: https://github.com/Cisco-Talos/clamav-devel
+  - name: OpenRCT2
+    url: https://openrct2.io/
+    gh_url: https://github.com/OpenRCT2/OpenRCT2
+  - name: bup
+    gh_url: https://github.com/bup/bup
+  - name: You-Get
+    gh_url: https://github.com/soimort/you-get
+  - name: Ramda
+    gh_url: https://github.com/ramda/ramda
+  - name: dateparser
+    gh_url: https://github.com/scrapinghub/dateparser
+  - name: kubectx
+    gh_url: https://github.com/ahmetb/kubectx
+  - name: rollup
+    gh_url: https://github.com/rollup/rollup
+  - name: Music Player Daemon (mpd)
+    url: https://www.musicpd.org/
+    gh_url: https://github.com/MusicPlayerDaemon/MPD
+  - name: wkhtmltopdf
+    url: https://wkhtmltopdf.org/
+    gh_url: https://github.com/wkhtmltopdf/wkhtmltopdf
+  - name: VS Code C/C++ extension
+    url: https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools
+    gh_url: https://github.com/microsoft/vscode-cpptools
+    reason: Created by Microsoft and with almost 8 million installs, this is the standard extension you want if working with C or C++ in VS Code.
+  - name: pywinauto
+    url: http://pywinauto.github.io/
+    gh_url: https://github.com/pywinauto/pywinauto
+  - name: React
+    url: https://reactjs.org
+    first_release_version: v0.3.0
+    gh_url: https://github.com/facebook/react
+    emeritus: true
+  - name: Rake
+    gh_url: https://github.com/ruby/rake
+    emeritus: true
+    reason: The pioneer of the zero-to-double-digits jump.
+  - name: Chocolatey
+    url: https://chocolatey.org/
+    gh_url: https://github.com/chocolatey/choco
+  - name: Perkeep
+    gh_url: https://github.com/perkeep/perkeep
+  - name: asn1c
+    gh_url: https://github.com/vlm/asn1c
+  - name: React Native
+    gh_url: https://github.com/facebook/react-native
+  - name: PHPStan
+    gh_url: https://github.com/phpstan/phpstan
+  - name: Nuitka
+    url: https://nuitka.net/
+    gh_url: https://github.com/Nuitka/Nuitka
+  - name: StreamEx
+    gh_url: https://github.com/amaembo/streamex
+  - name: 3proxy
+    gh_url: https://github.com/z3APA3A/3proxy
+  - name: Flow
+    gh_url: https://github.com/facebook/flow
+  - name: GoReleaser
+    gh_url: https://github.com/goreleaser/goreleaser
+  - name: JaCoCo
+    gh_url: https://github.com/jacoco/jacoco
+  - name: iodine
+    gh_url: https://github.com/yarrick/iodine
+  - name: foreman
+    gh_url: https://github.com/ddollar/foreman
+  - name: axios
+    gh_url: https://github.com/axios/axios
+  - name: Pry
+    gh_url: https://github.com/pry/pry
+  - name: Forge
+    gh_url: https://github.com/digitalbazaar/forge
+  - name: Stellarium
+    gh_url: https://github.com/Stellarium/stellarium
+  - name: xonsh
+    gh_url: https://github.com/xonsh/xonsh
+  - name: ccls
+    gh_url: https://github.com/MaskRay/ccls
+  - name: Colyseus
+    gh_url: https://github.com/colyseus/colyseus
+  - name: Teeworlds
+    url: https://teeworlds.com/
+    gh_url: https://github.com/teeworlds/teeworlds
+  - name: Numba
+    url: https://numba.pydata.org
+    gh_url: https://github.com/numba/numba
+    reason: Widely used throughout the PyData and Python scientific computing ecosystems.
+  - name: Semgrep
+    url: https://semgrep.dev/
+    gh_url: https://github.com/returntocorp/semgrep
+  - name: XMonad
+    url: https://xmonad.org/
+    gh_url: https://github.com/xmonad/xmonad
+  - name: Datasette
+    url: https://datasette.io/
+    gh_url: https://github.com/simonw/datasette
+  - name: Tendermint
+    gh_url: https://github.com/tendermint/tendermint/
+  - name: Cosmos-sdk
+    gh_url: https://github.com/cosmos/cosmos-sdk
+  - name: LocalStack
+    url: https://localstack.cloud
+    gh_url: https://github.com/localstack/localstack
+    reason: 250k+ daily Docker pulls in 2021
+  - name: Elm Language
+    gh_url: https://github.com/elm/compiler
+    reason: Two years ago, wrote, Elm 0.19.1 will be stable for quite some time. Also, Enforces SemVer at a package level, does not follow it itself.
+  - name: globalid (ruby)
+    gh_url: https://github.com/rails/globalid
+    reason: Dependency of Rails since 2014, still 0.5.2 in 2021
+  - name: winapi-rs (Rust)
+    gh_url: https://github.com/retep998/winapi-rs
+  - name: Paper.js
+    gh_url: https://github.com/paperjs/paper.js
+  - name: Knex.js
+    gh_url: https://github.com/knex/knex
+  - name: zoxide
+    gh_url: https://github.com/ajeetdsouza/zoxide
+  - name: OpenRC
+    gh_url: https://github.com/OpenRC/openrc
+  - name: Notary
+    gh_url: https://github.com/notaryproject/notary
+  - name: GoodbyeDPI
+    url: https://ntc.party/c/community-software/goodbyedpi
+    gh_url: https://github.com/ValdikSS/GoodbyeDPI
+  - name: Enlightenment
+    url: http://www.enlightenment.org/
+    gh_url: https://github.com/Enlightenment/enlightenment
+  - name: mpv
+    gh_url: https://github.com/mpv-player/mpv
+  - name: PyTransitions
+    gh_url: https://github.com/pytransitions/transitions
+  - name: Stylus
+    url: https://stylus-lang.com/
+    gh_url: https://github.com/stylus/stylus
+  - name: nw.js
+    gh_url: https://github.com/nwjs/nw.js
+  - name: Video Speed Controller
+    gh_url: https://github.com/igrigorik/videospeed
+    url: https://chrome.google.com/webstore/detail/video-speed-controller/nffaoalbilbmmfgbnbgppjihopabppdk
+  - name: Pyre
+    url: https://pyre-check.org
+    gh_url: https://github.com/facebook/pyre-check
+  - name: brick/math
+    gh_url: https://github.com/brick/math
+  #- name: Tachiyomi
+  #  url: https://tachiyomi.org/
+  #  gh_url: https://github.com/tachiyomiorg/tachiyomi
+  #  reason: Rewrite is supposed to release as 1.0.0, but it has been stale and in progress for several years with no finish line in sight.
+  #  dead: https://tachiyomi.org/news/2024-01-13-goodbye / https://pastebin.com/ScYsKtia
+  - name: Mihon
+    url: https://mihon.app/
+    gh_url: https://github.com/mihonapp/mihon
+    reason: Spiritual succesor of Tachiyomi. As such follows its versioning convention.
+  - name: python-dotenv
+    url: https://github.com/theskumar/python-dotenv
+    gh_url: https://github.com/theskumar/python-dotenv
+    reason: 8 years under development, core part of many libraries, just got to 0.20.0
+  - name: Zig
+    url: https://ziglang.org
+    gh_url: https://github.com/ziglang/zig
+  - name: FreeCol
+    url: https://www.freecol.org/
+    gh_url: https://github.com/FreeCol/freecol
+  - name: asdf
+    gh_url: https://github.com/asdf-vm/asdf
+  - name: Ruff
+    gh_url: https://github.com/astral-sh/ruff
+  - name: Qiskit
+    url: https://qiskit.org/
+    gh_url: https://github.com/Qiskit/qiskit
+    reason: Qiskit is the most popular quantum computing SDK according to Unitary Fund Quantum Open Source Software survey in 2022.
+  - name: graphile-worker
+    url: https://www.graphile.org/
+    gh_url: https://github.com/graphile/worker
+  - name: Monero
+    url: https://getmonero.org
+    gh_url: https://github.com/monero-project/monero
+  - name: MultiMC Launcher
+    url: https://multimc.org/
+    gh_url: https://github.com/MultiMC/Launcher
+    reason: Prominent launcher for maintaining multiple instances of MineCraft.
+  - name: Factor
+    url: https://factorcode.org/
+    gh_url: https://github.com/factor/factor
+    reason: A concatenative stack-based programming language.
+  - name: Tectonic
+    url: https://tectonic-typesetting.github.io/
+    gh_url: https://github.com/tectonic-typesetting/tectonic
+    reason: A TeX distributon that has been version 0 since 2016
+  - name: Flipper
+    url: https://www.flippercloud.io/docs
+    gh_url: https://github.com/flippercloud/flipper
+    reason: The main gem for managing feature flags in Ruby with 44 million downloads.
+  - name: CorsixTH
+    url: https://corsixth.com
+    gh_url: https://github.com/CorsixTH/CorsixTH
+  - name: Apache Druid
+    url: https://druid.apache.org/
+    gh_url: https://github.com/apache/druid/
+  - name: seaborn
+    url: https://seaborn.pydata.org/
+    gh_url: https://github.com/mwaskom/seaborn
+  - name: Cartopy
+    url: https://scitools.org.uk/cartopy/docs/latest/
+    gh_url: https://github.com/SciTools/cartopy
+  - name: fzf
+    url: https://github.com/junegunn/fzf#table-of-contents
+    gh_url: https://github.com/junegunn/fzf
+    reason: fzf is probably the most famous terminal fuzzy finder
+  - name: Pint
+    url: https://pint.readthedocs.io
+    gh_url: https://github.com/hgrecco/pint
+  - name: Helmfile
+    gh_url: https://github.com/helmfile/helmfile
+  - name: Google Go CDK
+    gh_url: https://github.com/google/go-cloud/
+  - name: FreeCAD
+    url: https://www.freecad.org/
+    gh_url: https://github.com/FreeCAD/FreeCAD
+    # first_release_date: 2002-10-29
+    # first_release_version: 0.0.1  # this tag's not on github, commented for now (2024-02-20)
+  - name: Haskell bytestring
+    gh_url: https://github.com/haskell/bytestring
+    reason: Ships with the Haskell compiler, over 8000 libraries depend on it.
+    # first_release_date: ~2007, see https://github.com/mahmoud/zerover/issues/186
+    # first_release_version: 0.9
+  - name: Anthropic Python SDK
+    gh_url: https://github.com/anthropics/anthropic-sdk-python
+  - name: Excalidraw
+    gh_url: https://github.com/excalidraw/excalidraw/
+  - name: restic
+    url: https://restic.net/
+    gh_url: https://github.com/restic/restic
+  - name: Zola
+    url: https://www.getzola.org/
+    gh_url: https://github.com/getzola/zola
+  - name: Hy
+    gh_url: https://github.com/hylang/hy
+  - name: Create
+    url: https://createmod.net/
+    gh_url: https://github.com/Creators-of-Create/Create
+  - name: FastAPI
+    url: https://github.com/fastapi/fastapi
+  - name: atlantis
+    url: https://www.runatlantis.io/
+    gh_url: https://github.com/runatlantis/atlantis
+  - name: Fabric API
+    url: https://modrinth.com/mod/fabric-api
+    gh_url: https://github.com/FabricMC/fabric
+  - name: Nushell
+    url: https://www.nushell.sh
+    gh_url: https://github.com/nushell/nushell
+  - name: PyVista
+    url: https://docs.pyvista.org/
+    gh_url: https://github.com/pyvista/pyvista
+  - name: Apache Thrift
+    gh_url: https://github.com/apache/thrift
+  - name: TypeORM
+    url: http://typeorm.io/
+    gh_url: https://github.com/typeorm/typeorm
+  - name: Sodium
+    gh_url: https://github.com/CaffeineMC/sodium
+  - name: The Clipboard project
+    url: https://getclipboard.app/
+    gh_url: https://github.com/Slackadays/Clipboard
+    reason: The only complete clipboard manager for the terminal.
+  - name: Uncrustify
+    url: http://uncrustify.sourceforge.net/
+    gh_url: https://github.com/uncrustify/uncrustify
+  - name: lazygit
+    gh_url: https://github.com/jesseduffield/lazygit
+  - name: OpenBLAS
+    url: http://www.openblas.net/
+    gh_url: https://github.com/OpenMathLib/OpenBLAS
+  - name: libc (Rust)
+    url: https://docs.rs/libc
+    gh_url: https://github.com/rust-lang/libc
+    reason: libc is one of the most popular libraries for Rust programming language providing bindings to platforms' system libraries.
+  - name: Metabase
+    url: https://www.metabase.com/
+    gh_url: https://github.com/metabase/metabase
+  - name: esbuild
+    url: https://esbuild.github.io
+    gh_url: https://github.com/evanw/esbuild
+  - name: yup
+    url: https://www.npmjs.com/package/yup
+    gh_url: https://github.com/jquense/yup
+    reason: 7+ years of history, over 2M weekly downloads on npm
 
   # # Non-GitHub projects below, manually updated
 
-  # - name: ASCEND
-  #   repo_url: http://code.ascend4.org/ascend/trunk/
-  #   wp_url: https://en.wikipedia.org/wiki/ASCEND
-  #   url: http://ascend4.org/Main_Page
-  #   first_release_date: 1978-06-01
-  #   first_release_version: 0.0.1
-  #   latest_release_date: 2012-12-13
-  #   latest_release_version: 0.9.8
-  # - name: Dash
-  #   url: https://git.kernel.org/pub/scm/utils/dash/dash.git
-  #   first_release_date: 1997-06-19T09:29:16
-  #   first_release_version: 0.3.1
-  #   latest_release_date: 2016-09-23T14:51:58
-  #   latest_release_version: 0.5.9.1
-  # - name: docutils
-  #   repo_url: https://github.com/docutils/docutils
-  #   reason: Depended on by Sphinx and most of the content on ReadTheDocs. The reference implementation of ReStructuredText, the inspiration for Markdown.
-  #   first_release_date: 2002-01-01
-  #   first_release_version: 0.1
-  #   latest_release_version: 0.19
-  #   latest_release_date: 2022-07-05
-  # - name: Inkscape
-  #   url: https://launchpad.net/inkscape
-  #   emeritus: true
-  #   first_release_date: 2000-09-01
-  #   first_release_version: 0.16 # sodipodi cvs import according to changelog
-  #   first_nonzv_release_date: 2020-05-01
-  #   last_zv_release_version: 0.92.5
-  # - name: Compiz
-  #   first_release_date: 2006-05-22
-  #   latest_release_date: 2016-11-11
-  #   latest_release_version: 0.9.13.1
-  #   url: https://launchpad.net/compiz
-  # - name: distlib
-  #   first_release_version: 0.1.0
-  #   first_release_date: 2013-03-02
-  #   latest_release_version: 0.2.6
-  #   latest_release_date: 2017-10-28
-  #   url: https://bitbucket.org/pypa/distlib
-  #   reason: Depended on by pypa/pip
-  # - name: OpenSSL
-  #   url: https://github.com/openssl/openssl
-  #   star_count: 6706 # release name convention is weird, hardcode counts 2018-03-31
-  #   release_count_zv: 51 # technically only counts til 1.0 by date (2010). 0.9.8zh was the last 0ver and came out in 2015.
-  #   emeritus: true
-  #   first_release_date: 1998-12-23
-  #   first_release_version: 0.9.1
-  #   last_zv_release_version: 0.9.8n
-  #   first_nonzv_release_date: 2010-03-29
-  # - name: Factorio
-  #   url: https://factorio.com/
-  #   emeritus: true
-  #   first_release_date: 2012-12-24
-  #   first_release_version: 0.1.0
-  #   latest_release_version: 1.0.0
-  #   latest_release_date: 2020-08-14
-  #   first_nonzv_release_date: 2020-08-14
-  #   last_zv_release_version: 0.18.47
-  #   reason: Popular, for-profit game.
-  # - name: pg (Ruby)
-  #   url: https://rubygems.org/gems/pg
-  #   first_release_version: 0.7.9.2008.01.28
-  #   first_release_date: 2008-01-26
-  #   last_zv_release_version: 0.21.0
-  #   first_nonzv_release_date: 2017-06-13
-  #   release_count_zv: 123
-  #   reason: Leading library for connecting Ruby to Postgres
-  #   emeritus: true
-  # - name: PuTTY
-  #   url: https://www.chiark.greenend.org.uk/~sgtatham/putty/
-  #   first_release_version: 0.43beta
-  #   first_release_date: 1999-01-08
-  #   latest_release_version: 0.82
-  #   latest_release_date: 2024-11-27
-  #   reason: Probably the most popular SSH client in Windows history
-  # - name: MAME
-  #   url: https://github.com/mamedev/mame
-  #   wp_url: https://en.wikipedia.org/wiki/MAME
-  #   star_count: 6970
-  #   first_release_version: 0.1
-  #   first_release_date: 1997-02-05
-  #   latest_release_version: 0.259
-  #   latest_release_date: 2023-09-28
-  #   release_count: 259
-  #   release_count_zv: 259
-  # - name: slrn # thanks hynek
-  #   url: http://slrn.sourceforge.net/
-  #   wp_url: https://en.wikipedia.org/wiki/Slrn
-  #   first_release_date: 1994-08-13 # https://sourceforge.net/p/slrn/mailman/message/6405527/
-  #   first_release_version: 0.1.0.0
-  #   latest_release_date: 2016-10-23
-  #   latest_release_version: 1.0.3
-  #   last_zv_release_version: 0.9.9p1
-  #   first_nonzv_release_date: 2012-12-21
-  #   emeritus: true
-  #   release_count: 71 # changelog_text.count('\nChanges since 0')
-  # - name: Dwarf Fortress
-  #   url: http://www.bay12games.com/dwarves/
-  #   first_release_date: 2006-08-08
-  #   first_release_version: 0.21.93.19a
-  #   latest_release_date: 2018-04-01
-  #   latest_release_version: 0.44.09
-  #   release_count: 142 # appx, based on df wiki release history
-  # - name: "Cataclysm: Dark Days Ahead"
-  #   url: https://cataclysmdda.org
-  #   # gh_url: https://github.com/CleverRaven/Cataclysm-DDA  # gh is returning tags out of order
-  #   reason: Immensely popular cross-platform open-source game under continuous development for 6 years.
-  #   first_release_version: 0.1
-  #   first_release_date: 2013-02-26
-  #   latest_release_version: 0.C
-  #   latest_release_date: 2015-03-19
-  #   release_count: 15
-  #   release_count_zv: 15
-  #   star_count: 1775
-  # - name: Window Maker
-  #   url: https://windowmaker.org/
-  #   wp_url: https://en.wikipedia.org/wiki/Window_Maker
-  #   first_release_date: 1997-01-01 # exact date unknown
-  #   first_release_version: 0.0.3
-  #   latest_release_version: 0.96.0
-  #   latest_release_date: 2023-08-05
-  #   release_count: 94
-  # - name: ReactOS
-  #   url: https://www.reactos.org/
-  #   _gh_url: https://github.com/reactos/reactos # underscore prefix prevents overriding data below
-  #   reason: A free Windows-compatible Operating System
-  #   first_release_version: 0.0.7
-  #   first_release_date: 1996-01-23
-  #   latest_release_version: 0.4.14
-  #   latest_release_date: 2021-12-16
-  #   release_count: 59 # ignore github saying >250 releases, ~80% of them are some kind of weird backup non-releases
-  #   release_count_zv: 59
-  #   star_count: 13301
-  # - name: OpenStreetMap API/website
-  #   url: https://openstreetmap.org/
-  #   wp_url: https://en.wikipedia.org/wiki/OpenStreetMap
-  #   _gh_url: https://github.com/openstreetmap/openstreetmap-website # Dosen't use releases on GitHub
-  #   reason: "Open map data used almost anywhere there's a non-Google map."
-  #   first_release_version: 0.3
-  #   first_release_date: 2004-8-9
-  #   latest_release_version: 0.6 February 2021 # See https://wiki.openstreetmap.org/wiki/API_v0.6#Semantic_versioning
-  #   latest_release_date: 2021-02-01
-  #   release_count: 14 # 0.3 → 0.6 and then the dated changes to 0.6
-  # - name: three.js
-  #   url: https://threejs.org/
-  #   _gh_url: https://github.com/mrdoob/three.js
-  #   first_release_version: 0.1 # github releases are r1-r130
-  #   first_release_date: 2013-07-03T11:49:48
-  #   latest_release_version: 0.130
-  #   latest_release_date: 2021-10-04T18:49:30
-  #   release_count: 133
-  #   release_count_zc: 133
-  #   star_count: 75000
-  # - name: yup
-  #   url: https://www.npmjs.com/package/yup
-  #   gh_url: https://github.com/jquense/yup
-  #   reason: 7+ years of history, over 2M weekly downloads on npm
-  # - name: google-api-client (ruby)
-  #   url: https://rubygems.org/gems/google-api-client/
-  #   _gh_url: https://github.com/googleapis/google-api-ruby-client
-  #   first_release_version: 0.1.0
-  #   first_release_date: 2010-10-14
-  #   latest_release_version: 0.53.0
-  #   latest_release_date: 2021-01-18
-  #   release_count: 201
-  #   star_count: 2400
-  # - name: rand
-  #   url: https://rust-random.github.io/book/
-  #   gh_url: https://github.com/rust-random/rand
-  #   reason: The most downloaded Rust crate
-  #   first_release_version: 0.1.1
-  #   first_release_date: 2015-02-03
-  #   latest_release_version: 0.8.4
-  #   latest_release_date: 2021-06-15
-  #   release_count: 67
-  #   star_count: 881
-  # - name: esbuild
-  #   url: https://esbuild.github.io
-  #   gh_url: https://github.com/evanw/esbuild
-  # - name: suhosin
-  #   url: https://suhosin.org/
-  #   _gh_url: https://github.com/sektioneins/suhosin
-  #   first_release_version: 0.9.1
-  #   first_release_date: 2006-09-16T00:00:00
-  #   latest_release_version: 0.9.38
-  #   latest_release_date: 2015-05-21T00:00:00
-  # - name: Pure Data
-  #   wp_url: https://en.wikipedia.org/wiki/Pure_Data
-  #   _gh_url: https://github.com/pure-data/pure-data/
-  #   url: https://puredata.info/
-  #   first_release_date: 1996-06-01
-  #   first_release_version: 0.1
-  #   latest_release_version: 0.52-1
-  #   latest_release_date: 2021-12-19
-  # - name: XeTeX
-  #   wp_url: https://en.wikipedia.org/wiki/XeTeX
-  #   url: http://xetex.sourceforge.net/
-  #   first_release_date: 2004-04-07
-  #   first_release_version: 0.3
-  #   latest_release_version: 0.999992
-  #   latest_release_date: 2020-01-20
-  # - name: PipeWire
-  #   wp_url: https://en.wikipedia.org/wiki/PipeWire
-  #   url: https://pipewire.org/
-  #   first_release_date: 2017-06-20
-  #   first_release_version: 0.1.0
-  #   latest_release_date: 2023-06-26
-  #   latest_release_version: 0.3.72
-  # - name: gettext
-  #   wp_url: https://en.wikipedia.org/wiki/Gettext
-  #   url: https://www.gnu.org/software/gettext/
-  #   first_release_date: 1987-01-01 # https://web.archive.org/web/20120323032211/http://compgroups.net/comp.unix.solaris/History-of-gettext-et-al
-  #   first_release_version: 0.1 # earliest version still on gnu.org is 0.10.40 from 2001-09-15
-  #   latest_release_date: 2023-06-17
-  #   latest_release_version: 0.22
-  # - name: Wine
-  #   wp_url: https://en.wikipedia.org/wiki/Wine_(software)
-  #   url: https://www.winehq.org/
-  #   first_release_date: 1993-06-29
-  #   first_release_version: 0.0.2
-  #   first_nonzv_release_date: 2008-06-17
-  #   last_zv_release_version: 0.9.61
-  #   emeritus: true
-  # - name: cargo-audit
-  #   url: https://rustsec.org/
-  #   first_release_date: 2017-02-27
-  #   first_release_version: 0.1.0
-  #   latest_release_date: 2024-02-15
-  #   latest_release_version: 0.20.0
-  #   # technically on github, but has a weird monorepo version tagging scheme that'll need code to handle
-  #   # gh_url: https://github.com/rustsec/rustsec
-  # - name: transformers
-  #   url: https://hackage.haskell.org/package/transformers
-  #   repo_url: https://hub.darcs.net/ross/transformers
-  #   first_release_date: 2009-01-05
-  #   first_release_version: 0.0.0.0 # Now *they* understand the power of zerover.
-  #   latest_release_date: 2023-08-01
-  #   latest_release_version: 0.6.1.1
-  #   release_count: 39
-  #   reason: 11444 reverse dependencies on Hackage, including GHC itself.
-  # - name: Discord for Linux
-  #   reason: A very popular communication platform with 200+ million monthly users, that has been version 0 since 2015.
-  #   wp_url: https://en.wikipedia.org/wiki/Discord
-  #   url: https://discord.com/api/download?platform=linux&format=tar.gz # Latest in tar.gz format
-  #   first_release_date: 2015-05-13 # According to Wikipedia - however according the files version 0.0.1 on Linux was compiled on 2017-01-04
-  #   first_release_version: 0.0.1 # https://stable.dl2.discordapp.net/apps/linux/0.0.1/discord-0.0.1.tar.gz
-  #   latest_release_date: 2024-12-05 # Assuming that the latest patch notes refer to this version (https://discord.com/blog/discord-patch-notes-december-5-2024)
-  #   latest_release_version: 0.0.77 # https://discord.com/api/download?platform=linux&format=tar.gz -> https://stable.dl2.discordapp.net/apps/linux/0.0.77/discord-0.0.77.tar.gz
-  #   release_count: 78
-  # - name: Discord for OSX
-  #   reason: A very popular communication platform with 200+ million monthly users, that has been version 0 since 2015.
-  #   wp_url: https://en.wikipedia.org/wiki/Discord
-  #   url: https://discord.com/api/download?platform=osx
-  #   first_release_date: 2015-05-13 # According to Wikipedia - however according the files version 0.0.165 on OSX was compiled on 2015-03-23
-  #   first_release_version: 0.0.165 # https://stable.dl2.discordapp.net/apps/osx/0.0.165/Discord.dmg
-  #   latest_release_date: 2024-12-05 # Assuming that the latest patch notes refer to this version (https://discord.com/blog/discord-patch-notes-december-5-2024)
-  #   latest_release_version: 0.0.329 # https://discord.com/api/download?platform=osx -> https://stable.dl2.discordapp.net/apps/osx/0.0.329/Discord.dmg
-  #   release_count: 148
-  # - name: Thanos
-  #   url: https://thanos.io
-  #   repo_url: https://github.com/thanos-io/thanos
-  #   first_release_date: 2018-05-18
-  #   first_release_version: 0.1.0-rc.0 # https://github.com/thanos-io/thanos/releases/tag/v0.1.0-rc.0
-  #   latest_release_date: 2023-08-01
-  #   release_count: 122
+  - name: ASCEND
+    repo_url: http://code.ascend4.org/ascend/trunk/
+    wp_url: https://en.wikipedia.org/wiki/ASCEND
+    url: http://ascend4.org/Main_Page
+    first_release_date: 1978-06-01
+    first_release_version: 0.0.1
+    latest_release_date: 2012-12-13
+    latest_release_version: 0.9.8
+  - name: Dash
+    url: https://git.kernel.org/pub/scm/utils/dash/dash.git
+    first_release_date: 1997-06-19T09:29:16
+    first_release_version: 0.3.1
+    latest_release_date: 2016-09-23T14:51:58
+    latest_release_version: 0.5.9.1
+  - name: docutils
+    repo_url: https://github.com/docutils/docutils
+    reason: Depended on by Sphinx and most of the content on ReadTheDocs. The reference implementation of ReStructuredText, the inspiration for Markdown.
+    first_release_date: 2002-01-01
+    first_release_version: 0.1
+    latest_release_version: 0.19
+    latest_release_date: 2022-07-05
+  - name: Inkscape
+    url: https://launchpad.net/inkscape
+    emeritus: true
+    first_release_date: 2000-09-01
+    first_release_version: 0.16 # sodipodi cvs import according to changelog
+    first_nonzv_release_date: 2020-05-01
+    last_zv_release_version: 0.92.5
+  - name: Compiz
+    first_release_date: 2006-05-22
+    latest_release_date: 2016-11-11
+    latest_release_version: 0.9.13.1
+    url: https://launchpad.net/compiz
+  - name: distlib
+    first_release_version: 0.1.0
+    first_release_date: 2013-03-02
+    latest_release_version: 0.2.6
+    latest_release_date: 2017-10-28
+    url: https://bitbucket.org/pypa/distlib
+    reason: Depended on by pypa/pip
+  - name: OpenSSL
+    url: https://github.com/openssl/openssl
+    star_count: 6706 # release name convention is weird, hardcode counts 2018-03-31
+    release_count_zv: 51 # technically only counts til 1.0 by date (2010). 0.9.8zh was the last 0ver and came out in 2015.
+    emeritus: true
+    first_release_date: 1998-12-23
+    first_release_version: 0.9.1
+    last_zv_release_version: 0.9.8n
+    first_nonzv_release_date: 2010-03-29
+  - name: Factorio
+    url: https://factorio.com/
+    emeritus: true
+    first_release_date: 2012-12-24
+    first_release_version: 0.1.0
+    latest_release_version: 1.0.0
+    latest_release_date: 2020-08-14
+    first_nonzv_release_date: 2020-08-14
+    last_zv_release_version: 0.18.47
+    reason: Popular, for-profit game.
+  - name: pg (Ruby)
+    url: https://rubygems.org/gems/pg
+    first_release_version: 0.7.9.2008.01.28
+    first_release_date: 2008-01-26
+    last_zv_release_version: 0.21.0
+    first_nonzv_release_date: 2017-06-13
+    release_count_zv: 123
+    reason: Leading library for connecting Ruby to Postgres
+    emeritus: true
+  - name: PuTTY
+    url: https://www.chiark.greenend.org.uk/~sgtatham/putty/
+    first_release_version: 0.43beta
+    first_release_date: 1999-01-08
+    latest_release_version: 0.82
+    latest_release_date: 2024-11-27
+    reason: Probably the most popular SSH client in Windows history
+  - name: MAME
+    url: https://github.com/mamedev/mame
+    wp_url: https://en.wikipedia.org/wiki/MAME
+    star_count: 6970
+    first_release_version: 0.1
+    first_release_date: 1997-02-05
+    latest_release_version: 0.259
+    latest_release_date: 2023-09-28
+    release_count: 259
+    release_count_zv: 259
+  - name: slrn # thanks hynek
+    url: http://slrn.sourceforge.net/
+    wp_url: https://en.wikipedia.org/wiki/Slrn
+    first_release_date: 1994-08-13 # https://sourceforge.net/p/slrn/mailman/message/6405527/
+    first_release_version: 0.1.0.0
+    latest_release_date: 2016-10-23
+    latest_release_version: 1.0.3
+    last_zv_release_version: 0.9.9p1
+    first_nonzv_release_date: 2012-12-21
+    emeritus: true
+    release_count: 71 # changelog_text.count('\nChanges since 0')
+  - name: Dwarf Fortress
+    url: http://www.bay12games.com/dwarves/
+    first_release_date: 2006-08-08
+    first_release_version: 0.21.93.19a
+    latest_release_date: 2018-04-01
+    latest_release_version: 0.44.09
+    release_count: 142 # appx, based on df wiki release history
+  - name: "Cataclysm: Dark Days Ahead"
+    url: https://cataclysmdda.org
+    _gh_url: https://github.com/CleverRaven/Cataclysm-DDA # gh is returning tags out of order
+    reason: Immensely popular cross-platform open-source game under continuous development for 6 years.
+    first_release_version: 0.1
+    first_release_date: 2013-02-26
+    latest_release_version: 0.C
+    latest_release_date: 2015-03-19
+    release_count: 15
+    release_count_zv: 15
+    star_count: 1775
+  - name: Window Maker
+    url: https://windowmaker.org/
+    wp_url: https://en.wikipedia.org/wiki/Window_Maker
+    first_release_date: 1997-01-01 # exact date unknown
+    first_release_version: 0.0.3
+    latest_release_version: 0.96.0
+    latest_release_date: 2023-08-05
+    release_count: 94
+  - name: ReactOS
+    url: https://www.reactos.org/
+    _gh_url: https://github.com/reactos/reactos # underscore prefix prevents overriding data below
+    reason: A free Windows-compatible Operating System
+    first_release_version: 0.0.7
+    first_release_date: 1996-01-23
+    latest_release_version: 0.4.14
+    latest_release_date: 2021-12-16
+    release_count: 59 # ignore github saying >250 releases, ~80% of them are some kind of weird backup non-releases
+    release_count_zv: 59
+    star_count: 13301
+  - name: OpenStreetMap API/website
+    url: https://openstreetmap.org/
+    wp_url: https://en.wikipedia.org/wiki/OpenStreetMap
+    _gh_url: https://github.com/openstreetmap/openstreetmap-website # Dosen't use releases on GitHub
+    reason: "Open map data used almost anywhere there's a non-Google map."
+    first_release_version: 0.3
+    first_release_date: 2004-8-9
+    latest_release_version: 0.6 February 2021 # See https://wiki.openstreetmap.org/wiki/API_v0.6#Semantic_versioning
+    latest_release_date: 2021-02-01
+    release_count: 14 # 0.3 → 0.6 and then the dated changes to 0.6
+  - name: three.js
+    url: https://threejs.org/
+    _gh_url: https://github.com/mrdoob/three.js
+    first_release_version: 0.1 # github releases are r1-r130
+    first_release_date: 2013-07-03T11:49:48
+    latest_release_version: 0.130
+    latest_release_date: 2021-10-04T18:49:30
+    release_count: 133
+    release_count_zc: 133
+    star_count: 75000
+  - name: google-api-client (ruby)
+    url: https://rubygems.org/gems/google-api-client/
+    _gh_url: https://github.com/googleapis/google-api-ruby-client
+    first_release_version: 0.1.0
+    first_release_date: 2010-10-14
+    latest_release_version: 0.53.0
+    latest_release_date: 2021-01-18
+    release_count: 201
+    star_count: 2400
+  - name: rand
+    url: https://rust-random.github.io/book/
+    gh_url: https://github.com/rust-random/rand
+    reason: The most downloaded Rust crate
+    first_release_version: 0.1.1
+    first_release_date: 2015-02-03
+    latest_release_version: 0.8.4
+    latest_release_date: 2021-06-15
+    release_count: 67
+    star_count: 881
+  - name: suhosin
+    url: https://suhosin.org/
+    _gh_url: https://github.com/sektioneins/suhosin
+    first_release_version: 0.9.1
+    first_release_date: 2006-09-16T00:00:00
+    latest_release_version: 0.9.38
+    latest_release_date: 2015-05-21T00:00:00
+  - name: Pure Data
+    wp_url: https://en.wikipedia.org/wiki/Pure_Data
+    _gh_url: https://github.com/pure-data/pure-data/
+    url: https://puredata.info/
+    first_release_date: 1996-06-01
+    first_release_version: 0.1
+    latest_release_version: 0.52-1
+    latest_release_date: 2021-12-19
+  - name: XeTeX
+    wp_url: https://en.wikipedia.org/wiki/XeTeX
+    url: http://xetex.sourceforge.net/
+    first_release_date: 2004-04-07
+    first_release_version: 0.3
+    latest_release_version: 0.999992
+    latest_release_date: 2020-01-20
+  - name: PipeWire
+    wp_url: https://en.wikipedia.org/wiki/PipeWire
+    url: https://pipewire.org/
+    first_release_date: 2017-06-20
+    first_release_version: 0.1.0
+    latest_release_date: 2023-06-26
+    latest_release_version: 0.3.72
+  - name: gettext
+    wp_url: https://en.wikipedia.org/wiki/Gettext
+    url: https://www.gnu.org/software/gettext/
+    first_release_date: 1987-01-01 # https://web.archive.org/web/20120323032211/http://compgroups.net/comp.unix.solaris/History-of-gettext-et-al
+    first_release_version: 0.1 # earliest version still on gnu.org is 0.10.40 from 2001-09-15
+    latest_release_date: 2023-06-17
+    latest_release_version: 0.22
+  - name: Wine
+    wp_url: https://en.wikipedia.org/wiki/Wine_(software)
+    url: https://www.winehq.org/
+    first_release_date: 1993-06-29
+    first_release_version: 0.0.2
+    first_nonzv_release_date: 2008-06-17
+    last_zv_release_version: 0.9.61
+    emeritus: true
+  - name: cargo-audit
+    url: https://rustsec.org/
+    # technically on github, but has a weird monorepo version tagging scheme that'll need code to handle
+    _gh_url: https://github.com/rustsec/rustsec
+    first_release_date: 2017-02-27
+    first_release_version: 0.1.0
+    latest_release_date: 2024-02-15
+    latest_release_version: 0.20.0
+  - name: transformers
+    url: https://hackage.haskell.org/package/transformers
+    repo_url: https://hub.darcs.net/ross/transformers
+    first_release_date: 2009-01-05
+    first_release_version: 0.0.0.0 # Now *they* understand the power of zerover.
+    latest_release_date: 2023-08-01
+    latest_release_version: 0.6.1.1
+    release_count: 39
+    reason: 11444 reverse dependencies on Hackage, including GHC itself.
+  - name: Discord for Linux
+    reason: A very popular communication platform with 200+ million monthly users, that has been version 0 since 2015.
+    wp_url: https://en.wikipedia.org/wiki/Discord
+    url: https://discord.com/api/download?platform=linux&format=tar.gz # Latest in tar.gz format
+    first_release_date: 2015-05-13 # According to Wikipedia - however according the files version 0.0.1 on Linux was compiled on 2017-01-04
+    first_release_version: 0.0.1 # https://stable.dl2.discordapp.net/apps/linux/0.0.1/discord-0.0.1.tar.gz
+    latest_release_date: 2024-12-05 # Assuming that the latest patch notes refer to this version (https://discord.com/blog/discord-patch-notes-december-5-2024)
+    latest_release_version: 0.0.77 # https://discord.com/api/download?platform=linux&format=tar.gz -> https://stable.dl2.discordapp.net/apps/linux/0.0.77/discord-0.0.77.tar.gz
+    release_count: 78
+  - name: Discord for OSX
+    reason: A very popular communication platform with 200+ million monthly users, that has been version 0 since 2015.
+    wp_url: https://en.wikipedia.org/wiki/Discord
+    url: https://discord.com/api/download?platform=osx
+    first_release_date: 2015-05-13 # According to Wikipedia - however according the files version 0.0.165 on OSX was compiled on 2015-03-23
+    first_release_version: 0.0.165 # https://stable.dl2.discordapp.net/apps/osx/0.0.165/Discord.dmg
+    latest_release_date: 2024-12-05 # Assuming that the latest patch notes refer to this version (https://discord.com/blog/discord-patch-notes-december-5-2024)
+    latest_release_version: 0.0.329 # https://discord.com/api/download?platform=osx -> https://stable.dl2.discordapp.net/apps/osx/0.0.329/Discord.dmg
+    release_count: 148
+  - name: Thanos
+    url: https://thanos.io
+    repo_url: https://github.com/thanos-io/thanos
+    first_release_date: 2018-05-18
+    first_release_version: 0.1.0-rc.0 # https://github.com/thanos-io/thanos/releases/tag/v0.1.0-rc.0
+    latest_release_date: 2023-08-01
+    release_count: 122
