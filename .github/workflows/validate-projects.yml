@@ -4,11 +4,9 @@ on:
   push:
     branches:
       - master
-      - master-test-ci
   pull_request:
     branches:
       - master
-      - master-test-ci
 
 jobs:
   validate-projects-yaml:
@@ -28,15 +26,18 @@ jobs:
       - name: Validate projects YAML file
         run: python -u tools/check_projects_yaml.py
 
-  update-projects:
-    if: github.ref == 'refs/heads/master-test-ci'
+  update-and-deploy:
+    if: github.ref == 'refs/heads/master'
+    needs: validate-projects-yaml
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: 3.12
 
@@ -44,7 +45,13 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Generate updated projects.json file
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_USER: ${{ vars.GH_USER }}
         run: python -u tools/gen_projects_json.py
+
+      - name: Publish new site
+        run: python -c "print('chert publish here...')"
 
       - name: Commit and Push Changes
         run: |
@@ -52,26 +59,4 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add projects.json
           git commit -m "chore: update project.json"
-          git push origin master-test-ci
-
-  deploy:
-    if: github.ref == 'refs/heads/master-test-ci'
-    needs: update-projects
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out the code
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: 3.12
-
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-
-      - name: Debug step, please remove me later
-        run: cat projects.json
-
-      - name: Validate projects YAML file
-        run: python -c "print('chert publish here...')"
+          git push origin master

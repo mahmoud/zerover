@@ -278,9 +278,9 @@ def main():
         cur_gen_date = None
 
     if cur_gen_date:
-        fetch_outdated = (datetime.datetime.now() - cur_gen_date) > datetime.timedelta(
-            seconds=3600
-        )
+        fetch_outdated = (
+            datetime.datetime.now() - cur_gen_date.replace(tzinfo=None)
+        ) > datetime.timedelta(seconds=3600)
     else:
         fetch_outdated = True
 
