@@ -1,0 +1,77 @@
+name: Validate, Update, and Deploy
+
+on:
+  push:
+    branches:
+      - master
+      - master-test-ci
+  pull_request:
+    branches:
+      - master
+      - master-test-ci
+
+jobs:
+  validate-projects-yaml:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.12
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Validate projects YAML file
+        run: python -u tools/check_projects_yaml.py
+
+  update-projects:
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.12
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Generate updated projects.json file
+        run: python -u tools/gen_projects_json.py
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add projects.json
+          git commit -m "chore: update project.json"
+          git push origin master-test-ci
+
+  deploy:
+    if: github.ref == 'refs/heads/master'
+    needs: update-projects
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.12
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Debug step, please remove me later
+        run: cat projects.json
+
+      - name: Validate projects YAML file
+        run: python -c "print('chert publish here...')"
