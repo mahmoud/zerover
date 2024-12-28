@@ -31,11 +31,35 @@ To add a project, follow the guide below.
 
 ## project.yaml Keys Description
 
+Adding a project to [`projects.yaml`](projects.yaml) is typically a simple task. You can find an [0verview of the allowable keys below](#0verview-of-keys), or find a more detailed guide with examples by directly navigating you the applicable section below from this list:
+
 - [Simple GitHub Projects](#simple-github-projects) (ZeroVer tags used)
 - [Complex GitHub Projects](#complex-github-projects-or-non-github-projects) (ZeroVer tags not used)
 - [Non-GitHub Projects](#complex-github-projects-or-non-github-projects)
 - [Emeritus Complex GitHub Projects](#emeritus-complex-github-projects-or-emeritus-non-github-projects)
 - [Emeritus Non-GitHub Projects](#emeritus-complex-github-projects-or-emeritus-non-github-projects)
+
+### 0verview of Keys
+
+| Key                           | ZeroVer or Emeritus | When to Add                                                                                                                                         | Description                                                    | Example Value                                                                                  |
+| ----------------------------- | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `name`                        | Either              | Always                                                                                                                                              | The name of the project                                        | Big ZeroVer Project                                                                            |
+| `url`                         | Either              | If the project has a webpage other than it's repository                                                                                             | The project's home page                                        | https://example.com                                                                            |
+| `gh_url`                      | Either              | If the project has a GitHub repository                                                                                                              | The project's GitHub repository link                           | https://github.com/example/test                                                                |
+| `repo_url`                    | Either              | If the project has a non-GitHub repository                                                                                                          | The project's non-GitHub repository link                       | https://gitlab.com/example                                                                     |
+| `wp_url`                      | Either              | If the project has a Wikipedia page                                                                                                                 | The project's Wikipedia link.                                  | https://www.wikipedia.org/                                                                     |
+| `emeritus`                    | Emeritus only       | If the project is no longer ZeroVer                                                                                                                 | `true` if the project is no longer ZeroVer                     | true                                                                                           |
+| `reason`                      | Either              | If the project is obscure or barely meets the 0ver requirements                                                                                     | The reason this project was added to the 0ver website listing. | This project is a core component of a large system used by millions of users around the world. |
+| `star_count`                  | Either              | If the project is not from GitHub and a star count can be obtained                                                                                  | The number of stars the project has                            | 10000                                                                                          |
+| `release_count`               | ZeroVer only        | If the project is currently ZeroVer and is not from GitHub or the repository on GitHub has an unusual tagging system                                | The number of releases the project has had                     | 100                                                                                            |
+| `release_count_zv`            | Emeritus only       | If the project is no longer ZeroVer and is not from GitHub or the repository on GitHub has an unusual tagging system                                | The number of releases the project has before it left 0ver     | 50                                                                                             |
+| `latest_release_date`         | ZeroVer only        | If the project is currently ZeroVer and is not from GitHub or the repository on GitHub has an unusual tagging system                                | The date of the latest release                                 | 2024-12-28                                                                                     |
+| `latest_release_version`      | ZeroVer only        | If the project is currently ZeroVer and is not from GitHub or the repository on GitHub has an unusual tagging system                                | The version of the latest release                              | 4.2.0                                                                                          |
+| `first_release_date`          | Either              | If the project is not from GitHub, the repository on GitHub has an unusual tagging system, or the first release tag is not on the GitHub repository | The date of the first release                                  | 2000-01-01                                                                                     |
+| `first_release_version`       | Either              | If the project is not from GitHub, the repository on GitHub has an unusual tagging system, or the first release tag is not on the GitHub repository | The version of the first release                               | 0.0.1                                                                                          |
+| `first_nonzv_release_date`    | Emeritus only       | If the project is no longer ZeroVer AND the project is not from GitHub or the repository on GitHub has an unusual tagging system                    | The date of the first non-0ver release                         | 2010-01-01                                                                                     |
+| `first_nonzv_release_version` | Emeritus only       | If the project is no longer ZeroVer AND the project is not from GitHub or the repository on GitHub has an unusual tagging system                    | The version of the first non-0ver release                      | 1.0.0                                                                                          |
+| `last_zv_release_version`     | Emeritus only       | If the project is no longer ZeroVer AND the project is not from GitHub or the repository on GitHub has an unusual tagging system                    | The last 0ver release before the project left ZeroVer          | 0.9.9                                                                                          |
 
 ### Simple GitHub Projects
 
@@ -116,6 +140,7 @@ If a complex GitHub project or non-GitHub project is no longer ZeroVer and needs
   first_release_date: 2000-01-01
   first_release_version: 0.1 # Reference: https://example.com/releases
   first_nonzv_release_date: 2024-12-30
+  first_nonzv_release_version: 1.0.0
   last_zv_release_version: 0.37.2 # Reference: https://example.com/releases
   release_count_zv: 100 # Reference: https://example.com/releases
 ```
