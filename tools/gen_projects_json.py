@@ -297,7 +297,12 @@ def main():
     cur_names = sorted([c["name"] for c in cur_projects])
     new_names = sorted([n["name"] for n in projects])
 
-    if fetch_outdated or cur_names != new_names or os.getenv("ZV_DISABLE_CACHING"):
+    caching_disabled = os.getenv("ZV_DISABLE_CACHING", "false").lower() in [
+        "true",
+        "1",
+        "yes",
+    ]
+    if fetch_outdated or cur_names != new_names or caching_disabled:
         entries = fetch_entries(projects)
     else:
         print("Current data already up to date, exiting.")
