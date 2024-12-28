@@ -11,6 +11,9 @@ from pprint import pprint
 import yaml
 from boltons.urlutils import URL
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
 
 PROJECT_ROOT_PATH = Path(__file__).parent.parent
 VTAG_RE = re.compile(
@@ -178,6 +181,8 @@ def get_gh_project_info(info: dict) -> dict:
 
     main_tags = _find_dominant_version_pattern(tags_data)
     vtags_data = [td for td in main_tags if match_vtag(td["name"])]
+    if not vtags_data:
+        return gh_info
 
     gh_info["release_count"] = len(vtags_data)
 
@@ -189,6 +194,7 @@ def get_gh_project_info(info: dict) -> dict:
     vtags_data.sort(key=lambda x: version_key(x["name"]), reverse=True)
 
     first_release_version = info.get("first_release_version")
+    first_release = None
     if first_release_version is None:
         first_release = [
             v
@@ -196,10 +202,13 @@ def get_gh_project_info(info: dict) -> dict:
             if version_key(v["name"]) < version_key(latest_release["name"])
         ][-1]
     else:
-        first_release = [v for v in vtags_data if v["name"] == first_release_version][0]
-    first_release_data = _get_gh_rel_data(first_release)
-    for k, v in first_release_data.items():
-        gh_info[f"first_release_{k}"] = v
+        first_releases = [v for v in vtags_data if v["name"] == first_release_version]
+        if first_releases:
+            first_release = first_releases[0]
+    if first_release:
+        first_release_data = _get_gh_rel_data(first_release)
+        for k, v in first_release_data.items():
+            gh_info[f"first_release_{k}"] = v
 
     zv_releases = []
     for rel in vtags_data:

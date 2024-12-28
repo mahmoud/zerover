@@ -1,26 +1,64 @@
+import datetime
 import sys
 import yaml
-from schema import Schema, Or
+from schema import Schema, Or, Optional
 from hyperlink import parse
 from pathlib import Path
 
 
-def check_url(url_str):
+def check_url(url_str: str):
     url = parse(url_str)
     assert url.scheme in ("http", "https")
-    return url
+    return True
 
 
+OPTIONAL = {
+    Optional("gh_url"): check_url,
+    Optional("reason"): str,
+    Optional("repo_url"): str,
+    Optional("wp_url"): str,
+    Optional("emeritus"): bool,
+    Optional("release_count"): int,
+    Optional("release_count_zv"): int,
+    Optional("star_count"): int,
+    Optional("first_nonzv_release_api_commit_url"): str,
+    Optional("first_nonzv_release_date"): Or(datetime.date, datetime.datetime),
+    Optional("first_nonzv_release_link"): str,
+    Optional("first_nonzv_release_tag"): str,
+    Optional("first_nonzv_release_version"): Or(float, str),
+    Optional("first_release_api_commit_url"): str,
+    Optional("first_release_date"): Or(datetime.date, datetime.datetime),
+    Optional("first_release_link"): str,
+    Optional("first_release_tag"): str,
+    Optional("first_release_version"): Or(float, str),
+    Optional("last_zv_release_version"): Or(float, str),
+    Optional("latest_release_api_commit_url"): str,
+    Optional("latest_release_date"): Or(datetime.date, datetime.datetime),
+    Optional("latest_release_link"): str,
+    Optional("latest_release_tag"): str,
+    Optional("latest_release_version"): Or(float, str),
+}
 IN_SCHEMA = Schema(
     {
         "projects": [
-            {
-                "name": str,
-                Or("url", "gh_url", "repo_url"): check_url,
-            },
+            Or(
+                # GitHub projects
+                {
+                    **OPTIONAL,
+                    "name": str,
+                    "gh_url": check_url,
+                    Optional("url"): check_url,  # Overrides gh_url for the hyperlink
+                },  # type: ignore
+                # Non-GitHub projects
+                {
+                    **OPTIONAL,
+                    "name": str,
+                    "url": check_url,
+                    "first_release_date": Or(datetime.date, datetime.datetime),
+                },  # type: ignore
+            )
         ],
     },
-    ignore_extra_keys=True,
 )
 
 
