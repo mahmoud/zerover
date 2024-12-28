@@ -1,4 +1,5 @@
 boltons==24.1.0
+chert==21.0.0 # TODO: update after new release
 hyperlink==21.0.0
 pyyaml==6.0.2
 schema==0.7.7
