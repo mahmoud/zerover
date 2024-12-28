@@ -1,3 +1,4 @@
+"""This module provides custom hooks for the Chert static site generator."""
 # user customization
 # TODO: document other hooks
 
@@ -18,9 +19,9 @@ NA_VAL = "---"
 
 
 def chert_post_load(chert_obj):
+    # https://github.com/mahmoud/chert/blob/b4a91b5a66ec5f5002d6e67a2f880709e2e11326/chert/core.py#L840
     with PROJECTS_JSON_PATH.open() as f:
-        data = json.load(f)
-        projects = data["projects"]
+        projects = json.load(f)["projects"]
 
     zv_projects, emeritus_projects = partition(projects, lambda p: p["is_zerover"])
     zv_project_table = None
@@ -47,7 +48,6 @@ def chert_post_load(chert_obj):
                 "[EMERITUS_PROJECT_TABLE]", emeritus_project_table
             )
             part["content"] = content
-    return
 
 
 ###########
