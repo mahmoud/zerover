@@ -17,7 +17,7 @@ Content is all under `entries/`.
 Tables of current and past ZeroVer users are generated from
 `projects.yaml` into `projects.json` by `tools/gen_projects_json.py`
 using the GitHub API. The project list has gotten long enough that
-you'll need an API key.
+you'll need [a GitHub API key](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token).
 
 `custom.py` uses Chert hooks to render and inject tables based off of
 `projects.json`. `custom.py` and `tools/gen_projects_json.py` are both

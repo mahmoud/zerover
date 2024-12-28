@@ -248,7 +248,8 @@ def fetch_entries(projects: list[dict]) -> list[dict]:
 
         if info.get("gh_url"):
             gh_info = get_gh_project_info(info)
-            info.update(gh_info)
+            # Only add new data, preserve any manual information
+            info.update({k: v for k, v in gh_info.items() if k not in info})
 
         info["is_zerover"] = info.get("is_zerover", not info.get("emeritus", False))
 
@@ -286,11 +287,6 @@ def main():
 
     cur_names = sorted([c["name"] for c in cur_projects])
     new_names = sorted([n["name"] for n in projects])
-
-    tpr = os.getenv("TRAVIS_PULL_REQUEST")
-    if tpr and tpr != "false":
-        print("Pull request detected. Skipping data update until merged.")
-        return
 
     if fetch_outdated or cur_names != new_names or os.getenv("ZV_DISABLE_CACHING"):
         entries = fetch_entries(projects)
