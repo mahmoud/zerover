@@ -4,6 +4,14 @@ ZeroVer is the world's most popular software versioning convention, and the only
 
 Read more at **[0ver.org](https://0ver.org)**.
 
+## Table of Contents
+
+- [Description](#description)
+- [Contributing](#contributing)
+- [Adding a Project](#adding-a-project)
+- [Building](#building)
+- [CI/CD](#cicd)
+
 ## Description
 
 The site is statically generated using [Chert](https://github.com/mahmoud/chert). The configuration for the Chert site is defined in [`chert.yaml`](chert.yaml) The pages for the site are located under [`entries/`](entries).
@@ -29,7 +37,7 @@ To add a project, follow the guide below.
 2. On the new branch, add your project to [`projects.yaml`](projects.yaml). See the [`project.yaml` keys description](#project-yaml-keys-description) below.
 3. Commit the change and create a pull request on GitHub.
 
-## project.yaml Keys Description
+## Adding a Project
 
 Adding a project to [`projects.yaml`](projects.yaml) is typically a simple task. You can find an [0verview of the allowable keys below](#0verview-of-keys), or find a more detailed guide with examples by directly navigating you the applicable section below from this list:
 
