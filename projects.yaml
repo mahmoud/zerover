@@ -395,6 +395,11 @@ projects:
   - name: Nushell
     url: https://www.nushell.sh
     gh_url: https://github.com/nushell/nushell
+  - name: Thanos
+    url: https://thanos.io
+    gh_url: https://github.com/thanos-io/thanos
+    first_release_date: 2018-05-18
+    first_release_version: 0.1.0-rc.0 # https://github.com/thanos-io/thanos/releases/tag/v0.1.0-rc.0
   - name: PyVista
     url: https://docs.pyvista.org/
     gh_url: https://github.com/pyvista/pyvista
@@ -546,7 +551,7 @@ projects:
     release_count: 24 # https://cataclysmdda.org/releases/
   - name: Window Maker
     url: https://windowmaker.org/
-    gh_url: https://github.com/window-maker/wmaker
+    gh_url: https://github.com/window-maker/wmaker # Tags are prefixed
     wp_url: https://en.wikipedia.org/wiki/Window_Maker
     first_release_date: 1997-01-01 # exact date unknown
     first_release_version: 0.0.3
@@ -673,11 +678,3 @@ projects:
     latest_release_date: 2024-12-05 # Assuming that the latest patch notes refer to this version (https://discord.com/blog/discord-patch-notes-december-5-2024)
     latest_release_version: 0.0.329 # https://discord.com/api/download?platform=osx -> https://stable.dl2.discordapp.net/apps/osx/0.0.329/Discord.dmg
     release_count: 148
-  - name: Thanos
-    url: https://thanos.io
-    gh_url: https://github.com/thanos-io/thanos
-    first_release_date: 2018-05-18
-    first_release_version: 0.1.0-rc.0 # https://github.com/thanos-io/thanos/releases/tag/v0.1.0-rc.0
-    latest_release_version: 0.37.2
-    latest_release_date: 2024-12-11
-    release_count: 124
