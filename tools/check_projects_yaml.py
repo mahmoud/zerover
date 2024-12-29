@@ -4,6 +4,7 @@ import yaml
 from schema import Schema, Or, Optional
 from hyperlink import parse
 from pathlib import Path
+from boltons.iterutils import redundant
 
 
 def check_url(url_str: str):
@@ -95,20 +96,6 @@ IN_SCHEMA = Schema(
         ],
     },
 )
-
-
-def redundant(src: list[str]):
-    """Returns a list of redundant items in the source list."""
-    items = []
-    duplicates = set()
-
-    for item in src:
-        if item in items:
-            duplicates.add(item)
-        else:
-            items.append(item)
-
-    return duplicates
 
 
 def main():
