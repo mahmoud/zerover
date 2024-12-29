@@ -28,9 +28,26 @@ jobs:
       - name: Validate projects YAML file
         run: python -u tools/check_projects_yaml.py
 
+  test-chert:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.12
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Render site
+        run: chert render
+
   update-and-deploy:
     if: github.ref == 'refs/heads/master'
-    needs: validate-projects-yaml
+    needs:
+      - validate-projects-yaml
+      - test-chert
     permissions:
       contents: write
     runs-on: ubuntu-latest
