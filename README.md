@@ -161,8 +161,8 @@ If a complex GitHub project or non-GitHub project is no longer ZeroVer and needs
 ### Updating projects.json
 
 1. Obtain a [personal access token from GitHub](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token). This token will not need any special permissions, the default options should be fine.
-2. Set the envirnoment variables `GH_USER` to your GitHub username and `GH_TOKEN` to the token you just obtained.
-3. Run `python tools/gen_projects_json.py`
+2. Create a file named `gh_token` and paste in your personal access token.
+3. Run `python tools/gen_projects_json.py --user YOUR_USERNAME --token gh_token`
 
 ### Serving the site
 

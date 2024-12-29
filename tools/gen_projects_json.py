@@ -280,7 +280,7 @@ def parse_args():
         "--token",
         type=str,
         default=os.getenv("GH_TOKEN", ""),
-        help='GitHub personal access token for API authentication. Falls back to the "GH_TOKEN" environment variable.',
+        help='A path to a file containing a GitHub personal access token for API authentication. Falls back to the "GH_TOKEN" environment variable.',
     )
     parser.add_argument(
         "--disable-caching",
@@ -294,7 +294,11 @@ def parse_args():
         help='Flag to disable caching. Falls back to the "ZV_DISABLE_CACHING" environment variable.',
     )
 
-    return parser.parse_args()
+    args = parser.parse_args()
+    if Path(args.token).is_file():
+        with Path(args.token).open() as f:
+            args.token = f.read().strip()
+    return args
 
 
 def main():

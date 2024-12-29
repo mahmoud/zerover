@@ -16,3 +16,7 @@ site/
 
 .env
 test.ipynb
+gh_token
+gh-token
+github_token
+github-token
