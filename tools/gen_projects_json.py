@@ -265,7 +265,7 @@ def fetch_entries(projects: list[dict], args: argparse.Namespace) -> list[dict]:
 
 def parse_args():
     parser = argparse.ArgumentParser(
-        description="Generate project.json from projects.yaml."
+        description="Generate or update project.json using projects.yaml."
     )
 
     parser.add_argument(
@@ -273,14 +273,14 @@ def parse_args():
         "--user",
         type=str,
         default=os.getenv("GH_USER", ""),
-        help="GitHub Username for API authentication.",
+        help='GitHub Username for API authentication. Falls back to the "GH_USER" environment variable.',
     )
     parser.add_argument(
         "-k",
         "--token",
         type=str,
         default=os.getenv("GH_TOKEN", ""),
-        help="GitHub personal access token for API authentication.",
+        help='GitHub personal access token for API authentication. Falls back to the "GH_TOKEN" environment variable.',
     )
     parser.add_argument(
         "--disable-caching",
@@ -291,7 +291,7 @@ def parse_args():
             "1",
             "yes",
         ],
-        help="Flag to disable caching.",
+        help='Flag to disable caching. Falls back to the "ZV_DISABLE_CACHING" environment variable.',
     )
 
     return parser.parse_args()
