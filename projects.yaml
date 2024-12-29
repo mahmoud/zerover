@@ -184,6 +184,8 @@ projects:
   - name: React
     url: https://reactjs.org
     gh_url: https://github.com/facebook/react
+    first_release_date: 2013-05-29T19:46:11Z
+    first_release_version: 0.3.0 # A later v0.0.0 tag breaks this
   - name: Rake
     gh_url: https://github.com/ruby/rake
     reason: The pioneer of the zero-to-double-digits jump.
