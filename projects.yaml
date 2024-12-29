@@ -31,7 +31,7 @@ projects:
     reason: Official kubernetes project with a logo, but no major release.
   - name: Arrow (Python)
     gh_url: https://github.com/crsmithdev/arrow
-  - name: NeoVIM
+  - name: Neovim
     gh_url: https://github.com/neovim/neovim
   - name: Tor
     gh_url: https://github.com/torproject/tor
@@ -157,6 +157,9 @@ projects:
     gh_url: https://github.com/autokey/autokey
   - name: ClamAV Antivirus
     gh_url: https://github.com/Cisco-Talos/clamav-devel
+  - name: OpenRCT2
+    url: https://openrct2.io/
+    gh_url: https://github.com/OpenRCT2/OpenRCT2
   - name: bup
     gh_url: https://github.com/bup/bup
   - name: You-Get
@@ -275,6 +278,9 @@ projects:
     gh_url: https://github.com/OpenRC/openrc
   - name: Notary
     gh_url: https://github.com/notaryproject/notary
+  - name: GoodbyeDPI
+    url: https://ntc.party/c/community-software/goodbyedpi
+    gh_url: https://github.com/ValdikSS/GoodbyeDPI
   - name: Enlightenment
     url: http://www.enlightenment.org/
     gh_url: https://github.com/Enlightenment/enlightenment
@@ -406,6 +412,41 @@ projects:
   - name: PyVista
     url: https://docs.pyvista.org/
     gh_url: https://github.com/pyvista/pyvista
+  - name: Apache Thrift
+    gh_url: https://github.com/apache/thrift
+  - name: TypeORM
+    url: http://typeorm.io/
+    gh_url: https://github.com/typeorm/typeorm
+  - name: Sodium
+    gh_url: https://github.com/CaffeineMC/sodium
+  - name: The Clipboard project
+    url: https://getclipboard.app/
+    gh_url: https://github.com/Slackadays/Clipboard
+    reason: The only complete clipboard manager for the terminal.
+  - name: Uncrustify
+    url: http://uncrustify.sourceforge.net/
+    gh_url: https://github.com/uncrustify/uncrustify
+  - name: lazygit
+    gh_url: https://github.com/jesseduffield/lazygit
+  - name: OpenBLAS
+    url: http://www.openblas.net/
+    gh_url: https://github.com/OpenMathLib/OpenBLAS
+  - name: libc (Rust)
+    url: https://docs.rs/libc
+    gh_url: https://github.com/rust-lang/libc
+    reason: libc is one of the most popular libraries for Rust programming language providing bindings to platforms' system libraries.
+  - name: Metabase
+    url: https://www.metabase.com/
+    gh_url: https://github.com/metabase/metabase
+  - name: esbuild
+    url: https://esbuild.github.io
+    gh_url: https://github.com/evanw/esbuild
+  - name: yup
+    url: https://www.npmjs.com/package/yup
+    gh_url: https://github.com/jquense/yup
+    reason: 7+ years of history, over 2M weekly downloads on npm
+  - name: Unmanic
+    gh_url: https://github.com/Unmanic/unmanic
   - name: Phoenix LiveView
     url: https://hex.pm/packages/phoenix_live_view
     gh_url: https://github.com/phoenixframework/phoenix_live_view
@@ -518,7 +559,7 @@ projects:
     release_count: 142 # appx, based on df wiki release history
   - name: "Cataclysm: Dark Days Ahead"
     url: https://cataclysmdda.org
-    # gh_url: https://github.com/CleverRaven/Cataclysm-DDA  # gh is returning tags out of order
+    _gh_url: https://github.com/CleverRaven/Cataclysm-DDA # gh is returning tags out of order
     reason: Immensely popular cross-platform open-source game under continuous development for 6 years.
     first_release_version: 0.1
     first_release_date: 2013-02-26
@@ -566,10 +607,6 @@ projects:
     release_count: 133
     release_count_zc: 133
     star_count: 75000
-  - name: yup
-    url: https://www.npmjs.com/package/yup
-    gh_url: https://github.com/jquense/yup
-    reason: 7+ years of history, over 2M weekly downloads on npm
   - name: google-api-client (ruby)
     url: https://rubygems.org/gems/google-api-client/
     _gh_url: https://github.com/googleapis/google-api-ruby-client
@@ -589,9 +626,6 @@ projects:
     latest_release_date: 2021-06-15
     release_count: 67
     star_count: 881
-  - name: esbuild
-    url: https://esbuild.github.io
-    gh_url: https://github.com/evanw/esbuild
   - name: suhosin
     url: https://suhosin.org/
     _gh_url: https://github.com/sektioneins/suhosin
@@ -638,12 +672,12 @@ projects:
     emeritus: true
   - name: cargo-audit
     url: https://rustsec.org/
+    # technically on github, but has a weird monorepo version tagging scheme that'll need code to handle
+    _gh_url: https://github.com/rustsec/rustsec
     first_release_date: 2017-02-27
     first_release_version: 0.1.0
     latest_release_date: 2024-02-15
     latest_release_version: 0.20.0
-    # technically on github, but has a weird monorepo version tagging scheme that'll need code to handle
-    # gh_url: https://github.com/rustsec/rustsec
   - name: transformers
     url: https://hackage.haskell.org/package/transformers
     repo_url: https://hub.darcs.net/ross/transformers
@@ -653,3 +687,28 @@ projects:
     latest_release_version: 0.6.1.1
     release_count: 39
     reason: 11444 reverse dependencies on Hackage, including GHC itself.
+  - name: Discord for Linux
+    reason: A very popular communication platform with 200+ million monthly users, that has been version 0 since 2015.
+    wp_url: https://en.wikipedia.org/wiki/Discord
+    url: https://discord.com/api/download?platform=linux&format=tar.gz # Latest in tar.gz format
+    first_release_date: 2015-05-13 # According to Wikipedia - however according the files version 0.0.1 on Linux was compiled on 2017-01-04
+    first_release_version: 0.0.1 # https://stable.dl2.discordapp.net/apps/linux/0.0.1/discord-0.0.1.tar.gz
+    latest_release_date: 2024-12-05 # Assuming that the latest patch notes refer to this version (https://discord.com/blog/discord-patch-notes-december-5-2024)
+    latest_release_version: 0.0.77 # https://discord.com/api/download?platform=linux&format=tar.gz -> https://stable.dl2.discordapp.net/apps/linux/0.0.77/discord-0.0.77.tar.gz
+    release_count: 78
+  - name: Discord for OSX
+    reason: A very popular communication platform with 200+ million monthly users, that has been version 0 since 2015.
+    wp_url: https://en.wikipedia.org/wiki/Discord
+    url: https://discord.com/api/download?platform=osx
+    first_release_date: 2015-05-13 # According to Wikipedia - however according the files version 0.0.165 on OSX was compiled on 2015-03-23
+    first_release_version: 0.0.165 # https://stable.dl2.discordapp.net/apps/osx/0.0.165/Discord.dmg
+    latest_release_date: 2024-12-05 # Assuming that the latest patch notes refer to this version (https://discord.com/blog/discord-patch-notes-december-5-2024)
+    latest_release_version: 0.0.329 # https://discord.com/api/download?platform=osx -> https://stable.dl2.discordapp.net/apps/osx/0.0.329/Discord.dmg
+    release_count: 148
+  - name: Thanos
+    url: https://thanos.io
+    repo_url: https://github.com/thanos-io/thanos
+    first_release_date: 2018-05-18
+    first_release_version: 0.1.0-rc.0 # https://github.com/thanos-io/thanos/releases/tag/v0.1.0-rc.0
+    latest_release_date: 2023-08-01
+    release_count: 122

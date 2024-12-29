@@ -19,40 +19,54 @@ from boltons.timeutils import isoparse
 
 TOOLS_PATH = os.path.dirname(os.path.abspath(__file__))
 PROJ_PATH = os.path.dirname(TOOLS_PATH)
+VTAG_RE = re.compile(r'''
+    ^
+    [^0-9]*
+    (?P<major>\d+)
+    \.
+    [0-9a-zA-Z_.]+
+    ''', re.VERBOSE)
 
-PREFIXES = ['v',     # common
-            'rel-',  # theano
-            'orc-',  # orc
-            'tor-',  # tor
-            'clamav-',  # ...
-            'streamex-',  # ...
-            'druid-', # ...
-            'nw-v',  # nw.js
+# Tags matching these patterns will be completely skipped
+SKIP_PATTERNS = [
+    r'^ciflow/',  # pytorch has loads of this noise
+    r'^ci/',      # pytorch has loads of this noise
+    r'^nightly',  # FreeCol
 ]
 
+# Version numbers after these patterns should be extracted
+STRIP_PATTERNS = [
+    r'^mc[0-9.]+-',  # Sodium tags include minecraft version numbers
+]
 
-VTAG_RE = re.compile(r'^(?P<major>\d+)\.[0-9a-zA-Z_.]+')
-
-def strip_prefix(tag_name, prefixes):
-    # TODO: could combine these all into the re
+def strip_prefix(tag_name):
+    """Strip any non-numeric prefix from the tag name."""
+    # Handle cases where tag includes a path (e.g. refs/tags/v1.0.0)
     _slash_prefix, _, tag_name = tag_name.rpartition('/')
-    for prefix in prefixes:
-        if tag_name.startswith(prefix):
-            tag_name = tag_name[len(prefix):]
-            break
+    
+    if '-' in tag_name:
+        prefix, _, version = tag_name.partition('-')
+        if re.search(r'^\d', version):
+            return version
+    
+    match = re.search(r'\d', tag_name)
+    if match:
+        return tag_name[match.start():]
     return tag_name
 
-
-def match_vtag(tag_name, prefixes):
-    tag_name = strip_prefix(tag_name, prefixes)
+def match_vtag(tag_name):
+    """Match version tags using a more general approach."""
+    tag_name = strip_prefix(tag_name)
     return VTAG_RE.match(tag_name)
 
-
-def version_key(version, prefixes=PREFIXES):
-    return tuple([int(x) for x in
-                  re.split('\D', match_vtag(version, prefixes).group(0))
-                  if x and x.isdigit()])
-
+def version_key(version):
+    """Extract and convert version numbers to tuple for comparison."""
+    clean_version = strip_prefix(version)
+    # Split on any non-digit character and convert to integers
+    try:
+        return tuple(int(x) for x in re.split(r'\D+', clean_version) if x and x.isdigit())
+    except (TypeError, ValueError):
+        return tuple()
 
 def _get_gh_json(url):
     """
@@ -92,17 +106,48 @@ def _get_gh_json(url):
     return ret
 
 
-def _get_gh_rel_data(rel_info, prefixes):
+def _get_gh_rel_data(rel_info):
     ret = {}
     ret['tag'] = rel_info['name']
     ret['version'] = None
-    if match_vtag(ret['tag'], prefixes):
-        ret['version'] = strip_prefix(ret['tag'], prefixes)
+    if match_vtag(ret['tag']):
+        ret['version'] = strip_prefix(ret['tag'])
     ret['api_commit_url'] = rel_info['commit']['url']
     rel_data = _get_gh_json(ret['api_commit_url'])
     ret['date'] = rel_data['commit']['author']['date']
     ret['link'] = rel_data['html_url']
     return ret
+
+
+def _find_dominant_version_pattern(tags):
+    """Find the most common version tag pattern in a project's tags."""
+    patterns = {}
+    for tag in tags:
+        _, _, tag_name = tag['name'].rpartition('/')
+        
+        if any(re.search(pattern, tag['name']) or re.search(pattern, tag_name) 
+              for pattern in SKIP_PATTERNS):
+            continue
+            
+        for pattern in STRIP_PATTERNS:
+            if re.search(pattern, tag_name):
+                prefix, _, version = tag_name.partition('-')
+                if re.search(r'^\d', version):
+                    tag_name = version
+                    break
+        
+        match = re.search(r'\d', tag_name)
+        if not match:
+            continue
+        prefix = tag_name[:match.start()]
+        if prefix in patterns:
+            patterns[prefix].append(tag)
+        else:
+            patterns[prefix] = [tag]
+    
+    if not patterns:
+        return []
+    return max(patterns.values(), key=len)
 
 
 def get_gh_project_info(info):
@@ -122,16 +167,18 @@ def get_gh_project_info(info):
     gh_url.path_parts += ('tags',)
     tags_url = gh_url.to_text()
     tags_data = _get_gh_json(tags_url)
-    vtags_data = [td for td in tags_data if match_vtag(td['name'], PREFIXES)]
+    
+    main_tags = _find_dominant_version_pattern(tags_data)
+    vtags_data = [td for td in main_tags if match_vtag(td['name'])]
 
     ret['release_count'] = len(vtags_data)
 
     latest_release = vtags_data[0]
-    latest_release_data = _get_gh_rel_data(latest_release, PREFIXES)
+    latest_release_data = _get_gh_rel_data(latest_release)
     for k, v in latest_release_data.items():
         ret['latest_release_%s' % k] = v
 
-    vtags_data.sort(key=lambda x: version_key(x['name'], PREFIXES), reverse=True)
+    vtags_data.sort(key=lambda x: version_key(x['name']), reverse=True)
 
     first_release_version = info.get('first_release_version')
     if first_release_version is None:
@@ -139,12 +186,12 @@ def get_gh_project_info(info):
                          if version_key(v['name']) < version_key(latest_release['name'])][-1]
     else:
         first_release = [v for v in vtags_data if v['name'] == first_release_version][0]
-    first_release_data = _get_gh_rel_data(first_release, PREFIXES)
+    first_release_data = _get_gh_rel_data(first_release)
     for k, v in first_release_data.items():
         ret['first_release_%s' % k] = v
 
     zv_releases = [rel for rel in vtags_data
-                   if match_vtag(rel['name'], PREFIXES).group('major') == '0']
+                   if match_vtag(rel['name']).group('major') == '0']
     ret['release_count_zv'] = len(zv_releases)
     print(' .. %s releases, %s 0ver' % (ret['release_count'], ret['release_count_zv']))
 
@@ -157,7 +204,7 @@ def get_gh_project_info(info):
 
     last_zv_release = zv_releases[0]
     first_nonzv_release = vtags_data[vtags_data.index(last_zv_release) - 1]
-    first_nonzv_release_data = _get_gh_rel_data(first_nonzv_release, PREFIXES)
+    first_nonzv_release_data = _get_gh_rel_data(first_nonzv_release)
 
     ret['last_zv_release_version'] = last_zv_release['name']
     for k, v in first_nonzv_release_data.items():
@@ -200,10 +247,10 @@ def fetch_entries(projects):
 def _main():
     start_time = time.time()
     with open(PROJ_PATH + '/projects.yaml') as f:
-        projects = yaml.load(f)['projects']
-    #projects = [p for p in projects if p['name'] == 'scikit-learn']
-    #if not projects:
-    #    return
+        projects = yaml.safe_load(f)['projects']
+    #projects = [p for p in projects if p['name'].lower() == 'sodium']
+    if not projects:
+        return
     try:
         with open(PROJ_PATH + '/projects.json') as f:
             cur_data = json.load(f)
