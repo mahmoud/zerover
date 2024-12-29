@@ -443,6 +443,8 @@ projects:
     url: https://www.npmjs.com/package/yup
     gh_url: https://github.com/jquense/yup
     reason: 7+ years of history, over 2M weekly downloads on npm
+  - name: Unmanic
+    gh_url: https://github.com/Unmanic/unmanic
 
   # Non-GitHub projects below, manually updated
   - name: ASCEND
