@@ -1,17 +1,17 @@
 import argparse
+import base64
+import datetime
+import json
 import os
 import re
 import sys
-import json
 import time
-import base64
 import urllib.request
-import datetime
+from pathlib import Path
 from pprint import pprint
 
 import yaml
 from boltons.urlutils import URL
-from pathlib import Path
 
 PROJECT_ROOT_PATH = Path(__file__).parent.parent
 VTAG_RE = re.compile(

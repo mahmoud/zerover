@@ -2,11 +2,10 @@
 # user customization
 # TODO: document other hooks
 
-from pathlib import Path
-
-import sys
-import json
 import datetime
+import json
+import sys
+from pathlib import Path
 
 from boltons.iterutils import partition
 from boltons.tableutils import Table

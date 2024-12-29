@@ -1,10 +1,11 @@
 import datetime
 import sys
-import yaml
-from schema import Schema, Or, Optional
-from hyperlink import parse
 from pathlib import Path
+
+import yaml
 from boltons.iterutils import redundant
+from hyperlink import parse
+from schema import Optional, Or, Schema
 
 
 def check_url(url_str: str):
