@@ -579,6 +579,13 @@ projects:
     latest_release_version: 0.6 February 2021 # See https://wiki.openstreetmap.org/wiki/API_v0.6#Semantic_versioning
     latest_release_date: 2021-02-01
     release_count: 14 # 0.3 → 0.6 and then the dated changes to 0.6
+  - name: three.js
+    url: https://threejs.org/
+    gh_url: https://github.com/mrdoob/three.js
+    first_release_version: 0.1 # GitHub releases are r1-r130
+    first_release_date: 2013-07-03T11:49:48
+    latest_release_version: 0.171.0
+    latest_release_date: 2024-11-29
   - name: google-api-client (ruby)
     url: https://rubygems.org/gems/google-api-client/
     gh_url: https://github.com/googleapis/google-api-ruby-client # GitHub releases are namespace prefixed

@@ -260,7 +260,7 @@ def fetch_entries(projects: list[dict], args: argparse.Namespace) -> list[dict]:
 
         entries.append(info)
 
-    return entries
+    return sorted(entries, key=lambda e: e["name"])
 
 
 def parse_args():
@@ -313,8 +313,8 @@ def main():
     if not projects:
         return
 
+    projects_json_path = Path(__file__).parent.parent / "projects.json"
     try:
-        projects_json_path = Path(__file__).parent.parent / "projects.json"
         with projects_json_path.open() as f:
             cur_data = json.load(f)
             cur_projects = cur_data["projects"]
