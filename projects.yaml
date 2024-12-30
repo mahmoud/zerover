@@ -251,6 +251,10 @@ projects:
     gh_url: https://github.com/tendermint/tendermint/
   - name: Cosmos-sdk
     gh_url: https://github.com/cosmos/cosmos-sdk
+    first_release_date: 2017-03-06
+    first_release_version: 0.2.0 # https://github.com/tendermint/basecoin/blob/master/CHANGELOG.md#020-march-6-2017
+    latest_release_date: 2024-12-16
+    latest_release_version: 0.50.11
   - name: LocalStack
     url: https://localstack.cloud
     gh_url: https://github.com/localstack/localstack

@@ -9,7 +9,6 @@ from pathlib import Path
 
 from boltons.iterutils import partition
 from boltons.tableutils import Table
-from boltons.timeutils import isoparse
 
 PROJECT_ROOT_PATH = Path(__file__).parent
 PROJECTS_JSON_PATH = PROJECT_ROOT_PATH / "projects.json"
@@ -78,13 +77,11 @@ def _zv_to_htmltable(entries):
     ]
 
     def _get_row(entry):
-        irel_dt = isoparse(
-            entry["first_release_date"].replace("Z", "")
-        )  # TODO: boltons Z handling
+        irel_dt = datetime.datetime.fromisoformat(entry["first_release_date"])
         lrel_dt, zv_streak = None, None
         if entry.get("latest_release_date"):
-            lrel_dt = isoparse(entry["latest_release_date"].replace("Z", ""))
-        zv_streak = datetime.datetime.utcnow() - irel_dt
+            lrel_dt = datetime.datetime.fromisoformat(entry["latest_release_date"])
+        zv_streak = datetime.datetime.now() - irel_dt.replace(tzinfo=None)
         zv_streak_years = round(zv_streak.days / 365.0, 1)
 
         row = [
@@ -145,13 +142,11 @@ def _emeritus_to_htmltable(entries):
 
     rows = []
     for entry in entries:
-        irel_dt = isoparse(
-            entry["first_release_date"].replace("Z", "")
-        )  # TODO: boltons Z handling
+        irel_dt = datetime.datetime.fromisoformat(entry["first_release_date"])
         lrel_dt, zv_streak = None, None
         if entry.get("first_nonzv_release_date"):
-            lrel_dt = isoparse(entry["first_nonzv_release_date"].replace("Z", ""))
-        zv_streak = lrel_dt - irel_dt
+            lrel_dt = datetime.datetime.fromisoformat(entry["first_nonzv_release_date"])
+        zv_streak = lrel_dt.replace(tzinfo=None) - irel_dt.replace(tzinfo=None)
         zv_streak_years = round(zv_streak.days / 365.0, 1)
 
         row = [
