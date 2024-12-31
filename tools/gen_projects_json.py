@@ -7,11 +7,10 @@ import sys
 import time
 from pathlib import Path
 from pprint import pprint
-from typing import TypedDict, cast
+from typing import TypedDict
 
 import requests
 import yaml
-from boltons.urlutils import URL
 from hyperlink import parse
 from packaging.version import InvalidVersion, Version
 
@@ -164,6 +163,8 @@ class GitHubAPI:
 def json_default(obj):
     if isinstance(obj, (datetime.datetime, datetime.date)):
         return obj.isoformat()
+    if isinstance(obj, Version):
+        return str(obj)
     raise TypeError(f"{obj} is not serializable")
 
 
@@ -199,9 +200,7 @@ class ProjectsEntry:
         """The project's non-GitHub repository link."""
         self.wp_url: str | None = wp_url
         """The project's Wikipedia link."""
-        self.emeritus: bool | None = emeritus
-        """`true` if the project is no longer ZeroVer"""
-        self.is_zerover: bool = bool(self.emeritus)  # TODO: combine with emeritus
+        self.is_zerover: bool = bool(emeritus)
         """Whether the project is still ZeroVer."""
         self.reason: str | None = reason
         """The reason this project was added to the 0ver website listing."""
@@ -296,14 +295,12 @@ class Entry:
         self.info.star_count = repo_info["star_count"]
 
         self.get_tags()
-        # TODO: Do pre releases, release candidates, post release fixes, dev releases, etc. count as releases?
         if not self.tags:
             return
 
         self.info.release_count = len(self.tags)
 
         # Latest release
-        # TODO: ensure latest_release_version is Version() compatible in the check_projects_json.py script
         if not self.info.latest_release_version:
             latest_release = self.tags[0]
             self.info.latest_release_tag = latest_release.name
