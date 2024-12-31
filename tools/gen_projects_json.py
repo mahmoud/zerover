@@ -80,6 +80,23 @@ def _get_gh_rel_data(rel_info: dict, args: argparse.Namespace) -> dict:
 def parse_tags(
     tags_data: list[dict], regex_subs: list[dict] | None = None
 ) -> tuple[list[dict], list[dict], list[dict]]:
+    """Parse the list of GitHub tags returning the tags with the PEP 440 compatible version objects.
+
+    Parameters
+    ----------
+    tags_data: list[dict]
+        The list of GitHub tags to parse from the API.
+    regex_subs: list[dict] | None = None
+        The list of regex substitutions from projects.yaml to apply to the tag names before parsing.
+
+    Returns:
+    parsed_tags_data: list[dict]
+        The list of properly parsed tags with the added "py_version" key.
+    failed_tags_data: list[dict]
+        The list of tags that failed to be parsed with the added "sub_name" key for debugging.
+    duplicate_tags_data: list[dict]
+        The list of duplicate tags with the added "sub_name" key for debugging.
+    """
     tag_names = set()
     parsed_tags_data = []
     failed_tags_data = []
@@ -137,7 +154,7 @@ def get_gh_project_info(info: dict, args: argparse.Namespace) -> dict:
     if not parsed_tags_data:
         return gh_info
 
-    gh_info["release_count"] = len(set(parsed_tags_data))
+    gh_info["release_count"] = len(parsed_tags_data)
 
     latest_release = vtags_data[0]
     latest_release_data = _get_gh_rel_data(latest_release, args)
