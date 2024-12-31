@@ -28,8 +28,8 @@ projects:
     gh_url: https://github.com/apache/kafka
     tag_regex_subs:
       - remove: ^kafka-
-      - replace: -incubating-candidate-(\d+)$
-        with: rc\1
+      - search: -incubating-candidate-(\d+)$
+        replace: rc\1
       - remove: -KAFKA-\d+$
       - remove: -cp$
       - remove: -beta\d+-candidate\d+$
@@ -57,8 +57,8 @@ projects:
   - name: Vala
     gh_url: https://github.com/GNOME/vala
     tag_regex_subs:
-      - replace: ^VALA_(\d)+_(\d)+_(\d)+$
-        with: \1.\2.\3
+      - search: ^VALA_(\d)+_(\d)+_(\d)+$
+        replace: \1.\2.\3
   - name: Onion
     gh_url: https://github.com/davidmoreno/onion
   - name: Nim
@@ -159,8 +159,8 @@ projects:
     tag_regex_subs:
       - remove: -rebuild$
       - remove: ^ent-changelog-
-      - replace: -rc(\d+)\.(\d+)$
-        with: -rc\1+\2
+      - search: -rc(\d+)\.(\d+)$
+        replace: -rc\1+\2
   - name: xhyve
     gh_url: https://github.com/mist64/xhyve
   - name: zeal
@@ -187,8 +187,8 @@ projects:
   - name: Julia
     gh_url: https://github.com/JuliaLang/julia
     tag_regex_subs:
-      - replace: -pre\.([a-z]+)$
-        with: -\1
+      - search: -pre\.([a-z]+)$
+        replace: -\1
   - name: Flatpak
     gh_url: https://github.com/flatpak/flatpak
   - name: Meson Build System
@@ -211,15 +211,15 @@ projects:
     url: https://www.pilosa.com/
     tag_regex_subs:
       - remove: -community$
-      - replace: -alpha\.(\d+)(-pre|\.)(\d+)$
-        with: -alpha\1+\3
+      - search: -alpha\.(\d+)(-pre|\.)(\d+)$
+        replace: -alpha\1+\3
   - name: fail2ban
     gh_url: https://github.com/fail2ban/fail2ban
     tag_regex_subs:
       - remove: -smartos$
       - remove: -PROPAGATE_DEBIAN_PATCHES$
-      - replace: ^(\d+)_(\d+)_(\d+)$
-        with: \1.\2.\3
+      - search: ^(\d+)_(\d+)_(\d+)$
+        replace: \1.\2.\3
   - name: qtile
     gh_url: https://github.com/qtile/qtile
   - name: autokey
@@ -229,13 +229,13 @@ projects:
   - name: ClamAV Antivirus
     gh_url: https://github.com/Cisco-Talos/clamav-devel
     tag_regex_subs:
-      - replace: CLAMAV_(\d+)_(\d+)(RC\d+)?
-        with: \1.\2\3
+      - search: CLAMAV_(\d+)_(\d+)(RC\d+)?
+        replace: \1.\2\3
       - remove: ^clamav-
       - remove: -dmgxar$
       - remove: _sf$
-      - replace: "@(\\d+)$"
-        with: +\1
+      - search: "@(\\d+)$"
+        replace: +\1
   - name: OpenRCT2
     url: https://openrct2.io/
     gh_url: https://github.com/OpenRCT2/OpenRCT2
@@ -264,14 +264,14 @@ projects:
     gh_url: https://github.com/microsoft/vscode-cpptools
     reason: Created by Microsoft and with almost 8 million installs, this is the standard extension you want if working with C or C++ in VS Code.
     tag_regex_subs:
-      - replace: -insiders$
-        with: rc1
-      - replace: -insiders?(\d+)$
-        with: rc\1
-      - replace: -debug$
-        with: dev
-      - replace: -prerelease(\d+)$
-        with: pre\1
+      - search: -insiders$
+        replace: rc1
+      - search: -insiders?(\d+)$
+        replace: rc\1
+      - search: -debug$
+        replace: dev
+      - search: -prerelease(\d+)$
+        replace: pre\1
       - remove: ^v\.
   - name: pywinauto
     url: http://pywinauto.github.io/
@@ -282,8 +282,8 @@ projects:
     first_release_date: 2013-05-29T19:46:11Z
     first_release_version: 0.3.0 # A later v0.0.0 tag breaks this
     tag_regex_subs:
-      - replace: -alpha\.(.*)$
-        with: -alpha+\1
+      - search: -alpha\.(.*)$
+        replace: -alpha+\1
   - name: Rake
     gh_url: https://github.com/ruby/rake
     reason: The pioneer of the zero-to-double-digits jump.
@@ -306,8 +306,8 @@ projects:
     url: https://nuitka.net/
     gh_url: https://github.com/Nuitka/Nuitka
     tag_regex_subs:
-      - replace: ^(\d+\.\d+\.\d+)([a-z])$
-        with: \1+\2
+      - search: ^(\d+\.\d+\.\d+)([a-z])$
+        replace: \1+\2
   - name: StreamEx
     gh_url: https://github.com/amaembo/streamex
     tag_regex_subs:
@@ -335,8 +335,8 @@ projects:
   - name: Stellarium
     gh_url: https://github.com/Stellarium/stellarium
     tag_regex_subs:
-      - replace: ^stellarium-(\d+)-(\d+)-(\d+)$
-        with: \1.\2.\3
+      - search: ^stellarium-(\d+)-(\d+)-(\d+)$
+        replace: \1.\2.\3
   - name: xonsh
     gh_url: https://github.com/xonsh/xonsh
   - name: ccls
@@ -350,8 +350,8 @@ projects:
       - remove: -start$
       - remove: -release$
       - remove: -endofline$
-      - replace: -cp-r(\d+)$
-        with: rc\1
+      - search: -cp-r(\d+)$
+        replace: rc\1
   - name: Numba
     url: https://numba.pydata.org
     gh_url: https://github.com/numba/numba
@@ -369,10 +369,10 @@ projects:
     gh_url: https://github.com/tendermint/tendermint/
     tag_regex_subs:
       - remove: -autodraft$
-      - replace: -dev0-fix0$
-        with: dev
-      - replace: ^dev-(.*)
-        with: \1dev
+      - search: -dev0-fix0$
+        replace: dev
+      - search: ^dev-(.*)
+        replace: \1dev
   - name: Cosmos-sdk
     gh_url: https://github.com/cosmos/cosmos-sdk
     first_release_date: 2017-03-06
@@ -403,8 +403,8 @@ projects:
   - name: Knex.js
     gh_url: https://github.com/knex/knex
     tag_regex_subs:
-      - replace: ^(\d+),(\d+),(\d+)$
-        with: \1.\2.\3
+      - search: ^(\d+),(\d+),(\d+)$
+        replace: \1.\2.\3
   - name: zoxide
     gh_url: https://github.com/ajeetdsouza/zoxide
   - name: OpenRC
@@ -430,8 +430,8 @@ projects:
   - name: nw.js
     gh_url: https://github.com/nwjs/nw.js
     tag_regex_subs:
-      - replace: ^nw-v(\d+)\.(\d+),(\d+)$
-        with: \1.\2.\3
+      - search: ^nw-v(\d+)\.(\d+),(\d+)$
+        replace: \1.\2.\3
       - remove: ^nw-
   - name: Video Speed Controller
     gh_url: https://github.com/igrigorik/videospeed
@@ -466,10 +466,10 @@ projects:
     url: https://www.graphile.org/
     gh_url: https://github.com/graphile/worker
     tag_regex_subs:
-      - replace: -canary\.([a-z\d]+)$
-        with: +\1
-      - replace: -bridge\.0$
-        with: "-0"
+      - search: -canary\.([a-z\d]+)$
+        replace: +\1
+      - search: -bridge\.0$
+        replace: "-0"
   - name: Monero
     url: https://getmonero.org
     gh_url: https://github.com/monero-project/monero
@@ -486,8 +486,8 @@ projects:
     tag_regex_subs:
       - remove: ^import-
       - remove: ^similar-
-      - replace: (release|factor)-(\d+)-(\d+)$
-        with: \2.\3
+      - search: (release|factor)-(\d+)-(\d+)$
+        replace: \2.\3
   - name: Tectonic
     url: https://tectonic-typesetting.github.io/
     gh_url: https://github.com/tectonic-typesetting/tectonic
@@ -562,8 +562,8 @@ projects:
     url: https://www.nushell.sh
     gh_url: https://github.com/nushell/nushell
     tag_regex_subs:
-      - replace: ^(\d+)_(\d+)_(\d+)$
-        with: \1.\2.\3
+      - search: ^(\d+)_(\d+)_(\d+)$
+        replace: \1.\2.\3
   - name: Thanos
     url: https://thanos.io
     gh_url: https://github.com/thanos-io/thanos
@@ -595,14 +595,14 @@ projects:
   - name: lazygit
     gh_url: https://github.com/jesseduffield/lazygit
     tag_regex_subs:
-      - replace: ^pre-(release-)?([\d\.]*)(-2)?
-        with: \2pre\3
+      - search: ^pre-(release-)?([\d\.]*)(-2)?
+        replace: \2pre\3
   - name: OpenBLAS
     url: http://www.openblas.net/
     gh_url: https://github.com/OpenMathLib/OpenBLAS
     tag_regex_subs:
-      - replace: alpha(\d+)\.(\d+)$
-        with: alpha\1+\2
+      - search: alpha(\d+)\.(\d+)$
+        replace: alpha\1+\2
   - name: libc (Rust)
     url: https://docs.rs/libc
     gh_url: https://github.com/rust-lang/libc
@@ -630,12 +630,12 @@ projects:
     last_zv_release_version: 0.9.8n
     first_nonzv_release_date: 2010-03-29
     tag_regex_subs:
-      - replace: ^(OpenSSL_|SSLeay_|OpenSSL-fips-|OpenSSL-fips-|OpenSSL-engine-)(\d+)_(\d+)_(\d+)([a-z]{1,2})
-        with: \2.\3.\4+\5
-      - replace: ^(OpenSSL_|SSLeay_|OpenSSL-fips-|OpenSSL-fips-|OpenSSL-engine-)(\d+)_(\d+)_(\d+)
-        with: \2.\3.\4
-      - replace: ^OpenSSL-fips-(\d+)_(\d+)
-        with: \1.\2
+      - search: ^(OpenSSL_|SSLeay_|OpenSSL-fips-|OpenSSL-fips-|OpenSSL-engine-)(\d+)_(\d+)_(\d+)([a-z]{1,2})
+        replace: \2.\3.\4+\5
+      - search: ^(OpenSSL_|SSLeay_|OpenSSL-fips-|OpenSSL-fips-|OpenSSL-engine-)(\d+)_(\d+)_(\d+)
+        replace: \2.\3.\4
+      - search: ^OpenSSL-fips-(\d+)_(\d+)
+        replace: \1.\2
       - remove: ^openssl-
       - remove: -auto-reformat$
       - remove: -format$
@@ -648,10 +648,10 @@ projects:
     latest_release_version: 0.272
     latest_release_date: 2024-11-29
     tag_regex_subs:
-      - replace: ^mame(\d)(\d+)(u\d+)$
-        with: \1.\2+\3
-      - replace: ^mame(\d)(\d+)$
-        with: \1.\2
+      - search: ^mame(\d)(\d+)(u\d+)$
+        replace: \1.\2+\3
+      - search: ^mame(\d)(\d+)$
+        replace: \1.\2
   - name: Window Maker
     url: https://windowmaker.org/
     gh_url: https://github.com/window-maker/wmaker
@@ -688,8 +688,8 @@ projects:
     latest_release_date: 2024-11-29
     tag_regex_subs:
       - remove: /ROME$
-      - replace: ^r(\d+)$
-        with: 0.\1.0
+      - search: ^r(\d+)$
+        replace: 0.\1.0
   - name: google-api-client (ruby)
     url: https://rubygems.org/gems/google-api-client/
     gh_url: https://github.com/googleapis/google-api-ruby-client
@@ -730,10 +730,10 @@ projects:
     latest_release_version: 0.55-2
     latest_release_date: 2024-11-17
     tag_regex_subs:
-      - replace: test(\d+)\.?([a-z\d])$
-        with: dev\1+\2
-      - replace: test(\d+)$
-        with: dev\1
+      - search: test(\d+)\.?([a-z\d])$
+        replace: dev\1+\2
+      - search: test(\d+)$
+        replace: dev\1
       - remove: -really$
   - name: cargo-audit
     url: https://rustsec.org/

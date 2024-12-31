@@ -9,6 +9,7 @@ import time
 import urllib.request
 from pathlib import Path
 from pprint import pprint
+from typing import TypedDict, cast
 
 import yaml
 from boltons.urlutils import URL
@@ -16,7 +17,128 @@ from hyperlink import parse
 from packaging.version import InvalidVersion, Version
 
 
-def if_version_compatible(version: str) -> bool:
+class RegexSubstituionDict(TypedDict):
+    remove: str
+    """The regex pattern to remove from the tag name."""
+    search: str
+    """The regex pattern to search for in the tag name to replace with `replace`."""
+    replace: str
+    """The string to replace the `search` pattern with."""
+
+
+class ProjectsInputEntryDict(TypedDict):
+    name: str
+    """The name of the project."""
+    url: str
+    """The project's home page."""
+    gh_url: str
+    """The project's GitHub repository link."""
+    repo_url: str
+    """The project's non-GitHub repository link."""
+    wp_url: str
+    """The project's Wikipedia link."""
+    emeritus: bool
+    """`true` if the project is no longer ZeroVer"""
+    reason: str
+    """The reason this project was added to the 0ver website listing."""
+    tag_regex_subs: list[RegexSubstituionDict]
+    """The list of regex substitutions to apply to the tag names before parsing."""
+    star_count: int
+    """The number of stars the project has."""
+    release_count: int
+    """The number of releases the project has had."""
+    release_count_zv: int
+    """The number of releases the project has before it left 0ver."""
+    latest_release_date: datetime.datetime | datetime.date
+    """The date of the latest release."""
+    latest_release_version: str | Version
+    """The version of the latest release."""
+    first_release_date: datetime.datetime | datetime.date
+    """The date of the first release."""
+    first_release_version: str | Version
+    """The version of the first release."""
+    first_nonzv_release_date: datetime.datetime | datetime.date
+    """The date of the first non-0ver release."""
+    first_nonzv_release_version: str | Version
+    """The version of the first non-0ver release."""
+    last_zv_release_version: str | Version
+    """The last 0ver release before the project left ZeroVer."""
+
+
+class ProjectsOutputEntryDict(ProjectsInputEntryDict):
+    is_zerover: bool
+    """Whether the project is still ZeroVer."""
+
+
+class GitHubTagCommitDict(TypedDict):
+    sha: str
+    url: str
+
+
+class GitHubTagDict(TypedDict):
+    name: str
+    """The name of the tag."""
+    zipball_url: str
+    tarball_url: str
+    commit: GitHubTagCommitDict
+    node_id: str
+
+
+class GitHubParsedTagDict(GitHubTagDict):
+    version: Version
+    """The parsed PEP 440 compatible version object."""
+
+
+class GitHubDebugTagDict(GitHubTagDict):
+    sub_name: str
+    """The tag name after applying regex substitutions."""
+
+
+class GitHubDetailedTagDict(TypedDict):
+    tag: str
+    """The name of the tag."""
+    version: Version
+    """The parsed PEP 440 compatible version object."""
+    api_commit_url: str
+    """The API URL of the commit."""
+    date: datetime.datetime
+    """The date of the commit."""
+    link: str
+    """The URL of the commit."""
+
+
+class GitHubInfoDict(TypedDict):
+    star_count: int
+    """The number of stars the project has."""
+    release_count: int
+    """The number of releases the project has had."""
+    release_count_zv: int
+    """The number of releases the project has before it left 0ver."""
+    latest_release_date: datetime.datetime | datetime.date
+    """The date of the latest release."""
+    latest_release_version: str | Version
+    """The version of the latest release."""
+    first_release_date: datetime.datetime | datetime.date
+    """The date of the first release."""
+    first_release_version: str | Version
+    """The version of the first release."""
+    first_nonzv_release_date: datetime.datetime | datetime.date
+    """The date of the first non-0ver release."""
+    first_nonzv_release_version: str | Version
+    """The version of the first non-0ver release."""
+    last_zv_release_version: str | Version
+    """The last 0ver release before the project left ZeroVer."""
+    is_zerover: bool
+    """Whether the project is still ZeroVer."""
+
+
+def json_default(obj):
+    if isinstance(obj, (datetime.datetime, datetime.date)):
+        return obj.isoformat()
+    raise TypeError(f"{obj} is not serializable")
+
+
+def is_version_compatible(version: str) -> bool:
     try:
         Version(version)
     except InvalidVersion:
@@ -63,44 +185,45 @@ def _get_gh_json(url: str, args: argparse.Namespace) -> dict | list[dict]:
     return ret
 
 
-def _get_gh_rel_data(rel_info: dict, args: argparse.Namespace) -> dict:
-    ret = {}
-    ret["tag"] = rel_info["name"]
-    ret["version"] = None
-    if match_vtag(ret["tag"]):
-        ret["version"] = strip_prefix(ret["tag"])
-    ret["api_commit_url"] = rel_info["commit"]["url"]
-    rel_data = _get_gh_json(ret["api_commit_url"], args)
-    if isinstance(rel_data, dict):
-        ret["date"] = rel_data["commit"]["author"]["date"]
-        ret["link"] = rel_data["html_url"]
-    return ret
+def _get_gh_rel_data(
+    rel_info: GitHubParsedTagDict, args: argparse.Namespace
+) -> GitHubDetailedTagDict:
+    rel_data: dict = _get_gh_json(rel_info["commit"]["url"], args)  # type: ignore
+    return {
+        "tag": rel_info["name"],
+        "version": rel_info["version"],
+        "api_commit_url": rel_info["commit"]["url"],
+        "date": rel_data["commit"]["author"]["date"],
+        "link": rel_data["html_url"],
+    }
 
 
 def parse_tags(
-    tags_data: list[dict], regex_subs: list[dict] | None = None
-) -> tuple[list[dict], list[dict], list[dict]]:
+    tags_data: list[GitHubTagDict], regex_subs: list[RegexSubstituionDict] | None = None
+) -> tuple[
+    list[GitHubParsedTagDict], list[GitHubDebugTagDict], list[GitHubDebugTagDict]
+]:
     """Parse the list of GitHub tags returning the tags with the PEP 440 compatible version objects.
 
     Parameters
     ----------
     tags_data: list[dict]
         The list of GitHub tags to parse from the API.
-    regex_subs: list[dict] | None = None
+    regex_subs: list[RegexSubstituionDict] | None = None
         The list of regex substitutions from projects.yaml to apply to the tag names before parsing.
 
     Returns:
     parsed_tags_data: list[dict]
-        The list of properly parsed tags with the added "py_version" key.
+        The list of properly parsed tags with the added "version" key.
     failed_tags_data: list[dict]
         The list of tags that failed to be parsed with the added "sub_name" key for debugging.
     duplicate_tags_data: list[dict]
         The list of duplicate tags with the added "sub_name" key for debugging.
     """
-    tag_names = set()
-    parsed_tags_data = []
-    failed_tags_data = []
-    duplicate_tags_data = []
+    tag_names: set[str] = set()
+    parsed_tags_data: list[GitHubParsedTagDict] = []
+    failed_tags_data: list[GitHubDebugTagDict] = []
+    duplicate_tags_data: list[GitHubDebugTagDict] = []
 
     for tag in reversed(tags_data):
         tag_name = tag["name"]
@@ -109,20 +232,17 @@ def parse_tags(
                 if sub.get("remove"):
                     tag_name = re.sub(sub["remove"], "", tag_name)
                 else:
-                    tag_name = re.sub(sub["replace"], sub["with"], tag_name)
+                    tag_name = re.sub(sub["search"], sub["replace"], tag_name)
         if tag_name in tag_names:
-            tag["sub_name"] = tag_name
-            duplicate_tags_data.append(tag)
+            duplicate_tags_data.append({**tag, "sub_name": tag_name})
             continue
         else:
             tag_names.add(tag_name)
 
-        if if_version_compatible(tag_name):
-            tag["py_version"] = Version(tag_name)
-            parsed_tags_data.append(tag)
+        if is_version_compatible(tag_name):
+            parsed_tags_data.append({**tag, "version": Version(tag_name)})
         else:
-            tag["sub_name"] = tag_name
-            failed_tags_data.append(tag)
+            failed_tags_data.append({**tag, "sub_name": tag_name})
 
     return (
         list(reversed(parsed_tags_data)),
@@ -131,8 +251,10 @@ def parse_tags(
     )
 
 
-def get_gh_project_info(info: dict, args: argparse.Namespace) -> dict:
-    gh_info = {}
+def get_gh_project_info(
+    info: ProjectsInputEntryDict, args: argparse.Namespace
+) -> GitHubInfoDict:
+    gh_info: GitHubInfoDict = {}  # type: ignore
     url = info.get("gh_url")
     if url is None:
         return gh_info
@@ -146,89 +268,86 @@ def get_gh_project_info(info: dict, args: argparse.Namespace) -> dict:
         gh_info["star_count"] = project_data["stargazers_count"]
 
     gh_url.path_parts += ("tags",)
-    tags_data = _get_gh_json(gh_url.to_text(), args)
-    if isinstance(tags_data, dict):
-        return gh_info
-
+    tags_data: list[GitHubTagDict] = _get_gh_json(gh_url.to_text(), args)  # type: ignore
     parsed_tags_data, _, _ = parse_tags(tags_data, info.get("tag_regex_subs"))
     if not parsed_tags_data:
         return gh_info
 
     gh_info["release_count"] = len(parsed_tags_data)
 
-    latest_release = vtags_data[0]
-    latest_release_data = _get_gh_rel_data(latest_release, args)
-    for k, v in latest_release_data.items():
-        gh_info[f"latest_release_{k}"] = v
-
-    vtags_data.sort(key=lambda x: version_key(x["name"]), reverse=True)
-
-    first_release_version = info.get("first_release_version")
-    first_release = None
-    if first_release_version is None:
-        first_release = [
-            v
-            for v in vtags_data
-            if version_key(v["name"]) < version_key(latest_release["name"])
-        ][-1]
+    # Latest release
+    if "latest_release_date" not in info or "latest_release_version" not in info:
+        latest_release = parsed_tags_data[0]
+        latest_release_data = _get_gh_rel_data(latest_release, args)
+        for k, v in latest_release_data.items():
+            gh_info[f"latest_release_{k}"] = v
     else:
-        first_releases = [v for v in vtags_data if v["name"] == first_release_version]
+        info["latest_release_version"] = Version(info["latest_release_version"])  # type: ignore
+        # TODO: ensure latest_release_version is Version() compatible in the check_projects_json.py script
+
+    # Sort after grabbing the latest release
+    # TODO: check if this is needed
+    # parsed_tags_data.sort(key=lambda x: x["version"], reverse=True)
+
+    # First release
+    first_release = None
+    if "first_release_version" in info:
+        first_releases = [
+            v for v in parsed_tags_data if v["name"] == info["first_release_version"]
+        ]
         if first_releases:
             first_release = first_releases[0]
+    else:
+        first_release = parsed_tags_data[-1]
     if first_release:
         first_release_data = _get_gh_rel_data(first_release, args)
         for k, v in first_release_data.items():
             gh_info[f"first_release_{k}"] = v
 
+    # ZeroVer releases
     zv_releases = []
-    for rel in vtags_data:
-        match = match_vtag(rel["name"])
-        if match and match.group("major") == "0":
+    for rel in parsed_tags_data:
+        if rel["version"].major == 0:
             zv_releases.append(rel)
     gh_info["release_count_zv"] = len(zv_releases)
     print(
         f' .. {gh_info["release_count"]} releases, {gh_info["release_count_zv"]} 0ver'
     )
 
-    is_zerover = latest_release in zv_releases
-
-    gh_info["is_zerover"] = is_zerover
-
-    if is_zerover:
+    gh_info["is_zerover"] = gh_info["latest_release_version"].major == 0  # type: ignore
+    if gh_info["is_zerover"]:
         return gh_info
 
+    # Last ZeroVer release
     last_zv_release = zv_releases[0]
-    first_nonzv_release = vtags_data[vtags_data.index(last_zv_release) - 1]
-    first_nonzv_release_data = _get_gh_rel_data(first_nonzv_release, args)
-
     gh_info["last_zv_release_version"] = last_zv_release["name"]
+
+    # First non-ZeroVer release
+    first_nonzv_release = parsed_tags_data[parsed_tags_data.index(last_zv_release) - 1]
+    first_nonzv_release_data = _get_gh_rel_data(first_nonzv_release, args)
     for k, v in first_nonzv_release_data.items():
         gh_info[f"first_nonzv_release_{k}"] = v
 
     return gh_info
 
 
-def json_default(obj):
-    if isinstance(obj, (datetime.datetime, datetime.date)):
-        return obj.isoformat()
-    raise TypeError(f"{obj} is not serializable")
-
-
-def fetch_entries(projects: list[dict], args: argparse.Namespace) -> list[dict]:
-    entries = []
+def fetch_entries(
+    projects: list[ProjectsInputEntryDict], args: argparse.Namespace
+) -> list[ProjectsOutputEntryDict]:
+    entries: list[ProjectsOutputEntryDict] = []
 
     for p in projects:
         print("Processing", p["name"])
-        info = dict(p)
+        info: ProjectsOutputEntryDict = cast(ProjectsOutputEntryDict, p)
         if info.get("skip"):
             continue
 
         info["url"] = info.get("url", info.get("gh_url"))
 
         if info.get("gh_url"):
-            gh_info = get_gh_project_info(info, args)
+            gh_info = get_gh_project_info(p, args)
             # Only add new data, preserve any manual information
-            info.update({k: v for k, v in gh_info.items() if k not in info})
+            info.update({k: v for k, v in gh_info.items() if k not in info})  # type: ignore
 
         info["is_zerover"] = info.get("is_zerover", not info.get("emeritus", False))
 
@@ -313,13 +432,31 @@ def parse_args():
     return args
 
 
+def get_entry_from_name(name: str) -> ProjectsInputEntryDict:
+    projects_yaml_path = Path(__file__).parent.parent / "projects.yaml"
+    with projects_yaml_path.open() as f:
+        projects = yaml.safe_load(f)["projects"]
+    matching_info = [p for p in projects if p["name"] == name]
+    if not matching_info:
+        print("No matching project found.")
+        sys.exit(1)
+    return matching_info[0]
+
+
 def main():
     args = parse_args()
     if args.command == "generate":
         generate(args)
     elif args.command == "info":
         print("Processing", args.name_or_link)
-        gh_info = get_gh_project_info({"gh_url": args.name_or_link}, args)
+
+        if parse(args.name_or_link).scheme in ("http", "https"):
+            info = {"gh_url": args.name_or_link}
+        else:
+            info = get_entry_from_name(args.name_or_link)
+
+        gh_info = get_gh_project_info(info, args)  # type: ignore
+
         print()
         pprint(gh_info)
     elif args.command == "tags":
@@ -328,30 +465,20 @@ def main():
         if parse(args.name_or_link).scheme in ("http", "https"):
             info = {"gh_url": args.name_or_link}
         else:
-            projects_yaml_path = Path(__file__).parent.parent / "projects.yaml"
-            with projects_yaml_path.open() as f:
-                projects = yaml.safe_load(f)["projects"]
-            matching_info = [p for p in projects if p["name"] == args.name_or_link]
-            if not matching_info:
-                print("No matching project found.")
-                return
-            info = matching_info[0]
+            info = get_entry_from_name(args.name_or_link)
 
         org, repo = URL(info["gh_url"].rstrip("/")).path_parts[1:]
         gh_url = URL("https://api.github.com/repos")
         gh_url.path_parts += (org, repo, "tags")
 
-        tags_data = _get_gh_json(gh_url.to_text(), args)
-        if isinstance(tags_data, dict):
-            tags_data = []
-
+        tags_data: list[GitHubTagDict] = _get_gh_json(gh_url.to_text(), args)  # type: ignore
         parsed_tags_data, failed_tags_data, duplicate_tag_names = parse_tags(
             tags_data, info.get("tag_regex_subs")
         )
 
         print("\nParsed tags:")
         for t in parsed_tags_data:
-            print(f"{t['name']} (parsed as {t['py_version']})")
+            print(f"{t['name']} (parsed as {t['version']})")
         if not parsed_tags_data:
             print("No tags parsed.")
         if duplicate_tag_names:
@@ -377,7 +504,7 @@ def generate(args: argparse.Namespace):
     try:
         with projects_json_path.open() as f:
             cur_data = json.load(f)
-            cur_projects = cur_data["projects"]
+            cur_projects: list[ProjectsInputEntryDict] = cur_data["projects"]
             cur_gen_date = datetime.datetime.fromisoformat(cur_data["gen_date"])
     except (IOError, KeyError):
         cur_projects = []
