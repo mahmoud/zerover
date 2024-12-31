@@ -733,6 +733,7 @@ projects:
     first_release_version: 0.16 # sodipodi cvs import according to changelog
     first_nonzv_release_date: 2020-05-01
     last_zv_release_version: 0.92.5
+    star_count: 3482
   - name: Compiz
     url: https://www.compiz-fusion.org/
     repo_url: https://launchpad.net/compiz
@@ -808,6 +809,7 @@ projects:
     last_zv_release_version: 0.3.85
     first_nonzv_release_date: 2023-11-26
     release_count_zv: 119
+    star_count: 410
   - name: gettext
     url: https://www.gnu.org/software/gettext/
     repo_url: https://savannah.gnu.org/projects/gettext/
@@ -825,6 +827,8 @@ projects:
     first_release_version: 0.0.2
     first_nonzv_release_date: 2008-06-17
     last_zv_release_version: 0.9.61
+    release_count_zv: 298
+    star_count: 118
   - name: transformers
     url: https://hackage.haskell.org/package/transformers
     repo_url: https://hub.darcs.net/ross/transformers
