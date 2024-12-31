@@ -1,4 +1,4 @@
-name: Validate, Update, and Deploy
+name: Validate, Test, and Update 
 
 on:
   push:
