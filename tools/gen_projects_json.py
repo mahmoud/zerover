@@ -70,14 +70,16 @@ def version_key(version: str) -> tuple:
         return tuple()
 
 
-def _get_gh_json(url: str, args: argparse.Namespace) -> dict | list[dict]:
+def _get_gh_json(
+    url: str, user: str | None = None, token: str | None = None
+) -> dict | list[dict]:
     """
     Get paginated results from GitHub, possibly authorized based on command
     line arguments or environment variables.
     """
     req = urllib.request.Request(url)
-    if args.user and args.token:
-        auth_str = f"{args.user}:{args.token}"
+    if user and token:
+        auth_str = f"{user}:{token}"
         auth_bytes = auth_str.encode("ascii")
         auth_header_val = f'Basic {base64.b64encode(auth_bytes).decode("ascii")}'
         req.add_header("Authorization", auth_header_val)
@@ -96,7 +98,7 @@ def _get_gh_json(url: str, args: argparse.Namespace) -> dict | list[dict]:
     while res:
         paged_url = f"{url}?page={page}"
         req = urllib.request.Request(paged_url)
-        if args.user and args.token:
+        if user and token:
             req.add_header("Authorization", auth_header_val)
         resp = urllib.request.urlopen(req)
         body = resp.read()
@@ -109,14 +111,16 @@ def _get_gh_json(url: str, args: argparse.Namespace) -> dict | list[dict]:
     return ret
 
 
-def _get_gh_rel_data(rel_info: dict, args: argparse.Namespace) -> dict:
+def _get_gh_rel_data(
+    rel_info: dict, user: str | None = None, token: str | None = None
+) -> dict:
     ret = {}
     ret["tag"] = rel_info["name"]
     ret["version"] = None
     if match_vtag(ret["tag"]):
         ret["version"] = strip_prefix(ret["tag"])
     ret["api_commit_url"] = rel_info["commit"]["url"]
-    rel_data = _get_gh_json(ret["api_commit_url"], args)
+    rel_data = _get_gh_json(ret["api_commit_url"], user, token)
     if isinstance(rel_data, dict):
         ret["date"] = rel_data["commit"]["author"]["date"]
         ret["link"] = rel_data["html_url"]
@@ -156,7 +160,9 @@ def _find_dominant_version_pattern(tags: list[dict]) -> list[dict]:
     return max(patterns.values(), key=len)
 
 
-def get_gh_project_info(info: dict, args: argparse.Namespace) -> dict:
+def get_gh_project_info(
+    info: dict, user: str | None = None, token: str | None = None
+) -> dict:
     gh_info = {}
     url = info.get("gh_url")
     if url is None:
@@ -166,12 +172,12 @@ def get_gh_project_info(info: dict, args: argparse.Namespace) -> dict:
     gh_url = URL("https://api.github.com/repos")
     gh_url.path_parts += (org, repo)
 
-    project_data = _get_gh_json(gh_url.to_text(), args)
+    project_data = _get_gh_json(gh_url.to_text(), user, token)
     if isinstance(project_data, dict):
         gh_info["star_count"] = project_data["stargazers_count"]
 
     gh_url.path_parts += ("tags",)
-    tags_data = _get_gh_json(gh_url.to_text(), args)
+    tags_data = _get_gh_json(gh_url.to_text(), user, token)
     if isinstance(tags_data, dict):
         tags_data = []
 
@@ -183,7 +189,7 @@ def get_gh_project_info(info: dict, args: argparse.Namespace) -> dict:
     gh_info["release_count"] = len(vtags_data)
 
     latest_release = vtags_data[0]
-    latest_release_data = _get_gh_rel_data(latest_release, args)
+    latest_release_data = _get_gh_rel_data(latest_release, user, token)
     for k, v in latest_release_data.items():
         gh_info[f"latest_release_{k}"] = v
 
@@ -202,7 +208,7 @@ def get_gh_project_info(info: dict, args: argparse.Namespace) -> dict:
         if first_releases:
             first_release = first_releases[0]
     if first_release:
-        first_release_data = _get_gh_rel_data(first_release, args)
+        first_release_data = _get_gh_rel_data(first_release, user, token)
         for k, v in first_release_data.items():
             gh_info[f"first_release_{k}"] = v
 
@@ -225,7 +231,7 @@ def get_gh_project_info(info: dict, args: argparse.Namespace) -> dict:
 
     last_zv_release = zv_releases[0]
     first_nonzv_release = vtags_data[vtags_data.index(last_zv_release) - 1]
-    first_nonzv_release_data = _get_gh_rel_data(first_nonzv_release, args)
+    first_nonzv_release_data = _get_gh_rel_data(first_nonzv_release, user, token)
 
     gh_info["last_zv_release_version"] = last_zv_release["name"]
     for k, v in first_nonzv_release_data.items():
@@ -240,7 +246,9 @@ def json_default(obj):
     raise TypeError(f"{obj} is not serializable")
 
 
-def fetch_entries(projects: list[dict], args: argparse.Namespace) -> list[dict]:
+def fetch_entries(
+    projects: list[dict], user: str | None = None, token: str | None = None
+) -> list[dict]:
     entries = []
 
     for p in projects:
@@ -252,7 +260,7 @@ def fetch_entries(projects: list[dict], args: argparse.Namespace) -> list[dict]:
         info["url"] = info.get("url", info.get("gh_url"))
 
         if info.get("gh_url"):
-            gh_info = get_gh_project_info(info, args)
+            gh_info = get_gh_project_info(info, user, token)
             # Only add new data, preserve any manual information
             info.update({k: v for k, v in gh_info.items() if k not in info})
 
@@ -334,7 +342,7 @@ def main():
     new_names = sorted([n["name"] for n in projects])
 
     if fetch_outdated or cur_names != new_names or args.disable_caching:
-        entries = fetch_entries(projects, args)
+        entries = fetch_entries(projects, args.user, args.token)
     else:
         print("Current data already up to date, exiting.")
         return
