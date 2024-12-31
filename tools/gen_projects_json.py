@@ -296,6 +296,7 @@ class Entry:
         self.info.star_count = repo_info["star_count"]
 
         self.get_tags()
+        # TODO: Do pre releases, release candidates, post release fixes, dev releases, etc. count as releases?
         if not self.tags:
             return
 

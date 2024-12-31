@@ -148,9 +148,6 @@ projects:
       - remove: ^ent-changelog-
   - name: HashiCorp Vault
     gh_url: https://github.com/hashicorp/vault
-    last_zv_release_version: v0.11.6
-    first_release_date: 2015-04-29
-    first_release_version: v0.1.0
     tag_regex_subs:
       - search: -rebuild$
         replace: "-1"
@@ -272,8 +269,6 @@ projects:
   - name: React
     url: https://reactjs.org
     gh_url: https://github.com/facebook/react
-    first_release_date: 2013-05-29T19:46:11Z
-    first_release_version: 0.3.0 # A later v0.0.0 tag breaks this
     tag_regex_subs:
       - search: -alpha\.(.*)$
         replace: -alpha+\1
@@ -369,8 +364,6 @@ projects:
     gh_url: https://github.com/cosmos/cosmos-sdk
     first_release_date: 2017-03-06
     first_release_version: 0.2.0 # https://github.com/tendermint/basecoin/blob/master/CHANGELOG.md#020-march-6-2017
-    latest_release_date: 2024-12-16
-    latest_release_version: 0.50.11
     tag_regex_subs:
       - remove: -circuit$
       - search: -patch$
@@ -556,8 +549,6 @@ projects:
   - name: Thanos
     url: https://thanos.io
     gh_url: https://github.com/thanos-io/thanos
-    first_release_date: 2018-05-18
-    first_release_version: 0.1.0-rc.0 # https://github.com/thanos-io/thanos/releases/tag/v0.1.0-rc.0
   - name: PyVista
     url: https://docs.pyvista.org/
     gh_url: https://github.com/pyvista/pyvista
@@ -614,8 +605,6 @@ projects:
   - name: OpenSSL
     gh_url: https://github.com/openssl/openssl
     emeritus: true
-    first_release_date: 1998-12-23
-    first_release_version: 0.9.1 # release name convention is weird, hardcode counts 2018-03-31
     tag_regex_subs:
       - search: ^(OpenSSL_|SSLeay_|OpenSSL-fips-|OpenSSL-fips-)(\d+)_(\d+)_(\d+)([a-z]{1,2})
         replace: \2.\3.\4+\5
@@ -633,10 +622,8 @@ projects:
   - name: MAME
     gh_url: https://github.com/mamedev/mame
     wp_url: https://en.wikipedia.org/wiki/MAME
-    first_release_version: 0.1
     first_release_date: 1997-02-05
-    latest_release_version: 0.272
-    latest_release_date: 2024-11-29
+    first_release_version: 0.1
     tag_regex_subs:
       - search: ^mame(\d)(\d+)(u\d+)$
         replace: \1.\2+\3
@@ -646,11 +633,8 @@ projects:
     url: https://windowmaker.org/
     gh_url: https://github.com/window-maker/wmaker
     wp_url: https://en.wikipedia.org/wiki/Window_Maker
-    first_release_date: 1997-01-01 # exact date unknown
+    first_release_date: 1997-01-01 # Exact date unknown
     first_release_version: 0.0.3
-    latest_release_version: 0.96.0
-    latest_release_date: 2023-08-05
-    release_count: 94
     tag_regex_subs:
       - remove: ^wmaker-
       - remove: ^wm-
@@ -660,21 +644,12 @@ projects:
     url: https://www.reactos.org/
     gh_url: https://github.com/reactos/reactos # Many tags are missing, use manual data below
     reason: A free Windows-compatible Operating System
-    first_release_version: 0.0.7
-    first_release_date: 1996-01-23
-    latest_release_version: 0.4.14
-    latest_release_date: 2021-12-16
-    release_count: 59 # Ignore GitHub saying >250 releases, ~80% of them are some kind of weird backup non-releases
     tag_regex_subs:
       - remove: ^ReactOS-
       - remove: -release$
   - name: three.js
     url: https://threejs.org/
     gh_url: https://github.com/mrdoob/three.js
-    first_release_version: 0.1
-    first_release_date: 2013-07-03T11:49:48
-    latest_release_version: 0.171.0
-    latest_release_date: 2024-11-29
     tag_regex_subs:
       - remove: /ROME$
       - search: ^r(\d+)$
@@ -682,11 +657,7 @@ projects:
   - name: google-api-client (ruby)
     url: https://rubygems.org/gems/google-api-client/
     gh_url: https://github.com/googleapis/google-api-ruby-client
-    first_release_version: 0.1.0
-    first_release_date: 2010-10-14
-    latest_release_version: 0.15.1 # Their versioning is really hard to figure out...
-    latest_release_date: 2024-07-29
-    release_count: 254
+    # Their versioning is really hard to figure out...
     tag_regex_subs:
       - remove: ^google-api-client-
       - remove: ^google-api-client/
@@ -696,18 +667,11 @@ projects:
     url: https://rust-random.github.io/book/
     gh_url: https://github.com/rust-random/rand
     reason: The most downloaded Rust crate
-    first_release_version: 0.1.1
-    first_release_date: 2015-02-03
-    latest_release_version: 0.8.5
-    latest_release_date: 2022-02-14
-    release_count: 68
   - name: suhosin
     url: https://suhosin.org/
     gh_url: https://github.com/sektioneins/suhosin
-    first_release_version: 0.9.1
     first_release_date: 2006-09-16T00:00:00
-    latest_release_version: 0.9.38
-    latest_release_date: 2015-05-21T00:00:00
+    first_release_version: 0.9.1
     tag_regex_subs:
       - remove: ^suhosin-
   - name: Pure Data
@@ -716,8 +680,6 @@ projects:
     url: https://puredata.info/
     first_release_date: 1996-06-01
     first_release_version: 0.1
-    latest_release_version: 0.55-2
-    latest_release_date: 2024-11-17
     tag_regex_subs:
       - search: test(\d+)\.?([a-z\d])$
         replace: dev\1+\2
@@ -726,12 +688,18 @@ projects:
   - name: cargo-audit
     url: https://rustsec.org/
     gh_url: https://github.com/rustsec/rustsec
-    first_release_date: 2017-02-27
-    first_release_version: 0.1.0
-    latest_release_date: 2024-10-29
-    latest_release_version: 0.21.0
     tag_regex_subs:
       - remove: ^cargo-audit/
+  - name: pg (Ruby)
+    url: https://rubygems.org/gems/pg
+    gh_url: https://github.com/ged/ruby-pg/tags
+    reason: Leading library for connecting Ruby to Postgres
+    first_release_date: 2008-01-26
+    first_release_version: 0.7.9.2008.01.28
+  - name: distlib
+    url: https://distlib.readthedocs.io
+    gh_url: https://github.com/pypa/distlib
+    reason: Depended on by PyPA/Pip
 
   # Non-GitHub projects below, manually updated
   - name: ASCEND
@@ -744,6 +712,7 @@ projects:
     latest_release_version: 0.9.8
   - name: Dash
     url: https://git.kernel.org/pub/scm/utils/dash/dash.git
+    repo_url: https://git.kernel.org/pub/scm/utils/dash/dash.git
     first_release_date: 1997-06-19T09:29:16
     first_release_version: 0.3.1
     latest_release_date: 2022-12-11T06:33:43
@@ -758,7 +727,7 @@ projects:
     latest_release_date: 2024-04-23
   - name: Inkscape
     url: https://inkscape.org/
-    repo_url: https://launchpad.net/inkscape
+    repo_url: https://gitlab.com/inkscape/inkscape
     emeritus: true
     first_release_date: 2000-09-01
     first_release_version: 0.16 # sodipodi cvs import according to changelog
@@ -770,13 +739,6 @@ projects:
     first_release_date: 2006-05-22
     latest_release_date: 2022-08-22
     latest_release_version: 0.9.14.2
-  - name: distlib
-    url: https://bitbucket.org/pypa/distlib
-    reason: Depended on by PyPA/Pip
-    first_release_version: 0.1.0
-    first_release_date: 2013-03-02
-    latest_release_version: 0.3.4
-    latest_release_date: 2021-12-08
   - name: Factorio
     url: https://factorio.com/
     reason: Popular, for-profit game.
@@ -785,17 +747,9 @@ projects:
     first_release_version: 0.1.0
     first_nonzv_release_date: 2020-08-14
     last_zv_release_version: 0.18.47
-  - name: pg (Ruby)
-    url: https://rubygems.org/gems/pg
-    reason: Leading library for connecting Ruby to Postgres
-    emeritus: true
-    first_release_version: 0.7.9.2008.01.28
-    first_release_date: 2008-01-26
-    last_zv_release_version: 0.21.0
-    first_nonzv_release_date: 2017-06-13
-    release_count_zv: 123
   - name: PuTTY
-    url: https://www.chiark.greenend.org.uk/~sgtatham/putty/
+    url: https://www.chiark.greenend.org.uk/~sgtatham/putty
+    repo_url: https://git.tartarus.org/?p=simon/putty.git
     reason: Probably the most popular SSH client in Windows history
     first_release_version: 0.43beta
     first_release_date: 1999-01-08
