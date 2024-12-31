@@ -312,7 +312,7 @@ class Entry:
 
         # First release
         first_release = None
-        if not self.info.first_release_version:
+        if self.info.first_release_version:
             first_releases = [
                 v for v in self.tags if v.version == self.info.first_release_version
             ]
@@ -368,7 +368,7 @@ class Entry:
         self.duplicate_tags = []
         for tag in reversed(tags_data):
             tag.process_name(self.info.tag_regex_subs)
-            if tag.processed_name in tag_names:
+            if tag.processed_name and tag.processed_name in tag_names:
                 self.duplicate_tags.append(tag)
                 continue
             else:
@@ -382,6 +382,8 @@ class Entry:
 
         self.tags = list(reversed(self.tags))
         self.duplicate_tags = list(reversed(self.duplicate_tags))
+        if self.duplicate_tags:
+            print(self.info.name, [t.name for t in self.duplicate_tags])
         self.failed_tags = list(reversed(self.failed_tags))
 
 
