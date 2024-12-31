@@ -12,62 +12,16 @@ from pprint import pprint
 
 import yaml
 from boltons.urlutils import URL
-
-PROJECT_ROOT_PATH = Path(__file__).parent.parent
-VTAG_RE = re.compile(
-    r"""
-    ^
-    [^0-9]*
-    (?P<major>\d+)
-    \.
-    [0-9a-zA-Z_.]+
-    """,
-    re.VERBOSE,
-)
-
-# Tags matching these patterns will be completely skipped
-SKIP_PATTERNS = [
-    r"^ciflow/",  # pytorch has loads of this noise
-    r"^ci/",  # pytorch has loads of this noise
-    r"^nightly",  # FreeCol
-]
-
-# Version numbers after these patterns should be extracted
-STRIP_PATTERNS = [
-    r"^mc[0-9.]+-",  # Sodium tags include minecraft version numbers
-]
+from hyperlink import parse
+from packaging.version import InvalidVersion, Version
 
 
-def strip_prefix(tag_name: str) -> str:
-    """Strip any non-numeric prefix from the tag name."""
-    _, _, tag_name = tag_name.rpartition("/")
-
-    if "-" in tag_name:
-        _, _, version = tag_name.partition("-")
-        if re.search(r"^\d", version):
-            return version
-
-    match = re.search(r"\d", tag_name)
-    if match:
-        return tag_name[match.start() :]
-    return tag_name
-
-
-def match_vtag(tag_name: str) -> re.Match | None:
-    """Match version tags using a more general approach."""
-    tag_name = strip_prefix(tag_name)
-    return VTAG_RE.match(tag_name)
-
-
-def version_key(version: str) -> tuple:
-    """Extract and convert version numbers to tuple for comparison."""
-    clean_version = strip_prefix(version)
+def if_version_compatible(version: str) -> bool:
     try:
-        return tuple(
-            int(x) for x in re.split(r"\D+", clean_version) if x and x.isdigit()
-        )
-    except (TypeError, ValueError):
-        return tuple()
+        Version(version)
+    except InvalidVersion:
+        return False
+    return True
 
 
 def _get_gh_json(url: str, args: argparse.Namespace) -> dict | list[dict]:
@@ -123,37 +77,41 @@ def _get_gh_rel_data(rel_info: dict, args: argparse.Namespace) -> dict:
     return ret
 
 
-def _find_dominant_version_pattern(tags: list[dict]) -> list[dict]:
-    """Find the most common version tag pattern in a project's tags."""
-    patterns = {}
-    for tag in tags:
-        _, _, tag_name = tag["name"].rpartition("/")
+def parse_tags(
+    tags_data: list[dict], regex_subs: list[dict] | None = None
+) -> tuple[list[dict], list[dict], list[dict]]:
+    tag_names = set()
+    parsed_tags_data = []
+    failed_tags_data = []
+    duplicate_tags_data = []
 
-        if any(
-            re.search(pattern, tag["name"]) or re.search(pattern, tag_name)
-            for pattern in SKIP_PATTERNS
-        ):
+    for tag in reversed(tags_data):
+        tag_name = tag["name"]
+        if regex_subs:
+            for sub in regex_subs:
+                if sub.get("remove"):
+                    tag_name = re.sub(sub["remove"], "", tag_name)
+                else:
+                    tag_name = re.sub(sub["replace"], sub["with"], tag_name)
+        if tag_name in tag_names:
+            tag["sub_name"] = tag_name
+            duplicate_tags_data.append(tag)
             continue
-
-        for pattern in STRIP_PATTERNS:
-            if re.search(pattern, tag_name):
-                prefix, _, version = tag_name.partition("-")
-                if re.search(r"^\d", version):
-                    tag_name = version
-                    break
-
-        match = re.search(r"\d", tag_name)
-        if not match:
-            continue
-        prefix = tag_name[: match.start()]
-        if prefix in patterns:
-            patterns[prefix].append(tag)
         else:
-            patterns[prefix] = [tag]
+            tag_names.add(tag_name)
 
-    if not patterns:
-        return []
-    return max(patterns.values(), key=len)
+        if if_version_compatible(tag_name):
+            tag["py_version"] = Version(tag_name)
+            parsed_tags_data.append(tag)
+        else:
+            tag["sub_name"] = tag_name
+            failed_tags_data.append(tag)
+
+    return (
+        list(reversed(parsed_tags_data)),
+        list(reversed(failed_tags_data)),
+        duplicate_tags_data,
+    )
 
 
 def get_gh_project_info(info: dict, args: argparse.Namespace) -> dict:
@@ -173,14 +131,13 @@ def get_gh_project_info(info: dict, args: argparse.Namespace) -> dict:
     gh_url.path_parts += ("tags",)
     tags_data = _get_gh_json(gh_url.to_text(), args)
     if isinstance(tags_data, dict):
-        tags_data = []
-
-    main_tags = _find_dominant_version_pattern(tags_data)
-    vtags_data = [td for td in main_tags if match_vtag(td["name"])]
-    if not vtags_data:
         return gh_info
 
-    gh_info["release_count"] = len(vtags_data)
+    parsed_tags_data, _, _ = parse_tags(tags_data, info.get("tag_regex_subs"))
+    if not parsed_tags_data:
+        return gh_info
+
+    gh_info["release_count"] = len(set(parsed_tags_data))
 
     latest_release = vtags_data[0]
     latest_release_data = _get_gh_rel_data(latest_release, args)
@@ -264,48 +221,134 @@ def fetch_entries(projects: list[dict], args: argparse.Namespace) -> list[dict]:
 
 
 def parse_args():
+    def add_options(parser: argparse.ArgumentParser, *, caching: bool = False):
+        parser.add_argument(
+            "-u",
+            "--user",
+            type=str,
+            default=os.getenv("GH_USER", ""),
+            help='GitHub Username for API authentication. Falls back to the "GH_USER" environment variable.',
+        )
+        parser.add_argument(
+            "-k",
+            "--token",
+            type=str,
+            default=os.getenv("GH_TOKEN", ""),
+            help='A path to a file containing a GitHub personal access token for API authentication. Falls back to the "GH_TOKEN" environment variable.',
+        )
+        if caching:
+            parser.add_argument(
+                "--disable-caching",
+                action="store_true",
+                default=os.getenv("ZV_DISABLE_CACHING", "false").lower()
+                in [
+                    "true",
+                    "1",
+                    "yes",
+                ],
+                help='Flag to disable caching. Falls back to the "ZV_DISABLE_CACHING" environment variable.',
+            )
+
     parser = argparse.ArgumentParser(
         description="Generate or update project.json using projects.yaml."
     )
+    add_options(parser, caching=True)
+    subparsers = parser.add_subparsers(dest="command", help="Available commands")
 
-    parser.add_argument(
-        "-u",
-        "--user",
+    # Generate
+    generate_parser = subparsers.add_parser(
+        "generate", help="Generate an updated projects.json file."
+    )
+    add_options(generate_parser, caching=True)
+
+    # Info
+    info_parser = subparsers.add_parser(
+        "info",
+        help="Print automatically pulled info for a GitHub project for debugging.",
+    )
+    info_parser.add_argument(
+        "name_or_link",
         type=str,
-        default=os.getenv("GH_USER", ""),
-        help='GitHub Username for API authentication. Falls back to the "GH_USER" environment variable.',
+        help="The project.yaml exact entry name or GitHub link.",
     )
-    parser.add_argument(
-        "-k",
-        "--token",
+    add_options(info_parser)
+
+    # Tags
+    tags_parser = subparsers.add_parser(
+        "tags", help="Print all sorted tags for a GitHub project for debugging."
+    )
+    tags_parser.add_argument(
+        "name_or_link",
         type=str,
-        default=os.getenv("GH_TOKEN", ""),
-        help='A path to a file containing a GitHub personal access token for API authentication. Falls back to the "GH_TOKEN" environment variable.',
+        help="The project.yaml exact entry name or GitHub link.",
     )
-    parser.add_argument(
-        "--disable-caching",
-        action="store_true",
-        default=os.getenv("ZV_DISABLE_CACHING", "false").lower()
-        in [
-            "true",
-            "1",
-            "yes",
-        ],
-        help='Flag to disable caching. Falls back to the "ZV_DISABLE_CACHING" environment variable.',
-    )
+    add_options(tags_parser)
 
     args = parser.parse_args()
+
+    if args.command is None:
+        args.command = "generate"
+
     if Path(args.token).is_file():
         with Path(args.token).open() as f:
             args.token = f.read().strip()
+
     return args
 
 
 def main():
-    start_time = time.time()
-
     args = parse_args()
+    if args.command == "generate":
+        generate(args)
+    elif args.command == "info":
+        print("Processing", args.name_or_link)
+        gh_info = get_gh_project_info({"gh_url": args.name_or_link}, args)
+        print()
+        pprint(gh_info)
+    elif args.command == "tags":
+        print("Processing", args.name_or_link)
 
+        if parse(args.name_or_link).scheme in ("http", "https"):
+            info = {"gh_url": args.name_or_link}
+        else:
+            projects_yaml_path = Path(__file__).parent.parent / "projects.yaml"
+            with projects_yaml_path.open() as f:
+                projects = yaml.safe_load(f)["projects"]
+            matching_info = [p for p in projects if p["name"] == args.name_or_link]
+            if not matching_info:
+                print("No matching project found.")
+                return
+            info = matching_info[0]
+
+        org, repo = URL(info["gh_url"].rstrip("/")).path_parts[1:]
+        gh_url = URL("https://api.github.com/repos")
+        gh_url.path_parts += (org, repo, "tags")
+
+        tags_data = _get_gh_json(gh_url.to_text(), args)
+        if isinstance(tags_data, dict):
+            tags_data = []
+
+        parsed_tags_data, failed_tags_data, duplicate_tag_names = parse_tags(
+            tags_data, info.get("tag_regex_subs")
+        )
+
+        print("\nParsed tags:")
+        for t in parsed_tags_data:
+            print(f"{t['name']} (parsed as {t['py_version']})")
+        if not parsed_tags_data:
+            print("No tags parsed.")
+        if duplicate_tag_names:
+            print("\nDuplicate tags:")
+            for t in duplicate_tag_names:
+                print(f"{t['name']} (parsed as {t['sub_name']})")
+        if failed_tags_data:
+            print("\nFailed tags:")
+            for t in failed_tags_data:
+                print(f"{t['name']} (tried {t['sub_name']})")
+
+
+def generate(args: argparse.Namespace):
+    start_time = time.time()
     projects_yaml_path = Path(__file__).parent.parent / "projects.yaml"
     with projects_yaml_path.open() as f:
         projects = yaml.safe_load(f)["projects"]
@@ -339,7 +382,7 @@ def main():
         print("Current data already up to date, exiting.")
         return
 
-    pprint(entries)
+    # pprint(entries)
 
     res = {
         "projects": entries,
