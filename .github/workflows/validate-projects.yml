@@ -69,6 +69,9 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python -u tools/gen_projects_json.py
 
+      - name: Test render site
+        run: chert render
+
       - name: Commit and Push Changes
         run: |
           git config --global user.name "github-actions[bot]"
