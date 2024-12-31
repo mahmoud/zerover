@@ -12,7 +12,7 @@ boltons==24.1.0
     #   chert
     #   face
     #   lithoxyl
-chert==21.0.0
+chert==24.0.0
     # via -r requirements.in
 face==24.0.0
     # via chert

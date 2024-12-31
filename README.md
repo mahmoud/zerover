@@ -170,8 +170,4 @@ Simply run `chert serve`.
 
 ## CI/CD
 
-0ver uses [GitHub Actions](https://github.com/features/actions) to validate `projects.yaml`, update `project.json`, and publish new versions of the site. To configure CI/CD in a fork, you only need to set the environment variables.
-
-1. Navigate to the project's Settings -> Secrets abd variables -> Actions.
-2. In the Secrets tab, add a new repository secret named `GH_TOKEN` and paste your personal access token.
-3. In the Variables tab, add a new repository variable named `GH_USER` and enter your GitHub username.
+0ver uses [GitHub Actions](https://github.com/features/actions) to validate `projects.yaml`, test, and update `project.json`.

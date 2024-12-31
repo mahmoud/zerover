@@ -104,6 +104,7 @@ projects:
     gh_url: https://github.com/hashicorp/nomad
   - name: HashiCorp Vault
     gh_url: https://github.com/hashicorp/vault
+    emeritus: true
     last_zv_release_version: v0.11.6
     first_release_date: 2015-04-29
     first_release_version: v0.1.0

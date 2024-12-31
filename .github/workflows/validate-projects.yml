@@ -65,12 +65,9 @@ jobs:
 
       - name: Generate updated projects.json file
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          GH_USER: ${{ vars.GH_USER }}
+          GH_USER: github-actions[bot]
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python -u tools/gen_projects_json.py
-
-      - name: Publish new site
-        run: python -c "print('chert publish here...')"
 
       - name: Commit and Push Changes
         run: |
