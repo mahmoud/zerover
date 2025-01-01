@@ -41,7 +41,12 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Render site
-        run: chert render
+        run: |
+          output=$(chert render 2>&1)
+          echo "$output"
+          if echo "$output" | grep -q "^E+"; then
+            exit 1
+          fi
 
   update-and-deploy:
     if: github.ref == 'refs/heads/master'
@@ -70,7 +75,12 @@ jobs:
         run: python -u tools/gen_projects_json.py
 
       - name: Test render site
-        run: chert render
+        run: |
+          output=$(chert render 2>&1)
+          echo "$output"
+          if echo "$output" | grep -q "^E+"; then
+            exit 1
+          fi
 
       - name: Commit and Push Changes
         run: |
