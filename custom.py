@@ -1,50 +1,55 @@
+"""This module provides custom hooks for the Chert static site generator."""
 # user customization
 # TODO: document other hooks
 
-import os
+import datetime
+import json
+import sys
+from pathlib import Path
 
-CUR_PATH = os.path.dirname(os.path.abspath(__file__))
-PROJECTS_JSON_PATH = os.path.join(CUR_PATH, 'projects.json')
+from boltons.iterutils import partition
+from boltons.tableutils import Table
 
-NA_VAL = '---'
+PROJECT_ROOT_PATH = Path(__file__).parent
+PROJECTS_JSON_PATH = PROJECT_ROOT_PATH / "projects.json"
+
+NA_VAL = "---"
 
 
 def chert_post_load(chert_obj):
-    with open(PROJECTS_JSON_PATH) as f:
-        data = json.load(f)
-        projects = data['projects']
+    # https://github.com/mahmoud/chert/blob/b4a91b5a66ec5f5002d6e67a2f880709e2e11326/chert/core.py#L840
+    with PROJECTS_JSON_PATH.open() as f:
+        projects = json.load(f)["projects"]
 
-    zv_projects, emeritus_projects = partition(projects, lambda p: p['is_zerover'])
+    zv_projects, emeritus_projects = partition(projects, lambda p: p["is_zerover"])
     zv_project_table = None
     emeritus_project_table = None
 
     for entry in chert_obj.all_entries:
         for part in entry.loaded_parts:
-            content = part['content']
-            if '[ZEROVER_PROJECT_TABLE]' not in content and '[EMERITUS_PROJECT_TABLE]' not in content:
+            content = part["content"]
+            if (
+                "[ZEROVER_PROJECT_TABLE]" not in content
+                and "[EMERITUS_PROJECT_TABLE]" not in content
+            ):
                 continue
             if zv_project_table is None:
                 try:
                     zv_project_table = _zv_to_htmltable(zv_projects)
                 except Exception as e:
-                    # import pdb;pdb.post_mortem()
-                    raise
-                emeritus_project_table = _emeritus_to_htmltable(emeritus_projects)  # TODO: emeritus table format
-            content = content.replace('[ZEROVER_PROJECT_TABLE]', zv_project_table)
-            content = content.replace('[EMERITUS_PROJECT_TABLE]', emeritus_project_table)
-            part['content'] = content
-    return
+                    raise e
+                emeritus_project_table = _emeritus_to_htmltable(
+                    emeritus_projects
+                )  # TODO: emeritus table format
+            content = content.replace("[ZEROVER_PROJECT_TABLE]", zv_project_table)
+            content = content.replace(
+                "[EMERITUS_PROJECT_TABLE]", emeritus_project_table
+            )
+            part["content"] = content
 
 
 ###########
 
-import sys
-import json
-import datetime
-
-from boltons.iterutils import partition
-from boltons.tableutils import Table
-from boltons.timeutils import isoparse
 
 class ZVTable(Table):
     _html_table_tag = '<table class="zv-table">'
@@ -57,33 +62,50 @@ class ZVTable(Table):
 
 def tooltipped(content, tip):
     if not tip:
-        return '%s' % content
+        return "%s" % content
     return '<span title="%s">%s</span>' % (tip, content)
 
 
 def _zv_to_htmltable(entries):
-    headers = ['Project', 'Stars', 'First Released', 'Releases', 'Current Version', '0ver years']
+    headers = [
+        "Project",
+        "Stars",
+        "First Released",
+        "Releases",
+        "Current Version",
+        "0ver years",
+    ]
 
     def _get_row(entry):
-        irel_dt = isoparse(entry['first_release_date'].replace('Z', ''))  # TODO: boltons Z handling
+        irel_dt = datetime.datetime.fromisoformat(entry["first_release_date"])
         lrel_dt, zv_streak = None, None
-        if entry.get('latest_release_date'):
-            lrel_dt = isoparse(entry['latest_release_date'].replace('Z', ''))
-        zv_streak = datetime.datetime.utcnow() - irel_dt
+        if entry.get("latest_release_date"):
+            lrel_dt = datetime.datetime.fromisoformat(entry["latest_release_date"])
+        zv_streak = datetime.datetime.now() - irel_dt.replace(tzinfo=None)
         zv_streak_years = round(zv_streak.days / 365.0, 1)
 
-        row = [tooltipped('<a href="%s">%s</a>' % (entry['url'], entry['name']),
-                          entry.get('reason')),
-               tooltipped('{:,}'.format(entry['star_count']) if entry.get('star_count') else NA_VAL,
-                          entry.get('reason')),
-               tooltipped(irel_dt.year, entry.get('first_release_version')),
-               '%s' % entry.get('release_count', NA_VAL)]
+        row = [
+            tooltipped(
+                '<a href="%s">%s</a>' % (entry["url"], entry["name"]),
+                entry.get("reason"),
+            ),
+            tooltipped(
+                "{:,}".format(entry["star_count"])
+                if entry.get("star_count")
+                else NA_VAL,
+                entry.get("reason"),
+            ),
+            tooltipped(irel_dt.year, entry.get("first_release_version")),
+            "%s" % entry.get("release_count", NA_VAL),
+        ]
         if lrel_dt:
-            row.append('%s (%s)' % (entry.get('latest_release_version', NA_VAL), lrel_dt.year))
+            row.append(
+                "%s (%s)" % (entry.get("latest_release_version", NA_VAL), lrel_dt.year)
+            )
         else:
             row.append(NA_VAL)
 
-        row.append('%s' % zv_streak_years)
+        row.append("%s" % zv_streak_years)
 
         return row
 
@@ -92,7 +114,7 @@ def _zv_to_htmltable(entries):
         try:
             row = _get_row(entry)
         except Exception:
-            print('failed to load entry: %r' % entry)
+            print("failed to load entry: %r" % entry)
             raise
         rows.append(row)
 
@@ -102,36 +124,53 @@ def _zv_to_htmltable(entries):
 
     # table sorting js at bottom of base.html uses the stars class on
     # the heading to sort properly
-    ret = ret.replace('<th>Stars</th>', '<th class="stars">Stars</th>')
-    ret = ret.replace('<th>Releases</th>', '<th class="releases">Releases</th>')
-    ret += '\n\n'
+    ret = ret.replace("<th>Stars</th>", '<th class="stars">Stars</th>')
+    ret = ret.replace("<th>Releases</th>", '<th class="releases">Releases</th>')
+    ret += "\n\n"
     return ret
 
 
 def _emeritus_to_htmltable(entries):
-    headers = ['Project', 'Stars', 'First Released', '0ver Releases', 'Last 0ver release', '0ver years']
+    headers = [
+        "Project",
+        "Stars",
+        "First Released",
+        "0ver Releases",
+        "Last 0ver release",
+        "0ver years",
+    ]
 
     rows = []
     for entry in entries:
-        irel_dt = isoparse(entry['first_release_date'].replace('Z', ''))  # TODO: boltons Z handling
+        irel_dt = datetime.datetime.fromisoformat(entry["first_release_date"])
         lrel_dt, zv_streak = None, None
-        if entry.get('first_nonzv_release_date'):
-            lrel_dt = isoparse(entry['first_nonzv_release_date'].replace('Z', ''))
-        zv_streak = lrel_dt - irel_dt
+        if entry.get("first_nonzv_release_date"):
+            lrel_dt = datetime.datetime.fromisoformat(entry["first_nonzv_release_date"])
+        zv_streak = lrel_dt.replace(tzinfo=None) - irel_dt.replace(tzinfo=None)
         zv_streak_years = round(zv_streak.days / 365.0, 1)
 
-        row = [tooltipped('<a href="%s">%s</a>' % (entry['url'], entry['name']),
-                          entry.get('reason')),
-               tooltipped('{:,}'.format(entry['star_count']) if entry.get('star_count') else NA_VAL,
-                          entry.get('reason')),
-               tooltipped(irel_dt.year, entry.get('first_release_version')),
-               '%s' % entry.get('release_count_zv', NA_VAL)]
+        row = [
+            tooltipped(
+                '<a href="%s">%s</a>' % (entry["url"], entry["name"]),
+                entry.get("reason"),
+            ),
+            tooltipped(
+                "{:,}".format(entry["star_count"])
+                if entry.get("star_count")
+                else NA_VAL,
+                entry.get("reason"),
+            ),
+            tooltipped(irel_dt.year, entry.get("first_release_version")),
+            "%s" % entry.get("release_count_zv", NA_VAL),
+        ]
         if lrel_dt:
-            row.append('%s (%s)' % (entry.get('last_zv_release_version', NA_VAL), lrel_dt.year))
+            row.append(
+                "%s (%s)" % (entry.get("last_zv_release_version", NA_VAL), lrel_dt.year)
+            )
         else:
             row.append(NA_VAL)
 
-        row.append('%s' % zv_streak_years)
+        row.append("%s" % zv_streak_years)
 
         rows.append(row)
 
@@ -141,21 +180,22 @@ def _emeritus_to_htmltable(entries):
 
     # table sorting js at bottom of base.html uses the stars class on
     # the heading to sort properly
-    ret = ret.replace('<th>Stars</th>', '<th class="stars">Stars</th>')
-    ret = ret.replace('<th>0ver Releases</th>', '<th class="releases">0ver Releases</th>')
-    ret += '\n\n'
+    ret = ret.replace("<th>Stars</th>", '<th class="stars">Stars</th>')
+    ret = ret.replace(
+        "<th>0ver Releases</th>", '<th class="releases">0ver Releases</th>'
+    )
+    ret += "\n\n"
     return ret
 
 
-def _main():
-    with open('projects.json') as f:
-        data = json.load(f)
-        projects = data['projects']
+def main():
+    with PROJECTS_JSON_PATH.open() as f:
+        projects = json.load(f)["projects"]
 
-    zv_projects, emeritus_projects = partition(projects, lambda p: p['is_zerover'])
+    zv_projects, emeritus_projects = partition(projects, lambda p: p["is_zerover"])
 
-    return
+    sys.exit(0)
 
 
-if __name__ == '__main__':
-    sys.exit(_main() or 0)
+if __name__ == "__main__":
+    main()
