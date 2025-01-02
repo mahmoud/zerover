@@ -264,7 +264,17 @@ def fetch_entries(
             # Only add new data, preserve any manual information
             info.update({k: v for k, v in gh_info.items() if k not in info})
 
-        info["is_zerover"] = info.get("is_zerover", not info.get("emeritus", False))
+        is_zerover = info.get("is_zerover")
+        if is_zerover is None:
+            is_zerover = info.get("emeritus")
+            if is_zerover is not None:
+                is_zerover = not is_zerover
+            else:
+                is_zerover = info.get("last_zv_release_version") is not None
+                if is_zerover is None:
+                    is_zerover = False
+        
+        info["is_zerover"] = is_zerover
 
         entries.append(info)
 
