@@ -1,4 +1,4 @@
-name: Validate, Update, and Deploy
+name: Validate, Test, and Update 
 
 on:
   push:
@@ -41,7 +41,12 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Render site
-        run: chert render
+        run: |
+          output=$(chert render 2>&1)
+          echo "$output"
+          if echo "$output" | grep -q "^E+"; then
+            exit 1
+          fi
 
   update-and-deploy:
     if: github.ref == 'refs/heads/master'
@@ -65,17 +70,22 @@ jobs:
 
       - name: Generate updated projects.json file
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          GH_USER: ${{ vars.GH_USER }}
+          GH_USER: github-actions[bot]
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python -u tools/gen_projects_json.py
 
-      - name: Publish new site
-        run: python -c "print('chert publish here...')"
+      - name: Test render site
+        run: |
+          output=$(chert render 2>&1)
+          echo "$output"
+          if echo "$output" | grep -q "^E+"; then
+            exit 1
+          fi
 
       - name: Commit and Push Changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add projects.json
-          git commit -m "chore: update project.json"
+          git commit -m "chore: update project.json [skip ci]"
           git push origin master

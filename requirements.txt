@@ -16,7 +16,7 @@ certifi==2024.12.14
     # via requests
 charset-normalizer==3.4.1
     # via requests
-chert==21.0.0
+chert==24.0.0
     # via -r requirements.in
 face==24.0.0
     # via chert

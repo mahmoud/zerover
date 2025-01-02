@@ -15,6 +15,9 @@ PROJECTS_JSON_PATH = PROJECT_ROOT_PATH / "projects.json"
 
 NA_VAL = "---"
 
+def isoparse(s):
+    return datetime.datetime.fromisoformat(s.rstrip("Z"))
+
 
 def chert_post_load(chert_obj):
     # https://github.com/mahmoud/chert/blob/b4a91b5a66ec5f5002d6e67a2f880709e2e11326/chert/core.py#L840
@@ -77,10 +80,10 @@ def _zv_to_htmltable(entries):
     ]
 
     def _get_row(entry):
-        irel_dt = datetime.datetime.fromisoformat(entry["first_release_date"])
+        irel_dt = isoparse(entry["first_release_date"])
         lrel_dt, zv_streak = None, None
         if entry.get("latest_release_date"):
-            lrel_dt = datetime.datetime.fromisoformat(entry["latest_release_date"])
+            lrel_dt = isoparse(entry["latest_release_date"])
         zv_streak = datetime.datetime.now() - irel_dt.replace(tzinfo=None)
         zv_streak_years = round(zv_streak.days / 365.0, 1)
 
@@ -142,10 +145,14 @@ def _emeritus_to_htmltable(entries):
 
     rows = []
     for entry in entries:
-        irel_dt = datetime.datetime.fromisoformat(entry["first_release_date"])
+        irel_dt = isoparse(entry["first_release_date"])
         lrel_dt, zv_streak = None, None
-        if entry.get("first_nonzv_release_date"):
-            lrel_dt = datetime.datetime.fromisoformat(entry["first_nonzv_release_date"])
+        lrel_entry = entry.get("first_nonzv_release_date")
+        if lrel_entry:
+            lrel_dt = isoparse(lrel_entry)
+        else:
+            lrel_dt = datetime.datetime.now()
+
         zv_streak = lrel_dt.replace(tzinfo=None) - irel_dt.replace(tzinfo=None)
         zv_streak_years = round(zv_streak.days / 365.0, 1)
 
