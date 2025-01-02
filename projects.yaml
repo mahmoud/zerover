@@ -13,7 +13,7 @@
 
 projects:
   # GitHub projects are at the top for convenience
-  # Up-to-date details are filled in automatically by tools/gen_entry_json.py
+  # Up-to-date details are filled in automatically by tools/gen_projects_json.py
   - name: Tactical RMM
     url: https://docs.tacticalrmm.com
     gh_url: https://github.com/amidaware/tacticalrmm
@@ -49,7 +49,6 @@ projects:
     gh_url: https://github.com/microsoft/terminal
   - name: Bitcoin
     gh_url: https://github.com/bitcoin/bitcoin
-    # first_release_date: 2009-01-12
   - name: Caddy
     gh_url: https://github.com/caddyserver/caddy
   - name: Werkzeug
@@ -66,7 +65,6 @@ projects:
     reason: Part of a paid product.
   - name: SciPy
     gh_url: https://github.com/scipy/scipy
-    emeritus: true
   - name: Pandas
     gh_url: https://github.com/pandas-dev/pandas
   - name: Wheel
@@ -84,7 +82,6 @@ projects:
     gh_url: https://github.com/sshuttle/sshuttle
   - name: Theano
     gh_url: https://github.com/Theano/Theano
-    emeritus: true
   - name: Bokeh
     gh_url: https://github.com/bokeh/bokeh
   - name: Magic Wormhole
@@ -107,13 +104,16 @@ projects:
     gh_url: https://github.com/hashicorp/nomad
   - name: HashiCorp Vault
     gh_url: https://github.com/hashicorp/vault
+    emeritus: true
+    last_zv_release_version: v0.11.6
+    first_release_date: 2015-04-29
+    first_release_version: v0.1.0
   - name: xhyve
     gh_url: https://github.com/mist64/xhyve
   - name: zeal
     gh_url: https://github.com/zealdocs/zeal
   - name: html5lib-python
     gh_url: https://github.com/html5lib/html5lib-python
-    emeritus: true
   - name: MyPy
     gh_url: https://github.com/python/mypy
   - name: asn1crypto
@@ -187,12 +187,11 @@ projects:
     gh_url: https://github.com/pywinauto/pywinauto
   - name: React
     url: https://reactjs.org
-    first_release_version: v0.3.0
     gh_url: https://github.com/facebook/react
-    emeritus: true
+    first_release_date: 2013-05-29T19:46:11Z
+    first_release_version: 0.3.0 # A later v0.0.0 tag breaks this
   - name: Rake
     gh_url: https://github.com/ruby/rake
-    emeritus: true
     reason: The pioneer of the zero-to-double-digits jump.
   - name: Chocolatey
     url: https://chocolatey.org/
@@ -256,6 +255,10 @@ projects:
     gh_url: https://github.com/tendermint/tendermint/
   - name: Cosmos-sdk
     gh_url: https://github.com/cosmos/cosmos-sdk
+    first_release_date: 2017-03-06
+    first_release_version: 0.2.0 # https://github.com/tendermint/basecoin/blob/master/CHANGELOG.md#020-march-6-2017
+    latest_release_date: 2024-12-16
+    latest_release_version: 0.50.11
   - name: LocalStack
     url: https://localstack.cloud
     gh_url: https://github.com/localstack/localstack
@@ -301,17 +304,11 @@ projects:
     gh_url: https://github.com/facebook/pyre-check
   - name: brick/math
     gh_url: https://github.com/brick/math
-  #- name: Tachiyomi
-  #  url: https://tachiyomi.org/
-  #  gh_url: https://github.com/tachiyomiorg/tachiyomi
-  #  reason: Rewrite is supposed to release as 1.0.0, but it has been stale and in progress for several years with no finish line in sight.
-  #  dead: https://tachiyomi.org/news/2024-01-13-goodbye / https://pastebin.com/ScYsKtia
   - name: Mihon
     url: https://mihon.app/
     gh_url: https://github.com/mihonapp/mihon
     reason: Spiritual succesor of Tachiyomi. As such follows its versioning convention.
   - name: python-dotenv
-    url: https://github.com/theskumar/python-dotenv
     gh_url: https://github.com/theskumar/python-dotenv
     reason: 8 years under development, core part of many libraries, just got to 0.20.0
   - name: Zig
@@ -363,7 +360,6 @@ projects:
     url: https://scitools.org.uk/cartopy/docs/latest/
     gh_url: https://github.com/SciTools/cartopy
   - name: fzf
-    url: https://github.com/junegunn/fzf#table-of-contents
     gh_url: https://github.com/junegunn/fzf
     reason: fzf is probably the most famous terminal fuzzy finder
   - name: Pint
@@ -376,13 +372,13 @@ projects:
   - name: FreeCAD
     url: https://www.freecad.org/
     gh_url: https://github.com/FreeCAD/FreeCAD
-    # first_release_date: 2002-10-29
-    # first_release_version: 0.0.1  # this tag's not on github, commented for now (2024-02-20)
+    first_release_date: 2002-10-29 # https://wiki.freecad.org/index.php?title=History#Release_history
+    first_release_version: 0.0.1 # This tag's not on GitHub
   - name: Haskell bytestring
     gh_url: https://github.com/haskell/bytestring
     reason: Ships with the Haskell compiler, over 8000 libraries depend on it.
-    # first_release_date: ~2007, see https://github.com/mahmoud/zerover/issues/186
-    # first_release_version: 0.9
+    first_release_date: 2007-10-21
+    first_release_version: 0.9 # https://hackage.haskell.org/package/bytestring-0.9
   - name: Anthropic Python SDK
     gh_url: https://github.com/anthropics/anthropic-sdk-python
   - name: Excalidraw
@@ -399,7 +395,7 @@ projects:
     url: https://createmod.net/
     gh_url: https://github.com/Creators-of-Create/Create
   - name: FastAPI
-    url: https://github.com/fastapi/fastapi
+    gh_url: https://github.com/fastapi/fastapi
   - name: atlantis
     url: https://www.runatlantis.io/
     gh_url: https://github.com/runatlantis/atlantis
@@ -409,6 +405,11 @@ projects:
   - name: Nushell
     url: https://www.nushell.sh
     gh_url: https://github.com/nushell/nushell
+  - name: Thanos
+    url: https://thanos.io
+    gh_url: https://github.com/thanos-io/thanos
+    first_release_date: 2018-05-18
+    first_release_version: 0.1.0-rc.0 # https://github.com/thanos-io/thanos/releases/tag/v0.1.0-rc.0
   - name: PyVista
     url: https://docs.pyvista.org/
     gh_url: https://github.com/pyvista/pyvista
@@ -452,11 +453,10 @@ projects:
     gh_url: https://github.com/n8n-io/n8n
 
   # Non-GitHub projects below, manually updated
-
   - name: ASCEND
+    url: http://ascend4.org/Main_Page
     repo_url: http://code.ascend4.org/ascend/trunk/
     wp_url: https://en.wikipedia.org/wiki/ASCEND
-    url: http://ascend4.org/Main_Page
     first_release_date: 1978-06-01
     first_release_version: 0.0.1
     latest_release_date: 2012-12-13
@@ -465,110 +465,106 @@ projects:
     url: https://git.kernel.org/pub/scm/utils/dash/dash.git
     first_release_date: 1997-06-19T09:29:16
     first_release_version: 0.3.1
-    latest_release_date: 2016-09-23T14:51:58
-    latest_release_version: 0.5.9.1
+    latest_release_date: 2022-12-11T06:33:43
+    latest_release_version: 0.5.12
   - name: docutils
-    repo_url: https://github.com/docutils/docutils
+    url: https://docutils.sourceforge.io/
+    gh_url: https://github.com/docutils/docutils # Only a mirror, tags don't update
     reason: Depended on by Sphinx and most of the content on ReadTheDocs. The reference implementation of ReStructuredText, the inspiration for Markdown.
     first_release_date: 2002-01-01
     first_release_version: 0.1
-    latest_release_version: 0.19
-    latest_release_date: 2022-07-05
+    latest_release_version: 0.21.2
+    latest_release_date: 2024-04-23
   - name: Inkscape
-    url: https://launchpad.net/inkscape
+    url: https://inkscape.org/
+    repo_url: https://launchpad.net/inkscape
     emeritus: true
     first_release_date: 2000-09-01
     first_release_version: 0.16 # sodipodi cvs import according to changelog
     first_nonzv_release_date: 2020-05-01
     last_zv_release_version: 0.92.5
   - name: Compiz
+    url: https://www.compiz-fusion.org/
+    repo_url: https://launchpad.net/compiz
     first_release_date: 2006-05-22
-    latest_release_date: 2016-11-11
-    latest_release_version: 0.9.13.1
-    url: https://launchpad.net/compiz
+    latest_release_date: 2022-08-22
+    latest_release_version: 0.9.14.2
   - name: distlib
+    url: https://bitbucket.org/pypa/distlib
+    reason: Depended on by PyPA/Pip
     first_release_version: 0.1.0
     first_release_date: 2013-03-02
-    latest_release_version: 0.2.6
-    latest_release_date: 2017-10-28
-    url: https://bitbucket.org/pypa/distlib
-    reason: Depended on by pypa/pip
+    latest_release_version: 0.3.4
+    latest_release_date: 2021-12-08
   - name: OpenSSL
-    url: https://github.com/openssl/openssl
-    star_count: 6706 # release name convention is weird, hardcode counts 2018-03-31
-    release_count_zv: 51 # technically only counts til 1.0 by date (2010). 0.9.8zh was the last 0ver and came out in 2015.
+    gh_url: https://github.com/openssl/openssl
     emeritus: true
     first_release_date: 1998-12-23
-    first_release_version: 0.9.1
+    first_release_version: 0.9.1 # release name convention is weird, hardcode counts 2018-03-31
     last_zv_release_version: 0.9.8n
     first_nonzv_release_date: 2010-03-29
+    release_count_zv: 51 # technically only counts til 1.0 by date (2010). 0.9.8zh was the last 0ver and came out in 2015.
   - name: Factorio
     url: https://factorio.com/
+    reason: Popular, for-profit game.
     emeritus: true
     first_release_date: 2012-12-24
     first_release_version: 0.1.0
-    latest_release_version: 1.0.0
-    latest_release_date: 2020-08-14
     first_nonzv_release_date: 2020-08-14
     last_zv_release_version: 0.18.47
-    reason: Popular, for-profit game.
   - name: pg (Ruby)
     url: https://rubygems.org/gems/pg
+    reason: Leading library for connecting Ruby to Postgres
+    emeritus: true
     first_release_version: 0.7.9.2008.01.28
     first_release_date: 2008-01-26
     last_zv_release_version: 0.21.0
     first_nonzv_release_date: 2017-06-13
     release_count_zv: 123
-    reason: Leading library for connecting Ruby to Postgres
-    emeritus: true
   - name: PuTTY
     url: https://www.chiark.greenend.org.uk/~sgtatham/putty/
+    reason: Probably the most popular SSH client in Windows history
     first_release_version: 0.43beta
     first_release_date: 1999-01-08
     latest_release_version: 0.82
     latest_release_date: 2024-11-27
-    reason: Probably the most popular SSH client in Windows history
   - name: MAME
-    url: https://github.com/mamedev/mame
+    gh_url: https://github.com/mamedev/mame # GitHub releases are mame0272
     wp_url: https://en.wikipedia.org/wiki/MAME
-    star_count: 6970
     first_release_version: 0.1
     first_release_date: 1997-02-05
-    latest_release_version: 0.259
-    latest_release_date: 2023-09-28
-    release_count: 259
-    release_count_zv: 259
+    latest_release_version: 0.272
+    latest_release_date: 2024-11-29
+    release_count: 304
   - name: slrn # thanks hynek
     url: http://slrn.sourceforge.net/
     wp_url: https://en.wikipedia.org/wiki/Slrn
+    emeritus: true
     first_release_date: 1994-08-13 # https://sourceforge.net/p/slrn/mailman/message/6405527/
     first_release_version: 0.1.0.0
-    latest_release_date: 2016-10-23
-    latest_release_version: 1.0.3
     last_zv_release_version: 0.9.9p1
     first_nonzv_release_date: 2012-12-21
-    emeritus: true
-    release_count: 71 # changelog_text.count('\nChanges since 0')
+    release_count_zv: 71 # changelog_text.count('\nChanges since 0')
   - name: Dwarf Fortress
     url: http://www.bay12games.com/dwarves/
+    emeritus: true
     first_release_date: 2006-08-08
     first_release_version: 0.21.93.19a
-    latest_release_date: 2018-04-01
-    latest_release_version: 0.44.09
-    release_count: 142 # appx, based on df wiki release history
+    last_zv_release_version: 0.47.05
+    first_nonzv_release_date: 2022-12-22
+    release_count_zv: 142 # appx, based on df wiki release history
   - name: "Cataclysm: Dark Days Ahead"
     url: https://cataclysmdda.org
-    _gh_url: https://github.com/CleverRaven/Cataclysm-DDA # gh is returning tags out of order
+    gh_url: https://github.com/CleverRaven/Cataclysm-DDA # GitHub is returning tags out of order
     reason: Immensely popular cross-platform open-source game under continuous development for 6 years.
     first_release_version: 0.1
     first_release_date: 2013-02-26
-    latest_release_version: 0.C
-    latest_release_date: 2015-03-19
-    release_count: 15
-    release_count_zv: 15
-    star_count: 1775
+    latest_release_version: 0.H
+    latest_release_date: 2024-11-22
+    release_count: 24 # https://cataclysmdda.org/releases/
   - name: Window Maker
     url: https://windowmaker.org/
+    gh_url: https://github.com/window-maker/wmaker # Tags are prefixed
     wp_url: https://en.wikipedia.org/wiki/Window_Maker
     first_release_date: 1997-01-01 # exact date unknown
     first_release_version: 0.0.3
@@ -577,115 +573,113 @@ projects:
     release_count: 94
   - name: ReactOS
     url: https://www.reactos.org/
-    _gh_url: https://github.com/reactos/reactos # underscore prefix prevents overriding data below
+    gh_url: https://github.com/reactos/reactos # Many tags are missing, use manual data below
     reason: A free Windows-compatible Operating System
     first_release_version: 0.0.7
     first_release_date: 1996-01-23
     latest_release_version: 0.4.14
     latest_release_date: 2021-12-16
-    release_count: 59 # ignore github saying >250 releases, ~80% of them are some kind of weird backup non-releases
-    release_count_zv: 59
-    star_count: 13301
+    release_count: 59 # Ignore GitHub saying >250 releases, ~80% of them are some kind of weird backup non-releases
   - name: OpenStreetMap API/website
     url: https://openstreetmap.org/
+    gh_url: https://github.com/openstreetmap/openstreetmap-website # Doesn't use releases on GitHub
     wp_url: https://en.wikipedia.org/wiki/OpenStreetMap
-    _gh_url: https://github.com/openstreetmap/openstreetmap-website # Dosen't use releases on GitHub
     reason: "Open map data used almost anywhere there's a non-Google map."
     first_release_version: 0.3
-    first_release_date: 2004-8-9
+    first_release_date: 2004-08-09
     latest_release_version: 0.6 February 2021 # See https://wiki.openstreetmap.org/wiki/API_v0.6#Semantic_versioning
     latest_release_date: 2021-02-01
     release_count: 14 # 0.3 → 0.6 and then the dated changes to 0.6
   - name: three.js
     url: https://threejs.org/
-    _gh_url: https://github.com/mrdoob/three.js
-    first_release_version: 0.1 # github releases are r1-r130
+    gh_url: https://github.com/mrdoob/three.js
+    first_release_version: 0.1 # GitHub releases are r1-r130
     first_release_date: 2013-07-03T11:49:48
-    latest_release_version: 0.130
-    latest_release_date: 2021-10-04T18:49:30
-    release_count: 133
-    release_count_zc: 133
-    star_count: 75000
+    latest_release_version: 0.171.0
+    latest_release_date: 2024-11-29
   - name: google-api-client (ruby)
     url: https://rubygems.org/gems/google-api-client/
-    _gh_url: https://github.com/googleapis/google-api-ruby-client
+    gh_url: https://github.com/googleapis/google-api-ruby-client # GitHub releases are namespace prefixed
     first_release_version: 0.1.0
     first_release_date: 2010-10-14
-    latest_release_version: 0.53.0
-    latest_release_date: 2021-01-18
-    release_count: 201
-    star_count: 2400
+    latest_release_version: 0.15.1 # Their versioning is really hard to figure out...
+    latest_release_date: 2024-07-29
+    release_count: 254
   - name: rand
     url: https://rust-random.github.io/book/
-    gh_url: https://github.com/rust-random/rand
+    gh_url: https://github.com/rust-random/rand # GitHub releases are rand_distr-0.5.0-beta.0
     reason: The most downloaded Rust crate
     first_release_version: 0.1.1
     first_release_date: 2015-02-03
-    latest_release_version: 0.8.4
-    latest_release_date: 2021-06-15
-    release_count: 67
-    star_count: 881
+    latest_release_version: 0.8.5
+    latest_release_date: 2022-02-14
+    release_count: 68
   - name: suhosin
     url: https://suhosin.org/
-    _gh_url: https://github.com/sektioneins/suhosin
+    gh_url: https://github.com/sektioneins/suhosin # Some GitHub releases are suhosin-0.9.35-RC1
     first_release_version: 0.9.1
     first_release_date: 2006-09-16T00:00:00
     latest_release_version: 0.9.38
     latest_release_date: 2015-05-21T00:00:00
   - name: Pure Data
     wp_url: https://en.wikipedia.org/wiki/Pure_Data
-    _gh_url: https://github.com/pure-data/pure-data/
+    gh_url: https://github.com/pure-data/pure-data/ # Some GitHub releases are 0.55-0test3a
     url: https://puredata.info/
     first_release_date: 1996-06-01
     first_release_version: 0.1
-    latest_release_version: 0.52-1
-    latest_release_date: 2021-12-19
+    latest_release_version: 0.55-2
+    latest_release_date: 2024-11-17
   - name: XeTeX
     wp_url: https://en.wikipedia.org/wiki/XeTeX
     url: http://xetex.sourceforge.net/
     first_release_date: 2004-04-07
     first_release_version: 0.3
-    latest_release_version: 0.999992
-    latest_release_date: 2020-01-20
+    latest_release_version: 0.9999.3
+    latest_release_date: 2024-05-21
   - name: PipeWire
-    wp_url: https://en.wikipedia.org/wiki/PipeWire
     url: https://pipewire.org/
+    repo_url: https://gitlab.freedesktop.org/pipewire/pipewire.git
+    wp_url: https://en.wikipedia.org/wiki/PipeWire
+    emeritus: true
     first_release_date: 2017-06-20
     first_release_version: 0.1.0
-    latest_release_date: 2023-06-26
-    latest_release_version: 0.3.72
+    last_zv_release_version: 0.3.85
+    first_nonzv_release_date: 2023-11-26
+    release_count_zv: 119
   - name: gettext
-    wp_url: https://en.wikipedia.org/wiki/Gettext
     url: https://www.gnu.org/software/gettext/
+    repo_url: https://savannah.gnu.org/projects/gettext/
+    wp_url: https://en.wikipedia.org/wiki/Gettext
     first_release_date: 1987-01-01 # https://web.archive.org/web/20120323032211/http://compgroups.net/comp.unix.solaris/History-of-gettext-et-al
     first_release_version: 0.1 # earliest version still on gnu.org is 0.10.40 from 2001-09-15
-    latest_release_date: 2023-06-17
-    latest_release_version: 0.22
+    latest_release_date: 2024-12-01
+    latest_release_version: 0.23
   - name: Wine
-    wp_url: https://en.wikipedia.org/wiki/Wine_(software)
     url: https://www.winehq.org/
+    repo_url: https://gitlab.winehq.org/wine/wine
+    wp_url: https://en.wikipedia.org/wiki/Wine_(software)
+    emeritus: true
     first_release_date: 1993-06-29
     first_release_version: 0.0.2
     first_nonzv_release_date: 2008-06-17
     last_zv_release_version: 0.9.61
-    emeritus: true
   - name: cargo-audit
     url: https://rustsec.org/
-    # technically on github, but has a weird monorepo version tagging scheme that'll need code to handle
-    _gh_url: https://github.com/rustsec/rustsec
+    # Technically on github, but has a weird monorepo version tagging scheme that'll need code to handle
+    gh_url: https://github.com/rustsec/rustsec
     first_release_date: 2017-02-27
     first_release_version: 0.1.0
-    latest_release_date: 2024-02-15
-    latest_release_version: 0.20.0
+    latest_release_date: 2024-10-29
+    latest_release_version: 0.21.0
   - name: transformers
     url: https://hackage.haskell.org/package/transformers
     repo_url: https://hub.darcs.net/ross/transformers
+    reason: 11444 reverse dependencies on Hackage, including GHC itself.
     first_release_date: 2009-01-05
     first_release_version: 0.0.0.0 # Now *they* understand the power of zerover.
-    latest_release_date: 2023-08-01
-    latest_release_version: 0.6.1.1
-    release_count: 39
-    reason: 11444 reverse dependencies on Hackage, including GHC itself.
+    latest_release_date: 2024-09-25
+    latest_release_version: 0.6.1.2
+    release_count: 40
   - name: Discord for Linux
     reason: A very popular communication platform with 200+ million monthly users, that has been version 0 since 2015.
     wp_url: https://en.wikipedia.org/wiki/Discord
@@ -704,10 +698,3 @@ projects:
     latest_release_date: 2024-12-05 # Assuming that the latest patch notes refer to this version (https://discord.com/blog/discord-patch-notes-december-5-2024)
     latest_release_version: 0.0.329 # https://discord.com/api/download?platform=osx -> https://stable.dl2.discordapp.net/apps/osx/0.0.329/Discord.dmg
     release_count: 148
-  - name: Thanos
-    url: https://thanos.io
-    repo_url: https://github.com/thanos-io/thanos
-    first_release_date: 2018-05-18
-    first_release_version: 0.1.0-rc.0 # https://github.com/thanos-io/thanos/releases/tag/v0.1.0-rc.0
-    latest_release_date: 2023-08-01
-    release_count: 122
