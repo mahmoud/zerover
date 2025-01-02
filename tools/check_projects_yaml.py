@@ -1,89 +1,126 @@
-
+import datetime
 import sys
-from collections import defaultdict
+from pathlib import Path
 
 import yaml
-from schema import Schema, And, Or, Optional
+from boltons.iterutils import redundant
 from hyperlink import parse
+from schema import Optional, Or, Schema
 
 
-def check_url(url_str):
-    url = parse(unicode(url_str))
-    assert url.scheme in ('http', 'https')
-    return url
+def check_url(url_str: str):
+    url = parse(url_str)
+    assert url.scheme in ("http", "https")
+    return True
 
 
-IN_SCHEMA = Schema({'projects': [{'name': str,
-                                  Or('url', 'gh_url'): check_url}]},
-                   ignore_extra_keys=True)
-
-
-def redundant(src, key=None, distinct=False, sort=True):
-    """The complement of unique(), returns non-unique values. Pass
-    distinct=True to get a list of the *first* redundant value for
-    each key. Results are sorted by default.
-
-    >>> redundant(range(5))
-    []
-    >>> redundant([1, 2, 3, 2, 3, 3])
-    [[2, 2], [3, 3, 3]]
-    >>> redundant([1, 2, 3, 2, 3, 3], distinct=True)
-    [2, 3]
-    >>> redundant(['hi', 'Hi', 'HI', 'hello'], key=str.lower)
-    [['hi', 'Hi', 'HI']]
-    >>> redundant(['hi', 'Hi', 'HI', 'hello'], distinct=True, key=str.lower)
-    ['Hi']
-
-    """
-    if key is None:
-        pass
-    elif callable(key):
-        key_func = key
-    elif isinstance(key, basestring):
-        key_func = lambda x: getattr(x, key, x)
-    else:
-        raise TypeError('"key" expected a string or callable, not %r' % key)
-    seen = {}  # key to first seen item
-    redundant_seen = {}
-    for i in src:
-        k = key_func(i) if key else i
-        if k not in seen:
-            seen[k] = i
-        else:
-            if k in redundant_seen:
-                if not distinct:
-                    redundant_seen[k].append(i)
-            else:
-                redundant_seen[k] = [seen[k], i]
-    if distinct:
-        ret = [r[1] for r in redundant_seen.values()]
-    else:
-        ret = redundant_seen.values()
-    return sorted(ret) if sort else ret
-
+OPTIONAL = {
+    Optional("gh_url"): check_url,
+    Optional("repo_url"): str,
+    Optional("wp_url"): str,
+    Optional("emeritus"): bool,
+    Optional("reason"): str,
+    Optional("star_count"): int,
+}
+IN_SCHEMA = Schema(
+    {
+        "projects": [
+            Or(
+                # GitHub projects
+                {
+                    **OPTIONAL,
+                    "name": str,
+                    "gh_url": check_url,
+                    Optional("emeritus"): False,
+                    Optional("url"): check_url,  # Overrides gh_url for the hyperlink
+                    Optional("release_count"): int,
+                    Optional("latest_release_date"): Or(
+                        datetime.date, datetime.datetime
+                    ),
+                    Optional("latest_release_version"): Or(float, str),
+                    Optional("first_release_date"): Or(
+                        datetime.date, datetime.datetime
+                    ),
+                    Optional("first_release_version"): Or(float, str),
+                },  # type: ignore
+                # Emeritus GitHub projects
+                {
+                    **OPTIONAL,
+                    "name": str,
+                    "gh_url": check_url,
+                    "emeritus": True,
+                    Optional("url"): check_url,  # Overrides gh_url for the hyperlink
+                    Optional("release_count_zv"): int,
+                    Optional("first_release_date"): Or(
+                        datetime.date, datetime.datetime
+                    ),
+                    Optional("first_release_version"): Or(float, str),
+                    Optional("first_nonzv_release_date"): Or(
+                        datetime.date, datetime.datetime
+                    ),
+                    Optional("first_nonzv_release_version"): Or(float, str),
+                    Optional("last_zv_release_version"): Or(float, str),
+                },  # type: ignore
+                # Non-GitHub projects
+                {
+                    **OPTIONAL,
+                    "name": str,
+                    "url": check_url,
+                    Optional("emeritus"): False,
+                    Optional("release_count"): int,
+                    "first_release_date": Or(datetime.date, datetime.datetime),
+                    Optional("latest_release_date"): Or(
+                        datetime.date, datetime.datetime
+                    ),
+                    Optional("latest_release_version"): Or(float, str),
+                    Optional("first_release_date"): Or(
+                        datetime.date, datetime.datetime
+                    ),
+                    Optional("first_release_version"): Or(float, str),
+                },  # type: ignore
+                # Emeritus Non-GitHub projects
+                {
+                    **OPTIONAL,
+                    "name": str,
+                    "url": check_url,
+                    "emeritus": True,
+                    Optional("release_count_zv"): int,
+                    "first_release_date": Or(datetime.date, datetime.datetime),
+                    Optional("first_release_version"): Or(float, str),
+                    Optional("first_nonzv_release_date"): Or(
+                        datetime.date, datetime.datetime
+                    ),
+                    Optional("first_nonzv_release_version"): Or(float, str),
+                    Optional("last_zv_release_version"): Or(float, str),
+                },  # type: ignore
+            )
+        ],
+    },
+)
 
 
 def main():
-    with open('projects.yaml') as f:
-        data = yaml.load(f)
+    projects_yaml_path = Path(__file__).parent.parent / "projects.yaml"
+    with projects_yaml_path.open() as f:
+        data = yaml.safe_load(f)
+
     IN_SCHEMA.validate(data)
 
-    projects = data['projects']
+    projects = data["projects"]
 
-    re_names = redundant([p['name'].lower() for p in projects])
-    if re_names:
-        print('got projects with duplicate names: %r' % re_names)
+    dup_names = redundant([p["name"].lower() for p in projects])
+    if dup_names:
+        print(f"Found {len(dup_names)} project(s) with duplicate names: {dup_names}")
         sys.exit(1)
 
-    re_urls = redundant([p.get('gh_url', p.get('url')) for p in projects])
-    if re_urls:
-        print('got projects with duplicate urls: %r' % re_urls)
+    dup_urls = redundant([p.get("gh_url", p.get("url")) for p in projects])
+    if dup_urls:
+        print(f"Found {len(dup_urls)} project(s) with duplicate urls: {dup_urls}")
         sys.exit(1)
 
+    print("projects.yaml validated successfully!")
+    sys.exit(0)
 
 
-    print 'projects.yaml validated'
-
-
-if __name__ == '__main__':
-    sys.exit(main() or 0)
+if __name__ == "__main__":
+    main()
