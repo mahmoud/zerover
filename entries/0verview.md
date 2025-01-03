@@ -67,7 +67,7 @@ microservice-oriented environment. And that's what made it one of
 ZeroVer's most important adherents until
 [2018](https://github.com/hashicorp/vault/releases/tag/v1.0.0).
 
-> *Low in the stack, low in the version. That's was the HashiCorp way.*
+> *Low in the stack, low in the version. That was the HashiCorp way.*
 
 <img align="right" width="30%" style="padding-left: 15px" src="/uploads/terraform_logo.png">
 
