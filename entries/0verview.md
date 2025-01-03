@@ -58,6 +58,32 @@ here](/submissions.html)!
 These flagship ZeroVer projects know how to get the most out of their
 zeroes.
 
+## HashiCorp Vault and Terraform
+
+<img align="left" style="padding-right: 15px" width="15%" src="/uploads/vault_logo.png">
+[HashiCorp's Vault][vault] project aims to be an enterprise secret
+management service, comprising the bedrock of a modern,
+microservice-oriented environment. And that's what made it one of
+ZeroVer's most important adherents until
+[2018](https://github.com/hashicorp/vault/releases/tag/v1.0.0).
+
+> *Low in the stack, low in the version. That's was the HashiCorp way.*
+
+<img align="right" width="30%" style="padding-left: 15px" src="/uploads/terraform_logo.png">
+
+To drive the point home, even further down the stack, HashiCorp's
+[Terraform][terraform] also complied with ZeroVer's cutting-edge
+versioning scheme until
+[2021](https://github.com/hashicorp/terraform/releases/tag/v1.0.0).
+With Vault and Terraform, HashiCorp demonstrated industry recognition
+of the importance of ZeroVer in infrastructure.
+
+HashiCorp knows ZeroVer works, especially when the projects are
+business-critical products, sold and supported.
+
+[vault]: https://www.vaultproject.io/
+[terraform]: https://www.terraform.io/
+
 ## PuTTY
 
 For decades, PuTTY has been the go-to tool for professional Windows users 
