@@ -60,16 +60,15 @@ zeroes.
 
 ## PuTTY
 
-For decades, PuTTY had been the go-to tool for professionals for creating SSH
-connections to remote hosts. PuTTY was first released in 1999 by Simon Tatham
-and has continued to resist the lure of [Semantic Versioning][semver] since.
+For decades, PuTTY has been the go-to tool for professional Windows users 
+creating SSH connections. PuTTY was first released in 1999 by Simon Tatham
+and has resisted the taboo of nonzero major versions for over 25 years.
 PuTTY's journey has been nothing short of legendary.
 
 Much like the tool itself, PuTTY's versioning approach is efficient,
 lightweight, robust, and focused on functionality rather than marketing optics
-like major releases. Its longstanding title as a ZeroVer champion has seen it
-handle everything from protocol migrations to critical security patches while
-under the reassuring banner of 0.x.
+like major releases. Even as the SSH protocol itself revved from version 1 to 2,
+PuTTY remained steadfast under the reassuring banner of 0.x.
 
 PuTTY's commitment to ZeroVer reminds us that great software doesn't need major
 version numbers to make a major impact.
