@@ -448,6 +448,9 @@ projects:
     reason: 7+ years of history, over 2M weekly downloads on npm
   - name: Unmanic
     gh_url: https://github.com/Unmanic/unmanic
+  - name: n8n
+    url: https://n8n.io/
+    gh_url: https://github.com/n8n-io/n8n
 
   # Non-GitHub projects below, manually updated
   - name: ASCEND
