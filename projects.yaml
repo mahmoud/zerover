@@ -700,6 +700,9 @@ projects:
     url: https://distlib.readthedocs.io
     gh_url: https://github.com/pypa/distlib
     reason: Depended on by PyPA/Pip
+  - name: n8n
+    url: https://n8n.io/
+    gh_url: https://github.com/n8n-io/n8n
 
   # Non-GitHub projects below, manually updated
   - name: ASCEND
@@ -856,3 +859,21 @@ projects:
     latest_release_date: 2024-12-05 # Assuming that the latest patch notes refer to this version (https://discord.com/blog/discord-patch-notes-december-5-2024)
     latest_release_version: 0.0.329 # https://discord.com/api/download?platform=osx -> https://stable.dl2.discordapp.net/apps/osx/0.0.329/Discord.dmg
     release_count: 148
+  - name: JED
+    reason: Included in debian stable since 1996.
+    wp_url: https://en.wikipedia.org/wiki/JED_(text_editor)
+    url: https://www.jedsoft.org/jed/
+    repo_url: https://github.com/thanos-io/thanos
+    first_release_date: 1996-10-06 # https://metadata.ftp-master.debian.org/changelogs//main/j/jed/jed_0.99.19-7_changelog
+    first_release_version: 0.98b-1
+    latest_release_date: 2009-12-13 # https://www.jedsoft.org/releases/jed/
+    latest_release_version: 0.99-19
+    release_count: 123 # https://metadata.ftp-master.debian.org/changelogs//main/j/jed/jed_0.99.19-7_changelog
+  - name: Tiny C Compiler
+    url: https://repo.or.cz/tinycc.git
+    gh_url: https://github.com/TinyCC/TinyCC
+    first_release_date: 2003-04-14
+    first_release_version: release_0_9_18
+    latest_release_date: 2017-12-12
+    latest_release_version: release_0_9_27
+    release_count: 9

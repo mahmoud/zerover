@@ -87,5 +87,9 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add projects.json
-          git commit -m "chore: update project.json [skip ci]"
-          git push origin master
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: update project.json [skip ci]"
+            git push origin master
+          fi
