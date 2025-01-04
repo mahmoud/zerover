@@ -1,332 +1,402 @@
 import argparse
-import base64
 import datetime
 import json
 import os
 import re
 import sys
 import time
-import urllib.request
 from pathlib import Path
 from pprint import pprint
+from typing import TypedDict
 
+import requests
 import yaml
-from boltons.urlutils import URL
-
-PROJECT_ROOT_PATH = Path(__file__).parent.parent
-VTAG_RE = re.compile(
-    r"""
-    ^
-    [^0-9]*
-    (?P<major>\d+)
-    \.
-    [0-9a-zA-Z_.]+
-    """,
-    re.VERBOSE,
-)
-
-# Tags matching these patterns will be completely skipped
-SKIP_PATTERNS = [
-    r"^ciflow/",  # pytorch has loads of this noise
-    r"^ci/",  # pytorch has loads of this noise
-    r"^nightly",  # FreeCol
-]
-
-# Version numbers after these patterns should be extracted
-STRIP_PATTERNS = [
-    r"^mc[0-9.]+-",  # Sodium tags include minecraft version numbers
-]
+from hyperlink import parse
+from packaging.version import InvalidVersion, Version
 
 
-def strip_prefix(tag_name: str) -> str:
-    """Strip any non-numeric prefix from the tag name."""
-    _, _, tag_name = tag_name.rpartition("/")
-
-    if "-" in tag_name:
-        _, _, version = tag_name.partition("-")
-        if re.search(r"^\d", version):
-            return version
-
-    match = re.search(r"\d", tag_name)
-    if match:
-        return tag_name[match.start() :]
-    return tag_name
+class RegexSubstituionDict(TypedDict):
+    remove: str
+    """The regex pattern to remove from the tag name."""
+    search: str
+    """The regex pattern to search for in the tag name to replace with `replace`."""
+    replace: str
+    """The string to replace the `search` pattern with."""
 
 
-def match_vtag(tag_name: str) -> re.Match | None:
-    """Match version tags using a more general approach."""
-    tag_name = strip_prefix(tag_name)
-    return VTAG_RE.match(tag_name)
+class GitHubTag:
+    def __init__(self, name: str, commit_url: str, committed_date: datetime.datetime):
+        self.name = name
+        self.processed_name = name
+        self.commit_url = commit_url
+        self.committed_date = committed_date
+        self.version: Version | None = None
+
+    def is_version_compatible(self) -> bool:
+        try:
+            Version(self.processed_name)
+        except InvalidVersion:
+            return False
+        return True
+
+    def process_name(self, regex_subs: list[RegexSubstituionDict] | None = None):
+        for sub in regex_subs or []:
+            if sub.get("remove"):
+                self.processed_name = re.sub(sub["remove"], "", self.processed_name)
+            else:
+                self.processed_name = re.sub(
+                    sub["search"], sub["replace"], self.processed_name
+                )
+
+    def parse_version(self):
+        self.version = Version(self.processed_name)
 
 
-def version_key(version: str) -> tuple:
-    """Extract and convert version numbers to tuple for comparison."""
-    clean_version = strip_prefix(version)
-    try:
-        return tuple(
-            int(x) for x in re.split(r"\D+", clean_version) if x and x.isdigit()
+class GitHubAPI:
+    def __init__(self, user: str, token: str, org: str, repo: str):
+        self.user = user
+        self.token = token
+        self.headers = {"Authorization": f"Bearer {self.token}"}
+        self.org = org
+        self.repo = repo
+
+    def get_repo_info(self) -> dict:
+        query = """
+        query($owner: String!, $repo: String!) {
+            rateLimit {
+                remaining
+            }
+            repository(owner: $owner, name: $repo) {
+                stargazerCount
+            }
+        }
+        """
+        variables = {"owner": self.org, "repo": self.repo}
+        response = requests.post(
+            "https://api.github.com/graphql",
+            json={"query": query, "variables": variables},
+            headers=self.headers,
         )
-    except (TypeError, ValueError):
-        return tuple()
+        data = response.json()
 
+        print(f" (( {data["data"]["rateLimit"]["remaining"]} requests remaining")
 
-def _get_gh_json(
-    url: str, user: str | None = None, token: str | None = None
-) -> dict | list[dict]:
-    """
-    Get paginated results from GitHub, possibly authorized based on command
-    line arguments or environment variables.
-    """
-    req = urllib.request.Request(url)
-    if user and token:
-        auth_str = f"{user}:{token}"
-        auth_bytes = auth_str.encode("ascii")
-        auth_header_val = f'Basic {base64.b64encode(auth_bytes).decode("ascii")}'
-        req.add_header("Authorization", auth_header_val)
+        return {"star_count": data["data"]["repository"]["stargazerCount"]}
 
-    resp = urllib.request.urlopen(req)
-    body = resp.read()
-    res = json.loads(body)
-    rate_rem = int(resp.info().get("x-ratelimit-remaining", "-1"))
+    def fetch_tags(self) -> list[GitHubTag]:
+        query = """
+        query($owner: String!, $repo: String!, $cursor: String) {
+            rateLimit {
+                remaining
+            }
+            repository(owner: $owner, name: $repo) {
+                refs(refPrefix: "refs/tags/", first: 100, after: $cursor, orderBy: {field: TAG_COMMIT_DATE, direction: DESC}) {
+                    edges {
+                        node {
+                            name
+                            target {
+                                commitUrl
+                                ... on Commit {
+                                    committedDate
+                                }
+                                ... on Tag {
+                                    target {
+                                        ... on Commit {
+                                            committedDate
+                                        }
+                                        ... on Tag {
+                                            target {
+                                                ... on Commit {
+                                                    committedDate
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    pageInfo {
+                        hasNextPage
+                        endCursor
+                    }
+                }
+            }
+        }
+        """
+        cursor = None
+        all_tags = []
 
-    if not isinstance(res, list) or not res:
-        print(f" (( {rate_rem} requests remaining")
-        return res
+        while True:
+            variables = {"owner": self.org, "repo": self.repo, "cursor": cursor}
+            response = requests.post(
+                "https://api.github.com/graphql",
+                json={"query": query, "variables": variables},
+                headers=self.headers,
+            )
+            data = response.json()
 
-    page = 2
-    ret = res
-    while res:
-        paged_url = f"{url}?page={page}"
-        req = urllib.request.Request(paged_url)
-        if user and token:
-            req.add_header("Authorization", auth_header_val)
-        resp = urllib.request.urlopen(req)
-        body = resp.read()
-        res = json.loads(body)
-        ret.extend(res)
-        page += 1
+            refs = data["data"]["repository"]["refs"]
+            all_tags.extend(refs["edges"])
 
-    rate_rem = int(resp.info().get("x-ratelimit-remaining", "-1"))
-    print(f" (( {rate_rem} requests remaining")
-    return ret
+            if refs["pageInfo"]["hasNextPage"]:
+                cursor = refs["pageInfo"]["endCursor"]
+            else:
+                break
 
+            print(f" (( {data["data"]["rateLimit"]["remaining"]} requests remaining")
 
-def _get_gh_rel_data(
-    rel_info: dict, user: str | None = None, token: str | None = None
-) -> dict:
-    ret = {}
-    ret["tag"] = rel_info["name"]
-    ret["version"] = None
-    if match_vtag(ret["tag"]):
-        ret["version"] = strip_prefix(ret["tag"])
-    ret["api_commit_url"] = rel_info["commit"]["url"]
-    rel_data = _get_gh_json(ret["api_commit_url"], user, token)
-    if isinstance(rel_data, dict):
-        ret["date"] = rel_data["commit"]["author"]["date"]
-        ret["link"] = rel_data["html_url"]
-    return ret
-
-
-def _find_dominant_version_pattern(tags: list[dict]) -> list[dict]:
-    """Find the most common version tag pattern in a project's tags."""
-    patterns = {}
-    for tag in tags:
-        _, _, tag_name = tag["name"].rpartition("/")
-
-        if any(
-            re.search(pattern, tag["name"]) or re.search(pattern, tag_name)
-            for pattern in SKIP_PATTERNS
-        ):
-            continue
-
-        for pattern in STRIP_PATTERNS:
-            if re.search(pattern, tag_name):
-                prefix, _, version = tag_name.partition("-")
-                if re.search(r"^\d", version):
-                    tag_name = version
-                    break
-
-        match = re.search(r"\d", tag_name)
-        if not match:
-            continue
-        prefix = tag_name[: match.start()]
-        if prefix in patterns:
-            patterns[prefix].append(tag)
-        else:
-            patterns[prefix] = [tag]
-
-    if not patterns:
-        return []
-    return max(patterns.values(), key=len)
-
-
-def get_gh_project_info(
-    info: dict, user: str | None = None, token: str | None = None
-) -> dict:
-    gh_info = {}
-    url = info.get("gh_url")
-    if url is None:
-        return gh_info
-
-    org, repo = URL(url.rstrip("/")).path_parts[1:]
-    gh_url = URL("https://api.github.com/repos")
-    gh_url.path_parts += (org, repo)
-
-    project_data = _get_gh_json(gh_url.to_text(), user, token)
-    if isinstance(project_data, dict):
-        gh_info["star_count"] = project_data["stargazers_count"]
-
-    gh_url.path_parts += ("tags",)
-    tags_data = _get_gh_json(gh_url.to_text(), user, token)
-    if isinstance(tags_data, dict):
-        tags_data = []
-
-    main_tags = _find_dominant_version_pattern(tags_data)
-    vtags_data = [td for td in main_tags if match_vtag(td["name"])]
-    if not vtags_data:
-        return gh_info
-
-    gh_info["release_count"] = len(vtags_data)
-
-    latest_release = vtags_data[0]
-    latest_release_data = _get_gh_rel_data(latest_release, user, token)
-    for k, v in latest_release_data.items():
-        gh_info[f"latest_release_{k}"] = v
-
-    vtags_data.sort(key=lambda x: version_key(x["name"]), reverse=True)
-
-    first_release_version = info.get("first_release_version")
-    first_release = None
-    if first_release_version is None:
-        first_release = [
-            v
-            for v in vtags_data
-            if version_key(v["name"]) < version_key(latest_release["name"])
-        ][-1]
-    else:
-        first_releases = [v for v in vtags_data if v["name"] == first_release_version]
-        if first_releases:
-            first_release = first_releases[0]
-    if first_release:
-        first_release_data = _get_gh_rel_data(first_release, user, token)
-        for k, v in first_release_data.items():
-            gh_info[f"first_release_{k}"] = v
-
-    zv_releases = []
-    for rel in vtags_data:
-        match = match_vtag(rel["name"])
-        if match and match.group("major") == "0":
-            zv_releases.append(rel)
-    gh_info["release_count_zv"] = len(zv_releases)
-    print(
-        f' .. {gh_info["release_count"]} releases, {gh_info["release_count_zv"]} 0ver'
-    )
-
-    is_zerover = latest_release in zv_releases
-
-    gh_info["is_zerover"] = is_zerover
-
-    if is_zerover:
-        return gh_info
-
-    last_zv_release = zv_releases[0]
-    first_nonzv_release = vtags_data[vtags_data.index(last_zv_release) - 1]
-    first_nonzv_release_data = _get_gh_rel_data(first_nonzv_release, user, token)
-
-    gh_info["last_zv_release_version"] = last_zv_release["name"]
-    for k, v in first_nonzv_release_data.items():
-        gh_info[f"first_nonzv_release_{k}"] = v
-
-    return gh_info
+        return [
+            GitHubTag(
+                name=t["node"]["name"],
+                commit_url=t["node"]["target"]["commitUrl"],
+                committed_date=datetime.datetime.fromisoformat(
+                    t["node"]["target"].get("committedDate")
+                    or t["node"]["target"]["target"].get("committedDate")
+                    or t["node"]["target"]["target"]["target"]["committedDate"]
+                ),
+            )
+            for t in all_tags
+        ]
 
 
 def json_default(obj):
     if isinstance(obj, (datetime.datetime, datetime.date)):
         return obj.isoformat()
+    if isinstance(obj, Version):
+        return str(obj)
     raise TypeError(f"{obj} is not serializable")
 
 
-def fetch_entries(
-    projects: list[dict], user: str | None = None, token: str | None = None
-) -> list[dict]:
-    entries = []
+class ProjectsEntry:
+    def __init__(
+        self,
+        name: str,
+        url: str | None = None,
+        gh_url: str | None = None,
+        repo_url: str | None = None,
+        wp_url: str | None = None,
+        emeritus: bool | None = None,
+        reason: str | None = None,
+        tag_regex_subs: list[RegexSubstituionDict] | None = None,
+        star_count: int | None = None,
+        release_count: int | None = None,
+        release_count_zv: int | None = None,
+        latest_release_date: datetime.datetime | datetime.date | None = None,
+        latest_release_version: str | Version | None = None,
+        first_release_date: datetime.datetime | datetime.date | None = None,
+        first_release_version: str | Version | None = None,
+        first_nonzv_release_date: datetime.datetime | datetime.date | None = None,
+        first_nonzv_release_version: str | Version | None = None,
+        last_zv_release_version: str | Version | None = None,
+    ):
+        self.name: str = name
+        """The name of the project."""
+        self.url: str | None = url
+        """The project's home page."""
+        self.gh_url: str | None = gh_url
+        """The project's GitHub repository link."""
+        self.repo_url: str | None = repo_url
+        """The project's non-GitHub repository link."""
+        self.wp_url: str | None = wp_url
+        """The project's Wikipedia link."""
+        self.is_zerover: bool = bool(emeritus)
+        """Whether the project is still ZeroVer."""
+        self.reason: str | None = reason
+        """The reason this project was added to the 0ver website listing."""
+        self.tag_regex_subs: list[RegexSubstituionDict] | None = tag_regex_subs
+        """The list of regex substitutions to apply to the tag names before parsing."""
+        self.star_count: int | None = star_count
+        """The number of stars the project has."""
+        self.release_count: int | None = release_count
+        """The number of releases the project has had."""
+        self.release_count_zv: int | None = release_count_zv
+        """The number of releases the project has before it left 0ver."""
+        self.latest_release_date: datetime.datetime | datetime.date | None = (
+            latest_release_date
+        )
+        """The date of the latest release."""
+        self.latest_release_version: Version | None = (
+            Version(latest_release_version)
+            if isinstance(latest_release_version, str)
+            else latest_release_version
+        )
+        """The version of the latest release."""
+        self.latest_release_tag: str | None = None
+        """The tag name of the latest release."""
+        self.latest_release_link: str | None = None
+        """The URL of the latest release commit."""
+        self.first_release_date: datetime.datetime | datetime.date | None = (
+            first_release_date
+        )
+        """The date of the first release."""
+        self.first_release_version: Version | None = (
+            Version(first_release_version)
+            if isinstance(first_release_version, str)
+            else first_release_version
+        )
+        self.first_release_tag: str | None = None
+        """The tag name of the first release."""
+        self.first_release_link: str | None = None
+        """The URL of the first release commit."""
+        """The version of the first release."""
+        self.first_nonzv_release_date: datetime.datetime | datetime.date | None = (
+            first_nonzv_release_date
+        )
+        """The date of the first non-0ver release."""
+        self.first_nonzv_release_version: Version | None = (
+            Version(first_nonzv_release_version)
+            if isinstance(first_nonzv_release_version, str)
+            else first_nonzv_release_version
+        )
+        """The version of the first non-0ver release."""
+        self.first_nonzv_release_tag: str | None = None
+        """The tag name of the first non-0ver release."""
+        self.first_nonzv_release_link: str | None = None
+        """The URL of the first non-0ver release commit."""
+        self.last_zv_release_version: Version | None = (
+            Version(last_zv_release_version)
+            if isinstance(last_zv_release_version, str)
+            else last_zv_release_version
+        )
+        """The last 0ver release before the project left ZeroVer."""
 
-    for p in projects:
-        print("Processing", p["name"])
-        info = dict(p)
-        if info.get("skip"):
-            continue
+    @classmethod
+    def from_dict(cls, info: dict):
+        return cls(**info)
 
-        info["url"] = info.get("url", info.get("gh_url"))
+    def to_dict(self) -> dict:
+        hide = ["tag_regex_subs"]
+        return {
+            k: v for k, v in self.__dict__.items() if v is not None and k not in hide
+        }
 
-        if info.get("gh_url"):
-            gh_info = get_gh_project_info(info, user, token)
-            # Only add new data, preserve any manual information
-            info.update({k: v for k, v in gh_info.items() if k not in info})
 
-        is_zerover = info.get("is_zerover")
-        if is_zerover is None:
-            is_zerover = info.get("emeritus")
-            if is_zerover is not None:
-                is_zerover = not is_zerover
+class Entry:
+    def __init__(self, info: dict, args: argparse.Namespace):
+        self.info = ProjectsEntry.from_dict(info)
+        if self.info.gh_url:
+            self.gh_org = self.info.gh_url.split("/")[3]
+            self.gh_repo = self.info.gh_url.split("/")[4]
+            self.api = GitHubAPI(args.user, args.token, self.gh_org, self.gh_repo)
+        else:
+            self.gh_org = None
+            self.gh_repo = None
+            self.api = None
+        self.tags: list[GitHubTag] = []
+        self.failed_tags: list[GitHubTag] = []
+        self.duplicate_tags: list[GitHubTag] = []
+
+    def update_gh_project_info(self):
+        if self.api is None:
+            return
+
+        repo_info = self.api.get_repo_info()
+        self.info.star_count = repo_info["star_count"]
+
+        self.get_tags()
+        if not self.tags:
+            return
+
+        self.info.release_count = len(self.tags)
+
+        # Latest release
+        if not self.info.latest_release_version:
+            latest_release = self.tags[0]
+            self.info.latest_release_tag = latest_release.name
+            self.info.latest_release_link = latest_release.commit_url
+            self.info.latest_release_date = latest_release.committed_date
+            self.info.latest_release_version = latest_release.version
+
+        # First release
+        first_release = None
+        if self.info.first_release_version:
+            first_releases = [
+                v for v in self.tags if v.version == self.info.first_release_version
+            ]
+            if first_releases:
+                first_release = first_releases[0]
+        else:
+            first_release = self.tags[-1]
+        if first_release:
+            self.info.first_release_tag = first_release.name
+            self.info.first_release_link = first_release.commit_url
+            self.info.first_release_date = first_release.committed_date
+            self.info.first_release_version = first_release.version
+
+        # ZeroVer releases
+        zv_releases = [t for t in self.tags if t.version and t.version.major == 0]
+        self.info.release_count_zv = len(zv_releases)
+        print(
+            f" .. {self.info.release_count} releases, {self.info.release_count_zv} 0ver"
+        )
+
+        self.info.is_zerover = (
+            self.info.latest_release_version is not None
+            and self.info.latest_release_version.major == 0
+        )
+        if self.info.is_zerover:
+            return
+
+        # Last ZeroVer release
+        if not self.info.last_zv_release_version:
+            last_zv_release = zv_releases[0]
+            self.info.last_zv_release_version = last_zv_release.version
+
+        # First non-ZeroVer release
+        if not self.info.first_nonzv_release_version:
+            nonzv_releases = [
+                t for t in self.tags if t.version and t.version.major != 0
+            ]
+            first_nonzv_release = nonzv_releases[-1]
+            self.info.first_nonzv_release_tag = first_nonzv_release.name
+            self.info.first_nonzv_release_link = first_nonzv_release.commit_url
+            self.info.first_nonzv_release_date = first_nonzv_release.committed_date
+            self.info.first_nonzv_release_version = first_nonzv_release.version
+
+    def get_tags(self):
+        if not self.api:
+            return
+
+        tags_data = self.api.fetch_tags()
+
+        tag_names = set()
+        self.tags = []
+        self.failed_tags = []
+        self.duplicate_tags = []
+        for tag in reversed(tags_data):
+            tag.process_name(self.info.tag_regex_subs)
+            if tag.processed_name and tag.processed_name in tag_names:
+                self.duplicate_tags.append(tag)
+                continue
             else:
-                is_zerover = info.get("last_zv_release_version") is not None
-                if is_zerover is None:
-                    is_zerover = False
-        
-        info["is_zerover"] = is_zerover
+                tag_names.add(tag.processed_name)
 
-        entries.append(info)
+            if tag.is_version_compatible():
+                tag.parse_version()
+                if tag.version and (
+                    tag.version.is_devrelease
+                    or tag.version.is_postrelease
+                    or tag.version.is_prerelease
+                ):
+                    self.duplicate_tags.append(tag)
+                else:
+                    self.tags.append(tag)
+            else:
+                self.failed_tags.append(tag)
 
-    return sorted(entries, key=lambda e: e["name"])
-
-
-def parse_args():
-    parser = argparse.ArgumentParser(
-        description="Generate or update project.json using projects.yaml."
-    )
-
-    parser.add_argument(
-        "-u",
-        "--user",
-        type=str,
-        default=os.getenv("GH_USER", ""),
-        help='GitHub Username for API authentication. Falls back to the "GH_USER" environment variable.',
-    )
-    parser.add_argument(
-        "-k",
-        "--token",
-        type=str,
-        default=os.getenv("GH_TOKEN", ""),
-        help='A path to a file containing a GitHub personal access token for API authentication. Falls back to the "GH_TOKEN" environment variable.',
-    )
-    parser.add_argument(
-        "--disable-caching",
-        action="store_true",
-        default=os.getenv("ZV_DISABLE_CACHING", "false").lower()
-        in [
-            "true",
-            "1",
-            "yes",
-        ],
-        help='Flag to disable caching. Falls back to the "ZV_DISABLE_CACHING" environment variable.',
-    )
-
-    args = parser.parse_args()
-    if Path(args.token).is_file():
-        with Path(args.token).open() as f:
-            args.token = f.read().strip()
-    return args
+        self.tags = list(reversed(self.tags))
+        self.duplicate_tags = list(reversed(self.duplicate_tags))
+        if self.duplicate_tags:
+            print(self.info.name, [t.name for t in self.duplicate_tags])
+        self.failed_tags = list(reversed(self.failed_tags))
 
 
-def main():
+def generate(args: argparse.Namespace):
     start_time = time.time()
-
-    args = parse_args()
-
     projects_yaml_path = Path(__file__).parent.parent / "projects.yaml"
     with projects_yaml_path.open() as f:
-        projects = yaml.safe_load(f)["projects"]
+        projects: list[dict] = yaml.safe_load(f)["projects"]
 
     if not projects:
         return
@@ -335,7 +405,7 @@ def main():
     try:
         with projects_json_path.open() as f:
             cur_data = json.load(f)
-            cur_projects = cur_data["projects"]
+            cur_projects: list[dict] = cur_data["projects"]
             cur_gen_date = datetime.datetime.fromisoformat(cur_data["gen_date"])
     except (IOError, KeyError):
         cur_projects = []
@@ -352,7 +422,23 @@ def main():
     new_names = sorted([n["name"] for n in projects])
 
     if fetch_outdated or cur_names != new_names or args.disable_caching:
-        entries = fetch_entries(projects, args.user, args.token)
+        entries: list[dict] = []
+
+        for p in projects:
+            print("Processing", p["name"])
+            if p.get("skip"):
+                continue
+
+            entry = Entry(p, args)
+            if not entry.info.url and entry.info.gh_url:
+                entry.info.url = entry.info.gh_url
+
+            if entry.info.gh_url:
+                entry.update_gh_project_info()
+
+            entries.append(entry.info.to_dict())
+
+        entries = sorted(entries, key=lambda e: e["name"])
     else:
         print("Current data already up to date, exiting.")
         return
@@ -368,7 +454,143 @@ def main():
     with projects_json_path.open("w") as f:
         json.dump(res, f, indent=2, sort_keys=True, default=json_default)
 
-    sys.exit(0)
+
+def info(args: argparse.Namespace):
+    print("Processing", args.name_or_link)
+
+    if parse(args.name_or_link).scheme in ("http", "https"):
+        info = {"gh_url": args.name_or_link}
+    else:
+        info = get_entry_from_name(args.name_or_link)
+
+    entry = Entry(info, args)
+    entry.update_gh_project_info()
+
+    print()
+    pprint(entry.info.to_dict())
+
+
+def tags(args: argparse.Namespace):
+    print("Processing", args.name_or_link)
+
+    if parse(args.name_or_link).scheme in ("http", "https"):
+        info = {"gh_url": args.name_or_link}
+    else:
+        info = get_entry_from_name(args.name_or_link)
+
+    entry = Entry(info, args)
+    entry.get_tags()
+
+    print("\nParsed tags:")
+    for t in entry.tags:
+        print(f"{t.name} (parsed as {t.version})")
+    if not entry.tags:
+        print("No tags parsed.")
+    if entry.duplicate_tags:
+        print("\nDuplicate tags:")
+        for t in entry.duplicate_tags:
+            print(f"{t.name} (parsed as {t.processed_name})")
+    if entry.failed_tags:
+        print("\nFailed tags:")
+        for t in entry.failed_tags:
+            print(f"{t.name} (tried {t.processed_name})")
+
+
+def parse_args():
+    def add_options(parser: argparse.ArgumentParser, *, caching: bool = False):
+        parser.add_argument(
+            "-u",
+            "--user",
+            type=str,
+            default=os.getenv("GH_USER", ""),
+            help='GitHub Username for API authentication. Falls back to the "GH_USER" environment variable.',
+        )
+        parser.add_argument(
+            "-k",
+            "--token",
+            type=str,
+            default=os.getenv("GH_TOKEN", ""),
+            help='A path to a file containing a GitHub personal access token for API authentication. Falls back to the "GH_TOKEN" environment variable.',
+        )
+        if caching:
+            parser.add_argument(
+                "--disable-caching",
+                action="store_true",
+                default=os.getenv("ZV_DISABLE_CACHING", "false").lower()
+                in [
+                    "true",
+                    "1",
+                    "yes",
+                ],
+                help='Flag to disable caching. Falls back to the "ZV_DISABLE_CACHING" environment variable.',
+            )
+
+    parser = argparse.ArgumentParser(
+        description="Generate or update project.json using projects.yaml."
+    )
+    add_options(parser, caching=True)
+    subparsers = parser.add_subparsers(dest="command", help="Available commands")
+
+    # Generate
+    generate_parser = subparsers.add_parser(
+        "generate", help="Generate an updated projects.json file."
+    )
+    add_options(generate_parser, caching=True)
+
+    # Info
+    info_parser = subparsers.add_parser(
+        "info",
+        help="Print automatically pulled info for a GitHub project for debugging.",
+    )
+    info_parser.add_argument(
+        "name_or_link",
+        type=str,
+        help="The project.yaml exact entry name or GitHub link.",
+    )
+    add_options(info_parser)
+
+    # Tags
+    tags_parser = subparsers.add_parser(
+        "tags", help="Print all sorted tags for a GitHub project for debugging."
+    )
+    tags_parser.add_argument(
+        "name_or_link",
+        type=str,
+        help="The project.yaml exact entry name or GitHub link.",
+    )
+    add_options(tags_parser)
+
+    args = parser.parse_args()
+
+    if args.command is None:
+        args.command = "generate"
+
+    if Path(args.token).is_file():
+        with Path(args.token).open() as f:
+            args.token = f.read().strip()
+
+    return args
+
+
+def get_entry_from_name(name: str) -> dict:
+    projects_yaml_path = Path(__file__).parent.parent / "projects.yaml"
+    with projects_yaml_path.open() as f:
+        projects = yaml.safe_load(f)["projects"]
+    matching_info = [p for p in projects if p["name"] == name]
+    if not matching_info:
+        print("No matching project found.")
+        sys.exit(1)
+    return matching_info[0]
+
+
+def main():
+    args = parse_args()
+    if args.command == "generate":
+        generate(args)
+    elif args.command == "info":
+        info(args)
+    elif args.command == "tags":
+        tags(args)
 
 
 if __name__ == "__main__":
