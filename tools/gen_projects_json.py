@@ -374,7 +374,14 @@ class Entry:
 
             if tag.is_version_compatible():
                 tag.parse_version()
-                self.tags.append(tag)
+                if tag.version and (
+                    tag.version.is_devrelease
+                    or tag.version.is_postrelease
+                    or tag.version.is_prerelease
+                ):
+                    self.duplicate_tags.append(tag)
+                else:
+                    self.tags.append(tag)
             else:
                 self.failed_tags.append(tag)
 
