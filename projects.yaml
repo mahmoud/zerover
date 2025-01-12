@@ -451,6 +451,11 @@ projects:
   - name: n8n
     url: https://n8n.io/
     gh_url: https://github.com/n8n-io/n8n
+    emeritus: true
+    first_release_date: 2019-06-24
+    first_release_version: 0.2.0
+    first_nonzv_release_date: 2023-06-27
+    last_zv_release_version: 0.234.0
   - name: typst
     url: https://typst.app/
     gh_url: https://github.com/typst/typst
