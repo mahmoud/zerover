@@ -12,6 +12,10 @@ boltons==24.1.0
     #   chert
     #   face
     #   lithoxyl
+certifi==2024.12.14
+    # via requests
+charset-normalizer==3.4.1
+    # via requests
 chert==24.0.0
     # via -r requirements.in
 face==24.0.0
@@ -23,7 +27,9 @@ hyperlink==21.0.0
     #   -r requirements.in
     #   chert
 idna==3.10
-    # via hyperlink
+    # via
+    #   hyperlink
+    #   requests
 lithoxyl==21.0.0
     # via chert
 markdown==3.7
@@ -34,11 +40,15 @@ pyyaml==6.0.2
     # via
     #   -r requirements.in
     #   chert
+requests==2.32.3
+    # via -r requirements.in
 schema==0.7.7
     # via -r requirements.in
 six==1.17.0
     # via
     #   html5lib
     #   python-dateutil
+urllib3==2.3.0
+    # via requests
 webencodings==0.5.1
     # via html5lib
