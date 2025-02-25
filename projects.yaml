@@ -459,7 +459,13 @@ projects:
   - name: typst
     url: https://typst.app/
     gh_url: https://github.com/typst/typst
-
+  - name: sccache
+    gh_url: https://github.com/mozilla/sccache
+    reason: 6+ years of history
+  - name: sccache action
+    gh_url: https://github.com/mozilla-actions/sccache-action
+    reason: Available ready to use on the GitHub actions marketplace
+    
   # Non-GitHub projects below, manually updated
   - name: ASCEND
     url: http://ascend4.org/Main_Page
