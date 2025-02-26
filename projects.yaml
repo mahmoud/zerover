@@ -26,6 +26,10 @@ projects:
     reason: "Official dependency management tool from Golang. To quote the first line of the readme, 'dep is safe for production use.'"
   - name: Apache Kafka
     gh_url: https://github.com/apache/kafka
+    tag_regex_subs:
+      - remove: ^kafka-
+      - search: -incubating-candidate-(\d+)$
+        replace: rc\1
   - name: Minikube
     gh_url: https://github.com/kubernetes/minikube
     reason: Official kubernetes project with a logo, but no major release.
@@ -36,10 +40,22 @@ projects:
   - name: Tor
     gh_url: https://github.com/torproject/tor
     url: https://blog.torproject.org/
+    tag_regex_subs:
+      - remove: ^tor-
+      - remove: ^debian-version-
+      - remove: -root$
+      - search: "@(\\d+)$"
+        replace: +\1
+      - search: -cvs-(\d+-\d+)$
+        replace: +\1
+      - remove: -pre\.\d+$
   - name: Home Assistant
     gh_url: https://github.com/home-assistant/home-assistant
   - name: Vala
     gh_url: https://github.com/GNOME/vala
+    tag_regex_subs:
+      - search: ^VALA_(\d)+_(\d)+_(\d)+$
+        replace: \1.\2.\3
   - name: Onion
     gh_url: https://github.com/davidmoreno/onion
   - name: Nim
@@ -47,19 +63,31 @@ projects:
   - name: Windows Terminal
     url: https://www.microsoft.com/en-ca/p/windows-terminal-preview/9n0dx20hk701
     gh_url: https://github.com/microsoft/terminal
+    tag_regex_subs:
+      - remove: ^\d{4}\.\d{5}$
   - name: Bitcoin
     gh_url: https://github.com/bitcoin/bitcoin
+    tag_regex_subs:
+      - remove: -final$
+      - remove: _closest$
+      - remove: _notexact$
+      - remove: -guixtest1$
+      - remove: test1$
   - name: Caddy
     gh_url: https://github.com/caddyserver/caddy
   - name: Werkzeug
     gh_url: https://github.com/pallets/werkzeug
     reason: Depended on by Flask and many other web frameworks.
+    tag_regex_subs:
+      - remove: \.x$
   - name: Cython
     gh_url: https://github.com/cython/cython
   - name: TOML
     gh_url: https://github.com/toml-lang/toml
   - name: Flask
     gh_url: https://github.com/pallets/flask
+    tag_regex_subs:
+      - remove: \.x$
   - name: datadogpy
     gh_url: https://github.com/DataDog/datadogpy
     reason: Part of a paid product.
@@ -76,12 +104,21 @@ projects:
     gh_url: https://github.com/jakubroztocil/httpie
   - name: scikit-learn
     gh_url: https://github.com/scikit-learn/scikit-learn
+    tag_regex_subs:
+      - remove: -branching$
   - name: certbot
     gh_url: https://github.com/certbot/certbot
+    tag_regex_subs:
+      - search: -corrected$
+        replace: "-1"
   - name: sshuttle
     gh_url: https://github.com/sshuttle/sshuttle
+    tag_regex_subs:
+      - remove: ^sshuttle-
   - name: Theano
     gh_url: https://github.com/Theano/Theano
+    tag_regex_subs:
+      - remove: ^rel-
   - name: Bokeh
     gh_url: https://github.com/bokeh/bokeh
   - name: Magic Wormhole
@@ -98,22 +135,33 @@ projects:
     gh_url: https://github.com/gohugoio/hugo
   - name: drone
     gh_url: https://github.com/drone/drone
+    tag_regex_subs:
+      - search: -debug$
+        replace: -dev
+      - search: -gitspaces-beta$
+        replace: -beta
   - name: HashiCorp Terraform
     gh_url: https://github.com/hashicorp/terraform
   - name: HashiCorp Nomad
     gh_url: https://github.com/hashicorp/nomad
+    tag_regex_subs:
+      - remove: ^ent-changelog-
   - name: HashiCorp Vault
     gh_url: https://github.com/hashicorp/vault
-    emeritus: true
-    last_zv_release_version: v0.11.6
-    first_release_date: 2015-04-29
-    first_release_version: v0.1.0
+    tag_regex_subs:
+      - search: -rebuild$
+        replace: "-1"
+      - remove: ^ent-changelog-
+      - search: -rc(\d+)\.(\d+)$
+        replace: -rc\1+\2
   - name: xhyve
     gh_url: https://github.com/mist64/xhyve
   - name: zeal
     gh_url: https://github.com/zealdocs/zeal
   - name: html5lib-python
     gh_url: https://github.com/html5lib/html5lib-python
+    tag_regex_subs:
+      - remove: ish$
   - name: MyPy
     gh_url: https://github.com/python/mypy
   - name: asn1crypto
@@ -123,12 +171,17 @@ projects:
     url: https://cgit.freedesktop.org/gstreamer/orc
     gh_url: https://github.com/GStreamer/orc
     reason: Depended on by Ubuntu and other free desktop operating systems
+    tag_regex_subs:
+      - remove: ^orc-
   - name: Gephi
     gh_url: https://github.com/gephi/gephi
   - name: vim-airline
     gh_url: https://github.com/vim-airline/vim-airline
   - name: Julia
     gh_url: https://github.com/JuliaLang/julia
+    tag_regex_subs:
+      - search: -pre\.([a-z]+)$
+        replace: -\1
   - name: Flatpak
     gh_url: https://github.com/flatpak/flatpak
   - name: Meson Build System
@@ -149,19 +202,37 @@ projects:
   - name: Pilosa
     gh_url: https://github.com/pilosa/pilosa
     url: https://www.pilosa.com/
+    tag_regex_subs:
+      - search: -alpha\.(\d+)(-pre|\.)(\d+)$
+        replace: -alpha\1+\3
   - name: fail2ban
     gh_url: https://github.com/fail2ban/fail2ban
+    tag_regex_subs:
+      - remove: -smartos$
+      - remove: -PROPAGATE_DEBIAN_PATCHES$
+      - search: ^(\d+)_(\d+)_(\d+)$
+        replace: \1.\2.\3
   - name: qtile
     gh_url: https://github.com/qtile/qtile
   - name: autokey
     gh_url: https://github.com/autokey/autokey
+    tag_regex_subs:
+      - remove: ^ak-
   - name: ClamAV Antivirus
     gh_url: https://github.com/Cisco-Talos/clamav-devel
+    tag_regex_subs:
+      - search: CLAMAV_(\d+)_(\d+)(RC\d+)?
+        replace: \1.\2\3
+      - remove: ^clamav-
+      - search: "@(\\d+)$"
+        replace: +\1
   - name: OpenRCT2
     url: https://openrct2.io/
     gh_url: https://github.com/OpenRCT2/OpenRCT2
   - name: bup
     gh_url: https://github.com/bup/bup
+    tag_regex_subs:
+      - remove: ^bup-
   - name: You-Get
     gh_url: https://github.com/soimort/you-get
   - name: Ramda
@@ -182,17 +253,32 @@ projects:
     url: https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools
     gh_url: https://github.com/microsoft/vscode-cpptools
     reason: Created by Microsoft and with almost 8 million installs, this is the standard extension you want if working with C or C++ in VS Code.
+    tag_regex_subs:
+      - search: -insiders$
+        replace: rc1
+      - search: -insiders(\d+)$
+        replace: rc\1
+      - search: -debug$
+        replace: dev
+      - search: -prerelease(\d+)$
+        replace: pre\1
+      - remove: ^v\.
   - name: pywinauto
     url: http://pywinauto.github.io/
     gh_url: https://github.com/pywinauto/pywinauto
   - name: React
     url: https://reactjs.org
     gh_url: https://github.com/facebook/react
-    first_release_date: 2013-05-29T19:46:11Z
-    first_release_version: 0.3.0 # A later v0.0.0 tag breaks this
+    tag_regex_subs:
+      - search: -alpha\.(.*)$
+        replace: -alpha+\1
   - name: Rake
     gh_url: https://github.com/ruby/rake
     reason: The pioneer of the zero-to-double-digits jump.
+    tag_regex_subs:
+      - remove: ^rake-
+      - remove: ^drake-
+      - remove: ^comp_tree-
   - name: Chocolatey
     url: https://chocolatey.org/
     gh_url: https://github.com/chocolatey/choco
@@ -207,10 +293,17 @@ projects:
   - name: Nuitka
     url: https://nuitka.net/
     gh_url: https://github.com/Nuitka/Nuitka
+    tag_regex_subs:
+      - search: ^(\d+\.\d+\.\d+)([a-z])$
+        replace: \1+\2
   - name: StreamEx
     gh_url: https://github.com/amaembo/streamex
+    tag_regex_subs:
+      - remove: ^streamex-
   - name: 3proxy
     gh_url: https://github.com/z3APA3A/3proxy
+    tag_regex_subs:
+      - remove: ^3proxy-
   - name: Flow
     gh_url: https://github.com/facebook/flow
   - name: GoReleaser
@@ -229,6 +322,9 @@ projects:
     gh_url: https://github.com/digitalbazaar/forge
   - name: Stellarium
     gh_url: https://github.com/Stellarium/stellarium
+    tag_regex_subs:
+      - search: ^stellarium-(\d+)-(\d+)-(\d+)$
+        replace: \1.\2.\3
   - name: xonsh
     gh_url: https://github.com/xonsh/xonsh
   - name: ccls
@@ -238,6 +334,12 @@ projects:
   - name: Teeworlds
     url: https://teeworlds.com/
     gh_url: https://github.com/teeworlds/teeworlds
+    tag_regex_subs:
+      - remove: -start$
+      - remove: -release$
+      - remove: -endofline$
+      - search: -cp-r(\d+)$
+        replace: rc\1
   - name: Numba
     url: https://numba.pydata.org
     gh_url: https://github.com/numba/numba
@@ -253,12 +355,19 @@ projects:
     gh_url: https://github.com/simonw/datasette
   - name: Tendermint
     gh_url: https://github.com/tendermint/tendermint/
+    tag_regex_subs:
+      - search: -dev0-fix0$
+        replace: dev
+      - search: ^dev-(.*)
+        replace: \1dev
   - name: Cosmos-sdk
     gh_url: https://github.com/cosmos/cosmos-sdk
     first_release_date: 2017-03-06
     first_release_version: 0.2.0 # https://github.com/tendermint/basecoin/blob/master/CHANGELOG.md#020-march-6-2017
-    latest_release_date: 2024-12-16
-    latest_release_version: 0.50.11
+    tag_regex_subs:
+      - remove: -circuit$
+      - search: -patch$
+        replace: "-1"
   - name: LocalStack
     url: https://localstack.cloud
     gh_url: https://github.com/localstack/localstack
@@ -275,10 +384,15 @@ projects:
     gh_url: https://github.com/paperjs/paper.js
   - name: Knex.js
     gh_url: https://github.com/knex/knex
+    tag_regex_subs:
+      - search: ^(\d+),(\d+),(\d+)$
+        replace: \1.\2.\3
   - name: zoxide
     gh_url: https://github.com/ajeetdsouza/zoxide
   - name: OpenRC
     gh_url: https://github.com/OpenRC/openrc
+    tag_regex_subs:
+      - remove: ^openrc-
   - name: Notary
     gh_url: https://github.com/notaryproject/notary
   - name: GoodbyeDPI
@@ -296,6 +410,10 @@ projects:
     gh_url: https://github.com/stylus/stylus
   - name: nw.js
     gh_url: https://github.com/nwjs/nw.js
+    tag_regex_subs:
+      - search: ^nw-v(\d+)\.(\d+),(\d+)$
+        replace: \1.\2.\3
+      - remove: ^nw-
   - name: Video Speed Controller
     gh_url: https://github.com/igrigorik/videospeed
     url: https://chrome.google.com/webstore/detail/video-speed-controller/nffaoalbilbmmfgbnbgppjihopabppdk
@@ -328,6 +446,11 @@ projects:
   - name: graphile-worker
     url: https://www.graphile.org/
     gh_url: https://github.com/graphile/worker
+    tag_regex_subs:
+      - search: -canary\.([a-z\d]+)$
+        replace: +\1
+      - search: -bridge\.0$
+        replace: "-0"
   - name: Monero
     url: https://getmonero.org
     gh_url: https://github.com/monero-project/monero
@@ -335,14 +458,24 @@ projects:
     url: https://multimc.org/
     gh_url: https://github.com/MultiMC/Launcher
     reason: Prominent launcher for maintaining multiple instances of MineCraft.
+    tag_regex_subs:
+      - search: -final$
+        replace: "-1"
   - name: Factor
     url: https://factorcode.org/
     gh_url: https://github.com/factor/factor
     reason: A concatenative stack-based programming language.
+    tag_regex_subs:
+      - remove: ^import-
+      - remove: ^similar-
+      - search: (release|factor)-(\d+)-(\d+)$
+        replace: \2.\3
   - name: Tectonic
     url: https://tectonic-typesetting.github.io/
     gh_url: https://github.com/tectonic-typesetting/tectonic
     reason: A TeX distributon that has been version 0 since 2016
+    tag_regex_subs:
+      - remove: ^tectonic@
   - name: Flipper
     url: https://www.flippercloud.io/docs
     gh_url: https://github.com/flippercloud/flipper
@@ -353,6 +486,9 @@ projects:
   - name: Apache Druid
     url: https://druid.apache.org/
     gh_url: https://github.com/apache/druid/
+    tag_regex_subs:
+      - remove: ^druid-
+      - remove: -incubating
   - name: seaborn
     url: https://seaborn.pydata.org/
     gh_url: https://github.com/mwaskom/seaborn
@@ -394,6 +530,8 @@ projects:
   - name: Create
     url: https://createmod.net/
     gh_url: https://github.com/Creators-of-Create/Create
+    tag_regex_subs:
+      - remove: ^mc\d+\.\d+/
   - name: FastAPI
     gh_url: https://github.com/fastapi/fastapi
   - name: atlantis
@@ -405,21 +543,26 @@ projects:
   - name: Nushell
     url: https://www.nushell.sh
     gh_url: https://github.com/nushell/nushell
+    tag_regex_subs:
+      - search: ^(\d+)_(\d+)_(\d+)$
+        replace: \1.\2.\3
   - name: Thanos
     url: https://thanos.io
     gh_url: https://github.com/thanos-io/thanos
-    first_release_date: 2018-05-18
-    first_release_version: 0.1.0-rc.0 # https://github.com/thanos-io/thanos/releases/tag/v0.1.0-rc.0
   - name: PyVista
     url: https://docs.pyvista.org/
     gh_url: https://github.com/pyvista/pyvista
   - name: Apache Thrift
     gh_url: https://github.com/apache/thrift
+    tag_regex_subs:
+      - remove: ^thrift-
   - name: TypeORM
     url: http://typeorm.io/
     gh_url: https://github.com/typeorm/typeorm
   - name: Sodium
     gh_url: https://github.com/CaffeineMC/sodium
+    tag_regex_subs:
+      - remove: ^mc\d+\.\d+(\.\d+)?-
   - name: The Clipboard project
     url: https://getclipboard.app/
     gh_url: https://github.com/Slackadays/Clipboard
@@ -427,11 +570,19 @@ projects:
   - name: Uncrustify
     url: http://uncrustify.sourceforge.net/
     gh_url: https://github.com/uncrustify/uncrustify
+    tag_regex_subs:
+      - remove: ^uncrustify-
   - name: lazygit
     gh_url: https://github.com/jesseduffield/lazygit
+    tag_regex_subs:
+      - search: ^pre-(release-)?([\d\.]*)(-2)?
+        replace: \2pre\3
   - name: OpenBLAS
     url: http://www.openblas.net/
     gh_url: https://github.com/OpenMathLib/OpenBLAS
+    tag_regex_subs:
+      - search: alpha(\d+)\.(\d+)$
+        replace: alpha\1+\2
   - name: libc (Rust)
     url: https://docs.rs/libc
     gh_url: https://github.com/rust-lang/libc
@@ -439,6 +590,9 @@ projects:
   - name: Metabase
     url: https://www.metabase.com/
     gh_url: https://github.com/metabase/metabase
+    tag_regex_subs: # Metabase has really wierd mixed versioning
+      - remove: ^v2015060\d-alpha
+      - remove: v1.[345]\d\.\d+(\.\d+)?.* # Hide non-0vers, not sure why they use them...
   - name: esbuild
     url: https://esbuild.github.io
     gh_url: https://github.com/evanw/esbuild
@@ -448,6 +602,104 @@ projects:
     reason: 7+ years of history, over 2M weekly downloads on npm
   - name: Unmanic
     gh_url: https://github.com/Unmanic/unmanic
+  - name: OpenSSL
+    gh_url: https://github.com/openssl/openssl
+    emeritus: true
+    tag_regex_subs:
+      - search: ^(OpenSSL_|SSLeay_|OpenSSL-fips-|OpenSSL-fips-)(\d+)_(\d+)_(\d+)([a-z]{1,2})
+        replace: \2.\3.\4+\5
+      - search: ^(OpenSSL_|SSLeay_|OpenSSL-fips-|OpenSSL-fips-)(\d+)_(\d+)_(\d+)
+        replace: \2.\3.\4
+      - search: ^OpenSSL-fips-(\d+)_(\d+)
+        replace: \1.\2
+      - remove: ^openssl-
+      - search: -auto-reformat$
+        replace: "-1"
+      - search: -format$
+        replace: "-2"
+      - search: -reformat$
+        replace: "-3"
+  - name: MAME
+    gh_url: https://github.com/mamedev/mame
+    wp_url: https://en.wikipedia.org/wiki/MAME
+    first_release_date: 1997-02-05
+    first_release_version: 0.1
+    tag_regex_subs:
+      - search: ^mame(\d)(\d+)(u\d+)$
+        replace: \1.\2+\3
+      - search: ^mame(\d)(\d+)$
+        replace: \1.\2
+  - name: Window Maker
+    url: https://windowmaker.org/
+    gh_url: https://github.com/window-maker/wmaker
+    wp_url: https://en.wikipedia.org/wiki/Window_Maker
+    first_release_date: 1997-01-01 # Exact date unknown
+    first_release_version: 0.0.3
+    tag_regex_subs:
+      - remove: ^wmaker-
+      - remove: ^wm-
+      - remove: ^release-
+      - remove: -crm$
+  - name: ReactOS
+    url: https://www.reactos.org/
+    gh_url: https://github.com/reactos/reactos # Many tags are missing, use manual data below
+    reason: A free Windows-compatible Operating System
+    tag_regex_subs:
+      - remove: ^ReactOS-
+      - remove: -release$
+  - name: three.js
+    url: https://threejs.org/
+    gh_url: https://github.com/mrdoob/three.js
+    tag_regex_subs:
+      - remove: /ROME$
+      - search: ^r(\d+)$
+        replace: 0.\1.0
+  - name: google-api-client (ruby)
+    url: https://rubygems.org/gems/google-api-client/
+    gh_url: https://github.com/googleapis/google-api-ruby-client
+    # Their versioning is really hard to figure out...
+    tag_regex_subs:
+      - remove: ^google-api-client-
+      - remove: ^google-api-client/
+      - remove: ^google-api-ruby-client-
+      - remove: ^google-api-ruby-client/
+  - name: rand
+    url: https://rust-random.github.io/book/
+    gh_url: https://github.com/rust-random/rand
+    reason: The most downloaded Rust crate
+  - name: suhosin
+    url: https://suhosin.org/
+    gh_url: https://github.com/sektioneins/suhosin
+    first_release_date: 2006-09-16T00:00:00
+    first_release_version: 0.9.1
+    tag_regex_subs:
+      - remove: ^suhosin-
+  - name: Pure Data
+    wp_url: https://en.wikipedia.org/wiki/Pure_Data
+    gh_url: https://github.com/pure-data/pure-data
+    url: https://puredata.info/
+    first_release_date: 1996-06-01
+    first_release_version: 0.1
+    tag_regex_subs:
+      - search: test(\d+)\.?([a-z\d])$
+        replace: dev\1+\2
+      - search: test(\d+)$
+        replace: dev\1
+  - name: cargo-audit
+    url: https://rustsec.org/
+    gh_url: https://github.com/rustsec/rustsec
+    tag_regex_subs:
+      - remove: ^cargo-audit/
+  - name: pg (Ruby)
+    url: https://rubygems.org/gems/pg
+    gh_url: https://github.com/ged/ruby-pg/tags
+    reason: Leading library for connecting Ruby to Postgres
+    first_release_date: 2008-01-26
+    first_release_version: 0.7.9.2008.01.28
+  - name: distlib
+    url: https://distlib.readthedocs.io
+    gh_url: https://github.com/pypa/distlib
+    reason: Depended on by PyPA/Pip
   - name: n8n
     url: https://n8n.io/
     gh_url: https://github.com/n8n-io/n8n
@@ -477,6 +729,7 @@ projects:
     latest_release_version: 0.9.8
   - name: Dash
     url: https://git.kernel.org/pub/scm/utils/dash/dash.git
+    repo_url: https://git.kernel.org/pub/scm/utils/dash/dash.git
     first_release_date: 1997-06-19T09:29:16
     first_release_version: 0.3.1
     latest_release_date: 2022-12-11T06:33:43
@@ -491,33 +744,19 @@ projects:
     latest_release_date: 2024-04-23
   - name: Inkscape
     url: https://inkscape.org/
-    repo_url: https://launchpad.net/inkscape
+    repo_url: https://gitlab.com/inkscape/inkscape
     emeritus: true
     first_release_date: 2000-09-01
     first_release_version: 0.16 # sodipodi cvs import according to changelog
     first_nonzv_release_date: 2020-05-01
     last_zv_release_version: 0.92.5
+    star_count: 3482
   - name: Compiz
     url: https://www.compiz-fusion.org/
     repo_url: https://launchpad.net/compiz
     first_release_date: 2006-05-22
     latest_release_date: 2022-08-22
     latest_release_version: 0.9.14.2
-  - name: distlib
-    url: https://bitbucket.org/pypa/distlib
-    reason: Depended on by PyPA/Pip
-    first_release_version: 0.1.0
-    first_release_date: 2013-03-02
-    latest_release_version: 0.3.4
-    latest_release_date: 2021-12-08
-  - name: OpenSSL
-    gh_url: https://github.com/openssl/openssl
-    emeritus: true
-    first_release_date: 1998-12-23
-    first_release_version: 0.9.1 # release name convention is weird, hardcode counts 2018-03-31
-    last_zv_release_version: 0.9.8n
-    first_nonzv_release_date: 2010-03-29
-    release_count_zv: 51 # technically only counts til 1.0 by date (2010). 0.9.8zh was the last 0ver and came out in 2015.
   - name: Factorio
     url: https://factorio.com/
     reason: Popular, for-profit game.
@@ -526,37 +765,21 @@ projects:
     first_release_version: 0.1.0
     first_nonzv_release_date: 2020-08-14
     last_zv_release_version: 0.18.47
-  - name: pg (Ruby)
-    url: https://rubygems.org/gems/pg
-    reason: Leading library for connecting Ruby to Postgres
-    emeritus: true
-    first_release_version: 0.7.9.2008.01.28
-    first_release_date: 2008-01-26
-    last_zv_release_version: 0.21.0
-    first_nonzv_release_date: 2017-06-13
-    release_count_zv: 123
   - name: PuTTY
-    url: https://www.chiark.greenend.org.uk/~sgtatham/putty/
+    url: https://www.chiark.greenend.org.uk/~sgtatham/putty
+    repo_url: https://git.tartarus.org/?p=simon/putty.git
     reason: Probably the most popular SSH client in Windows history
     first_release_version: 0.43beta
     first_release_date: 1999-01-08
     latest_release_version: 0.82
     latest_release_date: 2024-11-27
-  - name: MAME
-    gh_url: https://github.com/mamedev/mame # GitHub releases are mame0272
-    wp_url: https://en.wikipedia.org/wiki/MAME
-    first_release_version: 0.1
-    first_release_date: 1997-02-05
-    latest_release_version: 0.272
-    latest_release_date: 2024-11-29
-    release_count: 304
   - name: slrn # thanks hynek
     url: http://slrn.sourceforge.net/
     wp_url: https://en.wikipedia.org/wiki/Slrn
     emeritus: true
     first_release_date: 1994-08-13 # https://sourceforge.net/p/slrn/mailman/message/6405527/
     first_release_version: 0.1.0.0
-    last_zv_release_version: 0.9.9p1
+    last_zv_release_version: 0.9.9-1
     first_nonzv_release_date: 2012-12-21
     release_count_zv: 71 # changelog_text.count('\nChanges since 0')
   - name: Dwarf Fortress
@@ -569,31 +792,13 @@ projects:
     release_count_zv: 142 # appx, based on df wiki release history
   - name: "Cataclysm: Dark Days Ahead"
     url: https://cataclysmdda.org
-    gh_url: https://github.com/CleverRaven/Cataclysm-DDA # GitHub is returning tags out of order
+    repo_url: https://github.com/CleverRaven/Cataclysm-DDA # There are wayyyy to many tags on GitHub and the 0.A release system is hard to translate
     reason: Immensely popular cross-platform open-source game under continuous development for 6 years.
     first_release_version: 0.1
     first_release_date: 2013-02-26
-    latest_release_version: 0.H
+    # latest_release_version: 0.H # TODO: decide what to do here
     latest_release_date: 2024-11-22
     release_count: 24 # https://cataclysmdda.org/releases/
-  - name: Window Maker
-    url: https://windowmaker.org/
-    gh_url: https://github.com/window-maker/wmaker # Tags are prefixed
-    wp_url: https://en.wikipedia.org/wiki/Window_Maker
-    first_release_date: 1997-01-01 # exact date unknown
-    first_release_version: 0.0.3
-    latest_release_version: 0.96.0
-    latest_release_date: 2023-08-05
-    release_count: 94
-  - name: ReactOS
-    url: https://www.reactos.org/
-    gh_url: https://github.com/reactos/reactos # Many tags are missing, use manual data below
-    reason: A free Windows-compatible Operating System
-    first_release_version: 0.0.7
-    first_release_date: 1996-01-23
-    latest_release_version: 0.4.14
-    latest_release_date: 2021-12-16
-    release_count: 59 # Ignore GitHub saying >250 releases, ~80% of them are some kind of weird backup non-releases
   - name: OpenStreetMap API/website
     url: https://openstreetmap.org/
     gh_url: https://github.com/openstreetmap/openstreetmap-website # Doesn't use releases on GitHub
@@ -601,48 +806,9 @@ projects:
     reason: "Open map data used almost anywhere there's a non-Google map."
     first_release_version: 0.3
     first_release_date: 2004-08-09
-    latest_release_version: 0.6 February 2021 # See https://wiki.openstreetmap.org/wiki/API_v0.6#Semantic_versioning
+    latest_release_version: 0.6
     latest_release_date: 2021-02-01
     release_count: 14 # 0.3 → 0.6 and then the dated changes to 0.6
-  - name: three.js
-    url: https://threejs.org/
-    gh_url: https://github.com/mrdoob/three.js
-    first_release_version: 0.1 # GitHub releases are r1-r130
-    first_release_date: 2013-07-03T11:49:48
-    latest_release_version: 0.171.0
-    latest_release_date: 2024-11-29
-  - name: google-api-client (ruby)
-    url: https://rubygems.org/gems/google-api-client/
-    gh_url: https://github.com/googleapis/google-api-ruby-client # GitHub releases are namespace prefixed
-    first_release_version: 0.1.0
-    first_release_date: 2010-10-14
-    latest_release_version: 0.15.1 # Their versioning is really hard to figure out...
-    latest_release_date: 2024-07-29
-    release_count: 254
-  - name: rand
-    url: https://rust-random.github.io/book/
-    gh_url: https://github.com/rust-random/rand # GitHub releases are rand_distr-0.5.0-beta.0
-    reason: The most downloaded Rust crate
-    first_release_version: 0.1.1
-    first_release_date: 2015-02-03
-    latest_release_version: 0.8.5
-    latest_release_date: 2022-02-14
-    release_count: 68
-  - name: suhosin
-    url: https://suhosin.org/
-    gh_url: https://github.com/sektioneins/suhosin # Some GitHub releases are suhosin-0.9.35-RC1
-    first_release_version: 0.9.1
-    first_release_date: 2006-09-16T00:00:00
-    latest_release_version: 0.9.38
-    latest_release_date: 2015-05-21T00:00:00
-  - name: Pure Data
-    wp_url: https://en.wikipedia.org/wiki/Pure_Data
-    gh_url: https://github.com/pure-data/pure-data/ # Some GitHub releases are 0.55-0test3a
-    url: https://puredata.info/
-    first_release_date: 1996-06-01
-    first_release_version: 0.1
-    latest_release_version: 0.55-2
-    latest_release_date: 2024-11-17
   - name: XeTeX
     wp_url: https://en.wikipedia.org/wiki/XeTeX
     url: http://xetex.sourceforge.net/
@@ -660,6 +826,7 @@ projects:
     last_zv_release_version: 0.3.85
     first_nonzv_release_date: 2023-11-26
     release_count_zv: 119
+    star_count: 410
   - name: gettext
     url: https://www.gnu.org/software/gettext/
     repo_url: https://savannah.gnu.org/projects/gettext/
@@ -677,14 +844,8 @@ projects:
     first_release_version: 0.0.2
     first_nonzv_release_date: 2008-06-17
     last_zv_release_version: 0.9.61
-  - name: cargo-audit
-    url: https://rustsec.org/
-    # Technically on github, but has a weird monorepo version tagging scheme that'll need code to handle
-    gh_url: https://github.com/rustsec/rustsec
-    first_release_date: 2017-02-27
-    first_release_version: 0.1.0
-    latest_release_date: 2024-10-29
-    latest_release_version: 0.21.0
+    release_count_zv: 298
+    star_count: 118
   - name: transformers
     url: https://hackage.haskell.org/package/transformers
     repo_url: https://hub.darcs.net/ross/transformers
