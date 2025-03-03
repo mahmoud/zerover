@@ -2,4 +2,5 @@ boltons
 chert>=24.0.0
 hyperlink
 pyyaml
+requests
 schema
