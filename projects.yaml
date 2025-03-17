@@ -144,8 +144,15 @@ projects:
   - name: Sway Window Manager
     gh_url: https://github.com/swaywm/sway
   - name: ProsodyIM
-    gh_url: https://github.com/bjc/prosody
+    repo_url: https://hg.prosody.im/trunk
     url: https://prosody.im/
+    emeritus: true
+    release_count_zv: 56
+    first_release_date: 2008-12-04
+    first_release_version: 0.1.0
+    first_nonzv_release_date: 2025-03-17
+    first_nonzv_release_version: 13.0.0
+    last_zv_release_version: 0.12.5
   - name: Pilosa
     gh_url: https://github.com/pilosa/pilosa
     url: https://www.pilosa.com/
