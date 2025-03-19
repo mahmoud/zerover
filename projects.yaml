@@ -472,6 +472,8 @@ projects:
   - name: sccache action
     gh_url: https://github.com/mozilla-actions/sccache-action
     reason: Available ready to use on the GitHub actions marketplace
+  - name: BPF Compiler Collection (BCC)
+    gh_url: https://github.com/iovisor/bcc
     
   # Non-GitHub projects below, manually updated
   - name: ASCEND
