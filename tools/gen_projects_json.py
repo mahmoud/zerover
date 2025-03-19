@@ -270,9 +270,10 @@ def fetch_entries(
             if is_zerover is not None:
                 is_zerover = not is_zerover
             else:
-                is_zerover = info.get("last_zv_release_version") is not None
-                if is_zerover is None:
-                    is_zerover = False
+                is_zerover = (
+                    info.get("last_zv_release_version") is not None
+                    or info.get("latest_release_version") is not None
+                )
         
         info["is_zerover"] = is_zerover
 
