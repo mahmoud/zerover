@@ -474,6 +474,8 @@ projects:
     reason: Available ready to use on the GitHub actions marketplace
   - name: BPF Compiler Collection (BCC)
     gh_url: https://github.com/iovisor/bcc
+  - name: uv
+    gh_url: https://github.com/astral-sh/uv
     
   # Non-GitHub projects below, manually updated
   - name: ASCEND
