@@ -8,11 +8,15 @@ and the only one shown to harness the innovative power of zero. The
 benefits are innumerable and the effects on the software world are
 profound.
 
-Version 0.0.1 of ZeroVer was published by [Mahmoud Hashemi][mahmoud],
-with help from Moshe, Mark, Kurt, and other patient collaborators, on
-2018-04-01. ZeroVer is satire, [please do not use it][poes]. We
-sincerely hope no project release schedules were harmed as a result
-of this humble attempt at programmer humor.
+ZeroVer is satire. [Seriously, don't actually use it][poes].
+
+On April Fools' Day 2018, [Mahmoud Hashemi][mahmoud] roped in Mark,
+Moshe, Kurt, and a few other long-suffering collaborators to unleash
+version 0.0.1. He's mostly busy with [FinFam][finfam] these days.
+
+If this humble attempt at programmer humor wrecked your release
+schedule, well, *someone* didn't scroll all the way to the bottom of
+the page (or click on "About").
 
 [poes]: https://en.wikipedia.org/wiki/Poe%27s_law
 
@@ -57,6 +61,7 @@ and slap a [CalVer][calver] on it. [You'll be in much better
 company][calver_users].
 
 [mahmoud]: https://github.com/mahmoud/
+[finfam]: https://finfam.app/
 [calver_criterion]: https://sedimental.org/designing_a_version.html#fn:2
 [semver_criterion]: https://semver.org/#faq
 [calver_users]: https://calver.org/users.html
