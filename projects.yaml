@@ -739,3 +739,12 @@ projects:
     latest_release_date: 2017-12-12
     latest_release_version: release_0_9_27
     release_count: 9
+  - name: GNU Hurd
+    url: https://www.gnu.org/software/hurd/
+    repo_url: http://git.savannah.gnu.org/cgit/hurd/
+    first_release_date: 1996-09-06
+    first_release_version: 0.1
+    latest_release_date: 2016-12-18
+    latest_release_version: 0.9
+    release_count: 18
+    reason: "GNU"
