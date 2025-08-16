@@ -552,13 +552,13 @@ projects:
     latest_release_version: 0.82
     latest_release_date: 2024-11-27
   - name: MAME
-    gh_url: https://github.com/mamedev/mame # GitHub releases are mame0272
+    gh_url: https://github.com/mamedev/mame # GitHub releases are mame0277
     wp_url: https://en.wikipedia.org/wiki/MAME
     first_release_version: 0.1
     first_release_date: 1997-02-05
-    latest_release_version: 0.272
-    latest_release_date: 2024-11-29
-    release_count: 304
+    latest_release_version: 0.277
+    latest_release_date: 2025-04-30
+    release_count: 309
   - name: slrn # thanks hynek
     url: http://slrn.sourceforge.net/
     wp_url: https://en.wikipedia.org/wiki/Slrn
