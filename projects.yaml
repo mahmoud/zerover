@@ -477,6 +477,7 @@ projects:
   - name: Hyprland
     gh_url: https://github.com/hyprwm/Hyprland
     url: https://hypr.land/
+    reason: 31.5k GitHub stars, very good-looking website and extensive documentation
     
     
   # Non-GitHub projects below, manually updated
