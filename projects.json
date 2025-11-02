@@ -1,6 +1,6 @@
 {
-  "gen_date": "2025-11-02T20:25:14.842199+00:00",
-  "gen_duration": 1037.736071586609,
+  "gen_date": "2025-11-02T22:45:55.639738+00:00",
+  "gen_duration": 707.5915205478668,
   "projects": [
     {
       "first_release_api_commit_url": "https://api.github.com/repos/3proxy/3proxy/commits/5ef18c48f13a715dc2c8c66fcf20bd6fa87e31bc",
@@ -161,7 +161,7 @@
       "name": "BPF Compiler Collection (BCC)",
       "release_count": 45,
       "release_count_zv": 45,
-      "star_count": 21905,
+      "star_count": 21906,
       "url": "https://github.com/iovisor/bcc"
     },
     {
@@ -186,7 +186,7 @@
       "name": "Bitcoin",
       "release_count": 338,
       "release_count_zv": 258,
-      "star_count": 86583,
+      "star_count": 86585,
       "url": "https://github.com/bitcoin/bitcoin"
     },
     {
@@ -236,7 +236,7 @@
       "name": "Caddy",
       "release_count": 147,
       "release_count_zv": 47,
-      "star_count": 67673,
+      "star_count": 67677,
       "url": "https://github.com/caddyserver/caddy"
     },
     {
@@ -318,7 +318,7 @@
       "name": "ClamAV Antivirus",
       "release_count": 215,
       "release_count_zv": 179,
-      "star_count": 5799,
+      "star_count": 5800,
       "url": "https://github.com/Cisco-Talos/clamav-devel"
     },
     {
@@ -552,7 +552,7 @@
       "name": "Excalidraw",
       "release_count": 20,
       "release_count_zv": 20,
-      "star_count": 109544,
+      "star_count": 109546,
       "url": "https://github.com/excalidraw/excalidraw/"
     },
     {
@@ -621,7 +621,7 @@
       "name": "FastAPI",
       "release_count": 225,
       "release_count_zv": 225,
-      "star_count": 91434,
+      "star_count": 91440,
       "url": "https://github.com/fastapi/fastapi"
     },
     {
@@ -826,7 +826,7 @@
       "name": "GoReleaser",
       "release_count": 578,
       "release_count_zv": 468,
-      "star_count": 15246,
+      "star_count": 15247,
       "url": "https://github.com/goreleaser/goreleaser"
     },
     {
@@ -845,7 +845,7 @@
       "name": "GoodbyeDPI",
       "release_count": 30,
       "release_count_zv": 30,
-      "star_count": 27344,
+      "star_count": 27345,
       "url": "https://ntc.party/c/community-software/goodbyedpi"
     },
     {
@@ -889,7 +889,7 @@
       "name": "HTTPie",
       "release_count": 50,
       "release_count_zv": 30,
-      "star_count": 36914,
+      "star_count": 36915,
       "url": "https://github.com/jakubroztocil/httpie"
     },
     {
@@ -939,7 +939,7 @@
       "name": "HashiCorp Terraform",
       "release_count": 418,
       "release_count_zv": 194,
-      "star_count": 47008,
+      "star_count": 47010,
       "url": "https://github.com/hashicorp/terraform"
     },
     {
@@ -965,7 +965,7 @@
       "name": "HashiCorp Vault",
       "release_count": 449,
       "release_count_zv": 189,
-      "star_count": 33400,
+      "star_count": 33401,
       "url": "https://github.com/hashicorp/vault"
     },
     {
@@ -1032,7 +1032,7 @@
       "name": "Home Assistant",
       "release_count": 1519,
       "release_count_zv": 686,
-      "star_count": 82315,
+      "star_count": 82316,
       "url": "https://github.com/home-assistant/home-assistant"
     },
     {
@@ -1057,7 +1057,7 @@
       "name": "Hy",
       "release_count": 43,
       "release_count_zv": 37,
-      "star_count": 5333,
+      "star_count": 5332,
       "url": "https://github.com/hylang/hy"
     },
     {
@@ -1150,7 +1150,7 @@
       "name": "Knex.js",
       "release_count": 179,
       "release_count_zv": 160,
-      "star_count": 20083,
+      "star_count": 20082,
       "url": "https://github.com/knex/knex"
     },
     {
@@ -1303,7 +1303,7 @@
       "reason": "Spiritual succesor of Tachiyomi. As such follows its versioning convention.",
       "release_count": 90,
       "release_count_zv": 90,
-      "star_count": 16576,
+      "star_count": 16577,
       "url": "https://mihon.app/"
     },
     {
@@ -1431,7 +1431,7 @@
       "name": "Neovim",
       "release_count": 53,
       "release_count_zv": 53,
-      "star_count": 93898,
+      "star_count": 93901,
       "url": "https://github.com/neovim/neovim"
     },
     {
@@ -1456,7 +1456,7 @@
       "name": "Nim",
       "release_count": 69,
       "release_count_zv": 24,
-      "star_count": 17464,
+      "star_count": 17463,
       "url": "https://github.com/nim-lang/Nim"
     },
     {
@@ -1539,7 +1539,7 @@
       "name": "Nushell",
       "release_count": 117,
       "release_count_zv": 117,
-      "star_count": 37136,
+      "star_count": 37140,
       "url": "https://www.nushell.sh"
     },
     {
@@ -1577,7 +1577,7 @@
       "name": "OpenBLAS",
       "release_count": 66,
       "release_count_zv": 66,
-      "star_count": 7079,
+      "star_count": 7080,
       "url": "http://www.openblas.net/"
     },
     {
@@ -1615,7 +1615,7 @@
       "name": "OpenRCT2",
       "release_count": 57,
       "release_count_zv": 57,
-      "star_count": 14737,
+      "star_count": 14738,
       "url": "https://openrct2.io/"
     },
     {
@@ -1687,7 +1687,7 @@
       "name": "PHPStan",
       "release_count": 397,
       "release_count_zv": 160,
-      "star_count": 13694,
+      "star_count": 13695,
       "url": "https://github.com/phpstan/phpstan"
     },
     {
@@ -1712,7 +1712,7 @@
       "name": "Pandas",
       "release_count": 166,
       "release_count_zv": 93,
-      "star_count": 47000,
+      "star_count": 47001,
       "url": "https://github.com/pandas-dev/pandas"
     },
     {
@@ -2008,7 +2008,7 @@
       "name": "Ramda",
       "release_count": 61,
       "release_count_zv": 61,
-      "star_count": 24099,
+      "star_count": 24098,
       "url": "https://github.com/ramda/ramda"
     },
     {
@@ -2030,7 +2030,7 @@
       "name": "React",
       "release_count": 133,
       "release_count_zv": 45,
-      "star_count": 240259,
+      "star_count": 240258,
       "url": "https://reactjs.org"
     },
     {
@@ -2085,7 +2085,7 @@
       "name": "Ruff",
       "release_count": 311,
       "release_count_zv": 311,
-      "star_count": 43516,
+      "star_count": 43518,
       "url": "https://github.com/astral-sh/ruff"
     },
     {
@@ -2135,7 +2135,7 @@
       "name": "Semgrep",
       "release_count": 310,
       "release_count_zv": 146,
-      "star_count": 13222,
+      "star_count": 13223,
       "url": "https://semgrep.dev/"
     },
     {
@@ -2293,7 +2293,7 @@
       "reason": "One of those forever in beta software even if it is used in critical infrastructure.",
       "release_count": 171,
       "release_count_zv": 166,
-      "star_count": 3928,
+      "star_count": 3929,
       "url": "https://docs.tacticalrmm.com"
     },
     {
@@ -2500,7 +2500,7 @@
       "name": "Unmanic",
       "release_count": 31,
       "release_count_zv": 31,
-      "star_count": 2015,
+      "star_count": 2014,
       "url": "https://github.com/Unmanic/unmanic"
     },
     {
@@ -2581,9 +2581,9 @@
       "gh_url": "https://github.com/wekan/wekan",
       "is_zerover": false,
       "last_zv_release_version": "v0.99",
-      "latest_release_api_commit_url": "https://api.github.com/repos/wekan/wekan/commits/fb8ef4d978a4bd50005d742c6d01c0473b20381b",
-      "latest_release_date": "2025-11-02T19:36:17Z",
-      "latest_release_link": "https://github.com/wekan/wekan/commit/fb8ef4d978a4bd50005d742c6d01c0473b20381b",
+      "latest_release_api_commit_url": "https://api.github.com/repos/wekan/wekan/commits/f8e576e890ed8e6557537609a57afa5aa327a7bb",
+      "latest_release_date": "2025-11-02T20:23:16Z",
+      "latest_release_link": "https://github.com/wekan/wekan/commit/f8e576e890ed8e6557537609a57afa5aa327a7bb",
       "latest_release_tag": "v8.16",
       "latest_release_version": "8.16",
       "name": "Wekan",
@@ -2677,7 +2677,7 @@
       "name": "Windows Terminal",
       "release_count": 163,
       "release_count_zv": 40,
-      "star_count": 100767,
+      "star_count": 100768,
       "url": "https://www.microsoft.com/en-ca/p/windows-terminal-preview/9n0dx20hk701"
     },
     {
@@ -2756,7 +2756,7 @@
       "name": "Zig",
       "release_count": 24,
       "release_count_zv": 24,
-      "star_count": 41940,
+      "star_count": 41942,
       "url": "https://ziglang.org"
     },
     {
@@ -2775,7 +2775,7 @@
       "name": "Zola",
       "release_count": 51,
       "release_count_zv": 51,
-      "star_count": 16083,
+      "star_count": 16084,
       "url": "https://www.getzola.org/"
     },
     {
@@ -2877,7 +2877,7 @@
       "name": "autokey",
       "release_count": 28,
       "release_count_zv": 28,
-      "star_count": 3738,
+      "star_count": 3739,
       "url": "https://github.com/autokey/autokey"
     },
     {
@@ -3019,7 +3019,7 @@
       "name": "certbot",
       "release_count": 148,
       "release_count_zv": 83,
-      "star_count": 32575,
+      "star_count": 32576,
       "url": "https://github.com/certbot/certbot"
     },
     {
@@ -3150,7 +3150,7 @@
       "name": "drone",
       "release_count": 122,
       "release_count_zv": 30,
-      "star_count": 33546,
+      "star_count": 33545,
       "url": "https://github.com/drone/drone"
     },
     {
@@ -3169,7 +3169,7 @@
       "name": "esbuild",
       "release_count": 427,
       "release_count_zv": 427,
-      "star_count": 39405,
+      "star_count": 39404,
       "url": "https://esbuild.github.io"
     },
     {
@@ -3227,7 +3227,7 @@
       "reason": "fzf is probably the most famous terminal fuzzy finder",
       "release_count": 134,
       "release_count_zv": 134,
-      "star_count": 74828,
+      "star_count": 74831,
       "url": "https://github.com/junegunn/fzf"
     },
     {
@@ -3362,7 +3362,7 @@
       "name": "hugo",
       "release_count": 347,
       "release_count_zv": 347,
-      "star_count": 84499,
+      "star_count": 84501,
       "url": "https://github.com/gohugoio/hugo"
     },
     {
@@ -3419,7 +3419,7 @@
       "name": "lazygit",
       "release_count": 224,
       "release_count_zv": 224,
-      "star_count": 66943,
+      "star_count": 66944,
       "url": "https://github.com/jesseduffield/lazygit"
     },
     {
@@ -3470,7 +3470,7 @@
       "is_zerover": false,
       "last_zv_release_version": "0.234.0",
       "name": "n8n",
-      "star_count": 153503,
+      "star_count": 153524,
       "url": "https://n8n.io/"
     },
     {
@@ -3565,7 +3565,7 @@
       "name": "qtile",
       "release_count": 48,
       "release_count_zv": 48,
-      "star_count": 5139,
+      "star_count": 5140,
       "url": "https://github.com/qtile/qtile"
     },
     {
@@ -3585,7 +3585,7 @@
       "reason": "The most downloaded Rust crate",
       "release_count": 68,
       "release_count_zv": 73,
-      "star_count": 1930,
+      "star_count": 1931,
       "url": "https://rust-random.github.io/book/"
     },
     {
@@ -3604,7 +3604,7 @@
       "name": "restic",
       "release_count": 51,
       "release_count_zv": 51,
-      "star_count": 30616,
+      "star_count": 30619,
       "url": "https://restic.net/"
     },
     {
@@ -3654,7 +3654,7 @@
       "name": "rq",
       "release_count": 53,
       "release_count_zv": 10,
-      "star_count": 10417,
+      "star_count": 10418,
       "url": "https://github.com/rq/rq"
     },
     {
@@ -3841,7 +3841,7 @@
       "latest_release_date": "2024-11-29",
       "latest_release_version": "0.171.0",
       "name": "three.js",
-      "star_count": 109210,
+      "star_count": 109209,
       "url": "https://threejs.org/"
     },
     {
@@ -3872,7 +3872,7 @@
       "name": "typst",
       "release_count": 22,
       "release_count_zv": 22,
-      "star_count": 47678,
+      "star_count": 47683,
       "url": "https://typst.app/"
     },
     {
@@ -4031,7 +4031,7 @@
       "name": "zoxide",
       "release_count": 36,
       "release_count_zv": 36,
-      "star_count": 30869,
+      "star_count": 30870,
       "url": "https://github.com/ajeetdsouza/zoxide"
     },
     {
