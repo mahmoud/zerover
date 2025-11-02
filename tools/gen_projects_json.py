@@ -30,6 +30,7 @@ SKIP_PATTERNS = [
     r"^ciflow/",  # pytorch has loads of this noise
     r"^ci/",  # pytorch has loads of this noise
     r"^nightly",  # FreeCol
+    r"^weekly-",  # FreeCAD weekly builds
 ]
 
 # Version numbers after these patterns should be extracted
