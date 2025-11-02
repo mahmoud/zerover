@@ -76,13 +76,9 @@ projects:
     emeritus: true
     first_release_date: 2016-08-13
     first_release_version: 0.1.1
+    first_nonzv_release_date: 2018-12-06
+    first_nonzv_release_version: 1.0.0
     last_zv_release_version: v0.4.1
-    latest_release_api_commit_url: https://api.github.com/repos/pytorch/pytorch/commits/21fec65781bebe867faf209f89bb687ffd236ca4
-    latest_release_date: 2025-09-29T20:14:37Z
-    latest_release_link: https://github.com/pytorch/pytorch/commit/21fec65781bebe867faf209f89bb687ffd236ca4
-    latest_release_tag: v2.9.0-rc5
-    latest_release_version: 2.9.0-rc5
-    release_count: 249
     release_count_zv: 17
     star_count: 93599
   - name: HTTPie

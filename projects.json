@@ -1871,12 +1871,16 @@
     },
     {
       "emeritus": true,
+      "first_nonzv_release_date": "2018-12-06",
+      "first_nonzv_release_version": "1.0.0",
       "first_release_date": "2016-08-13",
       "first_release_version": "0.1.1",
       "gh_url": "https://github.com/pytorch/pytorch",
       "is_zerover": false,
+      "last_zv_release_version": "v0.4.1",
       "name": "PyTorch",
-      "star_count": 94476,
+      "release_count_zv": 17,
+      "star_count": 93599,
       "url": "https://github.com/pytorch/pytorch"
     },
     {
