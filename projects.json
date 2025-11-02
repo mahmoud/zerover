@@ -1,6 +1,6 @@
 {
-  "gen_date": "2025-11-02T20:01:53.029512+00:00",
-  "gen_duration": 1073.7019352912903,
+  "gen_date": "2025-11-02T20:25:14.842199+00:00",
+  "gen_duration": 1037.736071586609,
   "projects": [
     {
       "first_release_api_commit_url": "https://api.github.com/repos/3proxy/3proxy/commits/5ef18c48f13a715dc2c8c66fcf20bd6fa87e31bc",
@@ -514,7 +514,7 @@
       "reason": "Two years ago, wrote, Elm 0.19.1 will be stable for quite some time. Also, Enforces SemVer at a package level, does not follow it itself.",
       "release_count": 26,
       "release_count_zv": 26,
-      "star_count": 7697,
+      "star_count": 7698,
       "url": "https://github.com/elm/compiler"
     },
     {
@@ -1870,6 +1870,9 @@
       "wp_url": "https://en.wikipedia.org/wiki/Pure_Data"
     },
     {
+      "emeritus": true,
+      "first_release_date": "2016-08-13",
+      "first_release_version": "0.1.1",
       "gh_url": "https://github.com/pytorch/pytorch",
       "is_zerover": false,
       "name": "PyTorch",
@@ -2895,7 +2898,7 @@
       "name": "axios",
       "release_count": 120,
       "release_count_zv": 62,
-      "star_count": 108064,
+      "star_count": 108065,
       "url": "https://github.com/axios/axios"
     },
     {
@@ -3220,7 +3223,7 @@
       "reason": "fzf is probably the most famous terminal fuzzy finder",
       "release_count": 134,
       "release_count_zv": 134,
-      "star_count": 74827,
+      "star_count": 74828,
       "url": "https://github.com/junegunn/fzf"
     },
     {
@@ -3393,7 +3396,7 @@
       "name": "kubectx",
       "release_count": 21,
       "release_count_zv": 21,
-      "star_count": 19163,
+      "star_count": 19164,
       "url": "https://github.com/ahmetb/kubectx"
     },
     {
@@ -3463,7 +3466,7 @@
       "is_zerover": false,
       "last_zv_release_version": "0.234.0",
       "name": "n8n",
-      "star_count": 153501,
+      "star_count": 153503,
       "url": "https://n8n.io/"
     },
     {
@@ -3647,7 +3650,7 @@
       "name": "rq",
       "release_count": 53,
       "release_count_zv": 10,
-      "star_count": 10416,
+      "star_count": 10417,
       "url": "https://github.com/rq/rq"
     },
     {
@@ -3672,7 +3675,7 @@
       "name": "runc",
       "release_count": 67,
       "release_count_zv": 12,
-      "star_count": 12734,
+      "star_count": 12735,
       "url": "https://github.com/opencontainers/runc"
     },
     {
@@ -3865,7 +3868,7 @@
       "name": "typst",
       "release_count": 22,
       "release_count_zv": 22,
-      "star_count": 47676,
+      "star_count": 47678,
       "url": "https://typst.app/"
     },
     {
