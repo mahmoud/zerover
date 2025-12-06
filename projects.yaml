@@ -405,6 +405,9 @@ projects:
   - name: Zola
     url: https://www.getzola.org/
     gh_url: https://github.com/getzola/zola
+  - name: OpenTelemtry
+    url: https://opentelemetry.io/
+    gh_url: https://github.com/open-telemetry/opentelemetry-collector
   - name: Hy
     gh_url: https://github.com/hylang/hy
   - name: Create
