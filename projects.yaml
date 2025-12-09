@@ -83,8 +83,6 @@ projects:
     star_count: 93599
   - name: HTTPie
     gh_url: https://github.com/jakubroztocil/httpie
-  - name: scikit-learn
-    gh_url: https://github.com/scikit-learn/scikit-learn
   - name: certbot
     gh_url: https://github.com/certbot/certbot
   - name: sshuttle
