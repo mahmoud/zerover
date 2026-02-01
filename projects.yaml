@@ -748,3 +748,6 @@ projects:
     latest_release_date: 2017-12-12
     latest_release_version: release_0_9_27
     release_count: 9
+  - name: AdGuardHome
+    url: https://adguard.com/adguard-home/overview.html
+    gh_url: https://github.com/AdguardTeam/AdGuardHome
