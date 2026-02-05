@@ -138,6 +138,9 @@ projects:
     gh_url: https://github.com/vim-airline/vim-airline
   - name: Julia
     gh_url: https://github.com/JuliaLang/julia
+  - name: Harper
+    url: https://writewithharper.com
+    gh_url: https://github.com/Automattic/harper
   - name: Flatpak
     gh_url: https://github.com/flatpak/flatpak
   - name: Meson Build System
