@@ -748,3 +748,11 @@ projects:
     latest_release_date: 2017-12-12
     latest_release_version: release_0_9_27
     release_count: 9
+  - name: Dell, Inc. - Firmware
+    url: https://www.catalog.update.microsoft.com/search.aspx?q=12a16a59-464f-4b90-904b-fe1b847b72ca
+    # https://www.catalog.update.microsoft.com/search.aspx?q=12a16a59-464f-4b90-904b-fe1b847b72ca
+    first_release_date: 2020-03-12
+    first_release_version: 0.1.0.0
+    latest_release_date: 2024-09-10
+    latest_release_version: 0.1.33.1
+    release_count: 34
