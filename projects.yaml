@@ -483,6 +483,11 @@ projects:
     reason: Available ready to use on the GitHub actions marketplace
   - name: BPF Compiler Collection (BCC)
     gh_url: https://github.com/iovisor/bcc
+  - name: Hyprland
+    gh_url: https://github.com/hyprwm/Hyprland
+    url: https://hypr.land/
+    reason: 31.5k GitHub stars, very good-looking website and extensive documentation
+    
     
   # Non-GitHub projects below, manually updated
   - name: ASCEND
