@@ -436,6 +436,9 @@ projects:
     gh_url: https://github.com/typeorm/typeorm
   - name: Sodium
     gh_url: https://github.com/CaffeineMC/sodium
+  - name: Solidity
+    gh_url: https://github.com/ethereum/solidity
+    reason: The primary programming language for Ethereum smart contracts.
   - name: The Clipboard project
     url: https://getclipboard.app/
     gh_url: https://github.com/Slackadays/Clipboard
