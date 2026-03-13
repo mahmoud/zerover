@@ -682,10 +682,11 @@ projects:
     url: https://www.gnu.org/software/gettext/
     repo_url: https://savannah.gnu.org/projects/gettext/
     wp_url: https://en.wikipedia.org/wiki/Gettext
+    emeritus: true
     first_release_date: 1987-01-01 # https://web.archive.org/web/20120323032211/http://compgroups.net/comp.unix.solaris/History-of-gettext-et-al
     first_release_version: 0.1 # earliest version still on gnu.org is 0.10.40 from 2001-09-15
-    latest_release_date: 2024-12-01
-    latest_release_version: 0.23
+    last_zv_release_version: 0.26 # https://savannah.gnu.org/news/?id=10789
+    first_nonzv_release_date: 2026-01-29 # https://lists.gnu.org/archive/html/info-gnu/2026-01/msg00007.html
   - name: Wine
     url: https://www.winehq.org/
     repo_url: https://gitlab.winehq.org/wine/wine
