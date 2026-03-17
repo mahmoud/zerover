@@ -748,3 +748,12 @@ projects:
     latest_release_date: 2017-12-12
     latest_release_version: release_0_9_27
     release_count: 9
+  - name: PdfPig
+    url: https://github.com/UglyToad/PdfPig
+    gh_url: https://github.com/UglyToad/PdfPig
+    first_release_date: 2018-01-10
+    first_release_version: v0.0.1-alpha-001
+    latest_release_date: 2025-12-23
+    latest_release_version: 0.1.13
+    release_count: 33
+
