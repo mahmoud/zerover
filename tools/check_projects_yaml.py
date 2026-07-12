@@ -20,7 +20,7 @@ OPTIONAL = {
     Optional("wp_url"): str,
     Optional("emeritus"): bool,
     Optional("reason"): str,
-    Optional("star_count"): int,
+    Optional("skip"): bool,
 }
 IN_SCHEMA = Schema(
     {
@@ -37,11 +37,11 @@ IN_SCHEMA = Schema(
                     Optional("latest_release_date"): Or(
                         datetime.date, datetime.datetime
                     ),
-                    Optional("latest_release_version"): Or(float, str),
+                    Optional("latest_release_version"): str,
                     Optional("first_release_date"): Or(
                         datetime.date, datetime.datetime
                     ),
-                    Optional("first_release_version"): Or(float, str),
+                    Optional("first_release_version"): str,
                 },  # type: ignore
                 # Emeritus GitHub projects
                 {
@@ -54,12 +54,12 @@ IN_SCHEMA = Schema(
                     Optional("first_release_date"): Or(
                         datetime.date, datetime.datetime
                     ),
-                    Optional("first_release_version"): Or(float, str),
+                    Optional("first_release_version"): str,
                     Optional("first_nonzv_release_date"): Or(
                         datetime.date, datetime.datetime
                     ),
-                    Optional("first_nonzv_release_version"): Or(float, str),
-                    Optional("last_zv_release_version"): Or(float, str),
+                    Optional("first_nonzv_release_version"): str,
+                    Optional("last_zv_release_version"): str,
                 },  # type: ignore
                 # Non-GitHub projects
                 {
@@ -68,15 +68,15 @@ IN_SCHEMA = Schema(
                     "url": check_url,
                     Optional("emeritus"): False,
                     Optional("release_count"): int,
+                    # star_count is manual-only for non-GitHub projects;
+                    # GitHub projects get it fresh from the API every run.
+                    Optional("star_count"): int,
                     "first_release_date": Or(datetime.date, datetime.datetime),
                     Optional("latest_release_date"): Or(
                         datetime.date, datetime.datetime
                     ),
-                    Optional("latest_release_version"): Or(float, str),
-                    Optional("first_release_date"): Or(
-                        datetime.date, datetime.datetime
-                    ),
-                    Optional("first_release_version"): Or(float, str),
+                    Optional("latest_release_version"): str,
+                    Optional("first_release_version"): str,
                 },  # type: ignore
                 # Emeritus Non-GitHub projects
                 {
@@ -85,13 +85,16 @@ IN_SCHEMA = Schema(
                     "url": check_url,
                     "emeritus": True,
                     Optional("release_count_zv"): int,
+                    # star_count is manual-only for non-GitHub projects;
+                    # GitHub projects get it fresh from the API every run.
+                    Optional("star_count"): int,
                     "first_release_date": Or(datetime.date, datetime.datetime),
-                    Optional("first_release_version"): Or(float, str),
+                    Optional("first_release_version"): str,
                     Optional("first_nonzv_release_date"): Or(
                         datetime.date, datetime.datetime
                     ),
-                    Optional("first_nonzv_release_version"): Or(float, str),
-                    Optional("last_zv_release_version"): Or(float, str),
+                    Optional("first_nonzv_release_version"): str,
+                    Optional("last_zv_release_version"): str,
                 },  # type: ignore
             )
         ],
@@ -113,7 +116,9 @@ def main():
         print(f"Found {len(dup_names)} project(s) with duplicate names: {dup_names}")
         sys.exit(1)
 
-    dup_urls = redundant([p.get("gh_url", p.get("url")) for p in projects])
+    dup_urls = redundant(
+        [(p.get("gh_url") or p.get("url", "")).lower().rstrip("/") for p in projects]
+    )
     if dup_urls:
         print(f"Found {len(dup_urls)} project(s) with duplicate urls: {dup_urls}")
         sys.exit(1)
