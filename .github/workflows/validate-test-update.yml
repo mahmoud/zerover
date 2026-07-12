@@ -9,6 +9,7 @@ on:
       - master
   schedule:
     - cron: "45 1 * * *"
+  workflow_dispatch:
 
 jobs:
   validate-projects-yaml:
