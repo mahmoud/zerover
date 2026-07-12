@@ -6,7 +6,7 @@
 #
 ashes==24.0.0
     # via chert
-boltons==24.1.0
+boltons==26.0.0
     # via
     #   -r requirements.in
     #   chert
