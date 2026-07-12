@@ -172,4 +172,4 @@ Simply run `chert serve`.
 
 ## CI/CD
 
-0ver uses [GitHub Actions](https://github.com/features/actions) to validate `projects.yaml`, test, and update `project.json`.
+0ver uses [GitHub Actions](https://github.com/features/actions) to validate `projects.yaml`, test, and update `project.json`. The site itself is deployed by an hourly cron on the production host, which pulls `master`, renders with chert, and atomically swaps the live directory, reporting failures to Sentry; see `tools/deploy_prod.sh`.
