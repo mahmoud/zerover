@@ -62,12 +62,14 @@ Adding a project to [`projects.yaml`](projects.yaml) is typically a simple task.
 | `release_count`               | ZeroVer only        | If the project is currently ZeroVer and is not from GitHub or the repository on GitHub has an unusual tagging system                                | The number of releases the project has had                     | 100                                                                                            |
 | `release_count_zv`            | Emeritus only       | If the project is no longer ZeroVer and is not from GitHub or the repository on GitHub has an unusual tagging system                                | The number of releases the project has before it left 0ver     | 50                                                                                             |
 | `latest_release_date`         | ZeroVer only        | If the project is currently ZeroVer and is not from GitHub or the repository on GitHub has an unusual tagging system                                | The date of the latest release at time of writing              | 2024-12-28                                                                                     |
-| `latest_release_version`      | ZeroVer only        | If the project is currently ZeroVer and is not from GitHub or the repository on GitHub has an unusual tagging system                                | The version of the latest release                              | 4.2.0                                                                                          |
+| `latest_release_version`      | ZeroVer only        | If the project is currently ZeroVer and is not from GitHub or the repository on GitHub has an unusual tagging system                                | The version of the latest release                              | "4.2.0"                                                                                        |
 | `first_release_date`          | Either              | If the project is not from GitHub, the repository on GitHub has an unusual tagging system, or the first release tag is not on the GitHub repository | The date of the first release                                  | 2000-01-01                                                                                     |
-| `first_release_version`       | Either              | If the project is not from GitHub, the repository on GitHub has an unusual tagging system, or the first release tag is not on the GitHub repository | The version of the first release                               | 0.0.1                                                                                          |
+| `first_release_version`       | Either              | If the project is not from GitHub, the repository on GitHub has an unusual tagging system, or the first release tag is not on the GitHub repository | The version of the first release                               | "0.0.1"                                                                                        |
 | `first_nonzv_release_date`    | Emeritus only       | If the project is no longer ZeroVer AND the project is not from GitHub or the repository on GitHub has an unusual tagging system                    | The date of the first non-0ver release                         | 2010-01-01                                                                                     |
-| `first_nonzv_release_version` | Emeritus only       | If the project is no longer ZeroVer AND the project is not from GitHub or the repository on GitHub has an unusual tagging system                    | The version of the first non-0ver release                      | 1.0.0                                                                                          |
-| `last_zv_release_version`     | Emeritus only       | If the project is no longer ZeroVer AND the project is not from GitHub or the repository on GitHub has an unusual tagging system                    | The last 0ver release before the project left ZeroVer          | 0.9.9                                                                                          |
+| `first_nonzv_release_version` | Emeritus only       | If the project is no longer ZeroVer AND the project is not from GitHub or the repository on GitHub has an unusual tagging system                    | The version of the first non-0ver release                      | "1.0.0"                                                                                        |
+| `last_zv_release_version`     | Emeritus only       | If the project is no longer ZeroVer AND the project is not from GitHub or the repository on GitHub has an unusual tagging system                    | The last 0ver release before the project left ZeroVer          | "0.9.9"                                                                                        |
+
+Note: version values must be quoted strings (e.g. `"0.1"`, not `0.1`) so YAML doesn't parse them as floats, which breaks trailing zeros and exact tag matching.
 
 ### Simple GitHub Projects
 
@@ -96,7 +98,7 @@ If the project did not begin on GitHub, the tags may not extend to the origin of
   gh_url: https://github.com/example/test
   reason: This project is a core component of a large system used by millions of users around the world.
   first_release_date: 2000-01-01
-  first_release_version: 0.1 # This release isn't tagged on GitHub, see here: https://example.com/releases/0.1
+  first_release_version: "0.1" # This release isn't tagged on GitHub, see here: https://example.com/releases/0.1
 ```
 
 ### Complex GitHub Projects or Non-GitHub Projects
@@ -107,9 +109,9 @@ If the project you are adding is hosted on GitHub with incompatible ZeroVer tags
 - name: Project Name
   url: https://example.com
   first_release_date: 2000-01-01
-  first_release_version: 0.1 # Reference: https://example.com/releases
+  first_release_version: "0.1" # Reference: https://example.com/releases
   latest_release_date: 2024-12-28
-  latest_release_version: 0.37.2 # Reference: https://example.com/releases
+  latest_release_version: "0.37.2" # Reference: https://example.com/releases
 ```
 
 If the repository is available but not on GitHub, you can add the `repo_url` key.
@@ -119,9 +121,9 @@ If the repository is available but not on GitHub, you can add the `repo_url` key
   url: https://example.com
   repo_url: https://gitlab.com/example
   first_release_date: 2000-01-01
-  first_release_version: 0.1 # Reference: https://example.com/releases
+  first_release_version: "0.1" # Reference: https://example.com/releases
   latest_release_date: 2024-12-28
-  latest_release_version: 0.37.2 # Reference: https://example.com/releases
+  latest_release_version: "0.37.2" # Reference: https://example.com/releases
 ```
 
 If the release count is available you can add the `release_count` key.
@@ -131,9 +133,9 @@ If the release count is available you can add the `release_count` key.
   url: https://example.com
   repo_url: https://gitlab.com/example
   first_release_date: 2000-01-01
-  first_release_version: 0.1 # Reference: https://example.com/releases
+  first_release_version: "0.1" # Reference: https://example.com/releases
   latest_release_date: 2024-12-28
-  latest_release_version: 0.37.2 # Reference: https://example.com/releases
+  latest_release_version: "0.37.2" # Reference: https://example.com/releases
   release_count: 100 # Reference: https://example.com/releases
 ```
 
@@ -146,10 +148,10 @@ If a complex GitHub project or non-GitHub project is no longer ZeroVer and needs
   url: https://example.com
   emeritus: true
   first_release_date: 2000-01-01
-  first_release_version: 0.1 # Reference: https://example.com/releases
+  first_release_version: "0.1" # Reference: https://example.com/releases
   first_nonzv_release_date: 2024-12-30
-  first_nonzv_release_version: 1.0.0
-  last_zv_release_version: 0.37.2 # Reference: https://example.com/releases
+  first_nonzv_release_version: "1.0.0"
+  last_zv_release_version: "0.37.2" # Reference: https://example.com/releases
   release_count_zv: 100 # Reference: https://example.com/releases
 ```
 
