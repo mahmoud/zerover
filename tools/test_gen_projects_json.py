@@ -6,6 +6,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 import gen_projects_json
 
 import unittest
+import tempfile
 from unittest import mock
 
 GH_URL = "https://github.com/example/proj"
@@ -146,6 +147,40 @@ class TestVersionKey(unittest.TestCase):
             gen_projects_json.version_key("0.12.4"),
             gen_projects_json.version_key("v0.4.10"),
         )
+
+
+class TestParseArgsToken(unittest.TestCase):
+    """Contract: after parsing, -k/--token is replaced by file contents only
+    when it names a readable file; literal tokens pass through unchanged,
+    including tokens long enough that the file probe raises OSError."""
+
+    def _parse(self, token_arg: str):
+        with mock.patch.object(sys, "argv", ["prog", "-k", token_arg]):
+            return gen_projects_json.parse_args()
+
+    def test_long_literal_token_survives_raising_stat(self):
+        # On Linux/Python 3.13 Path.is_file() raises OSError(ENAMETOOLONG)
+        # for values longer than NAME_MAX (the real Actions GITHUB_TOKEN did);
+        # macOS silently returns False, so simulate the raise.
+        token = "g" * 300
+        with mock.patch.object(
+            gen_projects_json.Path,
+            "is_file",
+            side_effect=OSError(36, "File name too long"),
+        ):
+            args = self._parse(token)
+        self.assertEqual(args.token, token)
+
+    def test_token_file_path_replaced_by_stripped_contents(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            token_file = Path(tmpdir) / "token.txt"
+            token_file.write_text("sekrit\n")
+            args = self._parse(str(token_file))
+        self.assertEqual(args.token, "sekrit")
+
+    def test_short_literal_token_passes_through(self):
+        args = self._parse("notafile_gtk123")
+        self.assertEqual(args.token, "notafile_gtk123")
 
 
 if __name__ == "__main__":

@@ -343,9 +343,14 @@ def parse_args():
     )
 
     args = parser.parse_args()
-    if Path(args.token).is_file():
-        with Path(args.token).open() as f:
-            args.token = f.read().strip()
+    try:
+        token_path = Path(args.token)
+        if token_path.is_file():
+            args.token = token_path.read_text().strip()
+    except OSError:
+        # args.token is a literal token, not a path; long tokens (e.g. current
+        # Actions GITHUB_TOKEN) make os.stat raise ENAMETOOLONG on Linux.
+        pass
     return args
 
 
