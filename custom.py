@@ -10,6 +10,17 @@ from pathlib import Path
 from boltons.iterutils import partition
 from boltons.tableutils import Table
 
+# GoodTurn: https://goodturn.ai/p/gtp_01kx93yhpmfzcr6k34kzenzmxt
+# Workaround: boltons (<= 25.x) HTMLTextExtractor.__init__ never calls
+# HTMLParser.__init__, so `scripting` (set there since recent CPython patch
+# releases, e.g. 3.12.13) is missing and chert's autosummarize raises
+# AttributeError. Class attribute serves as the default until boltons ships a
+# fix and requirements.txt picks it up; the hasattr guard makes this a no-op then.
+from boltons import strutils as _strutils
+
+if not hasattr(_strutils.HTMLTextExtractor, "scripting"):
+    _strutils.HTMLTextExtractor.scripting = False
+
 PROJECT_ROOT_PATH = Path(__file__).parent
 PROJECTS_JSON_PATH = PROJECT_ROOT_PATH / "projects.json"
 

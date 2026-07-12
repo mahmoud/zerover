@@ -6,11 +6,13 @@ import os
 import re
 import sys
 import time
+import urllib.error
 import urllib.request
 from pathlib import Path
 from pprint import pprint
 
 import yaml
+from boltons.fileutils import atomic_save
 from boltons.urlutils import URL
 
 PROJECT_ROOT_PATH = Path(__file__).parent.parent
@@ -71,6 +73,23 @@ def version_key(version: str) -> tuple:
         return tuple()
 
 
+PER_PAGE = 100
+
+
+def _gh_urlopen(req: urllib.request.Request, attempts: int = 3):
+    """urlopen with retries on transient GitHub API errors (rate limits, 5xx)."""
+    for attempt in range(attempts):
+        try:
+            return urllib.request.urlopen(req)
+        except urllib.error.HTTPError as e:
+            if e.code in (403, 429, 500, 502, 503, 504) and attempt < attempts - 1:
+                wait = min(max(int(e.headers.get("retry-after") or 0), 2 ** (attempt + 2)), 120)
+                print(f" !! HTTP {e.code} from {req.full_url}, retrying in {wait}s")
+                time.sleep(wait)
+                continue
+            raise
+
+
 def _get_gh_json(
     url: str, user: str | None = None, token: str | None = None
 ) -> dict | list[dict]:
@@ -78,30 +97,31 @@ def _get_gh_json(
     Get paginated results from GitHub, possibly authorized based on command
     line arguments or environment variables.
     """
-    req = urllib.request.Request(url)
+    sep = "&" if "?" in url else "?"
+    req = urllib.request.Request(f"{url}{sep}per_page={PER_PAGE}")
     if user and token:
         auth_str = f"{user}:{token}"
         auth_bytes = auth_str.encode("ascii")
         auth_header_val = f'Basic {base64.b64encode(auth_bytes).decode("ascii")}'
         req.add_header("Authorization", auth_header_val)
 
-    resp = urllib.request.urlopen(req)
+    resp = _gh_urlopen(req)
     body = resp.read()
     res = json.loads(body)
     rate_rem = int(resp.info().get("x-ratelimit-remaining", "-1"))
 
-    if not isinstance(res, list) or not res:
+    if not isinstance(res, list) or len(res) < PER_PAGE:
         print(f" (( {rate_rem} requests remaining")
         return res
 
     page = 2
     ret = res
-    while res:
-        paged_url = f"{url}?page={page}"
+    while len(res) == PER_PAGE:
+        paged_url = f"{url}{sep}per_page={PER_PAGE}&page={page}"
         req = urllib.request.Request(paged_url)
         if user and token:
             req.add_header("Authorization", auth_header_val)
-        resp = urllib.request.urlopen(req)
+        resp = _gh_urlopen(req)
         body = resp.read()
         res = json.loads(body)
         ret.extend(res)
@@ -151,6 +171,8 @@ def _find_dominant_version_pattern(tags: list[dict]) -> list[dict]:
         if not match:
             continue
         prefix = tag_name[: match.start()]
+        if prefix in ("v", "V"):
+            prefix = ""
         if prefix in patterns:
             patterns[prefix].append(tag)
         else:
@@ -187,6 +209,10 @@ def get_gh_project_info(
     if not vtags_data:
         return gh_info
 
+    # GoodTurn: https://goodturn.ai/p/gtp_01kx93xqrcfqjtknbnbnnh8834
+    # /tags is name-version-sorted, not newest-first; sort before taking [0].
+    vtags_data.sort(key=lambda x: version_key(x["name"]), reverse=True)
+
     gh_info["release_count"] = len(vtags_data)
 
     latest_release = vtags_data[0]
@@ -194,20 +220,20 @@ def get_gh_project_info(
     for k, v in latest_release_data.items():
         gh_info[f"latest_release_{k}"] = v
 
-    vtags_data.sort(key=lambda x: version_key(x["name"]), reverse=True)
-
     first_release_version = info.get("first_release_version")
     first_release = None
     if first_release_version is None:
-        first_release = [
-            v
-            for v in vtags_data
-            if version_key(v["name"]) < version_key(latest_release["name"])
-        ][-1]
+        first_release = vtags_data[-1]
     else:
-        first_releases = [v for v in vtags_data if v["name"] == first_release_version]
-        if first_releases:
-            first_release = first_releases[0]
+        frv = str(first_release_version)
+        matches = [
+            v for v in vtags_data
+            if v["name"] == frv or strip_prefix(v["name"]) == frv
+        ]
+        if matches:
+            first_release = matches[-1]
+        elif "first_release_date" not in info:
+            print(f" !! first_release_version {frv!r} matches no tag of {info['name']}")
     if first_release:
         first_release_data = _get_gh_rel_data(first_release, user, token)
         for k, v in first_release_data.items():
@@ -230,13 +256,15 @@ def get_gh_project_info(
     if is_zerover:
         return gh_info
 
-    last_zv_release = zv_releases[0]
-    first_nonzv_release = vtags_data[vtags_data.index(last_zv_release) - 1]
-    first_nonzv_release_data = _get_gh_rel_data(first_nonzv_release, user, token)
-
-    gh_info["last_zv_release_version"] = last_zv_release["name"]
-    for k, v in first_nonzv_release_data.items():
-        gh_info[f"first_nonzv_release_{k}"] = v
+    if zv_releases:
+        last_zv_release = zv_releases[0]
+        gh_info["last_zv_release_version"] = last_zv_release["name"]
+        idx = vtags_data.index(last_zv_release)
+        if idx > 0:
+            first_nonzv_release = vtags_data[idx - 1]
+            first_nonzv_release_data = _get_gh_rel_data(first_nonzv_release, user, token)
+            for k, v in first_nonzv_release_data.items():
+                gh_info[f"first_nonzv_release_{k}"] = v
 
     return gh_info
 
@@ -339,7 +367,7 @@ def main():
             cur_data = json.load(f)
             cur_projects = cur_data["projects"]
             cur_gen_date = datetime.datetime.fromisoformat(cur_data["gen_date"])
-    except (IOError, KeyError):
+    except (IOError, KeyError, ValueError):
         cur_projects = []
         cur_gen_date = None
 
@@ -359,6 +387,11 @@ def main():
         print("Current data already up to date, exiting.")
         return
 
+    missing = sorted(e["name"] for e in entries if not e.get("first_release_date"))
+    if missing:
+        print(f"!! {len(missing)} project(s) missing first_release_date; site render would fail: {missing}")
+        sys.exit(1)
+
     pprint(entries)
 
     res = {
@@ -367,7 +400,7 @@ def main():
         "gen_duration": time.time() - start_time,
     }
 
-    with projects_json_path.open("w") as f:
+    with atomic_save(str(projects_json_path), text_mode=True) as f:
         json.dump(res, f, indent=2, sort_keys=True, default=json_default)
 
     sys.exit(0)

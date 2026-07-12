@@ -80,7 +80,6 @@ projects:
     first_nonzv_release_version: 1.0.0
     last_zv_release_version: v0.4.1
     release_count_zv: 17
-    star_count: 93599
   - name: HTTPie
     gh_url: https://github.com/jakubroztocil/httpie
   - name: scikit-learn
@@ -394,7 +393,7 @@ projects:
     gh_url: https://github.com/haskell/bytestring
     reason: Ships with the Haskell compiler, over 8000 libraries depend on it.
     first_release_date: 2007-10-21
-    first_release_version: 0.9 # https://hackage.haskell.org/package/bytestring-0.9
+    first_release_version: "0.9" # https://hackage.haskell.org/package/bytestring-0.9
   - name: Anthropic Python SDK
     gh_url: https://github.com/anthropics/anthropic-sdk-python
   - name: Excalidraw
@@ -504,7 +503,7 @@ projects:
     gh_url: https://github.com/docutils/docutils # Only a mirror, tags don't update
     reason: Depended on by Sphinx and most of the content on ReadTheDocs. The reference implementation of ReStructuredText, the inspiration for Markdown.
     first_release_date: 2002-01-01
-    first_release_version: 0.1
+    first_release_version: "0.1"
     latest_release_version: 0.21.2
     latest_release_date: 2024-04-23
   - name: Inkscape
@@ -512,7 +511,7 @@ projects:
     repo_url: https://launchpad.net/inkscape
     emeritus: true
     first_release_date: 2000-09-01
-    first_release_version: 0.16 # sodipodi cvs import according to changelog
+    first_release_version: "0.16" # sodipodi cvs import according to changelog
     first_nonzv_release_date: 2020-05-01
     last_zv_release_version: 0.92.5
   - name: Compiz
@@ -558,14 +557,14 @@ projects:
     reason: Probably the most popular SSH client in Windows history
     first_release_version: 0.43beta
     first_release_date: 1999-01-08
-    latest_release_version: 0.82
+    latest_release_version: "0.82"
     latest_release_date: 2024-11-27
   - name: MAME
     gh_url: https://github.com/mamedev/mame # GitHub releases are mame0272
     wp_url: https://en.wikipedia.org/wiki/MAME
-    first_release_version: 0.1
+    first_release_version: "0.1"
     first_release_date: 1997-02-05
-    latest_release_version: 0.272
+    latest_release_version: "0.272"
     latest_release_date: 2024-11-29
     release_count: 304
   - name: slrn # thanks hynek
@@ -589,7 +588,7 @@ projects:
     url: https://cataclysmdda.org
     gh_url: https://github.com/CleverRaven/Cataclysm-DDA # GitHub is returning tags out of order
     reason: Immensely popular cross-platform open-source game under continuous development for 6 years.
-    first_release_version: 0.1
+    first_release_version: "0.1"
     first_release_date: 2013-02-26
     latest_release_version: 0.H
     latest_release_date: 2024-11-22
@@ -617,7 +616,7 @@ projects:
     gh_url: https://github.com/openstreetmap/openstreetmap-website # Doesn't use releases on GitHub
     wp_url: https://en.wikipedia.org/wiki/OpenStreetMap
     reason: "Open map data used almost anywhere there's a non-Google map."
-    first_release_version: 0.3
+    first_release_version: "0.3"
     first_release_date: 2004-08-09
     latest_release_version: 0.6 February 2021 # See https://wiki.openstreetmap.org/wiki/API_v0.6#Semantic_versioning
     latest_release_date: 2021-02-01
@@ -625,7 +624,7 @@ projects:
   - name: three.js
     url: https://threejs.org/
     gh_url: https://github.com/mrdoob/three.js
-    first_release_version: 0.1 # GitHub releases are r1-r130
+    first_release_version: "0.1" # GitHub releases are r1-r130
     first_release_date: 2013-07-03T11:49:48
     latest_release_version: 0.171.0
     latest_release_date: 2024-11-29
@@ -658,14 +657,14 @@ projects:
     gh_url: https://github.com/pure-data/pure-data/ # Some GitHub releases are 0.55-0test3a
     url: https://puredata.info/
     first_release_date: 1996-06-01
-    first_release_version: 0.1
+    first_release_version: "0.1"
     latest_release_version: 0.55-2
     latest_release_date: 2024-11-17
   - name: XeTeX
     wp_url: https://en.wikipedia.org/wiki/XeTeX
     url: http://xetex.sourceforge.net/
     first_release_date: 2004-04-07
-    first_release_version: 0.3
+    first_release_version: "0.3"
     latest_release_version: 0.9999.3
     latest_release_date: 2024-05-21
   - name: PipeWire
@@ -683,9 +682,9 @@ projects:
     repo_url: https://savannah.gnu.org/projects/gettext/
     wp_url: https://en.wikipedia.org/wiki/Gettext
     first_release_date: 1987-01-01 # https://web.archive.org/web/20120323032211/http://compgroups.net/comp.unix.solaris/History-of-gettext-et-al
-    first_release_version: 0.1 # earliest version still on gnu.org is 0.10.40 from 2001-09-15
+    first_release_version: "0.1" # earliest version still on gnu.org is 0.10.40 from 2001-09-15
     latest_release_date: 2024-12-01
-    latest_release_version: 0.23
+    latest_release_version: "0.23"
   - name: Wine
     url: https://www.winehq.org/
     repo_url: https://gitlab.winehq.org/wine/wine
