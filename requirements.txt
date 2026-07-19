@@ -22,7 +22,7 @@ hyperlink==21.0.0
     # via
     #   -r requirements.in
     #   chert
-idna==3.10
+idna==3.15
     # via hyperlink
 lithoxyl==21.0.0
     # via chert
