@@ -63,23 +63,41 @@ zeroes.
 <img align="left" style="padding-right: 15px" width="15%" src="/uploads/vault_logo.png">
 [HashiCorp's Vault][vault] project aims to be an enterprise secret
 management service, comprising the bedrock of a modern,
-microservice-oriented environment. And that's what makes it one of
-ZeroVer's most important adherents.
+microservice-oriented environment. And that's what made it one of
+ZeroVer's most important adherents until
+[2018](https://github.com/hashicorp/vault/releases/tag/v1.0.0).
 
-> *Low in the stack, low in the version. That's the HashiCorp way.*
+> *Low in the stack, low in the version. That was the HashiCorp way.*
 
 <img align="right" width="30%" style="padding-left: 15px" src="/uploads/terraform_logo.png">
 
 To drive the point home, even further down the stack, HashiCorp's
-[Terraform][terraform] also complies with ZeroVer's cutting-edge
-versioning scheme. With Vault and Terraform, HashiCorp demonstrates
-industry recognition of the importance of ZeroVer in infrastructure.
+[Terraform][terraform] also complied with ZeroVer's cutting-edge
+versioning scheme until
+[2021](https://github.com/hashicorp/terraform/releases/tag/v1.0.0).
+With Vault and Terraform, HashiCorp demonstrated industry recognition
+of the importance of ZeroVer in infrastructure.
 
 HashiCorp knows ZeroVer works, especially when the projects are
 business-critical products, sold and supported.
 
 [vault]: https://www.vaultproject.io/
 [terraform]: https://www.terraform.io/
+
+## PuTTY
+
+For decades, PuTTY has been the go-to tool for professional Windows users 
+creating SSH connections. PuTTY was first released in 1999 by Simon Tatham
+and has resisted the taboo of nonzero major versions for over 25 years.
+PuTTY's journey has been nothing short of legendary.
+
+Much like the tool itself, PuTTY's versioning approach is efficient,
+lightweight, robust, and focused on functionality rather than marketing optics
+like major releases. Even as the SSH protocol itself revved from version 1 to 2,
+PuTTY remained steadfast under the reassuring banner of 0.x.
+
+PuTTY's commitment to ZeroVer reminds us that great software doesn't need major
+version numbers to make a major impact.
 
 ## TOML
 
